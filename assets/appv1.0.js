@@ -117,7 +117,7 @@
 
   const pj = $('#projector');
   pj.onclick = () => {
-    const on = document.body.classList.toggle('projector');
+    const on = document.documentElement.classList.toggle('projector');
     pj.setAttribute('aria-pressed', on);
     try { localStorage.setItem('projector', on ? '1' : '0'); } catch (e) {}
   };

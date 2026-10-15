@@ -126,4 +126,38 @@
   fetch('data/projectsv1.0.json').then(r => r.json()).then(d => {
     data = d; renderStats(); renderLevels(); renderFilters(); renderGrid(); renderLessons(); renderTools();
   }).catch(() => { $('#grid').innerHTML = '<p class="sub">作品数据加载失败，请刷新页面。</p>'; });
+
+  let learn = null, cLevel = 'all', libTopic = 'all';
+  function renderConcepts() {
+    const opts = [['all', '全部']].concat(LEVELS.map(l => [l.id, `${l.id} ${l.name}`]));
+    $('#conceptFilters').innerHTML = opts.map(([k, v]) => {
+      const n = k === 'all' ? learn.concepts.length : learn.concepts.filter(c => c.level === k).length;
+      return `<button class="chip" data-k="${k}" aria-pressed="${cLevel === k}">${v} ${n}</button>`;
+    }).join('');
+    $('#conceptFilters').querySelectorAll('.chip').forEach(b => b.onclick = () => { cLevel = b.dataset.k; renderConcepts(); });
+    $('#conceptGrid').innerHTML = learn.concepts.filter(c => cLevel === 'all' || c.level === cLevel).map(c => `
+      <article class="concept"><span class="badge lv">${c.level}</span>
+        <h3>${esc(c.term)}</h3><p>${esc(c.def)}</p>
+        <p class="play"><b>战术板比喻</b>${esc(c.play)}</p>
+        <a href="${esc(c.more)}" target="_blank" rel="noopener">深入学 ↗</a></article>`).join('');
+  }
+  function renderGear() {
+    $('#gearGrid').innerHTML = learn.gear.map(g => `
+      <article class="gear-card"><span class="tag">${esc(g.group)}</span>
+        <h3><a href="${esc(g.url)}" target="_blank" rel="noopener">${esc(g.name)} ↗</a></h3>
+        <dl><dt>擅长</dt><dd>${esc(g.good)}</dd><dt>医生怎么用</dt><dd>${esc(g.use)}</dd><dt>小心</dt><dd>${esc(g.care)}</dd></dl></article>`).join('');
+  }
+  function renderLibrary() {
+    $('#libCredit').innerHTML = `精选自好友 <a href="${esc(learn.credit.url)}" target="_blank" rel="noopener">${esc(learn.credit.name)}</a> 的公开课程，点击跳转原站学习。像赛前看录像一样，按主题挑着看。`;
+    const opts = [['all', '全部']].concat(Object.entries(learn.topics));
+    $('#libFilters').innerHTML = opts.map(([k, v]) => {
+      const n = k === 'all' ? learn.library.length : learn.library.filter(c => c.topic === k).length;
+      return n ? `<button class="chip" data-k="${k}" aria-pressed="${libTopic === k}">${v} ${n}</button>` : '';
+    }).join('');
+    $('#libFilters').querySelectorAll('.chip').forEach(b => b.onclick = () => { libTopic = b.dataset.k; renderLibrary(); });
+    $('#libList').innerHTML = learn.library.filter(c => libTopic === 'all' || c.topic === libTopic).map(c =>
+      `<a class="lib-item" href="${esc(c.url)}" target="_blank" rel="noopener"><span>${esc(learn.topics[c.topic])}</span><b>${esc(c.title)}</b></a>`).join('');
+  }
+  fetch('data/learnv1.0.json').then(r => r.json()).then(d => { learn = d; renderConcepts(); renderGear(); renderLibrary(); })
+    .catch(() => { $('#conceptGrid').innerHTML = '<p class="sub">词典数据加载失败，请刷新页面。</p>'; });
 })();

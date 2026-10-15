@@ -1,0 +1,445 @@
+---
+import Base from "../layouts/Base.astro";
+import Bi from "../components/Bi.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { FORK_GROUPS, formatDate, getCatalog, href } from "../lib/catalog";
+
+const catalog = getCatalog();
+const { site, modules, levels, projects, sessions, fetchedAt } = catalog;
+const courseModules = modules.filter((item) => ["a", "b", "c", "d"].includes(item.id));
+const teaching = projects.filter((item) => item.module.id !== "site");
+const originals = teaching.filter((item) => item.kind === "original");
+const forks = projects.filter((item) => item.kind === "fork");
+const demos = projects.filter((item) => item.demo && item.module.id !== "site");
+const projectable = demos.filter((item) => item.projectable);
+const localOnly = projects.filter((item) => item.local);
+const recent = [...projects].sort((a, b) => (a.pushedAt < b.pushedAt ? 1 : -1)).slice(0, 8);
+const siteProjects = projects.filter((item) => item.module.id === "site");
+const groupOrder = ["writing", "viz", "agent", "office", "other"];
+const description = `${site.position.zh}。${site.slogan.zh}`;
+---
+
+<Base title={`${site.name.zh} · ${site.position.zh}`} description={description}>
+  <section class="hero" id="top">
+    <p class="eyebrow"><span>01</span><Bi zh="课堂" en="Classroom" /></p>
+    <div class="hero-grid">
+      <div>
+        <p class="role"><Bi zh={site.role.zh} en={site.role.en} /></p>
+        <h1><Bi zh={site.position.zh} en={site.position.en} /></h1>
+        <p class="slogan"><Bi zh={site.slogan.zh} en={site.slogan.en} /></p>
+        <p class="who">
+          <Bi zh={site.person.zh} en={site.person.en} />
+          <span aria-hidden="true"> · </span>
+          <Bi zh="GitHub TUANZIDING" en="GitHub TUANZIDING" />
+        </p>
+        <div class="hero-actions">
+          <a class="btn solid" href="#path"><Bi zh="开始上课" en="Start class" /></a>
+          <a class="btn" href={href("projects/")}><Bi zh="看全部项目" en="All projects" /></a>
+        </div>
+        <dl class="stats">
+          <div>
+            <dt><Bi zh="原创课程" en="Original lessons" /></dt>
+            <dd>{originals.length}</dd>
+          </div>
+          <div>
+            <dt><Bi zh="Fork 收录" en="Forks in the lab" /></dt>
+            <dd>{forks.length}</dd>
+          </div>
+          <div>
+            <dt><Bi zh="可打开的 Pages" en="Pages you can open" /></dt>
+            <dd>{demos.length}</dd>
+          </div>
+        </dl>
+      </div>
+      <aside class="hero-panel">
+        <p class="panel-label"><Bi zh="现在可以投屏" en="Open on a screen now" /></p>
+        <ol>
+          {
+            demos.slice(0, 5).map((project) => (
+              <li>
+                <a href={project.demo || "#"}>
+                  <span>{project.module.code}</span>
+                  <Bi zh={project.title.zh} en={project.title.en} />
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+        <p class="panel-note">
+          <Bi
+            zh="这些地址来自各仓库已经开启的 GitHub Pages。没有 Pages 的项目只链到源码。"
+            en="These addresses are GitHub Pages that are already on. Repositories without Pages link to source only."
+          />
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="path">
+    <header class="sec-head">
+      <p class="num">02</p>
+      <div>
+        <p class="kicker"><Bi zh="学习路径" en="Learning path" /></p>
+        <h2><Bi zh="从打开一页，到做出有门槛的工具" en="From opening a page to a tool that knows when to stop" /></h2>
+        <p class="lede">
+          <Bi
+            zh="难度是这条课堂建议的位置，不是考试等级。空仓库标成规划中，不往前排课。"
+            en="A level is where this classroom suggests you start. It is not a grade. Empty repositories stay marked as planned."
+          />
+        </p>
+      </div>
+    </header>
+    <ol class="path">
+      {
+        levels.map((level) => {
+          const items = teaching.filter((project) => project.level.id === level.id);
+          return (
+            <li>
+              <p class="level-id">{level.id}</p>
+              <h3><Bi zh={level.title.zh} en={level.title.en} /></h3>
+              <p><Bi zh={level.summary.zh} en={level.summary.en} /></p>
+              <ul>
+                {items.map((project) => (
+                  <li>
+                    <a href={`#${project.repo}`}>
+                      <Bi zh={project.title.zh} en={project.title.en} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <a class="text-link" href={`${href("projects/")}?level=${level.id}`}>
+                <Bi zh="按此难度筛选" en="Filter this level" />
+              </a>
+            </li>
+          );
+        })
+      }
+    </ol>
+  </section>
+
+  <section class="section" id="modules">
+    <header class="sec-head">
+      <p class="num">03</p>
+      <div>
+        <p class="kicker"><Bi zh="课程模块" en="Course modules" /></p>
+        <h2><Bi zh="按要上的课来找，不按仓库新旧" en="Find a class by the lesson, not by the latest push" /></h2>
+      </div>
+    </header>
+    {
+      courseModules.map((module) => {
+        const items = projects.filter((project) => project.module.id === module.id);
+        return (
+          <div class="module-block" id={`module-${module.id}`}>
+            <header class="module-head">
+              <p class="module-code">{module.code}</p>
+              <div>
+                <h3><Bi zh={module.title.zh} en={module.title.en} /></h3>
+                <p><Bi zh={module.summary.zh} en={module.summary.en} /></p>
+                <a class="text-link" href={href(`modules/${module.id}/`)}>
+                  <Bi zh="打开模块页" en="Open module" />
+                </a>
+              </div>
+            </header>
+            <div class="cards">
+              {items.map((project) => <ProjectCard project={project} />)}
+            </div>
+          </div>
+        );
+      })
+    }
+  </section>
+
+  <section class="section" id="demos">
+    <header class="sec-head">
+      <p class="num">04</p>
+      <div>
+        <p class="kicker"><Bi zh="交互演示馆" en="Demo hall" /></p>
+        <h2><Bi zh="浏览器里打得开的页面" en="Pages a browser can open" /></h2>
+        <p class="lede">
+          <Bi
+            zh="只放已经返回页面的 GitHub Pages。上游网站放在项目卡片的「上游演示」，不算作本站演示。"
+            en="Only GitHub Pages that already return a page. Upstream websites stay on the card as upstream demos."
+          />
+        </p>
+      </div>
+    </header>
+    <div class="cards demos">
+      {demos.map((project) => <ProjectCard project={project} feature />)}
+    </div>
+  </section>
+
+  <section class="section" id="courseware">
+    <header class="sec-head">
+      <p class="num">05</p>
+      <div>
+        <p class="kicker"><Bi zh="线下课件馆" en="Offline courseware" /></p>
+        <h2><Bi zh="有日期的课，和现在就能投屏的页" en="Dated classes, and pages you can project today" /></h2>
+      </div>
+    </header>
+    {
+      sessions.length === 0 ? (
+        <div class="empty-session">
+          <p>
+            <Bi
+              zh="公开仓库里还没有写过某一次线下课的日期和地点。上过课之后，把讲义加到 data/sessions.yaml，这里会按课次列出。"
+              en="No dated offline class is written in the public repository yet. After a class, add it to data/sessions.yaml and it will be listed here."
+            />
+          </p>
+        </div>
+      ) : (
+        <ol class="sessions">
+          {sessions.map((session) => (
+            <li>
+              <time datetime={session.date}>{session.date}</time>
+              <div>
+                <h3><Bi zh={session.title.zh} en={session.title.en} /></h3>
+                <p><Bi zh={session.place.zh} en={session.place.en} /></p>
+                {session.notes.zh && <p><Bi zh={session.notes.zh} en={session.notes.en} /></p>}
+                {session.slides && (
+                  <a class="btn" href={session.slides}>
+                    <Bi zh="讲义" en="Slides" />
+                  </a>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+      )
+    }
+    <div class="split">
+      <div>
+        <h3><Bi zh="可投屏的在线页" en="Project these" /></h3>
+        <ul class="plain">
+          {projectable.map((project) => (
+            <li>
+              <a href={project.demo || "#"}><Bi zh={project.title.zh} en={project.title.en} /></a>
+              <span>{project.level.id}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3><Bi zh="需要在本机打开" en="Open on your own computer" /></h3>
+        <ul class="plain">
+          {localOnly.map((project) => (
+            <li>
+              <a href={`#${project.repo}`}><Bi zh={project.title.zh} en={project.title.en} /></a>
+              <span><Bi zh={project.local?.zh || ""} en={project.local?.en || ""} /></span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="lab">
+    <header class="sec-head">
+      <p class="num">06</p>
+      <div>
+        <p class="kicker"><Bi zh="开源实验室" en="Open-source lab" /></p>
+        <h2><Bi zh="Fork 来的工具，标明用途和边界" en="Forked tools, with a use and a limit" /></h2>
+        <p class="lede">
+          <Bi
+            zh="这些不是原创。收录理由根据仓库公开说明编写，供上课选用，不是临床背书，也不是上游作者的原话。"
+            en="These are not original. The notes are written for class from each public description. They are not a clinical endorsement, and they are not the upstream author's words."
+          />
+        </p>
+        <a class="text-link" href={href("modules/e/")}><Bi zh="打开实验室模块页" en="Open the lab module" /></a>
+      </div>
+    </header>
+    {
+      groupOrder.map((groupId) => {
+        const label = FORK_GROUPS[groupId];
+        const items = forks.filter((project) => project.forkGroup === groupId);
+        return (
+          <div class="lab-group" id={`lab-${groupId}`}>
+            <h3>
+              <Bi zh={label.zh} en={label.en} />
+              <span>{items.length}</span>
+            </h3>
+            <ul class="lab-list">
+              {items.map((project) => (
+                <li id={project.repo}>
+                  <div>
+                    <p class="card-kicker">
+                      <span>{project.level.id}</span>
+                      <span>{project.upstreamAuthor}</span>
+                      <span>★ {project.stars}</span>
+                    </p>
+                    <h4><Bi zh={project.title.zh} en={project.title.en} /></h4>
+                    {project.recommend && <p><Bi zh={project.recommend.zh} en={project.recommend.en} /></p>}
+                    <p class="boundary">
+                      <span><Bi zh="使用边界" en="Limit" /></span>
+                      <Bi zh={project.boundary.zh} en={project.boundary.en} />
+                    </p>
+                  </div>
+                  <div class="actions">
+                    <a class="btn" href={project.htmlUrl}><Bi zh="源码" en="Source" /></a>
+                    {project.upstreamUrl && (
+                      <a class="btn" href={project.upstreamUrl}><Bi zh="上游" en="Upstream" /></a>
+                    )}
+                    {project.upstreamDemo && (
+                      <a class="btn" href={project.upstreamDemo}><Bi zh="上游演示" en="Upstream demo" /></a>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })
+    }
+  </section>
+
+  <section class="section" id="boundaries">
+    <header class="sec-head">
+      <p class="num">07</p>
+      <div>
+        <p class="kicker"><Bi zh="AI 使用边界" en="Limits of AI use" /></p>
+        <h2><Bi zh="三件事先说在前面" en="Three limits, before the tools" /></h2>
+      </div>
+    </header>
+    <ol class="bounds">
+      <li>
+        <h3><Bi zh="临床语境优先" en="The clinical context comes first" /></h3>
+        <p>
+          <Bi
+            zh="工具要回答的是这节课的问题：谁在学、材料从哪来、结论能说到哪。生成得流畅，不等于能用在病人身上。"
+            en="A tool has to answer the class question: who is learning, where the material came from, and how far a sentence may go. Fluency is not fitness for a patient."
+          />
+        </p>
+      </li>
+      <li>
+        <h3><Bi zh="人类复核在环" en="A person stays in the loop" /></h3>
+        <p>
+          <Bi
+            zh="检索、草稿、幻灯片和评分都停在人工确认之前。失败、缺材料、对不上原文时，停下来，不补一句看起来完整的话。"
+            en="Search, drafts, slides, and scores stop for a person. If a step fails, the source is missing, or the sentence does not match the text, stop. Do not add a sentence that only sounds finished."
+          />
+        </p>
+      </li>
+      <li>
+        <h3><Bi zh="患者隐私边界" en="Patient privacy is a hard edge" /></h3>
+        <p>
+          <Bi
+            zh="病历、影像、检查单、证件和能识别具体病人的信息不上课、不进提示词、不进仓库。公开数据也只按该数据集自己的许可使用。"
+            en="Records, images, reports, identity documents, and anything that identifies a patient stay out of class, prompts, and repositories. Public data is used only under that dataset's own terms."
+          />
+        </p>
+      </li>
+    </ol>
+    <p class="principle">
+      <Bi zh={site.principles.zh} en={site.principles.en} />
+    </p>
+  </section>
+
+  <section class="section" id="about">
+    <header class="sec-head">
+      <p class="num">08</p>
+      <div>
+        <p class="kicker"><Bi zh="关于我" en="About" /></p>
+        <h2><Bi zh={site.person.zh} en={site.person.en} /></h2>
+      </div>
+    </header>
+    <div class="about-grid">
+      <div class="prose">
+        <p class="role"><Bi zh={site.aboutRole.zh} en={site.aboutRole.en} /></p>
+        <p><Bi zh={`${site.hospital.zh} · ${site.places.zh}`} en={`${site.hospital.en} · ${site.places.en}`} /></p>
+        <p><Bi zh={site.about.zh} en={site.about.en} /></p>
+        <p><Bi zh={site.research.zh} en={site.research.en} /></p>
+        <p><Bi zh={site.principles.zh} en={site.principles.en} /></p>
+        <ul class="plain links">
+          <li><a href={site.website}><Bi zh="学术主页" en="Academic site" /></a></li>
+          <li><a href={site.github}>github.com/TUANZIDING</a></li>
+          <li><a href={site.linkedin}>LinkedIn</a></li>
+          <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+        </ul>
+      </div>
+      <div class="cards">
+        {siteProjects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="feedback">
+    <header class="sec-head">
+      <p class="num">09</p>
+      <div>
+        <p class="kicker"><Bi zh="反馈" en="Feedback" /></p>
+        <h2><Bi zh="想学什么" en="What do you want to learn?" /></h2>
+        <p class="lede">
+          <Bi
+            zh="表单只打开你自己的邮件软件，发给下面这个地址。内容不会提交到本站或其他网站。"
+            en="The form only opens your own mail app, addressed below. Nothing is sent to this site or to another service."
+          />
+        </p>
+      </div>
+    </header>
+    <form class="feedback" action={`mailto:${site.email}`} method="post" enctype="text/plain" data-feedback data-email={site.email}>
+      <label>
+        <span><Bi zh="怎么称呼" en="Name" /></span>
+        <input name="name" type="text" autocomplete="name" />
+      </label>
+      <label>
+        <span><Bi zh="身份" en="Role" /></span>
+        <select name="role">
+          <option value=""><Bi zh="请选择" en="Choose" /></option>
+          <option value="clinician">医护人员 / Clinician</option>
+          <option value="student">医学生 / Student</option>
+          <option value="research">科研 / Research</option>
+          <option value="family">家长 / Parent</option>
+          <option value="other">其他 / Other</option>
+        </select>
+      </label>
+      <label>
+        <span><Bi zh="想学什么" en="What do you want to learn?" /></span>
+        <textarea name="want" rows="4" required></textarea>
+      </label>
+      <label>
+        <span><Bi zh="补充" en="Anything else" /></span>
+        <textarea name="note" rows="3"></textarea>
+      </label>
+      <p class="form-error" data-feedback-error hidden>
+        <Bi zh="先写一写想学的内容。" en="Write what you want to learn first." />
+      </p>
+      <button class="btn solid" type="submit"><Bi zh="用邮件发送" en="Send by email" /></button>
+      <p class="mail-fallback">
+        <Bi zh="也可以直接写：" en="Or write directly:" />
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+      </p>
+    </form>
+  </section>
+
+  <section class="section" id="updates">
+    <header class="sec-head">
+      <p class="num">10</p>
+      <div>
+        <p class="kicker"><Bi zh="最近更新" en="Recent updates" /></p>
+        <h2><Bi zh="最近有推送的仓库" en="Repositories pushed most recently" /></h2>
+        <p class="lede">
+          <Bi
+            zh={`按 GitHub pushed 时间排序。快照日期 ${formatDate(fetchedAt)}。构建时会重新拉取。`}
+            en={`Ordered by the GitHub push time. Snapshot ${formatDate(fetchedAt)}. The build fetches this again.`}
+          />
+        </p>
+      </div>
+    </header>
+    <ol class="updates">
+      {
+        recent.map((project) => (
+          <li>
+            <time datetime={project.pushedAt}>{formatDate(project.pushedAt)}</time>
+            <div>
+              <h3>
+                <a href={project.htmlUrl}><Bi zh={project.title.zh} en={project.title.en} /></a>
+              </h3>
+              <p><Bi zh={project.summary.zh} en={project.summary.en} /></p>
+            </div>
+            <span class="stars">★ {project.stars}</span>
+          </li>
+        ))
+      }
+    </ol>
+    <a class="text-link" href={href("projects/")}><Bi zh="看全部项目" en="All projects" /></a>
+  </section>
+</Base>

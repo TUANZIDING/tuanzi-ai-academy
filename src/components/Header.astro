@@ -1,0 +1,67 @@
+---
+import Bi from "./Bi.astro";
+import { getCatalog, href } from "../lib/catalog";
+
+const { site } = getCatalog();
+const path = Astro.url.pathname;
+const home = import.meta.env.BASE_URL;
+const onHome = path === home || path === home.slice(0, -1);
+
+const links = [
+  { href: `${home}#path`, zh: "路径", en: "Path" },
+  { href: `${home}#modules`, zh: "模块", en: "Modules" },
+  { href: `${home}#demos`, zh: "演示", en: "Demos" },
+  { href: `${home}#courseware`, zh: "课件", en: "Slides" },
+  { href: `${home}#lab`, zh: "实验室", en: "Lab" },
+  { href: `${home}#boundaries`, zh: "边界", en: "Limits" },
+  { href: `${home}#about`, zh: "关于", en: "About" },
+  { href: href("projects/"), zh: "全部项目", en: "All projects" },
+];
+---
+
+<a class="skip" href="#content"><Bi zh="跳到正文" en="Skip to content" /></a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href={home} aria-current={onHome ? "page" : undefined}>
+      <span class="seal" aria-hidden="true">团</span>
+      <span class="brand-text">
+        <strong><Bi zh={site.name.zh} en={site.name.en} /></strong>
+        <small><Bi zh={site.position.zh} en={site.position.en} /></small>
+      </span>
+    </a>
+    <nav class="nav-desktop" aria-label="sections">
+      {
+        links.map((link) => (
+          <a href={link.href} aria-current={path === link.href ? "page" : undefined}>
+            <Bi zh={link.zh} en={link.en} />
+          </a>
+        ))
+      }
+    </nav>
+    <div class="header-tools">
+      <button type="button" data-action="lang" aria-pressed="false">
+        <span class="zh">EN</span><span class="en">中文</span>
+      </button>
+      <button type="button" data-action="theme">
+        <span class="zh when-light">深色</span><span class="en when-light">Dark</span>
+        <span class="zh when-dark">浅色</span><span class="en when-dark">Light</span>
+      </button>
+      <button type="button" data-action="display">
+        <span class="zh when-read">投屏</span><span class="en when-read">Room</span>
+        <span class="zh when-project">阅读</span><span class="en when-project">Read</span>
+      </button>
+    </div>
+  </div>
+  <details class="nav-mobile">
+    <summary><Bi zh="目录" en="Contents" /></summary>
+    <div>
+      {
+        links.map((link) => (
+          <a href={link.href}>
+            <Bi zh={link.zh} en={link.en} />
+          </a>
+        ))
+      }
+    </div>
+  </details>
+</header>

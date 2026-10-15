@@ -4,6 +4,7 @@ import Bi from "../components/Bi.astro";
 import Ladder from "../components/Ladder.astro";
 import Layers from "../components/Layers.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import { coverArt, courseImage } from "../lib/course";
 import { FORK_GROUPS, formatDate, getCatalog, href } from "../lib/catalog";
 
 const catalog = getCatalog();
@@ -87,13 +88,17 @@ const description = `${site.purpose.zh}。${site.slogan.zh}`;
         <h2>未来的医生，可能需要同时懂医学与 AI</h2>
       </div>
     </header>
+    <figure class="course-cover">
+      <img src={courseImage(coverArt.file)} alt={coverArt.caption_zh} width="1600" height="900" />
+      <figcaption><Bi zh={coverArt.caption_zh} en={coverArt.caption_en} /></figcaption>
+    </figure>
     <blockquote>
       <p>从 Prompt、Context、Skill 到 Agent、Harness、Loop、Graph，我越来越觉得：AI 不是医生多学的一个软件，而是一种新的能力体系。</p>
     </blockquote>
     <p class="lede">
       <Bi
-        zh="这一课是后面所有项目的总纲：医学仍是底座，AI 是另一套能力。图出自课文第 08 节。原文、讨论题和能对上的仓库，在总纲课里。"
-        en="This lesson frames every project below: medicine stays the base, and AI is another set of abilities. The figures are from section 08 of the essay."
+            zh="这一课是后面所有项目的总纲：医学仍是底座，AI 是另一套能力。封面是插图。梯子和三层出自课文第 08 节。原文、讨论题和能对上的仓库，在总纲课里。"
+            en="This lesson frames every project below: medicine stays the base, and AI is another set of abilities. The cover is an illustration. The ladder and the three layers are from section 08 of the essay."
       />
     </p>
     <h3>Prompt → Graph</h3>

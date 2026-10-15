@@ -476,6 +476,58 @@ html[data-theme="dark"] .card[data-module="site"] { border-top-color: #f3eee4; }
 .discuss h3, .worked h3, .path-bridge h3 { font-size: 1rem; }
 .omit { color: var(--muted); }
 .course-tools { color: var(--muted); font-size: 0.92rem; }
+.course-cover, .essay-figure { margin: 0 0 18px; }
+.course-cover img, .essay-figure img, .slide img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
+}
+.course-cover figcaption, .essay-figure figcaption, .slide-caption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.deck { display: none; }
+html[data-display="project"] body:has(.deck) .site-header,
+html[data-display="project"] body:has(.deck) .site-footer,
+html[data-display="project"] body:has(.deck) .course-read { display: none !important; }
+html[data-display="project"] body:has(.deck) .deck {
+  display: grid;
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: var(--bg);
+  grid-template-rows: minmax(0, 1fr) auto;
+  outline: none;
+}
+html[data-display="project"] .slide { display: none; }
+html[data-display="project"] .slide.is-on {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  align-items: center;
+  min-height: 0;
+  padding: 28px 36px 8px;
+}
+html[data-display="project"] .slide-discuss { grid-template-columns: minmax(0, 46rem); justify-content: center; }
+.slide-copy { min-width: 0; }
+.key-line {
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  line-height: 1.45;
+}
+.deck-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 16px;
+  border-top: 1px solid var(--line);
+}
+.deck-count { margin: 0; font-family: var(--serif); letter-spacing: 0.06em; }
 
 .site-footer { border-top: 1px solid var(--line); margin-top: 20px; }
 .footer-inner { max-width: var(--max); margin: 0 auto; padding: 28px 20px 48px; display: grid; gap: 8px; }
@@ -514,6 +566,8 @@ html[data-display="project"] .filters { position: static; }
 @media (max-width: 640px) {
   body { font-size: 16px; }
   .path, .journey, .cards, .cards.demos, .example-list, .ladder { grid-template-columns: 1fr; }
+  html[data-display="project"] .slide.is-on { grid-template-columns: 1fr; padding: 16px; overflow: auto; }
+  html[data-display="project"] .slide img { max-height: 38vh; }
   .filters { grid-template-columns: 1fr 1fr; }
   .hero, .section, .catalog { padding-inline: 14px; }
   .updates li { grid-template-columns: 1fr auto; }
@@ -524,10 +578,11 @@ html[data-display="project"] .filters { position: static; }
   html { scroll-behavior: auto; }
 }
 @media print {
-  .site-header, .header-tools, .feedback, .filters, .course-tools, .hero-actions, .actions { display: none; }
+  .site-header, .header-tools, .feedback, .filters, .course-tools, .hero-actions, .actions, .deck { display: none !important; }
+  .course-read { display: block !important; }
   body { background: white; color: black; }
   a { color: black; }
   .essay { break-before: page; }
-  .essay-body, .worked, .discuss, .path-bridge, .ladder li, .layer { break-inside: avoid; }
+  .essay-body, .worked, .discuss, .path-bridge, .ladder li, .layer, .essay-figure { break-inside: avoid; }
   .course-open, .figures { break-after: avoid; }
 }

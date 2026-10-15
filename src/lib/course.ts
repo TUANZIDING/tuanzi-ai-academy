@@ -82,6 +82,134 @@ export const layers: LayerInfo[] = [
   },
 ];
 
+export const coverArt = {
+  file: "cover.webp",
+  caption_zh: "插图。医生站在医学和 AI 之间。",
+  caption_en: "Illustration. A doctor standing between medicine and a network.",
+  lines: ["AI 不是医生多学的一个软件，而是一种新的能力体系。"],
+};
+
+export interface SectionArt {
+  file: string;
+  caption_zh: string;
+  caption_en: string;
+  lines: string[];
+}
+
+export const sectionArt: Record<string, SectionArt> = {
+  intro: {
+    file: "intro.webp",
+    caption_zh: "插图。解剖书、夜班的钟、一起看片子。",
+    caption_en: "Illustration. Anatomy books, a night-shift clock, and a film read together.",
+    lines: [
+      "医学专业能力始终是医生最重要的底座。",
+      "仅仅懂医学，可能已经不足以定义下一代医生的全部能力。",
+    ],
+  },
+  s01: {
+    file: "01.webp",
+    caption_zh: "插图。一个对话框展开成文献、图表、实验和代码。",
+    caption_en: "Illustration. A chat bubble opening into papers, charts, flasks, and code.",
+    lines: [
+      "但如果今天仍然把 AI 理解为“一个更聪明的搜索框”，我们可能严重低估了它。",
+      "从使用 AI，走向设计 AI 的工作方式。",
+    ],
+  },
+  prompt: {
+    file: "02.webp",
+    caption_zh: "插图。一张问题卡片送进机器，四周还有没答完的问题。",
+    caption_en: "Illustration. One question card fed into a machine, with more questions still swirling.",
+    lines: [
+      "但真正使用久了就会发现：Prompt 只是入口。",
+      "这时你会发现：真正重要的已经不只是 Prompt。而是 Context——上下文。",
+    ],
+  },
+  context: {
+    file: "03.webp",
+    caption_zh: "插图。同样的胸痛，年轻人和老人不是同一个上下文。",
+    caption_en: "Illustration. The same chest pain, a young person and an older person, is not the same context.",
+    lines: [
+      "同样一句“胸痛”，放在 20 岁年轻人和 70 岁有冠心病史患者身上，意义完全不同。",
+      "医生根据 Context 做决策。未来，我们还需要学会给 AI 构建 Context。",
+    ],
+  },
+  skill: {
+    file: "04.webp",
+    caption_zh: "插图。反复要做的步骤，收成可以再拿起来的盒子。",
+    caption_en: "Illustration. A repeated workflow packed into boxes a robot arm can pick up again.",
+    lines: [
+      "如果一个任务需要反复完成，就不应该每一次都从头告诉 AI：第一步做什么，第二步做什么，第三步检查什么。",
+      "我们正在把一个人的经验，逐渐变成机器可以重复调用的能力。",
+    ],
+  },
+  agent: {
+    file: "05.webp",
+    caption_zh: "插图。沿一串站点走：检索、筛选、提取、比较，直到一面旗。",
+    caption_en: "Illustration. Figures walking stations: search, filter, extract, compare, then a flag.",
+    lines: [
+      "传统聊天模式是：我问 → AI 答。Agent 的思路更接近：我给目标 → AI 分解任务 → 调用工具 → 检查结果 → 继续执行。",
+      "这已经不再只是聊天。它开始接近一个科研工作流。",
+    ],
+  },
+  system: {
+    file: "06.webp",
+    caption_zh: "插图。脚手架、来回修正的圈，以及分头做事再汇合。",
+    caption_en: "Illustration. Scaffolding, a feedback loop, and nodes that converge.",
+    lines: [
+      "这些围绕 AI 工作的“脚手架”和运行环境，可以用 Harness 的视角来理解。",
+      "医学本身，就是一个不断反馈和修正的 Loop。",
+    ],
+  },
+  s07: {
+    file: "07.webp",
+    caption_zh: "插图。说出来的话变成线条，再变成笔记本电脑上的工具。",
+    caption_en: "Illustration. Speech becomes lines, then a tool on a laptop.",
+    lines: [
+      "因为自然语言正在逐渐成为人与计算机之间新的接口。",
+      "很多过去因为“我不会编程”而被放弃的想法，现在重新有了实现的可能。",
+    ],
+  },
+  s08: {
+    file: "08.webp",
+    caption_zh: "插图。三层台：底下是解剖，中间是盾，上面是齿轮。",
+    caption_en: "Illustration. Three tiers: anatomy at the base, shields, then gears.",
+    lines: [
+      "第一层：Domain Knowledge。医学专业知识。这是地基。",
+      "如何把一个复杂问题拆开，给机器足够的信息、工具和约束，让人与 AI 一起把事情完成。",
+    ],
+  },
+  s09: {
+    file: "09.webp",
+    caption_zh: "插图。从灯泡，到提纲，到蓝图，到床边能用的东西。",
+    caption_en: "Illustration. From a lightbulb to an outline, a blueprint, and a device at the bedside.",
+    lines: [
+      "AI 更重要的意义也许是：它开始降低“把一个想法变成现实”的门槛。",
+      "有了 AI 以后，一个医生以前做不到的事情，现在能不能做到了？",
+    ],
+  },
+  s10: {
+    file: "10.webp",
+    caption_zh: "插图。听诊器、影像、显微镜，然后是头影里的网络。",
+    caption_en: "Illustration. A stethoscope, a scanner, a microscope, then a network inside a head.",
+    lines: [
+      "但最后的医学判断、科学责任和价值判断，仍然属于人。",
+      "未来优秀的医生，需要理解如何与智能系统协作。",
+    ],
+  },
+  close: {
+    file: "10.webp",
+    caption_zh: "插图。仍是上一张：工具在变，判断仍在人。",
+    caption_en: "Illustration. The same picture: the tools change, the judgment stays with the person.",
+    lines: [
+      "医学给 AI 方向。AI 给医学新的可能。而医生，站在两者之间。",
+    ],
+  },
+};
+
+export function courseImage(file: string): string {
+  return `${import.meta.env.BASE_URL}course/future-doctor/${file}`;
+}
+
 const bridgeZh =
   "这一节说的是：想法不必停在脑子里。站点上的走法是五步：说出想法，拆开，和 AI 一起做，做成打得开的原型，再发布。";
 const bridgeEn =

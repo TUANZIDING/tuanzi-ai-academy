@@ -15,6 +15,7 @@ function setLang(lang: string) {
 function setDisplay(mode: string) {
   if (mode === "project") root.dataset.display = "project";
   else delete root.dataset.display;
+  document.dispatchEvent(new CustomEvent("academy:display"));
 }
 
 document.addEventListener("click", (event) => {

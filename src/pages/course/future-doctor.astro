@@ -3,7 +3,7 @@ import Base from "../../layouts/Base.astro";
 import Bi from "../../components/Bi.astro";
 import Ladder from "../../components/Ladder.astro";
 import Layers from "../../components/Layers.astro";
-import { sections } from "../../lib/course";
+import { coverArt, courseImage, sectionArt, sections } from "../../lib/course";
 import { getCatalog, href } from "../../lib/catalog";
 
 const { site, projects } = getCatalog();
@@ -20,6 +20,7 @@ function projectOf(repo: string) {
 
 <Base title={`${title} · ${site.name.zh}`} description={description}>
   <article class="course">
+    <div class="course-read">
     <header class="section page-intro course-open">
       <p class="kicker">
         <a href={home}><Bi zh="回到课堂" en="Back to class" /></a>
@@ -36,8 +37,8 @@ function projectOf(repo: string) {
       </p>
       <p class="course-tools">
         <Bi
-          zh="上课可开右上角「投屏」。打印时每一节单独起页。"
-          en="Use Room at the top right in class. When printed, each part starts on its own page."
+          zh="上课按右上角「投屏」：一节一张，方向键或空格翻页，讨论题单独一页。阅读模式仍是这篇长文。打印时每一节单独起页。"
+          en="Room is a slide deck: one section per slide, arrow keys or space, and the discussion on its own slide. Reading mode stays this long page. When printed, each part starts on its own page."
         />
       </p>
       <nav class="course-toc" aria-label="contents">
@@ -75,6 +76,19 @@ function projectOf(repo: string) {
               {section.id === "close" && <h2>{section.title}</h2>}
             </div>
           </header>
+          {sectionArt[section.id] && (
+            <figure class="essay-figure">
+              <img
+                src={courseImage(sectionArt[section.id].file)}
+                alt={sectionArt[section.id].caption_zh}
+                width="1600"
+                height="900"
+              />
+              <figcaption>
+                <Bi zh={sectionArt[section.id].caption_zh} en={sectionArt[section.id].caption_en} />
+              </figcaption>
+            </figure>
+          )}
           <div class="essay-body">
             {section.paragraphs.map((paragraph) => (
               <p id={paragraph.anchor}>{paragraph.text}</p>
@@ -148,5 +162,60 @@ function projectOf(repo: string) {
         </section>
       ))
     }
+    </div>
+
+    <div class="deck" data-deck tabindex="-1">
+      <div class="deck-stage">
+        <section class="slide is-on" data-slide>
+          <img src={courseImage(coverArt.file)} alt={coverArt.caption_zh} width="1600" height="900" />
+          <div class="slide-copy">
+            <p class="kicker"><Bi zh="第 0 课 · 总纲" en="Lesson 0 · The frame" /></p>
+            <h2>{title}</h2>
+            {coverArt.lines.map((line) => <p class="key-line">{line}</p>)}
+            <p class="slide-caption"><Bi zh={coverArt.caption_zh} en={coverArt.caption_en} /></p>
+          </div>
+        </section>
+        {
+          sections.map((section) => {
+            const art = sectionArt[section.id];
+            return (
+              <>
+                <section class="slide" data-slide hidden>
+                  {art && <img src={courseImage(art.file)} alt={art.caption_zh} width="1600" height="900" />}
+                  <div class="slide-copy">
+                    <p class="kicker">{section.label}</p>
+                    <h2>{section.title}</h2>
+                    {art?.lines.map((line) => <p class="key-line">{line}</p>)}
+                    {art && (
+                      <p class="slide-caption"><Bi zh={art.caption_zh} en={art.caption_en} /></p>
+                    )}
+                  </div>
+                </section>
+                <section class="slide slide-discuss" data-slide hidden>
+                  <div class="slide-copy">
+                    <p class="kicker">{section.label}</p>
+                    <h2><Bi zh="课堂讨论题" en="For the room" /></h2>
+                    <p class="key-line"><Bi zh={section.discuss_zh} en={section.discuss_en} /></p>
+                  </div>
+                </section>
+              </>
+            );
+          })
+        }
+      </div>
+      <div class="deck-bar">
+        <button type="button" class="btn" data-deck-action="prev"><Bi zh="上一张" en="Previous" /></button>
+        <p class="deck-count">
+          <span data-slide-current>1</span>
+          <span aria-hidden="true"> / </span>
+          <span data-slide-total>{1 + sections.length * 2}</span>
+        </p>
+        <button type="button" class="btn" data-deck-action="next"><Bi zh="下一张" en="Next" /></button>
+        <button type="button" class="btn" data-deck-action="exit"><Bi zh="回到阅读" en="Read" /></button>
+      </div>
+    </div>
   </article>
+  <script>
+    import "../../scripts/deck";
+  </script>
 </Base>

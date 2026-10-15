@@ -1,0 +1,24 @@
+{
+  "name": "tuanzi-ai-academy",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "node scripts/check-catalog.mjs && astro build",
+    "preview": "astro preview --host",
+    "refresh": "node scripts/refresh-github.mjs",
+    "check": "node scripts/check-catalog.mjs",
+    "covers": "node scripts/capture-covers.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.14.1",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "typescript": "^5.9.2"
+  }
+}

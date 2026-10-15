@@ -1,0 +1,138 @@
+---
+import Base from "../../layouts/Base.astro";
+import Bi from "../../components/Bi.astro";
+import Story from "../../components/Story.astro";
+import {
+  FORK_GROUPS,
+  KIND_LABEL,
+  STATUS_LABEL,
+  formatDate,
+  getCatalog,
+  href,
+  type Project,
+} from "../../lib/catalog";
+
+export function getStaticPaths() {
+  const { projects } = getCatalog();
+  return projects.map((project) => ({
+    params: { repo: project.repo },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: Project;
+}
+const { project } = Astro.props;
+const { site } = getCatalog();
+const status = STATUS_LABEL[project.status];
+const kind = KIND_LABEL[project.kind];
+const group = project.forkGroup ? FORK_GROUPS[project.forkGroup] : null;
+const description = project.idea.zh;
+---
+
+<Base title={`${project.title.zh} · ${site.name.zh}`} description={description}>
+  <article class="section page-intro detail">
+    <p class="kicker">
+      <a href={href("projects/")}><Bi zh="全部项目" en="All projects" /></a>
+      <span aria-hidden="true"> · </span>
+      <a href={href(`modules/${project.module.id}/`)}>{project.module.code}</a>
+      <span aria-hidden="true"> · </span>
+      <span>{project.level.id}</span>
+    </p>
+    <h1><Bi zh={project.title.zh} en={project.title.en} /></h1>
+    <p class="card-kicker">
+      <span class:list={["status", project.status]}><Bi zh={status.zh} en={status.en} /></span>
+      <span><Bi zh={kind.zh} en={kind.en} /></span>
+      {group && <span><Bi zh={group.zh} en={group.en} /></span>}
+      <span class="repo-name">{project.repo}</span>
+    </p>
+    <p class="lede"><Bi zh={project.summary.zh} en={project.summary.en} /></p>
+    <div class="actions detail-actions">
+      {
+        project.demo && (
+          <a class="btn solid" href={project.demo}><Bi zh="在线演示" en="Live demo" /></a>
+        )
+      }
+      {
+        project.courseware && (
+          <a class="btn" href={project.courseware}><Bi zh="课件" en="Materials" /></a>
+        )
+      }
+      {
+        project.upstreamDemo && (
+          <a class="btn" href={project.upstreamDemo}><Bi zh="上游演示" en="Upstream demo" /></a>
+        )
+      }
+      <a class="btn" href={project.htmlUrl}><Bi zh="源码" en="Source" /></a>
+      {
+        project.upstreamUrl && (
+          <a class="btn" href={project.upstreamUrl}><Bi zh="上游" en="Upstream" /></a>
+        )
+      }
+    </div>
+
+    <Story project={project} linked={false} />
+
+    {
+      project.kind === "fork" && project.upstreamAuthor && (
+        <p class="upstream">
+          <Bi zh="原作者" en="Upstream" />
+          {project.upstreamUrl ? (
+            <a href={project.upstreamUrl}>{project.upstreamAuthor}</a>
+          ) : (
+            <span>{project.upstreamAuthor}</span>
+          )}
+          {project.upstream && <span class="repo-name">{project.upstream}</span>}
+        </p>
+      )
+    }
+    {
+      project.recommend && (
+        <p class="recommend">
+          <span><Bi zh="收录理由" en="Why it is here" /></span>
+          <Bi zh={project.recommend.zh} en={project.recommend.en} />
+        </p>
+      )
+    }
+    <p class="boundary">
+      <span><Bi zh="使用边界" en="Limit" /></span>
+      <Bi zh={project.boundary.zh} en={project.boundary.en} />
+    </p>
+    {
+      project.local && (
+        <p class="local"><Bi zh={project.local.zh} en={project.local.en} /></p>
+      )
+    }
+    <dl class="meta">
+      <div>
+        <dt><Bi zh="适合" en="For" /></dt>
+        <dd><Bi zh={project.audience.zh} en={project.audience.en} /></dd>
+      </div>
+      <div>
+        <dt><Bi zh="课时" en="Time" /></dt>
+        <dd><Bi zh={project.hours.zh} en={project.hours.en} /></dd>
+      </div>
+      <div>
+        <dt><Bi zh="更新" en="Updated" /></dt>
+        <dd><time datetime={project.pushedAt}>{formatDate(project.pushedAt)}</time> · ★ {project.stars}</dd>
+      </div>
+    </dl>
+    <ul class="topics">
+      {project.topics.map((topic) => <li>{topic}</li>)}
+    </ul>
+    {
+      project.description && (
+        <p class="gh-desc">
+          <span><Bi zh="仓库简介" en="Repository description" /></span>
+          {project.description}
+        </p>
+      )
+    }
+    <p>
+      <a class="text-link" href={href("start/")}>
+        <Bi zh="用同一条路，做你自己的想法" en="Use the same path for your own idea" />
+      </a>
+    </p>
+  </article>
+</Base>

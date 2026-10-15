@@ -1,0 +1,160 @@
+---
+import Bi from "./Bi.astro";
+import Story from "./Story.astro";
+import {
+  KIND_LABEL,
+  STATUS_LABEL,
+  FORK_GROUPS,
+  coverUrl,
+  formatDate,
+  href,
+  type Project,
+} from "../lib/catalog";
+
+interface Props {
+  project: Project;
+  feature?: boolean;
+}
+const { project, feature = false } = Astro.props;
+const cover = coverUrl(project.repo);
+const group = project.forkGroup ? FORK_GROUPS[project.forkGroup] : null;
+const status = STATUS_LABEL[project.status];
+const kind = KIND_LABEL[project.kind];
+---
+
+<article
+  class:list={["card", { feature }]}
+  id={feature ? undefined : project.repo}
+  data-project
+  data-kind={project.kind}
+  data-module={project.module.id}
+  data-group={project.forkGroup || ""}
+  data-level={project.level.id}
+  data-language={project.language || "none"}
+  data-status={project.status}
+  data-search={project.search}
+>
+  <div class="card-cover">
+    {
+      cover ? (
+        <img src={cover} alt={`${project.title.zh} / ${project.title.en}`} />
+      ) : (
+        <div class="plate" aria-hidden="true">
+          <span>{project.module.code}</span>
+          <b>{project.repo}</b>
+        </div>
+      )
+    }
+  </div>
+  <div class="card-body">
+    <p class="card-kicker">
+      <span class="chip">{project.module.code}</span>
+      <span>{project.level.id}</span>
+      <span class:list={["status", project.status]}><Bi zh={status.zh} en={status.en} /></span>
+      <span class="kind"><Bi zh={kind.zh} en={kind.en} /></span>
+    </p>
+    <h3>
+      <a href={href(`projects/${project.repo}/`)}>
+        <Bi zh={project.title.zh} en={project.title.en} />
+      </a>
+    </h3>
+    <p class="summary"><Bi zh={project.summary.zh} en={project.summary.en} /></p>
+    <Story project={project} />
+    {
+      project.kind === "fork" && project.upstreamAuthor && (
+        <p class="upstream">
+          <Bi zh="原作者" en="Upstream" />
+          {project.upstreamUrl ? (
+            <a href={project.upstreamUrl}>{project.upstreamAuthor}</a>
+          ) : (
+            <span>{project.upstreamAuthor}</span>
+          )}
+          {project.upstream && <span class="repo-name">{project.upstream}</span>}
+        </p>
+      )
+    }
+    {
+      project.recommend && (
+        <p class="recommend">
+          <span><Bi zh="收录理由" en="Why it is here" /></span>
+          <Bi zh={project.recommend.zh} en={project.recommend.en} />
+        </p>
+      )
+    }
+    <p class="boundary">
+      <span><Bi zh="使用边界" en="Limit" /></span>
+      <Bi zh={project.boundary.zh} en={project.boundary.en} />
+    </p>
+    {
+      project.local && (
+        <p class="local">
+          <Bi zh={project.local.zh} en={project.local.en} />
+        </p>
+      )
+    }
+    <ul class="topics">
+      {project.topics.map((topic) => <li>{topic}</li>)}
+    </ul>
+    <dl class="meta">
+      <div>
+        <dt><Bi zh="适合" en="For" /></dt>
+        <dd><Bi zh={project.audience.zh} en={project.audience.en} /></dd>
+      </div>
+      <div>
+        <dt><Bi zh="课时" en="Time" /></dt>
+        <dd><Bi zh={project.hours.zh} en={project.hours.en} /></dd>
+      </div>
+    </dl>
+    {
+      project.description && (
+        <details class="gh-desc">
+          <summary><Bi zh="仓库简介" en="Repository description" /></summary>
+          <p>{project.description}</p>
+        </details>
+      )
+    }
+    <div class="card-foot">
+      <p class="stats">
+        <span>★ {project.stars}</span>
+        <time datetime={project.pushedAt}>{formatDate(project.pushedAt)}</time>
+        <span>{project.language || "—"}</span>
+        {group && (
+          <span>
+            <Bi zh={group.zh} en={group.en} />
+          </span>
+        )}
+      </p>
+      <div class="actions">
+        {
+          project.demo && (
+            <a class="btn solid" href={project.demo}>
+              <Bi zh="在线演示" en="Live demo" />
+            </a>
+          )
+        }
+        {
+          project.courseware && (
+            <a class="btn" href={project.courseware}>
+              <Bi zh="课件" en="Materials" />
+            </a>
+          )
+        }
+        {
+          project.upstreamDemo && (
+            <a class="btn" href={project.upstreamDemo}>
+              <Bi zh="上游演示" en="Upstream demo" />
+            </a>
+          )
+        }
+        <a class="btn" href={project.htmlUrl}><Bi zh="源码" en="Source" /></a>
+        {
+          project.upstreamUrl && (
+            <a class="btn" href={project.upstreamUrl}>
+              <Bi zh="上游" en="Upstream" />
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</article>

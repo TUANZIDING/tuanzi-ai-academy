@@ -1,0 +1,24 @@
+---
+import { ladder } from "../lib/course";
+import { href } from "../lib/catalog";
+
+interface Props {
+  current?: string;
+}
+const { current } = Astro.props;
+const base = href("course/future-doctor/");
+---
+
+<ol class="ladder">
+  {
+    ladder.map((rung, index) => (
+      <li class:list={[{ current: current === rung.id }]}>
+        <a href={`${base}#${rung.id}`}>
+          <span class="ladder-n">{index + 1}</span>
+          <b>{rung.en}</b>
+          <span>{rung.zh}</span>
+        </a>
+      </li>
+    ))
+  }
+</ol>

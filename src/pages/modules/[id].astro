@@ -1,0 +1,74 @@
+---
+import Base from "../../layouts/Base.astro";
+import Bi from "../../components/Bi.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { FORK_GROUPS, getCatalog, href } from "../../lib/catalog";
+
+export function getStaticPaths() {
+  const { modules } = getCatalog();
+  return modules.map((module) => ({
+    params: { id: module.id },
+    props: { moduleId: module.id },
+  }));
+}
+
+interface Props {
+  moduleId: string;
+}
+const { moduleId } = Astro.props;
+const catalog = getCatalog();
+const module = catalog.modules.find((item) => item.id === moduleId);
+if (!module) throw new Error(`Missing module ${moduleId}`);
+const items = catalog.projects.filter((project) => project.module.id === module.id);
+const groupOrder = ["writing", "viz", "agent", "office", "other"];
+const description = module.summary.zh;
+---
+
+<Base title={`${module.code}. ${module.title.zh} · ${catalog.site.name.zh}`} description={description}>
+  <section class="section page-intro">
+    <header class="sec-head">
+      <p class="num">{module.code}</p>
+      <div>
+        <p class="kicker"><a href={import.meta.env.BASE_URL}><Bi zh="回到课堂" en="Back to class" /></a></p>
+        <h1><Bi zh={module.title.zh} en={module.title.en} /></h1>
+        <p class="lede"><Bi zh={module.summary.zh} en={module.summary.en} /></p>
+        <p>
+          <Bi
+            zh="每张卡片都有一节「这个想法是怎样做成的」。仓库没写的工具和步骤，标成待补充。"
+            en="Each card includes how the idea became real. Tools and steps the repository did not record stay marked as still to be added."
+          />
+        </p>
+        <p class="count-static">
+          <Bi zh={`${items.length} 个仓库`} en={`${items.length} repositories`} />
+        </p>
+        <a class="text-link" href={`${href("projects/")}?module=${module.id}`}>
+          <Bi zh="在全部项目里筛选这一模块" en="Filter this module in all projects" />
+        </a>
+      </div>
+    </header>
+  </section>
+  {
+    module.id === "e" ? (
+      groupOrder.map((groupId) => {
+        const label = FORK_GROUPS[groupId];
+        const groupItems = items.filter((project) => project.forkGroup === groupId);
+        return (
+          <section class="section tight" id={groupId}>
+            <h2>
+              <Bi zh={label.zh} en={label.en} />
+            </h2>
+            <div class="cards">
+              {groupItems.map((project) => <ProjectCard project={project} />)}
+            </div>
+          </section>
+        );
+      })
+    ) : (
+      <section class="section tight">
+        <div class="cards">
+          {items.map((project) => <ProjectCard project={project} />)}
+        </div>
+      </section>
+    )
+  }
+</Base>

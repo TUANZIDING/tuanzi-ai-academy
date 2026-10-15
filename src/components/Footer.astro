@@ -1,0 +1,27 @@
+---
+import Bi from "./Bi.astro";
+import { formatDate, getCatalog } from "../lib/catalog";
+
+const { site, fetchedAt, projects } = getCatalog();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <strong><Bi zh={site.name.zh} en={site.name.en} /></strong>
+      <p><Bi zh="教学站点。不提供诊断或治疗建议。" en="A teaching site. It does not diagnose or recommend treatment." /></p>
+    </div>
+    <ul>
+      <li><a href={site.website}><Bi zh="学术主页" en="Academic site" /></a></li>
+      <li><a href={site.github}>GitHub</a></li>
+      <li><a href={site.linkedin}>LinkedIn</a></li>
+      <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+    </ul>
+    <p class="fetched">
+      <Bi
+        zh={`仓库星标与更新时间取自 GitHub，快照 ${formatDate(fetchedAt)}，共 ${projects.length} 个公开仓库。`}
+        en={`Stars and update times come from GitHub. Snapshot ${formatDate(fetchedAt)}. ${projects.length} public repositories.`}
+      />
+    </p>
+  </div>
+</footer>

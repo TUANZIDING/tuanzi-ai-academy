@@ -1,0 +1,25 @@
+---
+import Base from "../layouts/Base.astro";
+import Bi from "../components/Bi.astro";
+import { getCatalog } from "../lib/catalog";
+
+const { site } = getCatalog();
+---
+
+<Base title={`未找到 · ${site.name.zh}`} description="这个地址没有对应的页面。">
+  <section class="section page-intro">
+    <header class="sec-head">
+      <p class="num">404</p>
+      <div>
+        <h1><Bi zh="这页不在课堂里" en="This page is not in the classroom" /></h1>
+        <p class="lede">
+          <Bi zh="回到首页，或去全部项目里找仓库。" en="Go back home, or look through every repository." />
+        </p>
+        <div class="hero-actions">
+          <a class="btn solid" href={import.meta.env.BASE_URL}><Bi zh="回到首页" en="Home" /></a>
+          <a class="btn" href={`${import.meta.env.BASE_URL}projects/`}><Bi zh="全部项目" en="All projects" /></a>
+        </div>
+      </div>
+    </header>
+  </section>
+</Base>

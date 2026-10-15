@@ -1,0 +1,221 @@
+---
+import Base from "../../layouts/Base.astro";
+import Bi from "../../components/Bi.astro";
+import Ladder from "../../components/Ladder.astro";
+import Layers from "../../components/Layers.astro";
+import { coverArt, courseImage, sectionArt, sections } from "../../lib/course";
+import { getCatalog, href } from "../../lib/catalog";
+
+const { site, projects } = getCatalog();
+const home = import.meta.env.BASE_URL;
+const title = "未来的医生，可能需要同时懂医学与 AI";
+const description = "总纲课。AI 不是医生多学的一个软件，而是一种新的能力体系。";
+
+function projectOf(repo: string) {
+  const project = projects.find((item) => item.repo === repo);
+  if (!project) throw new Error(`Course example missing from catalog: ${repo}`);
+  return project;
+}
+---
+
+<Base title={`${title} · ${site.name.zh}`} description={description}>
+  <article class="course">
+    <div class="course-read">
+    <header class="section page-intro course-open">
+      <p class="kicker">
+        <a href={home}><Bi zh="回到课堂" en="Back to class" /></a>
+        <span aria-hidden="true"> · </span>
+        <Bi zh="第 0 课 · 总纲" en="Lesson 0 · The frame" />
+      </p>
+      <h1>{title}</h1>
+      <p class="who"><Bi zh={site.person.zh} en={site.person.en} /></p>
+      <p class="lede">
+        <Bi
+          zh="正文是原文，只为网页分成段落，没有改写。课堂讨论题和仓库例子是上课用的，单独放在原文后面。对不上 README 的例子不放。英文界面不另译这篇课文。"
+          en="The essay is the author's text, broken into paragraphs for the page. Discussion questions and repository examples sit after the text, for class. An example is omitted when the README does not support it. This essay is not translated."
+        />
+      </p>
+      <p class="course-tools">
+        <Bi
+          zh="上课按右上角「投屏」：一节一张，方向键或空格翻页，讨论题单独一页。阅读模式仍是这篇长文。打印时每一节单独起页。"
+          en="Room is a slide deck: one section per slide, arrow keys or space, and the discussion on its own slide. Reading mode stays this long page. When printed, each part starts on its own page."
+        />
+      </p>
+      <nav class="course-toc" aria-label="contents">
+        {
+          sections.map((section) => (
+            <a href={`#${section.id}`} title={section.title}>
+              {section.label}
+            </a>
+          ))
+        }
+      </nav>
+    </header>
+
+    <section class="section tight figures" id="map">
+      <h2><Bi zh="先看见这两张图" en="See these two figures first" /></h2>
+      <p>
+        <Bi
+          zh="梯子上的七个词，和第 08 节原文一样。每级下面的短注来自课文里对这一级的说法，方便投屏时看见，不是另写的一段。"
+          en="The seven words on the ladder are the ones in section 08. The short note under each word comes from how the essay names that step, so it can be seen on a screen. It is not an extra paragraph."
+        />
+      </p>
+      <h3>Prompt → Context → Skill → Agent → Harness → Loop → Graph</h3>
+      <Ladder />
+      <h3><Bi zh="三层" en="Three layers" /></h3>
+      <Layers />
+    </section>
+
+    {
+      sections.map((section) => (
+        <section class="section essay" id={section.id}>
+          <header class="sec-head">
+            <p class="num">{section.label}</p>
+            <div>
+              {section.id !== "intro" && section.id !== "close" && <h2>{section.title}</h2>}
+              {section.id === "close" && <h2>{section.title}</h2>}
+            </div>
+          </header>
+          {sectionArt[section.id] && (
+            <figure class="essay-figure">
+              <img
+                src={courseImage(sectionArt[section.id].file)}
+                alt={sectionArt[section.id].caption_zh}
+                width="1600"
+                height="900"
+              />
+              <figcaption>
+                <Bi zh={sectionArt[section.id].caption_zh} en={sectionArt[section.id].caption_en} />
+              </figcaption>
+            </figure>
+          )}
+          <div class="essay-body">
+            {section.paragraphs.map((paragraph) => (
+              <p id={paragraph.anchor}>{paragraph.text}</p>
+            ))}
+          </div>
+          {section.id === "s08" && (
+            <div class="figures inset">
+              <Layers />
+              <Ladder />
+            </div>
+          )}
+          {section.examples && section.examples.length > 0 && (
+            <aside class="worked">
+              <h3><Bi zh="仓库里对得上的例子" en="Repos that match this part" /></h3>
+              <p>
+                <Bi
+                  zh="只写 README 里有的。没写的工具仍是待补充。"
+                  en="Only what the README says. A tool it does not name stays unfilled."
+                />
+              </p>
+              <ul>
+                {section.examples.map((example) => {
+                  const project = projectOf(example.repo);
+                  return (
+                    <li>
+                      <p class="card-kicker">
+                        <Bi zh={example.fit_zh} en={example.fit_en} />
+                      </p>
+                      <h4>
+                        <a href={href(`projects/${project.repo}/`)}>
+                          <Bi zh={project.title.zh} en={project.title.en} />
+                        </a>
+                      </h4>
+                      <p><Bi zh={example.note_zh} en={example.note_en} /></p>
+                      <p class="actions">
+                        {project.demo && (
+                          <a class="btn solid" href={project.demo}><Bi zh="在线演示" en="Live demo" /></a>
+                        )}
+                        <a class="btn" href={project.htmlUrl}><Bi zh="源码" en="Source" /></a>
+                      </p>
+                    </li>
+                  );
+                })}
+              </ul>
+              {section.omit_zh && (
+                <p class="omit"><Bi zh={section.omit_zh} en={section.omit_en || ""} /></p>
+              )}
+              {section.id === "s07" && (
+                <p>
+                  <a href={`${home}#demos`}>
+                    <Bi zh="更多已经能打开的页，在首页演示馆。" en="More pages you can open are in the demo hall." />
+                  </a>
+                </p>
+              )}
+            </aside>
+          )}
+          <aside class="discuss">
+            <h3><Bi zh="课堂讨论题" en="For the room" /></h3>
+            <p><Bi zh={section.discuss_zh} en={section.discuss_en} /></p>
+          </aside>
+          {section.bridge_zh && (
+            <aside class="path-bridge">
+              <h3><Bi zh="和「想法怎样做成」接上" en="Connect this to making the idea" /></h3>
+              <p><Bi zh={section.bridge_zh} en={section.bridge_en || ""} /></p>
+              <p class="actions">
+                <a class="btn solid" href={href("start/")}><Bi zh="从自己的想法开始" en="Start from your idea" /></a>
+                <a class="btn" href={`${home}#path`}><Bi zh="看这五步" en="See the five steps" /></a>
+              </p>
+            </aside>
+          )}
+        </section>
+      ))
+    }
+    </div>
+
+    <div class="deck" data-deck tabindex="-1">
+      <div class="deck-stage">
+        <section class="slide is-on" data-slide>
+          <img src={courseImage(coverArt.file)} alt={coverArt.caption_zh} width="1600" height="900" />
+          <div class="slide-copy">
+            <p class="kicker"><Bi zh="第 0 课 · 总纲" en="Lesson 0 · The frame" /></p>
+            <h2>{title}</h2>
+            {coverArt.lines.map((line) => <p class="key-line">{line}</p>)}
+            <p class="slide-caption"><Bi zh={coverArt.caption_zh} en={coverArt.caption_en} /></p>
+          </div>
+        </section>
+        {
+          sections.map((section) => {
+            const art = sectionArt[section.id];
+            return (
+              <>
+                <section class="slide" data-slide hidden>
+                  {art && <img src={courseImage(art.file)} alt={art.caption_zh} width="1600" height="900" />}
+                  <div class="slide-copy">
+                    <p class="kicker">{section.label}</p>
+                    <h2>{section.title}</h2>
+                    {art?.lines.map((line) => <p class="key-line">{line}</p>)}
+                    {art && (
+                      <p class="slide-caption"><Bi zh={art.caption_zh} en={art.caption_en} /></p>
+                    )}
+                  </div>
+                </section>
+                <section class="slide slide-discuss" data-slide hidden>
+                  <div class="slide-copy">
+                    <p class="kicker">{section.label}</p>
+                    <h2><Bi zh="课堂讨论题" en="For the room" /></h2>
+                    <p class="key-line"><Bi zh={section.discuss_zh} en={section.discuss_en} /></p>
+                  </div>
+                </section>
+              </>
+            );
+          })
+        }
+      </div>
+      <div class="deck-bar">
+        <button type="button" class="btn" data-deck-action="prev"><Bi zh="上一张" en="Previous" /></button>
+        <p class="deck-count">
+          <span data-slide-current>1</span>
+          <span aria-hidden="true"> / </span>
+          <span data-slide-total>{1 + sections.length * 2}</span>
+        </p>
+        <button type="button" class="btn" data-deck-action="next"><Bi zh="下一张" en="Next" /></button>
+        <button type="button" class="btn" data-deck-action="exit"><Bi zh="回到阅读" en="Read" /></button>
+      </div>
+    </div>
+  </article>
+  <script>
+    import "../../scripts/deck";
+  </script>
+</Base>

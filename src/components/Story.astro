@@ -1,0 +1,33 @@
+---
+import Bi from "./Bi.astro";
+import { href, type Project } from "../lib/catalog";
+
+interface Props {
+  project: Project;
+  linked?: boolean;
+}
+const { project, linked = true } = Astro.props;
+---
+
+<section class="story">
+  <h4><Bi zh="这个想法是怎样做成的" en="How this idea became real" /></h4>
+  <p>
+    <span><Bi zh="原来的想法" en="The idea" /></span>
+    <Bi zh={project.idea.zh} en={project.idea.en} />
+  </p>
+  <p>
+    <span><Bi zh="工具和步骤" en="Tools and steps" /></span>
+    <Bi zh={project.steps.zh} en={project.steps.en} />
+  </p>
+  <p>
+    <span><Bi zh="你可以照着做" en="What you can copy" /></span>
+    <Bi zh={project.reproduce.zh} en={project.reproduce.en} />
+  </p>
+  {
+    linked && (
+      <a href={href(`projects/${project.repo}/`)}>
+        <Bi zh="单独看这一则" en="Open this one" />
+      </a>
+    )
+  }
+</section>

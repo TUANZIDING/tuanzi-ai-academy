@@ -1,0 +1,1778 @@
+# 团子 AI 课堂 · 手工教学元数据
+# 星标、仓库一句话简介、语言、更新时间、是否开启 Pages：由 data/github-meta.json 在构建时合并。
+# 这里写上课要用的分组、难度，以及“想法是怎样做成的”。
+# 做法只根据 README 和提交记录。写不清的地方用「待补充」，不要编造。
+# 新增公开仓库：补一条，然后 npm run refresh && npm run check。
+
+site:
+  name_zh: "团子 AI 课堂"
+  name_en: "Tuanzi AI Academy"
+  position_zh: "临床医生的 AI 实践课堂"
+  position_en: "A practice classroom for clinicians using AI"
+  headline_zh: "把自己的想法，做成一个能打开的东西"
+  headline_en: "Turn an idea into something you can open"
+  purpose_zh: "让人知道怎么样让自己的想法实现"
+  purpose_en: "Show how to make your own idea real"
+  slogan_zh: "先把念头说清楚，再拆开，和 AI 一起做成原型，然后发布出去。"
+  slogan_en: "Say the idea, break it down, make a prototype with an AI tool, then publish it."
+  person_zh: "丁海祥"
+  person_en: "Haixiang Ding"
+  role_zh: "创伤外科医生 · 苏州大学博士生"
+  role_en: "Trauma surgeon · PhD student, Soochow University"
+  about_role_zh: "创伤急救外科主治医师 · 苏州大学临床医学博士在读"
+  about_role_en: "Emergency and trauma surgeon · PhD student in clinical medicine, Soochow University"
+  about_zh: "我在急诊与创伤外科一线工作，临床经验涉及多发伤、骨盆骨折和老年髋部骨折。博士研究聚焦放射性骨骼肌损伤与修复。我希望把临床问题做成能看懂的教学内容、能复现的研究流程，以及来源可追溯的医学 AI 工具。"
+  about_en: "I work in frontline emergency and trauma care, with clinical experience in polytrauma, pelvic fractures, and geriatric hip fractures. My doctoral research focuses on radiation-induced skeletal muscle injury and repair. I build open tools that connect clinical questions, medical education, reproducible research, and traceable evidence."
+  principles_zh: "来源可追溯、证据边界明确、人工复核、保护患者隐私。"
+  principles_en: "Traceable sources, explicit evidence limits, human review, and protection of patient privacy."
+  research_zh: "肌肉干细胞、FAPs、免疫与基质相互作用、纤维化，以及细胞外囊泡相关研究方向；临床研究关注创伤结局、围术期低血压与肌肉骨骼健康。"
+  research_en: "Muscle stem cells, fibro-adipogenic progenitors, immune–stromal interactions, fibrosis, and extracellular vesicles as a research direction. Clinical research looks at trauma outcomes, perioperative hypotension, and musculoskeletal health."
+  hospital_zh: "江南大学附属医院"
+  hospital_en: "Affiliated Hospital of Jiangnan University"
+  places_zh: "无锡 / 苏州"
+  places_en: "Wuxi / Suzhou, China"
+  email: "haixiangding001@gmail.com"
+  github: "https://github.com/TUANZIDING"
+  website: "https://tuanziding.github.io/"
+  linkedin: "https://www.linkedin.com/in/haixiang-ding-a1a646411/"
+
+modules:
+  - id: a
+    code: "A"
+    title_zh: "创伤与医学教育互动课堂"
+    title_en: "Trauma and medical-education classrooms"
+    summary_zh: "临床教学里的一个想法，做成能投屏的一页。看的时候先问：原来想讲清什么，现在打开的又是什么。"
+    summary_en: "A teaching idea turned into a page you can project. Ask what it set out to explain, and what the page actually opens."
+  - id: b
+    code: "B"
+    title_zh: "医学科研与可复现研究"
+    title_en: "Medical research and reproducible studies"
+    summary_zh: "一个研究问题怎样拆成可复现的步骤：方法、代码、人工核对。推不推广，以各仓库自己写下的边界为准。"
+    summary_en: "How a research question becomes repeatable steps: method, code, and a person checking. Each repo states how far the result may go."
+  - id: c
+    code: "C"
+    title_zh: "Codex / Agent 工作流与技能"
+    title_en: "Codex and agent workflows"
+    summary_zh: "和 Codex、Claude Code 或其他代理一起干活时，交接、确认和停止条件怎样写成能再走一遍的步骤。"
+    summary_en: "When you work with Codex, Claude Code, or another agent, how the handoff, the check, and the stop are written so someone can walk them again."
+  - id: d
+    code: "D"
+    title_zh: "亲子与创意 AI"
+    title_en: "Family and creative AI"
+    summary_zh: "一句话、一本书或一座只有台基的宫殿，怎样变成能打开的页面。适合先看成品，再回头做自己的小块。"
+    summary_en: "A sentence, a book, or a palace that was never built upstairs, turned into a page you can open. Look at the finished piece, then make your own small piece."
+  - id: e
+    code: "E"
+    title_zh: "开源实验室"
+    title_en: "Open-source lab"
+    summary_zh: "别人已经做成的工具。用来看一种做法，不是把上游的制作过程说成我们自己的。没有记录的地方标待补充。"
+    summary_en: "Tools other people already made. Use them to see one way of working. Where the making was not recorded, it stays marked as not yet written down."
+  - id: site
+    code: "S"
+    title_zh: "主页与本站"
+    title_en: "Profile and this site"
+    summary_zh: "学术主页、GitHub 简介仓库，以及你正在看的这间课堂。"
+    summary_en: "The academic homepage, the GitHub profile repository, and this classroom."
+
+levels:
+  - id: L0
+    title_zh: "先看一个做成的样子"
+    title_en: "See one finished piece"
+    summary_zh: "先打开别人已经发布的页面，看想法最后长什么样。不要求会写代码。"
+    summary_en: "Open a page someone already published and see what the idea became. No coding yet."
+  - id: L1
+    title_zh: "把想法拆开"
+    title_en: "Break the idea down"
+    summary_zh: "写成今天能做完的一块：一页、一个例子、一句要人确认的话。"
+    summary_en: "Cut it into one piece you can finish today: a page, an example, or a sentence a person must confirm."
+  - id: L2
+    title_zh: "做出打得开的原型"
+    title_en: "Make a prototype you can open"
+    summary_zh: "和 Codex、Claude Code 或其他代理一起做。在浏览器或自己的电脑里打得开，才算做成。"
+    summary_en: "Make it with Codex, Claude Code, or another agent. It counts when you can open it in a browser or on your own computer."
+  - id: L3
+    title_zh: "把做法写成能再走一遍"
+    title_en: "Write the steps so they can be walked again"
+    summary_zh: "数据从哪来、哪里必须停、谁来确认，都留在记录里。"
+    summary_en: "Write down where the data came from, where the work must stop, and who confirms it."
+  - id: L4
+    title_zh: "收成可以交给下一个人的技能"
+    title_en: "Leave a skill the next person can use"
+    summary_zh: "把流程收成技能或代理。失败时停下来，不编一句看起来完整的话。"
+    summary_en: "Package the workflow as a skill or agent. When a step fails, stop, instead of adding a sentence that only sounds finished."
+
+journey:
+  - n: "1"
+    title_zh: "说出想法"
+    title_en: "Say the idea"
+    summary_zh: "用一句话说清要做什么、给谁用、做成什么样算完成。还没写清的，就标待补充。"
+    summary_en: "Say what you are making, who it is for, and what done looks like. If that is not clear yet, mark it as still to be added."
+    examples: ["nianjing", "storysprout", "comic-companion-course"]
+  - n: "2"
+    title_zh: "拆开"
+    title_en: "Break it down"
+    summary_zh: "不要一次做完。先切出今天能做完的一块，并写明哪一句不能让工具替你说死。"
+    summary_en: "Do not build the whole thing at once. Cut out one piece for today, and write down what the tool must not decide for you."
+    examples: ["clinical-stats-languages-guide", "research-evidence", "comic-companion-course"]
+  - n: "3"
+    title_zh: "和 AI 一起做"
+    title_en: "Work with an AI tool"
+    summary_zh: "Codex、Claude Code 或其他代理都可以。先写它能改什么、不能碰什么，做完由人看一遍。"
+    summary_en: "Codex, Claude Code, or another agent can help. First write what it may change and what it must not touch. A person looks before anything is shared."
+    examples: ["codex-hark-bridge", "codex-obsidian-wechat-workflow", "medical-paper-pipeline"]
+  - n: "4"
+    title_zh: "做出原型"
+    title_en: "Make a prototype"
+    summary_zh: "在自己的电脑或浏览器里打开。打不开，就不算做成。"
+    summary_en: "Open it on your own computer or in a browser. If it does not open, it is not made yet."
+    examples: ["epang-palace", "peter-rabbit-interactive", "trauma-master-academy"]
+  - n: "5"
+    title_zh: "发布并分享"
+    title_en: "Publish and share"
+    summary_zh: "放上 GitHub。静态页可以用 GitHub Pages，让别人不用安装就能打开。说明里写下想法、工具，和还待补充的地方。"
+    summary_en: "Put it on GitHub. A static page can go out through GitHub Pages so someone else can open it without installing anything. Write the idea, the tools, and what is still missing."
+    examples: ["epang-palace", "comic-companion-course", "orthopaedic-trauma-atlas"]
+
+projects:
+  - repo: trauma-master-academy
+    kind: original
+    module: a
+    level: L2
+    status: live
+    projectable: true
+    title_zh: "创伤救治学院"
+    title_en: "Trauma Master Academy"
+    summary_zh: "中英文创伤救治教学平台，把院前预警、团队、xABCDE、病种推理、操作模拟、转运和复评连成一条学习链。"
+    summary_en: "A bilingual trauma-care platform linking pre-alert, teamwork, xABCDE, system reasoning, procedural simulation, transfer, and reassessment."
+    idea_zh: "把院前预警到复评的创伤救治链，做成中英文能打开的教学平台。"
+    idea_en: "Turn the trauma pathway, from pre-alert to reassessment, into a bilingual site people can open."
+    steps_zh: "README 写的是平台本身和教学边界。提交记录里有一次合并，分支名为 codex/homepage-trauma-care-chain。哪几步由 AI 写成，README 没有写，待补充。页面发布在 GitHub Pages。"
+    steps_en: "The README describes the platform and its teaching limits. One merged branch is named codex/homepage-trauma-care-chain. Which steps an AI wrote is not in the README. To be added. The page is on GitHub Pages."
+    reproduce_zh: "打开在线页，沿院前、团队、xABCDE、转运和复评走一遍，并记住它写明只用于教学。"
+    reproduce_en: "Open the live page and walk pre-alert, the team, xABCDE, transfer, and reassessment. Keep the README limit: teaching only."
+    topics: ["创伤", "xABCDE", "教学", "双语"]
+    audience_zh: "医学生、实习医师、住培医师和青年临床医师"
+    audience_en: "Medical students, interns, residents, and early-career clinicians"
+    hours_zh: "门户可投屏浏览 1 课时；骨科 12 单元按单元另开"
+    hours_en: "One session to tour the portal; the 12 orthopaedic units need their own sessions"
+    boundary_zh: "README 写明仅用于教学，不是床旁决策支持、医疗器械、医院规程或个体化治疗方案。骨科单元为教学试用，待教师复核。"
+    boundary_en: "The README limits this to education. It is not bedside decision support, a device, a hospital protocol, or a personal treatment plan. The orthopaedic units are a teaching pilot pending teacher review."
+
+  - repo: trauma-xabcde-classroom
+    kind: original
+    module: a
+    level: L1
+    status: pilot
+    projectable: false
+    title_zh: "创伤急救 · xABCDE 互动课堂"
+    title_en: "Trauma xABCDE classroom"
+    summary_zh: "面向临床医学本科生的 111 页互动课，涵盖 xABCDE 初评、休克、多发伤决策、合成病例和测验。本地打开 dist/index.html。"
+    summary_en: "A 111-slide interactive course for clinical undergraduates: xABCDE, shock, polytrauma decisions, synthetic cases, and quizzes. Open dist/index.html locally."
+    idea_zh: "给临床医学本科生一套能翻页、能做题的 xABCDE 课。"
+    idea_en: "An xABCDE class for clinical undergraduates, with pages and questions."
+    steps_zh: "README 写它是没有构建步骤的静态页，本地打开 dist/index.html。用哪个 AI 工具写成，待补充。"
+    steps_en: "The README says it is a static site with no build step. Open dist/index.html locally. Which AI tool wrote it is not recorded. To be added."
+    reproduce_zh: "克隆后在本地打开 dist/index.html，切换中英文，做一道题再看反馈。正式上课前按 README 请教师复核。"
+    reproduce_en: "Clone it, open dist/index.html, switch language, and answer one question. Before a real class, follow the README and have a teacher review it."
+    topics: ["xABCDE", "本科教学", "测验", "双语"]
+    audience_zh: "临床医学本科生；正式授课前由授课教师复核"
+    audience_en: "Undergraduate clinical students; the instructor reviews it before a formal class"
+    hours_zh: "111 页，建议按章节拆成多次课，不要一次翻完"
+    hours_en: "111 slides. Split them across several classes."
+    local_zh: "按 README 在本地打开 dist/index.html。仓库里写过的公开演示地址目前无法直接打开，所以这里不放那个链接。"
+    local_en: "Open dist/index.html locally, as the README says. The public demo URL in the README does not open right now, so this site does not link it."
+    boundary_zh: "病例、生命体征和动画都是合成教学情境。不是 ATLS 官方认证课程，不能替代专业培训、本院流程或个体化诊疗。"
+    boundary_en: "Cases, vital signs, and animations are synthetic. This is not an official ATLS course and does not replace training, local protocol, or care of a real patient."
+
+  - repo: TraumaMaster-AI-ETM
+    kind: original
+    module: a
+    level: L2
+    status: pilot
+    projectable: false
+    title_zh: "TraumaMaster-AI ETM"
+    title_en: "TraumaMaster-AI ETM"
+    summary_zh: "基于 XABCDE 的创伤急救临床思维训练平台，用交互病例练习优先级、脱手指挥、并行处理和团队更新。"
+    summary_en: "An XABCDE trauma-training platform with interactive cases for priority, hands-off leadership, parallel processing, and team updates."
+    idea_zh: "用交互病例练习 XABCDE 下的优先级、脱手指挥和团队更新。"
+    idea_en: "Practice XABCDE priority, hands-off leadership, and team updates with interactive cases."
+    steps_zh: "README 要求到 Google AI Studio 自行取得模型密钥，再在本地运行。页面由哪个编程助手写成，待补充。没有公开的 Pages。"
+    steps_en: "The README says to get your own model key at Google AI Studio and run it locally. Which coding assistant built the page is not recorded. To be added. There is no public Pages site."
+    reproduce_zh: "只用合成病例在本地看界面。不要填入真实患者资料。"
+    reproduce_en: "Look at the interface locally with a synthetic case. Do not enter a real patient's information."
+    topics: ["ETM", "模拟", "XABCDE", "临床思维"]
+    audience_zh: "急诊医学生、住院医师和创伤救治培训学员"
+    audience_en: "Emergency-medicine students, residents, and trauma-course trainees"
+    hours_zh: "建议 1 课时看界面和一条合成病例；本地运行需要自备模型密钥"
+    hours_en: "One session for the interface and one synthetic case. A local run needs your own model key."
+    local_zh: "没有公开的 Pages。README 要求自行配置模型密钥后在本地运行。"
+    local_en: "No public Pages site. The README expects a local run with your own model key."
+    boundary_zh: "这是医学教育模拟，不是诊疗产品。不要把真实患者资料放进模型对话。"
+    boundary_en: "This is a medical-education simulation, not a care product. Do not put real patient information into the model."
+
+  - repo: orthopaedic-trauma-atlas
+    kind: original
+    module: a
+    level: L2
+    status: live
+    projectable: true
+    title_zh: "骨科创伤操作教学图谱"
+    title_en: "Orthopaedic Trauma Atlas"
+    summary_zh: "给医学教师的中英双语图谱。路径是识别解剖、选择入路、看神经血管风险，再复核来源和限制。含筋膜室切开和牵引、外固定等页面。"
+    summary_en: "A bilingual atlas for medical teachers: anatomy, approach, neurovascular risk, then sources and limits. Includes fasciotomy, traction, and external fixation pages."
+    idea_zh: "给医学教师一条路径：先认解剖，再选入路，看神经血管风险，然后核对来源。"
+    idea_en: "A path for medical teachers: anatomy, approach, neurovascular risk, then the sources."
+    steps_zh: "README 写明首页有 AI 生成的导览图，具体模型和提示词待补充。医学内容来自各模块的教学图和公开来源。站点用 GitHub Pages 发布。"
+    steps_en: "The README says the homepage has AI-generated guide images. The model and prompts are not named. To be added. The medical figures come from each module and public sources. The site is on GitHub Pages."
+    reproduce_zh: "投屏打开一个部位。先分开哪张是导览、哪张是教学图，再读页面上的限制。"
+    reproduce_en: "Project one region. Separate the guide image from the teaching figure, then read the limits on the page."
+    topics: ["骨科创伤", "解剖", "神经血管", "教学图"]
+    audience_zh: "医学教师，以及需要看入路和风险分层的学员"
+    audience_en: "Medical teachers and learners who need approach and risk layers"
+    hours_zh: "建议 1 课时讲一个部位（例如小腿筋膜室或胫骨结节牵引）"
+    hours_en: "One session for a single region, such as the leg compartments or tibial traction"
+    boundary_zh: "教学图配有来源链接和使用限制。不能代替标本、手术带教或本院操作规范。"
+    boundary_en: "Teaching images come with source links and limits. They do not replace specimens, supervised operating, or local protocol."
+
+  - repo: radiation-muscle-pathway
+    kind: original
+    module: a
+    level: L3
+    status: live
+    projectable: true
+    title_zh: "辐射肌肉损伤与修复图谱"
+    title_en: "Radiation muscle pathway"
+    summary_zh: "中文优先、可切英文的交互图谱，按六个阶段演示电离辐射后的肌肉干细胞损伤、FAP、免疫基质通讯、成肌障碍和修复窗口，并给证据分级。"
+    summary_en: "A Chinese-first, English-switchable atlas of six stages after ionizing radiation: MuSC injury, FAPs, immune–stromal signals, failed myogenesis, and a repair window, with evidence grades."
+    idea_zh: "把电离辐射后的肌肉损伤和修复按阶段讲清，并标出证据等级。"
+    idea_en: "Explain radiation muscle injury and repair in stages, with evidence grades kept visible."
+    steps_zh: "README 写数据在 pathway-data.js，播放在 timeline.js，Pages 入口是 docs/index.html。用哪个 AI 工具协助写成，待补充。"
+    steps_en: "The README puts the data in pathway-data.js, playback in timeline.js, and the Pages entry at docs/index.html. Which AI tool helped write it is not recorded. To be added."
+    reproduce_zh: "打开 Pages，按证据等级筛选着讲。不要顺着动画下治疗结论。"
+    reproduce_en: "Open the Pages site and teach from the evidence grades. Do not turn the animation into treatment advice."
+    topics: ["辐射", "肌肉", "证据分级", "教学图谱"]
+    audience_zh: "想把这条研究讲清楚的研究生和教师"
+    audience_en: "Graduate students and teachers explaining this research line"
+    hours_zh: "页面动画总长约 34 秒，只表示教学顺序。建议 1 课时顺着证据等级讲，而不是顺着动画下结论"
+    hours_en: "The animation is about 34 seconds and only marks teaching order. Use one session to follow evidence grades, not the motion."
+    boundary_zh: "A/B/C 级线型表示证据强弱。动画不改变证据等级。页面不把动物药理或摘要级候选写成治疗建议。"
+    boundary_en: "Line styles mark evidence grades. Animation does not change them. Animal pharmacology and abstract-level candidates are not treatment advice."
+
+  - repo: medical-science-shorts
+    kind: original
+    module: a
+    level: L0
+    status: planned
+    projectable: false
+    title_zh: "医学短片"
+    title_en: "Medical science shorts"
+    summary_zh: "仓库目前只有标题 README，还没有课程正文、受众或演示。"
+    summary_en: "The repository currently has a title-only README. There is no lesson text, audience, or demo yet."
+    idea_zh: "仓库名叫医学短片。想做成什么样，README 只有标题，待补充。"
+    idea_en: "The repository is named medical science shorts. What it should become is not written beyond the title. To be added."
+    steps_zh: "待补充。"
+    steps_en: "To be added."
+    reproduce_zh: "现在还不能照着做。可以先到「从自己的想法开始」，把想讲的那一句写下来。"
+    reproduce_en: "There is nothing to copy yet. Start with the guide and write the one sentence the short would say."
+    topics: ["短内容", "规划中"]
+    audience_zh: "尚未写明"
+    audience_en: "Not stated yet"
+    hours_zh: "暂不排课"
+    hours_en: "No class time until there is a lesson"
+    boundary_zh: "不要把这个空仓库当成已经完成的科普或临床课程。"
+    boundary_en: "Do not treat this empty repository as a finished explainer or clinical course."
+
+  - repo: clinical-stats-languages-guide
+    kind: original
+    module: b
+    level: L1
+    status: live
+    projectable: true
+    title_zh: "医学科研统计选择指南"
+    title_en: "Clinical statistics guide"
+    summary_zh: "面向零编程基础临床科研人员的中文离线图文：说明方法选择的依据，复算结果，并把信息不足标成待核查。"
+    summary_en: "An offline Chinese guide for clinical researchers without a programming background: explain a method choice, recompute a result, and mark what is still missing."
+    idea_zh: "让还不会编程的临床科研人员说清统计方法为什么这样选，并能复算、标出还没核查的地方。"
+    idea_en: "Help a clinical researcher who does not program yet explain a method choice, recompute it, and mark what is still unchecked."
+    steps_zh: "README 写了 AI 提问模板和测评提示词。网页本身不调用 AI 接口，提问要自己复制出去。Pages 按仓库里的流程手动发布 docs/。提交记录里有名为 codex/ 的分支。那些分支具体改了什么，待补充。"
+    steps_en: "The README includes AI question templates and evaluation prompts. The page does not call an AI API. You copy the question out yourself. Pages publishes docs/ by the repo's manual flow. Some branches are named codex/. What those branches changed is not spelled out. To be added."
+    reproduce_zh: "打开方法向导，用一个模拟问题走一遍。信息不够就留成待补充，不要让模型补完。"
+    reproduce_en: "Open the method guide with a made-up question. Leave gaps marked as still to be added. Do not let a model fill them in."
+    topics: ["统计", "R", "Python", "教学", "复现"]
+    audience_zh: "零编程基础的临床科研初学者"
+    audience_en: "Clinical research beginners who do not program yet"
+    hours_zh: "建议先用 1 课时走方法向导；软件对照和论文复算另排"
+    hours_en: "One session for the method navigator; software comparison and paper checks need more time"
+    boundary_zh: "它帮助形成可讨论的统计草案。正式研究仍要完整方案、数据质量核查和统计专业意见。"
+    boundary_en: "It helps draft a method you can discuss. A real study still needs a protocol, data checks, and a statistician's review."
+
+  - repo: medical-paper-pipeline
+    kind: original
+    module: b
+    level: L3
+    status: pilot
+    projectable: false
+    title_zh: "医学论文流水线"
+    title_en: "Medical Paper Pipeline"
+    summary_zh: "面向回顾性临床研究的技能：数据清理、统计、文稿、参考文献核对、期刊格式和审稿回复，中间设有人工检查点。"
+    summary_en: "A skill for retrospective clinical papers: cleaning, statistics, manuscript, reference checks, journal formatting, and reviewer replies, with human checkpoints."
+    idea_zh: "把回顾性临床论文从清理数据到回复审稿，拆成六段，每段有人检查。"
+    idea_en: "Split a retrospective clinical paper, from cleaning data to answering reviewers, into six stages with a person at each check."
+    steps_zh: "README 写明这是 Claude Code 技能，复制到 ~/.claude/skills/ 后调用。提交记录里至少有一次写了 Claude Opus 的 Co-Authored-By。它不代替作者核对数据、伦理和文献。"
+    steps_en: "The README says this is a Claude Code skill, copied into ~/.claude/skills/. At least one commit lists Claude Opus as co-author. It does not replace the author's check of data, ethics, and citations."
+    reproduce_zh: "读六个阶段，只用模拟材料走一个检查点。不要在课上跑真实研究数据。"
+    reproduce_en: "Read the six stages and walk one checkpoint with simulated material. Do not run real study data in class."
+    topics: ["论文", "统计", "STROBE", "技能"]
+    audience_zh: "做回顾性观察性研究的创伤外科和临床研究者"
+    audience_en: "Trauma surgeons and clinical researchers writing retrospective observational papers"
+    hours_zh: "建议 1 课时只讲六个阶段和人工检查点，不在课上跑真实数据"
+    hours_en: "One session on the six stages and the human checkpoints. Do not run real study data in class."
+    boundary_zh: "流水线不能代替作者对数据、伦理和文献的责任。课上使用模拟或已获许可的材料。"
+    boundary_en: "The pipeline does not take the author's responsibility for data, ethics, or citations. Use simulated or already permitted material in class."
+
+  - repo: Paper-AI-Research-Agent
+    kind: original
+    module: b
+    level: L4
+    status: pilot
+    projectable: false
+    title_zh: "论文证据研究代理"
+    title_en: "Paper AI Research Agent"
+    summary_zh: "本地的开放文献检索内核：分页检索、书目核对、出版后状态和证据保存分成可审计的步骤，失败时关闭而不是继续编。"
+    summary_en: "A local open-literature kernel that splits search, bibliographic checks, post-publication status, and saved evidence into auditable steps, and stops when a gate fails."
+    idea_zh: "把开放文献检索拆成可核对的步骤，过不了门槛就停，而不是继续编。"
+    idea_en: "Split an open-literature search into checks that stop when a gate fails, instead of continuing with an invented citation."
+    steps_zh: "README 写了 PubMed、Europe PMC、书目核对和出版后状态。提交说明里出现过 Codex/pdf reference audit，以及中英文落地页。某一次对话的提示词，待补充。"
+    steps_en: "The README names PubMed, Europe PMC, bibliographic checks, and post-publication status. A commit mentions Codex/pdf reference audit and bilingual landing pages. The prompts from a particular session are not recorded. To be added."
+    reproduce_zh: "按 README 跑一个公开检索，看它在什么情况下关闭。不要把 citation_ready 当成已经读过全文。"
+    reproduce_en: "Run one public search as the README describes, and see when it stops. citation_ready does not mean the full text was read."
+    topics: ["文献", "PubMed", "证据", "Agent"]
+    audience_zh: "需要可审计检索记录的科研初学者"
+    audience_en: "Research beginners who need an auditable search record"
+    hours_zh: "建议 1 课时跑一个公开检索例子，并阅读失败关闭的条件"
+    hours_en: "One session to run a public search example and read the fail-closed gates"
+    boundary_zh: "不绕过付费墙、登录或机构权限。citation_ready 不等于已读全文、结论可靠或系统综述检索完整。"
+    boundary_en: "It does not bypass paywalls, logins, or institutional access. citation_ready does not mean the full text was read, the claim is sound, or a systematic search is complete."
+
+  - repo: research-evidence
+    kind: original
+    module: b
+    level: L2
+    status: pilot
+    projectable: false
+    title_zh: "科研声明回到原文"
+    title_en: "research-evidence"
+    summary_zh: "一份可复用的审查记录：固定候选声明，定位原文，写明支持范围和材料缺口，并留下人工确认栏。"
+    summary_en: "A reusable review record: fix a claim, locate the source text, state the support and the gaps, and leave a field for human confirmation."
+    idea_zh: "写讨论之前，把一句话收回它对应的原文、支持范围和缺口。"
+    idea_en: "Before writing a discussion, pull one sentence back to the source text, the scope, and the gaps."
+    steps_zh: "README 给的是审查模板和人工确认栏。用哪个 AI 协助填写，待补充。"
+    steps_en: "The README gives a review template and a field for human confirmation. Which AI helped fill it is not recorded. To be added."
+    reproduce_zh: "拿一篇你打开过的文章，用模板审查一两句固定声明。材料不够就停。"
+    reproduce_en: "Take a paper you have actually opened and review one or two fixed claims with the template. Stop if the source is missing."
+    topics: ["证据", "声明", "人工确认", "写作"]
+    audience_zh: "写讨论、转述文献之前想先把一句话收回原文的人"
+    audience_en: "People who want a sentence pulled back to its source before they cite it"
+    hours_zh: "建议 1 课时用模板审查少量固定声明"
+    hours_en: "One session to review a few fixed claims with the template"
+    boundary_zh: "辅助判断必须人工复核。README 写明科学审查性能仍待进一步验证。材料不够就停。"
+    boundary_en: "Assisted judgments need a person. The README says review performance is not yet validated. Stop when the source is missing."
+
+  - repo: inspire-hypotension-reproducibility
+    kind: original
+    module: b
+    level: L3
+    status: pilot
+    projectable: false
+    title_zh: "INSPIRE 低血压复现"
+    title_en: "INSPIRE hypotension reproducibility"
+    summary_zh: "BMC Anesthesiology 一篇老年髋部或股骨手术术中低血压研究的复现代码。仓库只有代码，没有患者数据。"
+    summary_en: "Code for a BMC Anesthesiology paper on intraoperative hypotension in older adults undergoing hip or femoral surgery. Code only. No patient data."
+    idea_zh: "给一篇已经发表的术中低血压研究留下可复现的代码，仓库里不放患者数据。"
+    idea_en: "Leave reproducible code for a published intraoperative-hypotension paper, with no patient data in the repository."
+    steps_zh: "README 指定 INSPIRE 1.4.2 和 Python 环境。是否用 AI 协助写代码，待补充。"
+    steps_en: "The README names INSPIRE 1.4.2 and the Python environment. Whether an AI helped write the code is not recorded. To be added."
+    reproduce_zh: "先读它故意不包含什么。没有 PhysioNet 权限，就不要假装能跑通。"
+    reproduce_en: "Read what the repository deliberately leaves out. Without PhysioNet access, do not pretend the code ran."
+    topics: ["INSPIRE", "低血压", "复现", "PhysioNet"]
+    audience_zh: "已能自己取得 PhysioNet 数据权限的复现练习者"
+    audience_en: "People who can obtain PhysioNet access themselves"
+    hours_zh: "建议 1 次组会讲人群、结局和仓库明确不包含什么"
+    hours_en: "One seminar on the population, outcomes, and what the repository deliberately leaves out"
+    boundary_zh: "使用者自行遵守 PhysioNet 的许可。不要把数据包或本地输出上传到仓库。代码不能在没有数据权限的课堂上跑通。"
+    boundary_en: "Each user follows PhysioNet's credentialing. Do not upload the data ZIP or local outputs. The code cannot be run in class without that access."
+
+  - repo: nhanes-grip-vfa-2013-2014
+    kind: original
+    module: b
+    level: L3
+    status: pilot
+    projectable: false
+    title_zh: "NHANES 握力与椎体骨折复现包"
+    title_en: "NHANES grip and VFA archive"
+    summary_zh: "NHANES 2013–2014 握力与椎体骨折评估的可复现代码包。个体数据不在仓库里，需向 NCHS 自行下载指定 XPT。"
+    summary_en: "A reproducibility package for handgrip strength and VFA-identified vertebral fracture in NHANES 2013–2014. Microdata are not in the repo. Download the named XPT files from NCHS."
+    idea_zh: "为 NHANES 握力与椎体骨折分析留下代码包，个体数据不放进仓库。"
+    idea_en: "Leave a code package for the NHANES grip-strength and vertebral-fracture analysis, without participant-level data in the repo."
+    steps_zh: "README 列出要自行下载的 XPT，以及 R 与 Python 校验。AI 工具待补充。"
+    steps_en: "The README lists the XPT files to download yourself, plus R and Python checks. The AI tool is not recorded. To be added."
+    reproduce_zh: "对照数据清单看那些失败就停的校验。不要转发参与者数据。"
+    reproduce_en: "Follow the data list and the checks that stop on failure. Do not pass on participant-level data."
+    topics: ["NHANES", "握力", "椎体骨折", "复现"]
+    audience_zh: "练习公开调查数据复现的学员"
+    audience_en: "Learners practising reproducibility with public survey data"
+    hours_zh: "建议 1 次组会对照 README 的数据清单和失败即停的校验"
+    hours_en: "One seminar on the data list and the fail-closed checks in the README"
+    boundary_zh: "不要转发参与者级数据。复现包不是诊断工具。"
+    boundary_en: "Do not redistribute participant-level data. The archive is not a diagnostic tool."
+
+  - repo: diabetic-osteoporosis-public-transcriptome
+    kind: original
+    module: b
+    level: L3
+    status: pilot
+    projectable: false
+    title_zh: "糖尿病性骨质疏松公共转录组再分析"
+    title_en: "Diabetic osteoporosis public transcriptome"
+    summary_zh: "糖尿病性骨质疏松公共转录组的可复现再分析代码和图表。README 报告直接临床标签检验在预设多重校正后没有通路结果留下来。"
+    summary_en: "Reproducible code and figures for a public-transcriptome reanalysis of diabetic osteoporosis. The README reports that direct clinical-label tests left no pathway result after the prespecified multiplicity correction."
+    idea_zh: "用公共转录组把糖尿病性骨质疏松的再分析做成可复现的代码，并写明预设校正后没有留下的通路结果。"
+    idea_en: "Turn a public-transcriptome reanalysis of diabetic osteoporosis into reproducible code, including the pathway results that did not survive the prespecified correction."
+    steps_zh: "README 指向 scripts/v0.4.0。AI 工具待补充。"
+    steps_en: "The README points to scripts/v0.4.0. The AI tool is not recorded. To be added."
+    reproduce_zh: "读 README 里它明确不声称的话：没有独立验证，也没有治疗建议。"
+    reproduce_en: "Read what the README refuses to claim: no independent validation and no treatment advice."
+    topics: ["转录组", "骨质疏松", "复现", "公开数据"]
+    audience_zh: "讨论公开组学再分析边界的研究生"
+    audience_en: "Graduate students discussing the limits of a public omics reanalysis"
+    hours_zh: "建议 1 次组会只读 README 的范围和它明确不声称的内容"
+    hours_en: "One seminar on the README scope and the claims it refuses"
+    boundary_zh: "不声称独立队列验证、诊断标志、因果机制、治疗建议或治疗靶点。"
+    boundary_en: "No independent cohort validation, diagnostic signature, causal mechanism, treatment recommendation, or therapeutic target is claimed."
+
+  - repo: saaki-public-data-reproducibility-audit
+    kind: original
+    module: b
+    level: L3
+    status: pilot
+    projectable: false
+    title_zh: "脓毒症相关急性肾损伤微 RNA 公开数据审计"
+    title_en: "SA-AKI public microRNA audit"
+    summary_zh: "脓毒症相关急性肾损伤循环 microRNA 的公开数据复现与无效结果审计。代码和派生表在仓库里，原始测序不转发。"
+    summary_en: "A public-data reproducibility and null-result audit of circulating microRNA in sepsis-associated acute kidney injury. Code and derived tables only. Raw downloads are not redistributed."
+    idea_zh: "把脓毒症相关急性肾损伤循环 microRNA 的公开数据做成一次无效结果审计。"
+    idea_en: "Make a public-data null-result audit of circulating microRNA in sepsis-associated acute kidney injury."
+    steps_zh: "README 说明仓库里是代码和派生表，原始测序不转发。AI 工具待补充。"
+    steps_en: "The README says the repo holds code and derived tables, not the raw sequencing files. The AI tool is not recorded. To be added."
+    reproduce_zh: "用一次讨论讲清它不是生物标志物结论。"
+    reproduce_en: "Use one discussion to be clear that this is not a biomarker claim."
+    topics: ["SA-AKI", "microRNA", "无效结果", "复现"]
+    audience_zh: "需要看到“没有阳性标志物结论”也可以是完整工作的学员"
+    audience_en: "Learners who need to see that a null audit can be a complete piece of work"
+    hours_zh: "建议 1 次组会"
+    hours_en: "One seminar"
+    boundary_zh: "这不是生物标志物、诊断、因果、治疗靶点，也不是“生物学上不存在”的证明。"
+    boundary_en: "It is not a biomarker, diagnosis, causal claim, treatment target, or proof of biological absence."
+
+  - repo: codex-hark-bridge
+    kind: original
+    module: c
+    level: L2
+    status: pilot
+    projectable: false
+    title_zh: "浏览器接力 · Codex × Hark"
+    title_en: "Codex × Hark bridge"
+    summary_zh: "用浏览器把 Hark 的设计和 Codex 的本地执行交接起来的教程与模板。人保留决定，交接可以恢复。"
+    summary_en: "A tutorial and templates for handing design notes from Hark to local Codex execution through the browser. The person keeps the decision, and the handoff can be recovered."
+    idea_zh: "Hark 里已经有设计，Codex 要靠这些背景来写和跑。与其来回复制，不如把交接写成能恢复的步骤。"
+    idea_en: "Hark already holds the design, and Codex needs that context to write and run. Write the handoff down so it can be recovered, instead of copying messages back and forth."
+    steps_zh: "README 写明 Hark 规划、Codex 执行、人做决定。v0.1 是教程和模板，依赖你电脑上已有的 Codex 浏览器能力，没有单独的机器人。"
+    steps_en: "The README says Hark plans, Codex executes, and a person decides. v0.1 is a tutorial and templates. It needs the Codex browser ability already on your computer. There is no separate bot."
+    reproduce_zh: "用仓库里的启动提示词做一次写明授权的交接，记下发出去什么、收回来什么。"
+    reproduce_en: "Use the startup prompt in the repo for one handoff whose permission is written down. Note what you sent and what came back."
+    topics: ["Codex", "交接", "教程", "双语"]
+    audience_zh: "已经会打开这两个工具、想把交接写成步骤的人"
+    audience_en: "People who already use both tools and want the handoff written down"
+    hours_zh: "建议 1 课时顺着教程做一次明确授权的交接"
+    hours_en: "One session to follow the tutorial through one explicitly authorized handoff"
+    boundary_zh: "教程包不是自动替你点击发布或授权。没有明确授权就不要把本地文件交给另一个工具。"
+    boundary_en: "The tutorial does not click publish or grant access for you. Do not hand local files to another tool without an explicit decision."
+
+  - repo: codex-obsidian-wechat-workflow
+    kind: original
+    module: c
+    level: L3
+    status: live
+    projectable: true
+    title_zh: "Codex + Obsidian 公众号工作流"
+    title_en: "Codex + Obsidian WeChat workflow"
+    summary_zh: "面向个人医学科研和教学写作的本地工作流：Obsidian 存来源，Codex 提炼，人工确认后再发到微信公众号。"
+    summary_en: "A local workflow for personal medical research and teaching posts: Obsidian keeps sources, Codex drafts, and a person confirms before anything goes to WeChat."
+    idea_zh: "把一篇医学教学稿从笔记做到能审的公众号稿，发表仍由人点。"
+    idea_en: "Take a medical teaching note as far as a draft someone can review. A person still publishes it."
+    steps_zh: "README 的顺序是：Obsidian 存来源，Codex 提炼，人确认，再发到微信。说明页在 GitHub Pages。密码和患者资料不进提示词。"
+    steps_en: "The README order is Obsidian for sources, Codex for the draft, a person to confirm, then WeChat. The guide is on GitHub Pages. Passwords and patient data stay out of the prompt."
+    reproduce_zh: "用一篇没有患者信息的笔记，走到自己确认为止。先不要点发表。"
+    reproduce_en: "Take one note with no patient information and stop at your own confirmation. Do not press publish yet."
+    topics: ["Obsidian", "公众号", "本地优先", "证据"]
+    audience_zh: "用笔记写医学科普或教学稿、并且自己拥有发布账号的人"
+    audience_en: "People who draft medical teaching posts from notes and own the publishing account"
+    hours_zh: "建议 1 课时看安全上手：不装不必要的插件，不把凭证写进笔记"
+    hours_en: "One session on the safe start: skip extra plugins, and keep credentials out of notes"
+    boundary_zh: "密码、Cookie、验证码、API key、患者资料和私人库不要进入笔记、提示词或 GitHub。公众号登录和发表由账号本人完成。"
+    boundary_en: "Passwords, cookies, codes, API keys, patient data, and the private vault stay out of notes, prompts, and GitHub. The account owner logs in and publishes."
+
+  - repo: github-homepage-style
+    kind: original
+    module: c
+    level: L2
+    status: pilot
+    projectable: false
+    title_zh: "GitHub 首页布局技能"
+    title_en: "GitHub Homepage Style"
+    summary_zh: "给 Codex 的双语仓库首页技能：宽幅主图、中英标题、导航和清楚的使用入口。"
+    summary_en: "A Codex skill for bilingual repository homepages: a wide hero, titles in both languages, navigation, and an obvious way to start."
+    idea_zh: "把已经用顺的仓库首页布局，收成 Codex 下次还能沿用的技能。"
+    idea_en: "Turn a repository homepage layout that already works into a Codex skill that can be used again."
+    steps_zh: "README 写它从个人项目整理而来，念景是版式来源。在 Codex 里安装技能后再改首页。它不是一个独立的网站生成器。"
+    steps_en: "The README says it was gathered from personal projects, and Nianjing is the layout source. Install the skill in Codex, then edit a homepage. It is not a standalone site generator."
+    reproduce_zh: "选你自己的一个仓库，只改介绍和入口，不改里面的研究结论。"
+    reproduce_en: "Pick a repository of your own and change only the introduction and the way in. Do not change the scientific claims."
+    topics: ["GitHub", "首页", "技能", "双语"]
+    audience_zh: "想把仓库 README 整理成能看懂的首页的人"
+    audience_en: "People who want a repository README to read like a homepage"
+    hours_zh: "建议 1 课时拿一个真实仓库改首页，不改它的研究结论"
+    hours_en: "One session to restyle one real repository homepage without changing its scientific claims"
+    boundary_zh: "技能只约束版式。主图说明里写了它是示意，不是产品截图。不要用版式掩盖证据缺口。"
+    boundary_en: "The skill is about layout. Its hero is a diagram, not a product screenshot. Layout must not hide a gap in the evidence."
+
+  - repo: medical-conference-pptx
+    kind: original
+    module: c
+    level: L2
+    status: pilot
+    projectable: false
+    title_zh: "医学会议 PPT 技能"
+    title_en: "Medical Conference PPTX"
+    summary_zh: "审查和重建可编辑的医学会议 PowerPoint，尽量保住事实、限定条件、原图和参考文献。"
+    summary_en: "Review and rebuild editable medical-conference slides while keeping facts, qualifiers, source images, and references."
+    idea_zh: "医学幻灯片常常把字烤进图片，或为了好看删掉限定条件。这个技能要把字留成能改的。"
+    idea_en: "Medical slides often bake words into pictures, or delete a qualifier to look cleaner. This skill keeps the words editable."
+    steps_zh: "README 写明它是 Codex 技能，克隆到 ~/.codex/skills/ 后用 $medical-conference-pptx 调用。"
+    steps_en: "The README says it is a Codex skill. Clone it into ~/.codex/skills/ and call $medical-conference-pptx."
+    reproduce_zh: "用自带的六页模板看一页：标题、数字和引用是否还能改。"
+    reproduce_en: "Use the included six-slide template and check one slide: can you still edit the title, the numbers, and the citation?"
+    topics: ["PPT", "会议", "可编辑", "技能"]
+    audience_zh: "做医学会议、继续教育和学术汇报幻灯片的人"
+    audience_en: "People making slides for medical meetings, continuing education, and research talks"
+    hours_zh: "建议 1 课时用自带的 6 页起始模板讲“哪些字必须还能编辑”"
+    hours_en: "One session with the included 6-slide starter, focused on what must stay editable"
+    boundary_zh: "不要为了版面删掉医学限定条件，也不要把探索性机制写成临床结论。仓库是 source-available：非商业免费，商业使用需要授权。"
+    boundary_en: "Do not delete a medical qualifier to save space, or turn an exploratory mechanism into a clinical conclusion. The repo is source-available: free for non-commercial use, with a separate commercial license."
+
+  - repo: topic-drift-guard
+    kind: original
+    module: c
+    level: L3
+    status: pilot
+    projectable: false
+    title_zh: "主题漂移监测"
+    title_en: "Topic Drift Guard"
+    summary_zh: "本地、可审计的 Python 工具，检查多轮代理是否还在最初目标上，以及已批准的决定有没有在后面的回合里消失。"
+    summary_en: "A local, auditable Python tool that checks whether a long agent run still serves the root goal, and whether approved decisions disappeared in later turns."
+    idea_zh: "多轮代理做着做着，会把整件事换成一个局部目标。这个工具把根目标和已经答应的决定写成基线，再逐段看有没有漂。"
+    idea_en: "A long agent run can quietly swap the whole goal for a local one. This tool writes the root goal and the approved decisions as a baseline, then checks each stretch."
+    steps_zh: "README 给了不安装第三方库的命令。基线是不是某个 AI 起草的，待补充。示例已脱敏。"
+    steps_en: "The README gives a command with no third-party libraries. Whether an AI drafted the baseline is not recorded. To be added. The example is de-identified."
+    reproduce_zh: "跑仓库里的脱敏示例，读一份报告。不要把分数当成临床结论。"
+    reproduce_en: "Run the de-identified example and read one report. Do not treat the score as a clinical conclusion."
+    topics: ["审计", "多轮", "Agent", "本地"]
+    audience_zh: "已经在用多轮代理做项目、担心做着做着换了题的人"
+    audience_en: "People running multi-turn agents who worry the task quietly changes"
+    hours_zh: "建议 1 课时跑仓库里的脱敏示例，读一份监测报告"
+    hours_en: "One session to run the de-identified example and read one report"
+    boundary_zh: "示例已脱敏，不含未公开权利要求、精确制造参数或临床阈值。监测分数不是医学或法律结论。"
+    boundary_en: "The example is de-identified. It has no unpublished claims, exact manufacturing parameters, or clinical thresholds. A drift score is not a medical or legal conclusion."
+
+  - repo: comic-companion-course
+    kind: original
+    module: d
+    level: L1
+    status: live
+    projectable: true
+    title_zh: "从一本书到漫画伴读"
+    title_en: "Comic Companion Course"
+    summary_zh: "免费、非商业的 12 课静态网页：把故事整理成可看、可读、可演的五页小课堂，并附真实 PDF 案例和可改的排版示例。"
+    summary_en: "A free, non-commercial 12-lesson static site: turn a story into a five-page comic workshop, with real PDF cases and an editable layout example."
+    idea_zh: "把一本书整理成能看、能读、能演的五页小课，并让别人按十二课自己做一遍。"
+    idea_en: "Turn a book into a five-page class you can look at, read, and act, then let someone else follow the twelve lessons."
+    steps_zh: "README 的参与声明写明：两本历史漫画由 Hark 组织；课程文字、提示词、网页和示例代码由 Codex 辅助编写；新的主图由 OpenAI 内置图像工具生成。生图模型和部分提示词，README 自己标了待补充。课程在 GitHub Pages。"
+    steps_en: "The README's note says Hark organized two historical comic companions; Codex helped write the lessons, prompts, pages, and example code; the new cover came from OpenAI's built-in image tool. The image model and some prompts are marked to be added in the README itself. The course is on GitHub Pages."
+    reproduce_zh: "从第一课的读者卡做起。用课里的提示词做一页，并标明哪些是原书、哪些是改编。"
+    reproduce_en: "Start with the reader card in lesson one. Make one page with the lesson's prompt, and mark what comes from the book and what was adapted."
+    topics: ["漫画伴读", "12课", "提示词", "亲子"]
+    audience_zh: "医学科研人员和 AI 应用学习者；也适合想做亲子伴读的家长"
+    audience_en: "Medical researchers and AI learners; also parents building a reading companion"
+    hours_zh: "课程自述为 12 课，按课次投屏。第 10 课才进入虚构的医学教学场景"
+    hours_en: "The course describes itself as 12 lessons. Lesson 10 is the one that moves into a fictional medical scenario."
+    boundary_zh: "课程文字与代码为 CC BY-NC 4.0。读者和医学场景是虚构的。README 写明本轮工具辅助审阅不等于法律或医学专家验收。"
+    boundary_en: "Course text and code are CC BY-NC 4.0. Readers and medical scenes are fictional. The README says tool-assisted review is not legal or medical expert acceptance."
+
+  - repo: peter-rabbit-interactive
+    kind: original
+    module: d
+    level: L0
+    status: live
+    projectable: true
+    title_zh: "彼得兔互动伴读"
+    title_en: "Peter Rabbit Interactive"
+    summary_zh: "家长陪同的四章英语有声漫画和五关练习。听一句、读一格，再回到纸上。不需要注册。"
+    summary_en: "Four chapters of spoken-comic English and five activities, with a parent alongside. Listen, read a panel, then return to paper. No sign-up."
+    idea_zh: "家长陪着听一句、读一格，把四章故事做成有声漫画和五关练习。"
+    idea_en: "With a parent nearby, listen to one line and read one panel. Four chapters become a spoken comic and five activities."
+    steps_zh: "README 写插图是使用者提供的 AI 图，作图模型待补充。已有音频可以直接用。站点从 main 分支根目录发到 GitHub Pages。页面由哪个编程助手写成，待补充。"
+    steps_en: "The README says the pictures are AI images supplied by the user. The image model is not named. To be added. Existing audio can be reused. GitHub Pages serves the main branch root. Which coding assistant built the page is not recorded. To be added."
+    reproduce_zh: "打开一章，听一句，再回到纸上。README 写每章大约十五分钟。"
+    reproduce_en: "Open one chapter, listen to a line, then go back to paper. The README says about fifteen minutes a chapter."
+    topics: ["亲子", "英语", "有声漫画", "静态页"]
+    audience_zh: "家长和儿童；README 写明适合家长陪同"
+    audience_en: "Parents and children; the README says a parent stays with the child"
+    hours_zh: "README 写明每章约 15 分钟，四章可拆开"
+    hours_en: "The README says about 15 minutes a chapter. The four chapters can be split."
+    boundary_zh: "这是亲子英语练习，不是医学内容，也不要让孩子单独对着开放的生成式工具。"
+    boundary_en: "This is parent-child English practice, not medical content. Do not leave a child alone with an open generative tool."
+
+  - repo: storysprout
+    kind: original
+    module: d
+    level: L1
+    status: planned
+    projectable: false
+    title_zh: "故事芽"
+    title_en: "StorySprout"
+    summary_zh: "儿童漫画伴读的内容设计、提示词和数据契约。README 写明应用尚未实现，目前没有界面、生成插画或音频成品。"
+    summary_en: "Content design, prompts, and a data contract for a children's comic companion. The README says the app is not built: no interface, generated art, or finished audio."
+    idea_zh: "孩子喜欢漫画，家长希望字更短、图更清楚，还能听一句、读一句。先把内容方案定下来。"
+    idea_en: "A child likes comics, and a parent wants shorter words, clearer pictures, and a line to hear then read. The content plan comes first."
+    steps_zh: "README 写构想来自使用者和 Hark 的亲子伴读。仓库里是内容方案、提示词、数据契约和检查脚本。应用、插画和音频都还没做。"
+    steps_en: "The README says the idea came from a parent-child reading project with Hark. The repo holds a content plan, prompts, a data contract, and check scripts. The app, illustrations, and audio are not made."
+    reproduce_zh: "读第一章方案，把原书里有的和改编的分开。不要把它当成已经能打开的软件。"
+    reproduce_en: "Read the chapter-one plan and separate what the book says from what was adapted. It is not software you can open yet."
+    topics: ["儿童", "内容设计", "规划中", "伴读"]
+    audience_zh: "想先看内容方案、而不是成品应用的家长和开发者"
+    audience_en: "Parents and developers who want the content plan, not a finished app"
+    hours_zh: "可花 1 课时阅读第一章内容方案；不要当成已经能用的软件"
+    hours_en: "One session can read the chapter-one content plan. It is not usable software yet."
+    boundary_zh: "原书未提供的事实在方案里标为待核验。不要把概念封面说成产品截图。"
+    boundary_en: "Facts the source book did not provide are marked unchecked. The concept cover is not a product screenshot."
+
+  - repo: nianjing
+    kind: original
+    module: d
+    level: L1
+    status: pilot
+    projectable: false
+    title_zh: "念景"
+    title_en: "Nianjing"
+    summary_zh: "中英文纸上影像创作桌：把一句话做成摄影和绘画拼接的会动的画，配乐自选，作品本地导出。AI 服务由使用者自己选择。"
+    summary_en: "A bilingual paper-and-photo desk: turn a sentence into a moving collage, choose your own music, and export locally. You bring your own AI service."
+    idea_zh: "把心里的一句话，做成一张会动的纸上影像。"
+    idea_en: "Turn one sentence you care about into a moving picture on paper."
+    steps_zh: "README 的顺序是：写下想法，拼画面、动态和配乐，再在本地合成。可以在 Muse、Hark 等网站做好后导入，或使用自己开通的火山方舟、Vidu。封面是 AI 生成的概念图，模型待补充。没有公开 Pages。"
+    steps_en: "The README order is: write the idea, then picture, motion, and music, then compose it locally. You can make pieces on Muse, Hark, or a similar site and import them, or use Volcengine Ark or Vidu if you already have access. The cover is an AI concept image. The model is not named. To be added. There is no public Pages site."
+    reproduce_zh: "在自己的电脑上用一句话走完一次导出。私人照片不要随便上传。"
+    reproduce_en: "On your own computer, take one sentence through to an export. Do not upload private photos without choosing to."
+    topics: ["创作", "本地导出", "双语", "影像"]
+    audience_zh: "想把心情、回忆或旅行愿望做成一张纸上影像的人"
+    audience_en: "People who want a feeling, a memory, or a place turned into a paper picture"
+    hours_zh: "建议 1 课时在本机走完一次导出"
+    hours_en: "One session to finish one local export"
+    local_zh: "没有公开 Pages。按仓库说明在本地创作。"
+    local_en: "No public Pages site. Create locally, as the repository describes."
+    boundary_zh: "封面是概念图，不是全部功能的截图。不要把私人照片不加选择地上传到别人的服务。"
+    boundary_en: "The cover is a concept image, not a full product screenshot. Do not upload private photos to someone else's service without choosing to."
+
+  - repo: chinese-chess-learning
+    kind: original
+    module: d
+    level: L1
+    status: planned
+    projectable: false
+    title_zh: "中国象棋学习"
+    title_en: "Chinese chess learning"
+    summary_zh: "仓库简介写的是一个融合苏格拉底式提问的交互式中国象棋学习平台。仓库本身还是空的，没有 README 和代码。"
+    summary_en: "The repository description says an interactive Chinese-chess platform taught by Socratic questions. The repository is empty: no README and no code."
+    idea_zh: "简介只有一句：用苏格拉底式提问，做中国象棋的交互学习。仓库还是空的。"
+    idea_en: "The description is one sentence: an interactive Chinese-chess platform taught by Socratic questions. The repository is empty."
+    steps_zh: "待补充。"
+    steps_en: "To be added."
+    reproduce_zh: "还不能照着做。"
+    reproduce_en: "There is nothing to copy yet."
+    topics: ["象棋", "苏格拉底式", "规划中"]
+    audience_zh: "简介所指向的象棋学习者；课程还未开始"
+    audience_en: "Chess learners named by the description; the course has not started"
+    hours_zh: "暂不排课"
+    hours_en: "No class time yet"
+    boundary_zh: "除了这句简介，没有可以讲授的内容。不要补充它没有写出的规则或对局。"
+    boundary_en: "Beyond that one-line description there is nothing to teach. Do not invent rules or games for it."
+
+  - repo: epang-palace
+    kind: original
+    module: d
+    level: L2
+    status: live
+    projectable: true
+    title_zh: "阿房宫前殿"
+    title_en: "Epang Palace front hall"
+    summary_zh: "用 three.js 做的单页三维假说：台基尺寸来自考古，台上的建筑是推测。可以拆层、剖切，并第一人称走上殿。"
+    summary_en: "A single-file three.js hypothesis. Terrace measurements are archaeological. Everything standing on the terrace is speculative. You can peel layers, cut a section, and walk inside."
+    idea_zh: "考古留下的是夯土台基。把台上没建成的房子做成能走进去的页面，并让人看出哪一层是推测。"
+    idea_en: "Archaeology left a rammed-earth terrace. Turn the hall that was not built on top of it into a page you can walk through, and show which layer is speculation."
+    steps_zh: "README 写它是 three.js 单页。推到 main 后，Actions 把 index.html 发到 GitHub Pages。页面由哪个 AI 工具写成，待补充。"
+    steps_en: "The README says it is a single three.js page. After a push to main, Actions publishes index.html to GitHub Pages. Which AI tool wrote the page is not recorded. To be added."
+    reproduce_zh: "打开演示，先指出台基尺寸来自考古，台上的建筑是推测。"
+    reproduce_en: "Open the demo and first say which measurements are archaeological and which buildings are speculative."
+    topics: ["三维", "建筑史", "假说", "演示"]
+    audience_zh: "想看“证据和推测怎样分开画”的学员，不限医学背景"
+    audience_en: "Anyone who wants to see evidence and speculation drawn apart. No medical background required."
+    hours_zh: "建议 20–30 分钟投屏：先指出哪一层是考古，哪一层是推测"
+    hours_en: "Twenty to thirty minutes on a screen: first show which layer is archaeology and which is speculation"
+    boundary_zh: "不要把复原假说讲成已建成的宫殿。这不是医学项目。"
+    boundary_en: "Do not teach the reconstruction hypothesis as a palace that was built. This is not a medical project."
+
+  - repo: TUANZIDING.github.io
+    kind: original
+    module: site
+    level: L0
+    status: live
+    projectable: false
+    title_zh: "学术主页"
+    title_en: "Academic profile"
+    summary_zh: "丁海祥的临床学术主页，介绍创伤、教学、研究和联系方式。站点由该仓库的 docs 目录发布。"
+    summary_en: "Haixiang Ding's clinical academic profile: trauma, teaching, research, and contact. The site is published from the repository's docs directory."
+    idea_zh: "做一个公开的学术主页，放研究、教学和联系方式。"
+    idea_en: "Make a public academic page for research, teaching, and contact."
+    steps_zh: "README 写生产站点生成在 docs/，用于 GitHub Pages。协助编写的工具待补充。"
+    steps_en: "The README says the production site is generated in docs/ for GitHub Pages. Which tool helped write it is not recorded. To be added."
+    reproduce_zh: "看它怎样把公开介绍和证件、电话分开。这不是看病的入口。"
+    reproduce_en: "See how the public introduction is kept apart from licence numbers and phone numbers. It is not a door to a clinic."
+    topics: ["主页", "学术", "联系"]
+    audience_zh: "想先认识作者再上课的人"
+    audience_en: "People who want to know the author before class"
+    hours_zh: "不作为课时，放在关于我"
+    hours_en: "Not a class. It lives in About."
+    boundary_zh: "主页不是诊疗入口。公开站点不放证件号、电话、证书扫描件和私人照片。"
+    boundary_en: "The profile is not a clinic door. The public site omits licence numbers, phone numbers, certificate scans, and private photographs."
+
+  - repo: TUANZIDING
+    kind: original
+    module: site
+    level: L0
+    status: live
+    projectable: false
+    title_zh: "GitHub 个人简介"
+    title_en: "GitHub profile"
+    summary_zh: "GitHub 个人主页使用的简介仓库，概述创伤教学、辐射肌肉研究和可追溯的 AI 工作。"
+    summary_en: "The profile repository shown on the GitHub homepage. It outlines trauma teaching, radiation-muscle research, and traceable AI work."
+    idea_zh: "在 GitHub 首页用一篇简介，说明创伤教学、辐射肌肉研究和可追溯的 AI 工作。"
+    idea_en: "Use the GitHub profile to say, in one page, what the trauma teaching, radiation-muscle research, and traceable AI work are."
+    steps_zh: "这是简介仓库。怎样写成，待补充。"
+    steps_en: "This is the profile repository. How it was written is not recorded. To be added."
+    reproduce_zh: "读里面的工作原则，再进具体项目看边界。"
+    reproduce_en: "Read the working principles, then open a project and look at its limits."
+    topics: ["简介", "GitHub"]
+    audience_zh: "从 GitHub 进来的访客"
+    audience_en: "Visitors arriving from GitHub"
+    hours_zh: "不作为课时"
+    hours_en: "Not a class"
+    boundary_zh: "简介是入口，不是课程全文。具体边界以各个项目仓库为准。"
+    boundary_en: "The profile is an entrance, not the course. Limits live in each project repository."
+
+  - repo: tuanzi-ai-academy
+    kind: original
+    module: site
+    level: L1
+    status: pilot
+    projectable: true
+    title_zh: "团子 AI 课堂"
+    title_en: "Tuanzi AI Academy"
+    summary_zh: "把公开仓库收成这一间可以投屏、可以自学的静态课堂。教学分组手写，星标和更新时间在构建时向 GitHub 查询。"
+    summary_en: "This static classroom gathers the public repositories for projection and self-study. Teaching notes are written by hand. Stars and update times are read from GitHub at build."
+    idea_zh: "把公开仓库收成一间课，让人看见自己的想法可以怎样做成能打开的东西。"
+    idea_en: "Gather the public repositories into a class that shows how an idea can become something you can open."
+    steps_zh: "本仓库 README 写明用 Astro 做静态页，教学说明手写在 data/projects.yaml，星标和更新时间在构建时向 GitHub 查询，再用 GitHub Actions 发布。对话里用过哪个模型，README 没有记录，待补充。"
+    steps_en: "This repository's README says the pages are static Astro, the teaching notes are written in data/projects.yaml, stars and update times are read from GitHub at build, and GitHub Actions publishes the site. Which model was used in the chat is not in the README. To be added."
+    reproduce_zh: "从「从自己的想法开始」抄一份记录。先做成一页，再考虑要不要发到 GitHub Pages。"
+    reproduce_en: "Copy the record on the start-here page. Make one page first, then decide whether to publish it with GitHub Pages."
+    topics: ["教学站", "索引", "静态站"]
+    audience_zh: "医护、医学生、科研初学者、家长和 AI 零基础学员"
+    audience_en: "Clinicians, students, research beginners, parents, and people new to AI"
+    hours_zh: "总纲课单独成页。平时把它当目录，按模块打开项目。"
+    hours_en: "The framing lesson has its own page. Otherwise use the site as the table of contents and open a module."
+    boundary_zh: "本站不提供诊断或治疗建议，也不把 fork 的上游工具写成原创或临床背书。"
+    boundary_en: "This site does not diagnose or treat, and it does not present forked tools as original work or as a clinical endorsement."
+
+  - repo: Nature-Paper-Skills
+    kind: fork
+    module: e
+    fork_group: writing
+    level: L3
+    status: pilot
+    upstream: "Boom5426/Nature-Paper-Skills"
+    upstream_author: "Boom5426"
+    title_zh: "Nature 风格论文技能"
+    title_en: "Nature-Paper-Skills"
+    summary_zh: "上游是一套面向 Nature 风格稿件的起草、修改、审计和再投技能。"
+    summary_en: "Upstream skills for drafting, revising, auditing, and resubmitting a Nature-style manuscript."
+    idea_zh: "一套面向 Nature 风格稿件的起草、修改、审计和再投技能。"
+    idea_en: "skills for drafting, revising, auditing, and resubmitting a Nature-style manuscript."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["论文", "技能", "写作"]
+    audience_zh: "已经在写英文研究稿、想对照一份流程的人"
+    audience_en: "People already writing an English research manuscript who want a checklist"
+    hours_zh: "建议作为写作课的对照材料，1 课时"
+    hours_en: "One session as a writing checklist"
+    recommend_zh: "收录在科研写作一组，用来对照“起草—修改—审计”的顺序。"
+    recommend_en: "Filed under scientific writing as a draft–revise–audit sequence to compare with."
+    boundary_zh: "技能稿不是已接收论文。文献、数据和期刊格式仍由作者核对。"
+    boundary_en: "A skill draft is not an accepted paper. The author still checks literature, data, and journal format."
+
+  - repo: nature-skills
+    kind: fork
+    module: e
+    fork_group: writing
+    level: L3
+    status: pilot
+    upstream: "Yuan1z0825/nature-skills"
+    upstream_author: "Yuan1z0825"
+    title_zh: "Nature 表达与科研绘图技能"
+    title_en: "nature-skills"
+    summary_zh: "上游说明是面向 Nature 论文学术表达和科研绘图的技能。"
+    summary_en: "Upstream skills aimed at Nature-style scientific expression and research figures."
+    idea_zh: "上游说明是面向 Nature 论文学术表达和科研绘图的技能。"
+    idea_en: "skills aimed at Nature-style scientific expression and research figures."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["论文", "绘图", "技能"]
+    audience_zh: "改英文表达和配图说明的学员"
+    audience_en: "Learners editing English expression and figure notes"
+    hours_zh: "与上一则写作技能合上 1 课时即可，不必单独开课"
+    hours_en: "Combine with the previous writing skill in one session"
+    recommend_zh: "和 Nature-Paper-Skills 放在一起，用来区分“文字流程”和“绘图技能”。"
+    recommend_en: "Paired with Nature-Paper-Skills so a class can separate prose workflow from figure skills."
+    boundary_zh: "画得像期刊图，不等于结果达到了发表标准。"
+    boundary_en: "A figure that looks like a journal figure is not a result that meets publication standard."
+
+  - repo: scientific-agent-skills
+    kind: fork
+    module: e
+    fork_group: writing
+    level: L4
+    status: pilot
+    upstream: "K-Dense-AI/scientific-agent-skills"
+    upstream_author: "K-Dense-AI"
+    title_zh: "科学 Agent 技能库"
+    title_en: "scientific-agent-skills"
+    summary_zh: "上游仓库是一批面向科学工作的 Agent Skills，并索引科学数据库。具体覆盖范围以仓库当前文件为准。"
+    summary_en: "An upstream library of agent skills for scientific work, plus an index of scientific databases. Coverage is whatever the repository currently contains."
+    idea_zh: "上游仓库是一批面向科学工作的 Agent Skills，并索引科学数据库。具体覆盖范围以仓库当前文件为准。"
+    idea_en: "library of agent skills for scientific work, plus an index of scientific databases. Coverage is whatever the repository currently contains."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["科学", "技能库", "数据库"]
+    audience_zh: "想浏览现成科学技能、而不是从零写技能的学员"
+    audience_en: "Learners browsing ready-made science skills rather than writing one from scratch"
+    hours_zh: "建议 1 课时只选一个与自己课题相关的技能读完，不逐个安装"
+    hours_en: "One session to read a single skill related to your own topic. Do not install the whole library in class."
+    recommend_zh: "收录作科学技能的总索引，便于和本站原创的文献、证据仓库对照。"
+    recommend_en: "Kept as a science-skill index to set beside this site's own literature and evidence repositories."
+    boundary_zh: "不要引用仓库简介里的用户规模作为事实。数据库查询结果仍要回到原始记录核对。不上传未公开的患者或实验数据。"
+    boundary_en: "Do not repeat the repository blurb's user counts as established fact. Database hits still need the original record. Do not upload unpublished patient or experiment data."
+
+  - repo: OpenResearch
+    kind: fork
+    module: e
+    fork_group: writing
+    level: L3
+    status: pilot
+    upstream: "alphaXiv/OpenResearch"
+    upstream_author: "alphaXiv"
+    upstream_demo: "https://openresearch.sh/"
+    title_zh: "OpenResearch"
+    title_en: "OpenResearch"
+    summary_zh: "上游项目把编程代理转去作文献研究。"
+    summary_en: "An upstream project that turns coding agents toward literature research."
+    idea_zh: "上游项目把编程代理转去作文献研究。"
+    idea_en: "project that turns coding agents toward literature research."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。也可以先打开上游演示，看看成品。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it. You can also open the upstream demo and look at the finished piece."
+    topics: ["文献", "研究代理"]
+    audience_zh: "已经会用编程代理、想看文献工作流的学员"
+    audience_en: "Learners who already use a coding agent and want a literature workflow"
+    hours_zh: "建议 1 课时看上游说明页，再和 Paper-AI-Research-Agent 的失败关闭门槛对照"
+    hours_en: "One session on the upstream page, then compare its gates with Paper-AI-Research-Agent"
+    recommend_zh: "用来和原创的文献代理并排看：哪些步骤有记录，哪些步骤会在失败时停。"
+    recommend_en: "Read it beside the original literature agent: which steps are recorded, and which steps stop on failure."
+    boundary_zh: "研究代理的综述不能代替你读过的全文和人工筛选。"
+    boundary_en: "An agent's review does not replace the papers you have actually read or a human screen."
+
+  - repo: AutoResearchClaw
+    kind: fork
+    module: e
+    fork_group: writing
+    level: L4
+    status: pilot
+    upstream: "aiming-lab/AutoResearchClaw"
+    upstream_author: "aiming-lab"
+    title_zh: "AutoResearchClaw"
+    title_en: "AutoResearchClaw"
+    summary_zh: "上游自述是从想法走向论文的自主研究流程。"
+    summary_en: "Upstream describes an autonomous path from an idea toward a paper."
+    idea_zh: "上游自述是从想法走向论文的自主研究流程。"
+    idea_en: "describes an autonomous path from an idea toward a paper."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["自动研究", "论文"]
+    audience_zh: "讨论“自动化边界”的高阶学员，不作为第一课"
+    audience_en: "Advanced learners discussing the limits of automation. Not a first lesson."
+    hours_zh: "只适合已完成 L3 的讨论课，半课时讲它不能省略什么"
+    hours_en: "A half session after L3, on what automation is not allowed to skip"
+    recommend_zh: "放在写作组的末尾，用来讨论全自动研究不该越过的门槛。"
+    recommend_en: "Last in the writing group, as a discussion of gates a fully automatic pipeline must not cross."
+    boundary_zh: "伦理审查、数据许可、统计专业意见和作者责任不能自动化掉。不要在课上把它对未公开数据运行。"
+    boundary_en: "Ethics review, data permission, statistical judgment, and authorship cannot be automated away. Do not run it on unpublished data in class."
+
+  - repo: diagram-design
+    kind: fork
+    module: e
+    fork_group: viz
+    level: L2
+    status: pilot
+    upstream: "cathrynlavery/diagram-design"
+    upstream_author: "cathrynlavery"
+    upstream_demo: "https://diagramdesign.dev"
+    title_zh: "图解设计"
+    title_en: "diagram-design"
+    summary_zh: "上游是一套社论式图解技能，输出自包含的 HTML 和 SVG。"
+    summary_en: "An upstream editorial-diagram skill that emits self-contained HTML and SVG."
+    idea_zh: "一套社论式图解技能，输出自包含的 HTML 和 SVG。"
+    idea_en: "editorial-diagram skill that emits self-contained HTML and SVG."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。也可以先打开上游演示，看看成品。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it. You can also open the upstream demo and look at the finished piece."
+    topics: ["图解", "SVG", "技能"]
+    audience_zh: "需要把流程画清楚的教师和研究生"
+    audience_en: "Teachers and graduate students who need a process drawn clearly"
+    hours_zh: "建议 1 课时画一张自己课程的流程图"
+    hours_en: "One session to draw one flowchart from your own course"
+    recommend_zh: "绘图组的入口：先把结构画对，再谈装饰。"
+    recommend_en: "The entrance to the figure group: get the structure right before decoration."
+    boundary_zh: "图要标注哪些是数据、哪些是示意。不要用一张好看的图代替图注。"
+    boundary_en: "Label what is data and what is a schematic. A handsome diagram does not replace a caption."
+
+  - repo: figures4papers
+    kind: fork
+    module: e
+    fork_group: viz
+    level: L2
+    status: pilot
+    upstream: "ChenLiu-1996/figures4papers"
+    upstream_author: "ChenLiu-1996"
+    title_zh: "论文图脚本"
+    title_en: "figures4papers"
+    summary_zh: "上游是作者用来给论文做图的 Python 脚本。"
+    summary_en: "Upstream Python scripts the author uses to make publication figures."
+    idea_zh: "作者用来给论文做图的 Python 脚本。"
+    idea_en: "Python scripts the author uses to make publication figures."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["Python", "论文图"]
+    audience_zh: "会一点 Python、想看具体绑图脚本的学员"
+    audience_en: "Learners with a little Python who want concrete plotting scripts"
+    hours_zh: "作为课后阅读，不单独占一课时"
+    hours_en: "After-class reading, not its own session"
+    recommend_zh: "用来提醒：论文图通常是脚本，不是一张没法改的截图。"
+    recommend_en: "A reminder that paper figures are usually scripts, not an uneditable screenshot."
+    boundary_zh: "脚本风格不能直接挪到医学图上。医学图还要守住单位、对照和样本边界。"
+    boundary_en: "A plotting style does not transfer unchanged to a medical figure. Units, controls, and sample limits still have to be right."
+
+  - repo: bioicons
+    kind: fork
+    module: e
+    fork_group: viz
+    level: L1
+    status: pilot
+    upstream: "duerrsimon/bioicons"
+    upstream_author: "duerrsimon"
+    upstream_demo: "https://bioicons.com"
+    title_zh: "Bioicons"
+    title_en: "bioicons"
+    summary_zh: "生物学和化学科学插图用的自由开源图标库。"
+    summary_en: "A library of free and open-source icons for biology and chemistry illustrations."
+    idea_zh: "生物学和化学科学插图用的自由开源图标库。"
+    idea_en: "A library of free and open-source icons for biology and chemistry illustrations."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。也可以先打开上游演示，看看成品。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it. You can also open the upstream demo and look at the finished piece."
+    topics: ["图标", "科学插图"]
+    audience_zh: "做课件和示意图、需要可追溯图标的人"
+    audience_en: "People making slides and diagrams who need icons with a known license"
+    hours_zh: "并入绘图课，用 10 分钟演示如何查看许可"
+    hours_en: "Ten minutes inside a figure class, on how to check a license"
+    recommend_zh: "课件配图时优先找许可清楚的科学图标。"
+    recommend_en: "Prefer science icons with a clear license when illustrating a lesson."
+    boundary_zh: "图标不是解剖事实的来源。使用前看每个图标的许可，不要把图标画成临床所见。"
+    boundary_en: "An icon is not a source of anatomical fact. Check each license. Do not draw an icon as if it were a clinical finding."
+
+  - repo: scientific-visual-skills
+    kind: fork
+    module: e
+    fork_group: viz
+    level: L2
+    status: pilot
+    upstream: "2023Anita/scientific-visual-skills"
+    upstream_author: "2023Anita"
+    title_zh: "科学视觉技能"
+    title_en: "scientific-visual-skills"
+    summary_zh: "上游是用图像生成做科学信息图、研究封面和论文图的 Codex 技能。"
+    summary_en: "Upstream Codex skills for scientific infographics, research covers, and paper figures via image generation."
+    idea_zh: "用图像生成做科学信息图、研究封面和论文图的 Codex 技能。"
+    idea_en: "Codex skills for scientific infographics, research covers, and paper figures via image generation."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["信息图", "封面", "图像生成"]
+    audience_zh: "需要封面或信息图、并且会区分生成图和数据图的人"
+    audience_en: "People who need a cover or infographic and can tell a generated image from a data figure"
+    hours_zh: "建议半课时，专门练习在图上写明“生成示意”"
+    hours_en: "Half a session practising how to label an image as a generated schematic"
+    recommend_zh: "用来练习生成图的标注，而不是用来生产论文结果图。"
+    recommend_en: "Use it to practise labelling generated images, not to manufacture result figures."
+    boundary_zh: "生成图不能冒充显微镜、影像、统计图或患者图像。论文结果图必须来自数据和脚本。"
+    boundary_en: "A generated image must not impersonate a micrograph, a scan, a statistical chart, or a patient image. Result figures come from data and scripts."
+
+  - repo: codex-visio-paper-figure-skill
+    kind: fork
+    module: e
+    fork_group: viz
+    level: L2
+    status: pilot
+    upstream: "pengjunchi0/codex-visio-paper-figure-skill"
+    upstream_author: "pengjunchi0"
+    title_zh: "论文图转可编辑格式"
+    title_en: "Paper figure to editable drawing"
+    summary_zh: "上游技能把生成的图转成 Visio 等可编辑格式，方便改细节。"
+    summary_en: "An upstream skill that converts a generated figure into an editable format such as Visio so details can be adjusted."
+    idea_zh: "上游技能把生成的图转成 Visio 等可编辑格式，方便改细节。"
+    idea_en: "skill that converts a generated figure into an editable format such as Visio so details can be adjusted."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["Visio", "可编辑", "论文图"]
+    audience_zh: "需要把示意图改成可编辑物件的人"
+    audience_en: "People who need a schematic turned into editable objects"
+    hours_zh: "并入 PPT 或绘图课"
+    hours_en: "Fold into the slide or figure class"
+    recommend_zh: "和医学会议 PPT 技能放在一起讲：图里的字要能改。"
+    recommend_en: "Teach it with the medical-slide skill: words inside a figure should remain editable."
+    boundary_zh: "转成可编辑格式不会核对科学内容。转换后仍要人工改错。"
+    boundary_en: "An editable conversion does not check the science. A person still corrects it afterward."
+
+  - repo: lanshu-animated-architecture-diagram
+    kind: fork
+    module: e
+    fork_group: viz
+    level: L2
+    status: pilot
+    upstream: "cclank/lanshu-animated-architecture-diagram"
+    upstream_author: "cclank"
+    title_zh: "手绘动态架构图"
+    title_en: "Animated architecture diagrams"
+    summary_zh: "上游是绘制手绘风格动态架构图的 Codex 技能。"
+    summary_en: "An upstream Codex skill for hand-drawn animated architecture diagrams."
+    idea_zh: "绘制手绘风格动态架构图的 Codex 技能。"
+    idea_en: "Codex skill for hand-drawn animated architecture diagrams."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["架构图", "动画", "技能"]
+    audience_zh: "需要讲解系统设计的学员"
+    audience_en: "Learners explaining a system design"
+    hours_zh: "作为演示技巧，半课时"
+    hours_en: "Half a session on presentation technique"
+    recommend_zh: "讲 Agent 或网站结构时可以参考它的动态说明方式。"
+    recommend_en: "A reference for animated explanation when teaching an agent or website structure."
+    boundary_zh: "动画架构图是示意。不要把还没实现的模块画成已经上线。"
+    boundary_en: "An animated architecture is a sketch. Do not draw an unimplemented module as if it were live."
+
+  - repo: anatomy
+    kind: fork
+    module: e
+    fork_group: viz
+    level: L2
+    status: pilot
+    upstream: "wheresryan22/anatomy"
+    upstream_author: "wheresryan22"
+    upstream_demo: "https://skills.wheresryan.sh/anatomy"
+    title_zh: "机器解剖插图技能"
+    title_en: "anatomy illustrations"
+    summary_zh: "上游技能用等轴测插图拆开机器和复杂系统，输出精细 SVG。"
+    summary_en: "An upstream skill for detailed isometric illustrations that take apart machines and complex systems, as SVG."
+    idea_zh: "上游技能用等轴测插图拆开机器和复杂系统，输出精细 SVG。"
+    idea_en: "skill for detailed isometric illustrations that take apart machines and complex systems, as SVG."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。也可以先打开上游演示，看看成品。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it. You can also open the upstream demo and look at the finished piece."
+    topics: ["等轴测", "拆解", "SVG"]
+    audience_zh: "想练习“拆开讲解”的教师；这里的 anatomy 指机械结构，不是人体解剖课"
+    audience_en: "Teachers practising an exploded explanation. Here anatomy means machines, not a human-anatomy course."
+    hours_zh: "半课时看上游示例"
+    hours_en: "Half a session on the upstream examples"
+    recommend_zh: "和阿房宫、骨科图谱对照：拆层之前先说明哪一层是事实。"
+    recommend_en: "Set it beside Epang Palace and the orthopaedic atlas: before peeling a layer, say which layer is fact."
+    boundary_zh: "不要把它当成人体解剖教材，也不要用于手术入路教学。"
+    boundary_en: "Do not use it as a human-anatomy textbook or for surgical-approach teaching."
+
+  - repo: machine-skill
+    kind: fork
+    module: e
+    fork_group: viz
+    level: L2
+    status: pilot
+    upstream: "AirsupHQ/machine-skill"
+    upstream_author: "AirsupHQ"
+    upstream_demo: "https://airsup.ai/lab/skill"
+    title_zh: "一句话机器模拟"
+    title_en: "machine-skill"
+    summary_zh: "上游技能用一句话描述机器，生成单个 HTML 里的交互模拟。"
+    summary_en: "An upstream skill that turns a one-line description of a machine into an interactive simulation in one HTML file."
+    idea_zh: "上游技能用一句话描述机器，生成单个 HTML 里的交互模拟。"
+    idea_en: "skill that turns a one-line description of a machine into an interactive simulation in one HTML file."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。也可以先打开上游演示，看看成品。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it. You can also open the upstream demo and look at the finished piece."
+    topics: ["模拟", "HTML", "技能"]
+    audience_zh: "想快速做出一个可打开演示的学员"
+    audience_en: "Learners who want a demo they can open quickly"
+    hours_zh: "1 课时做一个与患者无关的机械小演示"
+    hours_en: "One session to make a small mechanical demo that does not involve patients"
+    recommend_zh: "用来体验“一句话到可打开页面”，并立刻讨论它哪里是虚构的。"
+    recommend_en: "Use it to feel the jump from one sentence to an openable page, then immediately discuss what is invented."
+    boundary_zh: "生成的物理模拟不是测量，也不能拿来讲医疗器械的真实参数。"
+    boundary_en: "A generated physics toy is not a measurement, and it cannot teach the real parameters of a medical device."
+
+  - repo: human-atlas
+    kind: fork
+    module: e
+    fork_group: viz
+    level: L2
+    status: pilot
+    upstream: "ashemag/human-atlas"
+    upstream_author: "ashemag"
+    title_zh: "人体三维图谱"
+    title_en: "human-atlas"
+    summary_zh: "上游是开源的三维解剖浏览器，使用 BodyParts3D 网格，可以检索和分层查看。"
+    summary_en: "An upstream open-source 3D anatomy explorer using BodyParts3D meshes, with search and system layers."
+    idea_zh: "开源的三维解剖浏览器，使用 BodyParts3D 网格，可以检索和分层查看。"
+    idea_en: "open-source 3D anatomy explorer using BodyParts3D meshes, with search and system layers."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["解剖", "三维", "BodyParts3D"]
+    audience_zh: "需要一个可旋转解剖参考的医学生"
+    audience_en: "Medical students who want a rotatable anatomy reference"
+    hours_zh: "可并入骨科图谱课，作为对照视图"
+    hours_en: "Use beside the orthopaedic atlas as a comparison view"
+    recommend_zh: "辐射肌肉图谱的 README 提到设计时参考过 Human Atlas 的探索布局。此仓库是相关的上游三维浏览器。"
+    recommend_en: "The radiation-muscle README says its layout looked at Human Atlas. This fork is the related upstream 3D browser."
+    boundary_zh: "三维网格是教学参考，不是患者影像，也不能指导手术切口。"
+    boundary_en: "The meshes are a teaching reference, not a patient's imaging, and they do not guide an incision."
+
+  - repo: agent-skills
+    kind: fork
+    module: e
+    fork_group: agent
+    level: L3
+    status: pilot
+    upstream: "addyosmani/agent-skills"
+    upstream_author: "addyosmani"
+    upstream_demo: "https://skills.addy.ie"
+    title_zh: "工程级 Agent 技能"
+    title_en: "agent-skills"
+    summary_zh: "上游是给编程代理用的工程技能集合。"
+    summary_en: "An upstream collection of engineering skills for coding agents."
+    idea_zh: "给编程代理用的工程技能集合。"
+    idea_en: "collection of engineering skills for coding agents."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。也可以先打开上游演示，看看成品。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it. You can also open the upstream demo and look at the finished piece."
+    topics: ["技能", "工程", "Agent"]
+    audience_zh: "开始写自己的技能之前，想先读成熟例子的人"
+    audience_en: "People who want a mature example before writing their own skill"
+    hours_zh: "1 课时读一个技能的结构：输入、步骤、验证"
+    hours_en: "One session to read one skill's shape: input, steps, verification"
+    recommend_zh: "Agent 工程组的起点，用来看一个技能文件通常长什么样。"
+    recommend_en: "The starting point of the agent group: what a skill file usually contains."
+    boundary_zh: "工程技能不提供医学判断。把技能用到临床材料之前，先套用本站的隐私和复核规则。"
+    boundary_en: "Engineering skills do not make medical judgments. Apply this site's privacy and review rules before pointing one at clinical material."
+
+  - repo: Real-Engineers-for-skills
+    kind: fork
+    module: e
+    fork_group: agent
+    level: L3
+    status: pilot
+    upstream: "mattpocock/skills"
+    upstream_author: "mattpocock"
+    upstream_demo: "https://aihero.dev/skills"
+    title_zh: "Real Engineers 技能"
+    title_en: "Real Engineers skills"
+    summary_zh: "上游是作者从自己的代理目录里公开的一组工程技能。"
+    summary_en: "Upstream engineering skills published from the author's own agent directory."
+    idea_zh: "作者从自己的代理目录里公开的一组工程技能。"
+    idea_en: "engineering skills published from the author's own agent directory."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。也可以先打开上游演示，看看成品。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it. You can also open the upstream demo and look at the finished piece."
+    topics: ["技能", "工程"]
+    audience_zh: "想多看一种技能写法的学员"
+    audience_en: "Learners comparing another way of writing skills"
+    hours_zh: "与 agent-skills 同课对照，不另排"
+    hours_en: "Compare it in the same session as agent-skills"
+    recommend_zh: "和第二套工程技能对照，看不同作者如何写验证步骤。"
+    recommend_en: "Compare it with the other engineering-skill set and notice how each author writes verification."
+    boundary_zh: "示例里的命令和路径是上游作者的环境，不要原样套到患者数据或医院电脑上。"
+    boundary_en: "Commands and paths belong to the upstream author's environment. Do not copy them onto patient data or a hospital computer."
+
+  - repo: codex-dynamic-workflows-enhanced
+    kind: fork
+    module: e
+    fork_group: agent
+    level: L3
+    status: pilot
+    upstream: "2023Anita/codex-dynamic-workflows-enhanced"
+    upstream_author: "2023Anita"
+    title_zh: "动态工作流技能"
+    title_en: "Dynamic workflows"
+    summary_zh: "面向初学者的动态工作流技能，包含任务包、批准关卡、验证和例子。"
+    summary_en: "A beginner-facing dynamic workflow skill with packets, approval gates, verification, and examples."
+    idea_zh: "面向初学者的动态工作流技能，包含任务包、批准关卡、验证和例子。"
+    idea_en: "A beginner-facing dynamic workflow skill with packets, approval gates, verification, and examples."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["工作流", "批准", "验证"]
+    audience_zh: "第一次把代理流程写成步骤的人"
+    audience_en: "People writing an agent workflow down for the first time"
+    hours_zh: "1 课时"
+    hours_en: "One session"
+    recommend_zh: "用来讲批准关卡：代理做完一步，人点头之后才能继续。"
+    recommend_en: "Use it to teach approval gates: the agent finishes a step, and a person agrees before it continues."
+    boundary_zh: "关卡要落在你自己的流程上。不要因为示例里有批准字样，就认为它已经替你复核了医学内容。"
+    boundary_en: "The gate has to sit on your own process. An example that mentions approval has not reviewed your medical content."
+
+  - repo: loop-engineering-co-builder
+    kind: fork
+    module: e
+    fork_group: agent
+    level: L4
+    status: pilot
+    upstream: "2023Anita/loop-engineering-co-builder"
+    upstream_author: "2023Anita"
+    title_zh: "有界代理循环"
+    title_en: "Bounded agent loops"
+    summary_zh: "上游技能讨论有界、可验证、失败后能恢复的代理循环。"
+    summary_en: "An upstream skill about agent loops that are bounded, verifiable, and recoverable after failure."
+    idea_zh: "上游技能讨论有界、可验证、失败后能恢复的代理循环。"
+    idea_en: "skill about agent loops that are bounded, verifiable, and recoverable after failure."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["循环", "验证", "恢复"]
+    audience_zh: "已经会写单次技能、想讨论循环风险的学员"
+    audience_en: "Learners who can write a single skill and want to discuss loop risk"
+    hours_zh: "半课时，放在 L4"
+    hours_en: "Half a session, at L4"
+    recommend_zh: "和主题漂移监测一起读：循环必须有停止条件。"
+    recommend_en: "Read it with Topic Drift Guard: a loop needs a stop condition."
+    boundary_zh: "没有停止条件的循环不要对临床或未公开数据运行。"
+    boundary_en: "Do not run an unbounded loop on clinical or unpublished data."
+
+  - repo: graph-engineering-agent-builder
+    kind: fork
+    module: e
+    fork_group: agent
+    level: L4
+    status: pilot
+    upstream: "2023Anita/graph-engineering-agent-builder"
+    upstream_author: "2023Anita"
+    title_zh: "图工程代理"
+    title_en: "Graph engineering agent"
+    summary_zh: "上游讨论带证据的图边、独立验证、人工关卡和确定性校验。"
+    summary_en: "Upstream work on evidence-carrying graph edges, independent verification, human gates, and deterministic checks."
+    idea_zh: "上游讨论带证据的图边、独立验证、人工关卡和确定性校验。"
+    idea_en: "work on evidence-carrying graph edges, independent verification, human gates, and deterministic checks."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["图", "证据", "验证"]
+    audience_zh: "L4 学员"
+    audience_en: "L4 learners"
+    hours_zh: "作为阅读材料"
+    hours_en: "Reading material"
+    recommend_zh: "用来对照原创证据仓库：关系上面要带着证据，而不是只连一条线。"
+    recommend_en: "Compare it with the original evidence repositories: an edge should carry its evidence, not just connect two boxes."
+    boundary_zh: "图上的边不是因果关系，除非原始材料这么说并且被人确认。"
+    boundary_en: "An edge is not a causal claim unless the source says so and a person confirms it."
+
+  - repo: codex-luna-worker
+    kind: fork
+    module: e
+    fork_group: agent
+    level: L3
+    status: pilot
+    upstream: "2023Anita/codex-luna-worker"
+    upstream_author: "2023Anita"
+    title_zh: "Luna 子代理"
+    title_en: "codex-luna-worker"
+    summary_zh: "上游是一个强调透明、安全和可复核的自定义子代理。"
+    summary_en: "An upstream custom subagent described as transparent, safety-aware, and verifiable."
+    idea_zh: "一个强调透明、安全和可复核的自定义子代理。"
+    idea_en: "custom subagent described as transparent, safety-aware, and verifiable."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["子代理", "安全", "复核"]
+    audience_zh: "在学子代理分工的学员"
+    audience_en: "Learners studying how subagents divide work"
+    hours_zh: "并入 Agent 工程课"
+    hours_en: "Fold into the agent-engineering class"
+    recommend_zh: "作为“子代理应当留下可核对轨迹”的例子。"
+    recommend_en: "An example of a subagent that is supposed to leave a trail someone can check."
+    boundary_zh: "透明的设计说明不等于它在你的任务上已经安全。敏感数据不要交给子代理。"
+    boundary_en: "A transparent design does not mean it is safe on your task. Do not hand sensitive data to a subagent."
+
+  - repo: codex-jev-assistant
+    kind: fork
+    module: e
+    fork_group: agent
+    level: L3
+    status: pilot
+    upstream: "2023Anita/codex-jev-assistant"
+    upstream_author: "2023Anita"
+    title_zh: "Jev 判断插件"
+    title_en: "codex-jev-assistant"
+    summary_zh: "上游插件用分型判断做风险复核、证据检查、上下文筛选和重排。"
+    summary_en: "An upstream plugin that uses typed judgments for risk review, evidence checks, context screening, and reranking."
+    idea_zh: "上游插件用分型判断做风险复核、证据检查、上下文筛选和重排。"
+    idea_en: "plugin that uses typed judgments for risk review, evidence checks, context screening, and reranking."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["风险", "证据", "插件"]
+    audience_zh: "想给代理加一个检查步骤的学员"
+    audience_en: "Learners who want a check step in front of an agent"
+    hours_zh: "半课时"
+    hours_en: "Half a session"
+    recommend_zh: "用来讨论“检查”本身也要有类型，不能只说一句看起来合理。"
+    recommend_en: "Use it to discuss how a check needs a type, not only a sentence that sounds reasonable."
+    boundary_zh: "风险判断不是临床风险评估，不能对患者分层或出具建议。"
+    boundary_en: "A risk judgment here is not a clinical risk score. It must not stratify patients or issue advice."
+
+  - repo: workflow-eval-lab
+    kind: fork
+    module: e
+    fork_group: agent
+    level: L3
+    status: pilot
+    upstream: "2023Anita/workflow-eval-lab"
+    upstream_author: "2023Anita"
+    title_zh: "工作流评估实验"
+    title_en: "workflow-eval-lab"
+    summary_zh: "上游是带六维评分、改进卡和版本对照的工作流评估技能。"
+    summary_en: "An upstream skill for evidence-aware workflow evaluation, with six-dimension scores, improvement cards, and version comparisons."
+    idea_zh: "带六维评分、改进卡和版本对照的工作流评估技能。"
+    idea_en: "skill for evidence-aware workflow evaluation, with six-dimension scores, improvement cards, and version comparisons."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["评估", "工作流", "评分"]
+    audience_zh: "想给自己的提示流程打分的学员"
+    audience_en: "Learners scoring their own prompt workflows"
+    hours_zh: "1 课时评估一个自己的小流程"
+    hours_en: "One session to score one small workflow of your own"
+    recommend_zh: "课堂上用来复盘，而不是用来给医学论文打分。"
+    recommend_en: "Use it in class as a retrospective, not as a grade for a medical paper."
+    boundary_zh: "分数是教学用的过程记录，不是期刊评审或临床质量结论。"
+    boundary_en: "The score is a teaching record of a process. It is not journal peer review or a clinical quality conclusion."
+
+  - repo: roach-pi
+    kind: fork
+    module: e
+    fork_group: agent
+    level: L4
+    status: pilot
+    upstream: "tmdgusya/roach-pi"
+    upstream_author: "tmdgusya"
+    upstream_demo: "https://tmdgusya.github.io/roach-pi/"
+    title_zh: "roach-pi"
+    title_en: "roach-pi"
+    summary_zh: "上游是给 pi 编程代理的严格工程纪律和多代理编排。"
+    summary_en: "Upstream engineering discipline and multi-agent orchestration for the pi coding agent."
+    idea_zh: "给 pi 编程代理的严格工程纪律和多代理编排。"
+    idea_en: "engineering discipline and multi-agent orchestration for the pi coding agent."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。也可以先打开上游演示，看看成品。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it. You can also open the upstream demo and look at the finished piece."
+    topics: ["多代理", "工程纪律", "pi"]
+    audience_zh: "已经在用编程代理、想看编排约束的学员"
+    audience_en: "People already using a coding agent who want to see orchestration constraints"
+    hours_zh: "作为 L4 阅读"
+    hours_en: "L4 reading"
+    recommend_zh: "看多代理分工时，约束如何写在流程里而不是写在口号里。"
+    recommend_en: "See how multi-agent constraints are written into the workflow rather than left as a slogan."
+    boundary_zh: "编排规则是上游项目的。不要把它接到医院内网或未脱敏病历。"
+    boundary_en: "The rules belong to the upstream project. Do not connect it to a hospital network or to records that still identify a patient."
+
+  - repo: garden-skills
+    kind: fork
+    module: e
+    fork_group: agent
+    level: L2
+    status: pilot
+    upstream: "ConardLi/garden-skills"
+    upstream_author: "ConardLi"
+    title_zh: "Garden Skills"
+    title_en: "garden-skills"
+    summary_zh: "上游是一组开源技能，涵盖网页设计、知识检索和图像生成等。"
+    summary_en: "An upstream open-source skill collection spanning web design, retrieval, and image generation."
+    idea_zh: "一组开源技能，涵盖网页设计、知识检索和图像生成等。"
+    idea_en: "open-source skill collection spanning web design, retrieval, and image generation."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["技能", "网页", "检索"]
+    audience_zh: "想做小网页或检索演示的学员"
+    audience_en: "Learners making a small page or a retrieval demo"
+    hours_zh: "按需要选一个技能，半课时"
+    hours_en: "Pick one skill when needed. Half a session."
+    recommend_zh: "技能种类多，适合作为“选一个就够”的例子，避免一次装上一整园。"
+    recommend_en: "The garden is broad. Use it as an example of choosing one skill instead of installing the whole set."
+    boundary_zh: "检索和生图技能会接触外部内容。不要把患者信息当作查询词。"
+    boundary_en: "Retrieval and image skills touch outside content. Do not use patient information as a query."
+
+  - repo: Agent-Learning-Hub
+    kind: fork
+    module: e
+    fork_group: agent
+    level: L1
+    status: pilot
+    upstream: "datawhalechina/Agent-Learning-Hub"
+    upstream_author: "datawhalechina"
+    upstream_demo: "https://datawhalechina.github.io/Agent-Learning-Hub/"
+    title_zh: "Agent 学习路线"
+    title_en: "Agent Learning Hub"
+    summary_zh: "上游是 AI Agent 的学习路线和资料收集。"
+    summary_en: "An upstream learning path and reading list for AI agents."
+    idea_zh: " AI Agent 的学习路线和资料收集。"
+    idea_en: "learning path and reading list for AI agents."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。也可以先打开上游演示，看看成品。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it. You can also open the upstream demo and look at the finished piece."
+    topics: ["学习路线", "Agent", "资料"]
+    audience_zh: "刚进入 L1、还没写技能的学员"
+    audience_en: "Learners at the start of L1 who have not written a skill yet"
+    hours_zh: "课后按路线自学；课上只用 15 分钟指出本站 L0–L4 和它的差别"
+    hours_en: "Follow the path after class. In class, take 15 minutes to contrast it with this site's L0–L4."
+    recommend_zh: "外部学习路线，用来和本站从临床课堂出发的路径对照，而不是替换它。"
+    recommend_en: "An external path to set beside this site's clinical classroom. It does not replace it."
+    boundary_zh: "资料列表会过时。打开链接前仍要看日期和许可。它不教临床决策。"
+    boundary_en: "Reading lists go stale. Check the date and the license before you open a link. It does not teach clinical decisions."
+
+  - repo: OpenIntelligentUI
+    kind: fork
+    module: e
+    fork_group: agent
+    level: L3
+    status: pilot
+    upstream: "CopilotKit/OpenIntelligentUI"
+    upstream_author: "CopilotKit"
+    upstream_demo: "https://opengenerativeui.copilotkit.ai/"
+    title_zh: "生成式界面框架"
+    title_en: "OpenIntelligentUI"
+    summary_zh: "上游是开源的生成式界面框架。"
+    summary_en: "An upstream open-source generative UI framework."
+    idea_zh: "开源的生成式界面框架。"
+    idea_en: "open-source generative UI framework."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。也可以先打开上游演示，看看成品。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it. You can also open the upstream demo and look at the finished piece."
+    topics: ["生成式界面", "前端", "框架"]
+    audience_zh: "想了解代理如何生成界面的学员"
+    audience_en: "Learners looking at how an agent generates an interface"
+    hours_zh: "作为演示阅读，不在本站复现框架"
+    hours_en: "A demo to read. This site does not rebuild the framework."
+    recommend_zh: "用来说明：界面可以由代理生成，但生成的界面仍要有人看过才能上课。"
+    recommend_en: "It shows that an agent can generate an interface, and that a person still has to look before it is taught."
+    boundary_zh: "不要把生成的界面直接用于采集患者信息。"
+    boundary_en: "Do not use a generated interface to collect patient information."
+
+  - repo: ppt-master
+    kind: fork
+    module: e
+    fork_group: office
+    level: L2
+    status: pilot
+    upstream: "hugohe3/ppt-master"
+    upstream_author: "hugohe3"
+    upstream_demo: "https://hugohe3.github.io/ppt-master-examples/"
+    title_zh: "PPT Master"
+    title_en: "ppt-master"
+    summary_zh: "上游工具把文档或题目做成原生 PowerPoint，包含形状、切换、图表和备注朗读。"
+    summary_en: "An upstream tool that turns a document or a topic into a native PowerPoint, with shapes, transitions, charts, and spoken notes."
+    idea_zh: "上游工具把文档或题目做成原生 PowerPoint，包含形状、切换、图表和备注朗读。"
+    idea_en: "tool that turns a document or a topic into a native PowerPoint, with shapes, transitions, charts, and spoken notes."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。也可以先打开上游演示，看看成品。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it. You can also open the upstream demo and look at the finished piece."
+    topics: ["PPT", "幻灯片"]
+    audience_zh: "需要从提纲生成可编辑幻灯片的人"
+    audience_en: "People who want an outline turned into editable slides"
+    hours_zh: "和医学会议 PPT 技能对照 1 课时：一个偏生成，一个偏医学约束"
+    hours_en: "One session beside the medical-conference skill: one tool generates, the other constrains medical slides"
+    recommend_zh: "办公组里的通用幻灯片工具，用来和原创的医学 PPT 技能对照。"
+    recommend_en: "The general slide tool in the office group, taught against the original medical-slide skill."
+    boundary_zh: "通用幻灯片技能不知道医学限定条件。医学内容请回到 medical-conference-pptx 的规则，并人工核对。"
+    boundary_en: "A general slide skill does not know medical qualifiers. For medical content, return to the medical-conference skill and check it by hand."
+
+  - repo: patent-disclosure-skill
+    kind: fork
+    module: e
+    fork_group: office
+    level: L3
+    status: pilot
+    upstream: "handsomestWei/patent-disclosure-skill"
+    upstream_author: "handsomestWei"
+    upstream_demo: "https://skillhub.cn/skills/patent-disclosure-skill"
+    title_zh: "专利交底技能"
+    title_en: "patent-disclosure-skill"
+    summary_zh: "上游技能帮助挖掘专利点、撰写交底书，并辅助理解审查意见。"
+    summary_en: "An upstream skill for finding patent points, drafting a disclosure, and reading office actions."
+    idea_zh: "上游技能帮助挖掘专利点、撰写交底书，并辅助理解审查意见。"
+    idea_en: "skill for finding patent points, drafting a disclosure, and reading office actions."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。也可以先打开上游演示，看看成品。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it. You can also open the upstream demo and look at the finished piece."
+    topics: ["专利", "交底书"]
+    audience_zh: "想了解交底书结构的研发人员；不代替专利代理师"
+    audience_en: "Developers who want to see how a disclosure is structured. Not a substitute for a patent attorney."
+    hours_zh: "1 课时看结构，不在课上写真实发明"
+    hours_en: "One session on structure. Do not draft a real invention in class."
+    recommend_zh: "办公与专利组的入口，先理解交底书不是已经递交的申请。"
+    recommend_en: "Entrance to the patent group. A disclosure draft is not a filed application."
+    boundary_zh: "课堂不分析未公开的发明细节。正式文本必须由有资格的人复核后再递交。"
+    boundary_en: "Class does not analyse unpublished invention details. A qualified person reviews the text before filing."
+
+  - repo: cn-patent-drafter
+    kind: fork
+    module: e
+    fork_group: office
+    level: L3
+    status: pilot
+    upstream: "handsomeZR-netizen/cn-patent-drafter"
+    upstream_author: "handsomeZR-netizen"
+    title_zh: "中国发明专利起草技能"
+    title_en: "cn-patent-drafter"
+    summary_zh: "上游是按中国发明专利撰写需要组织的起草技能。"
+    summary_en: "An upstream drafting skill organised around Chinese invention-patent writing."
+    idea_zh: "按中国发明专利撰写需要组织的起草技能。"
+    idea_en: "drafting skill organised around Chinese invention-patent writing."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["专利", "CNIPA", "起草"]
+    audience_zh: "已有交底材料、想看权利要求结构的人"
+    audience_en: "People who already have disclosure notes and want to see claim structure"
+    hours_zh: "与交底技能同课，只作结构对照"
+    hours_en: "Same session as the disclosure skill, for structure only"
+    recommend_zh: "和交底技能分开放：一个找点，一个组织文本。"
+    recommend_en: "Keep it separate from the disclosure skill: one finds the point, the other organises text."
+    boundary_zh: "不要把仓库简介中的“全网首个”或时效声明当成法律事实。输出不是递交稿。"
+    boundary_en: "Do not treat marketing lines in the repository description as legal fact. The output is not a filing."
+
+  - repo: paper-to-cn-patent
+    kind: fork
+    module: e
+    fork_group: office
+    level: L3
+    status: pilot
+    upstream: "learnljs/paper-to-cn-patent"
+    upstream_author: "learnljs"
+    title_zh: "论文到中国专利草稿"
+    title_en: "paper-to-cn-patent"
+    summary_zh: "上游技能把论文、附图和作者备注整理成中文发明专利草稿，并要求保留人工复核。"
+    summary_en: "An upstream skill that turns a paper, figures, and author notes into a Chinese invention-patent draft, and requires human review."
+    idea_zh: "上游技能把论文、附图和作者备注整理成中文发明专利草稿，并要求保留人工复核。"
+    idea_en: "skill that turns a paper, figures, and author notes into a Chinese invention-patent draft, and requires human review."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["论文", "专利", "复核"]
+    audience_zh: "同时在写论文和了解专利文本差异的学员"
+    audience_en: "Learners who need to see how a paper and a patent draft differ"
+    hours_zh: "1 课时，只用已经公开的论文做例子"
+    hours_en: "One session, using an already public paper as the example"
+    recommend_zh: "用来讲论文语言和专利语言不是一回事，以及草稿必须人工复核。"
+    recommend_en: "Use it to show that paper language and patent language differ, and that the draft needs a person."
+    boundary_zh: "不要用未发表数据。上游也要求避免过度泛化和公开不充分。本站不提供递交建议。"
+    boundary_en: "Do not use unpublished data. The upstream project itself warns against over-generalising and insufficient disclosure. This site does not advise on filing."
+
+  - repo: PatentDatabases
+    kind: fork
+    module: e
+    fork_group: office
+    level: L1
+    status: pilot
+    upstream: "CNIPA/PatentDatabases"
+    upstream_author: "CNIPA"
+    title_zh: "各国专利数据库链接"
+    title_en: "PatentDatabases"
+    summary_zh: "上游汇总了各地专利信息数据库的网址。"
+    summary_en: "An upstream list of patent-database URLs from around the world."
+    idea_zh: "上游汇总了各地专利信息数据库的网址。"
+    idea_en: "list of patent-database URLs from around the world."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["专利", "数据库", "链接"]
+    audience_zh: "需要自己去官方库检索、而不是只看技能草稿的人"
+    audience_en: "People who should search an official database rather than stop at a skill draft"
+    hours_zh: "10 分钟，演示打开官方入口"
+    hours_en: "Ten minutes to open an official entry point"
+    recommend_zh: "专利课最后一步：回到数据库，而不是停在生成文本。"
+    recommend_en: "The last step of a patent class: go back to a database instead of stopping at generated text."
+    boundary_zh: "链接会失效。检索前核对是否仍是官方入口。链接列表不是法律意见。"
+    boundary_en: "Links rot. Confirm the official entry before you search. A link list is not legal advice."
+
+  - repo: emergency-mdt-ai-platform
+    kind: fork
+    module: e
+    fork_group: other
+    level: L3
+    status: pilot
+    upstream: "2023Anita/emergency-mdt-ai-platform"
+    upstream_author: "2023Anita"
+    title_zh: "急诊 MDT 平台"
+    title_en: "Emergency MDT platform"
+    summary_zh: "上游仓库描述的是急诊分诊、鉴别、报告 OCR 和以患者为中心的急诊流程界面。"
+    summary_en: "The upstream repository describes an emergency interface for triage, differential diagnosis, report OCR, and a patient-centered workflow."
+    idea_zh: "上游仓库描述的是急诊分诊、鉴别、报告 OCR 和以患者为中心的急诊流程界面。"
+    idea_en: "The upstream repository describes an emergency interface for triage, differential diagnosis, report OCR, and a patient-centered workflow."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["急诊", "分诊", "界面"]
+    audience_zh: "只在教学讨论里看流程界面的临床学员"
+    audience_en: "Clinical learners discussing a workflow interface in class"
+    hours_zh: "半课时讨论边界，不演示真实病历"
+    hours_en: "Half a session on limits. No real records."
+    recommend_zh: "收录是为了把“看起来像临床决策支持的工具”放到边界课里讨论，而不是推荐用它看病。"
+    recommend_en: "It is listed so a boundaries class can discuss a tool that looks like decision support. It is not recommended for care."
+    boundary_zh: "不接入真实患者，不上传检查单，不把输出当成医嘱、分诊结论或本院流程。"
+    boundary_en: "Do not connect a real patient, upload a report, or treat the output as an order, a triage decision, or hospital protocol."
+
+  - repo: reverse-skill
+    kind: fork
+    module: e
+    fork_group: other
+    level: L4
+    status: pilot
+    upstream: "zhaoxuya520/reverse-skill"
+    upstream_author: "zhaoxuya520"
+    title_zh: "安全研究技能路由"
+    title_en: "reverse-skill"
+    summary_zh: "上游是面向授权安全研究的技能路由包，给编程代理选择工具用。"
+    summary_en: "An upstream skill router for authorized security research, used to point a coding agent at tools."
+    idea_zh: "面向授权安全研究的技能路由包，给编程代理选择工具用。"
+    idea_en: "skill router for authorized security research, used to point a coding agent at tools."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it."
+    topics: ["安全研究", "技能路由"]
+    audience_zh: "只在讨论“工具边界”时提及；不作为医学课内容"
+    audience_en: "Mentioned only when discussing tool limits. Not medical course content."
+    hours_zh: "不排操作课。若提到，只用一句话说明它不在临床课堂里使用"
+    hours_en: "No practical session. If it comes up, one sentence is enough: it is not used in the clinical classroom."
+    recommend_zh: "放在其他组，是为了不把安全研究工具混进临床或亲子模块。"
+    recommend_en: "Filed under Other so a security-research tool is not mixed into the clinical or family modules."
+    boundary_zh: "只限授权测试与防御性研究。本站不提供利用步骤，也不在课堂上运行。"
+    boundary_en: "Authorized testing and defensive research only. This site does not provide exploit steps and does not run the tools in class."
+
+  - repo: NotionNext
+    kind: fork
+    module: e
+    fork_group: other
+    level: L2
+    status: pilot
+    upstream: "notionnext-org/NotionNext"
+    upstream_author: "notionnext-org"
+    upstream_demo: "https://tangly1024.com"
+    title_zh: "NotionNext"
+    title_en: "NotionNext"
+    summary_zh: "上游是用 Next.js 和 Notion API 搭建的静态博客方案。"
+    summary_en: "An upstream static blog built with Next.js and the Notion API."
+    idea_zh: "用 Next.js 和 Notion API 搭建的静态博客方案。"
+    idea_en: "static blog built with Next.js and the Notion API."
+    steps_zh: "这是收藏来的上游仓库，不是在这里从零做出来的。它怎样写成现在这样，本站没有记录，待补充。"
+    steps_en: "This is an upstream repository kept as a fork, not something built from scratch here. How it was made is not recorded on this site. To be added."
+    reproduce_zh: "打开上游说明，只试它已经写明的用法。看不清的制作过程就标待补充，不要替它编。也可以先打开上游演示，看看成品。"
+    reproduce_en: "Open the upstream instructions and try only the use they already describe. If the making is not written down, mark it as still to be added. Do not invent it. You can also open the upstream demo and look at the finished piece."
+    topics: ["博客", "Notion", "Next.js"]
+    audience_zh: "想另建个人站点的学员；本课堂本身不用它"
+    audience_en: "Learners who want a different personal site. This classroom does not use it."
+    hours_zh: "不在本站课程内排课，只在项目页可找到"
+    hours_en: "Not scheduled in this classroom. It remains on the projects page."
+    recommend_zh: "收录是因为公开 fork 列表里有它。本站选择静态页面和手写数据，不依赖 Notion。"
+    recommend_en: "It is listed because the public fork list includes it. This classroom uses static pages and hand-written data, not Notion."
+    boundary_zh: "不要把课程笔记或患者相关内容放进第三方笔记服务再公开同步。"
+    boundary_en: "Do not put lesson notes or anything patient-related into a third-party notes service and sync it publicly."

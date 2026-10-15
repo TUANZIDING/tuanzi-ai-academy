@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>团子 AI 学院 · AI 战术手册 | Tuanzi AI Academy</title>
+<meta name="description" content="丁海祥（急诊创伤外科医生）的 AI 使用策略教学站：L0–L4 战术路线、可点开的开源作品、线上线下课件。">
+<link rel="stylesheet" href="assets/stylev1.0.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+<header class="nav">
+  <a class="brand" href="#top" aria-label="团子 AI 学院 首页">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><ellipse cx="20" cy="20" rx="17" ry="11" transform="rotate(-30 20 20)" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M13 24 27 16M16 20l2 3M19 18l2 3M22 16l2 3" stroke="currentColor" stroke-width="2"/></svg>
+    <span>团子 AI 学院<small>TUANZI AI ACADEMY</small></span>
+  </a>
+  <nav aria-label="主导航">
+    <a href="#playbook">战术路线</a>
+    <a href="#gallery">作品馆</a>
+    <a href="#lessons">课件馆</a>
+    <a href="#safety">安全边界</a>
+    <a href="#toolbox">开源工具箱</a>
+    <a href="#about">关于</a>
+  </nav>
+  <button class="btn ghost" id="projector" aria-pressed="false" title="线下投屏时放大字号">投屏模式</button>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="hero-text">
+    <p class="eyebrow">AI PLAYBOOK · 医生的 AI 战术手册</p>
+    <h1>先会用，<br><em>再用对。</em></h1>
+    <p class="lead">一名急诊创伤外科医生的 AI 实战课：每一招都配一个能点开的真实作品，每一个结论都要能被核查。</p>
+    <div class="cta">
+      <a class="btn primary" href="#playbook">从 L0 开始 →</a>
+      <a class="btn ghost" href="#gallery">直接看作品</a>
+    </div>
+    <ul class="stats" id="stats" aria-label="站点数据"></ul>
+  </div>
+  <figure class="hero-board" aria-label="战术板动画：QB、RB、WR 三条路线">
+    <svg viewBox="0 0 420 320" role="img">
+      <title>AI 战术板</title>
+      <defs><pattern id="yard" width="42" height="320" patternUnits="userSpaceOnUse"><path d="M0 0V320" stroke="#1e3a5f" stroke-width="1"/></pattern></defs>
+      <rect width="420" height="320" rx="18" fill="#0b1a2e"/>
+      <rect width="420" height="320" rx="18" fill="url(#yard)"/>
+      <line x1="0" y1="200" x2="420" y2="200" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 6" opacity=".7"/>
+      <g class="route r1"><path d="M110 230 C110 160 150 120 210 90" /><circle cx="110" cy="230" r="11"/><text x="96" y="262">问</text></g>
+      <g class="route r2"><path d="M210 240 C230 180 300 170 330 110" /><circle cx="210" cy="240" r="11"/><text x="196" y="272">核对</text></g>
+      <g class="route r3"><path d="M310 230 C330 190 380 160 360 60" /><circle cx="310" cy="230" r="11"/><text x="296" y="262">构建</text></g>
+      <text x="22" y="36" class="board-label">PLAY 01 · 先问，再核对，最后构建</text>
+      <text x="22" y="300" class="board-label small">人类做决定 · AI 跑路线</text>
+    </svg>
+  </figure>
+</section>
+
+<section id="playbook" class="section">
+  <p class="eyebrow">01 / PLAYBOOK</p>
+  <h2>AI 使用策略 · 五档战术路线</h2>
+  <p class="sub">像橄榄球推进码数一样，一档一档往前推。点击任一档，作品馆只显示这一档的示范作品。</p>
+  <ol class="levels" id="levels"></ol>
+</section>
+
+<section id="gallery" class="section">
+  <p class="eyebrow">02 / GALLERY</p>
+  <h2>作品馆</h2>
+  <p class="sub">全部来自我的 GitHub 公开项目。<b>在线演示</b>可以课上直接打开；其余是源码和文档。</p>
+  <div class="filters" role="toolbar" aria-label="按板块筛选" id="filters"></div>
+  <p class="filter-state" id="filterState" aria-live="polite"></p>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="lessons" class="section">
+  <p class="eyebrow">03 / LESSONS</p>
+  <h2>课件馆 · 示范课路线</h2>
+  <p class="sub">线上线下课都按同一条主线讲。每场课后的课件会按场次上架到这里。</p>
+  <div class="lessons" id="lessonList"></div>
+</section>
+
+<section id="safety" class="section safety">
+  <p class="eyebrow">04 / SAFETY</p>
+  <h2>AI 可以跑路线，<em>判断留给人。</em></h2>
+  <div class="rules">
+    <article><span>01</span><h3>患者隐私停在门外</h3><p>任何真实病历、影像、身份信息都不进入公共 AI。公开仓库只放代码与模拟数据。</p></article>
+    <article><span>02</span><h3>证据分三层</h3><p>每个论断标明：事实、关联还是推测。没有来源的结论不进课件。</p></article>
+    <article><span>03</span><h3>人类复核在环</h3><p>AI 产出的诊疗、统计、专利、投稿内容，都要由专业人员最终确认。</p></article>
+    <article><span>04</span><h3>失败即停</h3><p>证据不足时，宁可让 AI 说“查不到”，也不要让它编一个看似合理的答案。</p></article>
+  </div>
+</section>
+
+<section id="toolbox" class="section">
+  <p class="eyebrow">05 / TOOLBOX</p>
+  <h2>开源工具箱</h2>
+  <p class="sub">我收藏并在用的他人开源项目（fork），课上作为“装备库”介绍，和我自己的作品分开。</p>
+  <div class="tools" id="tools"></div>
+</section>
+
+<section id="about" class="section about">
+  <div>
+    <p class="eyebrow">06 / COACH</p>
+    <h2>丁海祥 · Haixiang Ding, MD</h2>
+    <p>急诊创伤外科主治医师，苏州大学临床医学博士在读。研究方向：放射性骨骼肌损伤、骨质疏松。把临床问题、教学经验和开源实践放在同一张战术板上，帮助医护人员从“想学 AI”走到“能用、用对”。</p>
+    <div class="cta">
+      <a class="btn primary" href="https://tuanziding.github.io/" target="_blank" rel="noopener">个人主页 ↗</a>
+      <a class="btn ghost" href="https://github.com/TUANZIDING" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn ghost" href="https://github.com/TUANZIDING/tuanzi-ai-academy/issues/new?title=%E6%88%91%E6%83%B3%E5%AD%A6%EF%BC%9A" target="_blank" rel="noopener">告诉我下一课想学什么 ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <p>团子 AI 学院 · Learn AI. Verify Everything. Build for Care.</p>
+  <p class="muted" id="updated"></p>
+</footer>
+<script src="assets/appv1.0.js"></script>
+</body>
+</html>

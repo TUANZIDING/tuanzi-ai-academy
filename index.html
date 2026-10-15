@@ -16,8 +16,11 @@
   </a>
   <nav aria-label="主导航">
     <a href="#playbook">战术路线</a>
+    <a href="#concepts">战术词典</a>
+    <a href="#gear">装备库</a>
     <a href="#gallery">作品馆</a>
     <a href="#lessons">课件馆</a>
+    <a href="#library">延伸学习</a>
     <a href="#safety">安全边界</a>
     <a href="#toolbox">开源工具箱</a>
     <a href="#about">关于</a>
@@ -60,8 +63,23 @@
   <ol class="levels" id="levels"></ol>
 </section>
 
+<section id="concepts" class="section">
+  <p class="eyebrow">02 / GLOSSARY</p>
+  <h2>战术词典 · 23 个必懂 AI 概念</h2>
+  <p class="sub">每个概念一句话讲清楚，再配一个橄榄球比喻。按 L0–L4 排列，跟着档位学；点“深入学”跳到好友的完整课件。</p>
+  <div class="filters" role="toolbar" aria-label="按档位看概念" id="conceptFilters"></div>
+  <div class="concepts" id="conceptGrid"></div>
+</section>
+
+<section id="gear" class="section">
+  <p class="eyebrow">03 / GEAR</p>
+  <h2>装备库 · 常用 AI 工具怎么选</h2>
+  <p class="sub">不求全，只列课上真正会用到的。每件装备写清楚：擅长什么、医生怎么用、要小心什么。</p>
+  <div class="gear" id="gearGrid"></div>
+</section>
+
 <section id="gallery" class="section">
-  <p class="eyebrow">02 / GALLERY</p>
+  <p class="eyebrow">04 / GALLERY</p>
   <h2>作品馆</h2>
   <p class="sub">全部来自我的 GitHub 公开项目。<b>在线演示</b>可以课上直接打开；其余是源码和文档。</p>
   <div class="filters" role="toolbar" aria-label="按板块筛选" id="filters"></div>
@@ -70,14 +88,22 @@
 </section>
 
 <section id="lessons" class="section">
-  <p class="eyebrow">03 / LESSONS</p>
+  <p class="eyebrow">05 / LESSONS</p>
   <h2>课件馆 · 示范课路线</h2>
   <p class="sub">线上线下课都按同一条主线讲。每场课后的课件会按场次上架到这里。</p>
   <div class="lessons" id="lessonList"></div>
 </section>
 
+<section id="library" class="section">
+  <p class="eyebrow">06 / FILM ROOM</p>
+  <h2>延伸学习 · 录像室</h2>
+  <p class="sub" id="libCredit"></p>
+  <div class="filters" role="toolbar" aria-label="按主题筛选课程" id="libFilters"></div>
+  <div class="library" id="libList"></div>
+</section>
+
 <section id="safety" class="section safety">
-  <p class="eyebrow">04 / SAFETY</p>
+  <p class="eyebrow">07 / SAFETY</p>
   <h2>AI 可以跑路线，<em>判断留给人。</em></h2>
   <div class="rules">
     <article><span>01</span><h3>患者隐私停在门外</h3><p>任何真实病历、影像、身份信息都不进入公共 AI。公开仓库只放代码与模拟数据。</p></article>
@@ -88,7 +114,7 @@
 </section>
 
 <section id="toolbox" class="section">
-  <p class="eyebrow">05 / TOOLBOX</p>
+  <p class="eyebrow">08 / TOOLBOX</p>
   <h2>开源工具箱</h2>
   <p class="sub">我收藏并在用的他人开源项目（fork），课上作为“装备库”介绍，和我自己的作品分开。</p>
   <div class="tools" id="tools"></div>
@@ -96,7 +122,7 @@
 
 <section id="about" class="section about">
   <div>
-    <p class="eyebrow">06 / COACH</p>
+    <p class="eyebrow">09 / COACH</p>
     <h2>丁海祥 · Haixiang Ding, MD</h2>
     <p>急诊创伤外科主治医师，苏州大学临床医学博士在读。研究方向：放射性骨骼肌损伤、骨质疏松。把临床问题、教学经验和开源实践放在同一张战术板上，帮助医护人员从“想学 AI”走到“能用、用对”。</p>
     <div class="cta">

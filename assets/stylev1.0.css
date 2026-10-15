@@ -96,7 +96,7 @@ h2{font-size:clamp(1.6rem,3.4vw,2.4rem);margin:.1em 0 .3em}
 .tool:hover{border-color:var(--cyan);border-style:solid}
 .tool b{display:block;font-size:.95rem}
 .tool span{color:var(--muted);font-size:.84rem}
-.about{display:grid;grid-template-columns:1fr;max-width:900px}
+.about{display:block}.about>div{max-width:900px}
 .about p{color:var(--muted)}
 .foot{padding:36px 4vw;border-top:1px solid var(--line);color:var(--ink);text-align:center}
 .muted{color:var(--muted);font-size:.85rem}

@@ -807,8 +807,8 @@ projects:
     topics: ["教学站", "索引", "静态站"]
     audience_zh: "医护、医学生、科研初学者、家长和 AI 零基础学员"
     audience_en: "Clinicians, students, research beginners, parents, and people new to AI"
-    hours_zh: "作为每次课的目录使用，本身不是一节内容课"
-    hours_en: "Use it as the table of contents for a class. It is not itself a content lesson."
+    hours_zh: "总纲课单独成页。平时把它当目录，按模块打开项目。"
+    hours_en: "The framing lesson has its own page. Otherwise use the site as the table of contents and open a module."
     boundary_zh: "本站不提供诊断或治疗建议，也不把 fork 的上游工具写成原创或临床背书。"
     boundary_en: "This site does not diagnose or treat, and it does not present forked tools as original work or as a clinical endorsement."
 

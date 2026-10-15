@@ -1,0 +1,29 @@
+---
+import Bi from "./Bi.astro";
+import { layers } from "../lib/course";
+import { getCatalog, href } from "../lib/catalog";
+
+const { projects } = getCatalog();
+---
+
+<ol class="layers">
+  {
+    layers.map((layer) => {
+      const project = layer.repo ? projects.find((item) => item.repo === layer.repo) : null;
+      const to = project ? href(`projects/${project.repo}/`) : layer.href ? href(layer.href) : "";
+      return (
+        <li class={`layer layer-${layer.id}`}>
+          <p class="layer-kicker">{layer.n}</p>
+          <h3>{layer.name}</h3>
+          <p>{layer.line}</p>
+          {to && (
+            <a href={to}>
+              {project ? <Bi zh={project.title.zh} en={project.title.en} /> : <Bi zh={layer.link_zh} en={layer.link_en} />}
+            </a>
+          )}
+          {project && <span class="layer-reason"><Bi zh={layer.link_zh} en={layer.link_en} /></span>}
+        </li>
+      );
+    })
+  }
+</ol>

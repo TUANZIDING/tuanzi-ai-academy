@@ -23,7 +23,8 @@
 
 子页：
 
-- `/start/` 从自己的想法开始：五步，加一段可抄进 README 的记录模板
+- `/course/future-doctor/` 总纲课「未来的医生，可能需要同时懂医学与 AI」。正文用作者原文，只为网页分段。课堂讨论题单独标出。仓库例子只在 README 对得上时链，否则不放。图是 Prompt → Graph 的梯子，以及 Domain Knowledge / AI Literacy / AI Engineering Mindset 三层
+- `/start/` 从自己的想法开始：五步，加一段可抄进 README 的记录模板。总纲课第 07、09 节和写在最后，接到这条路上
 - `/modules/<id>/` 模块详情（含 `e` 实验室和 `site` 主页与本站）
 - `/projects/` 全部项目，可筛语言、模块、原创/fork、难度、状态
 - `/projects/<repo>/` 单则：原来的想法、工具和步骤、可以照着做的部分

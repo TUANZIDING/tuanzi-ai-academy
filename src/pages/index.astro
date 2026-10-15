@@ -1,6 +1,8 @@
 ---
 import Base from "../layouts/Base.astro";
 import Bi from "../components/Bi.astro";
+import Ladder from "../components/Ladder.astro";
+import Layers from "../components/Layers.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import { FORK_GROUPS, formatDate, getCatalog, href } from "../lib/catalog";
 
@@ -34,7 +36,8 @@ const description = `${site.purpose.zh}。${site.slogan.zh}`;
           <Bi zh="GitHub TUANZIDING" en="GitHub TUANZIDING" />
         </p>
         <div class="hero-actions">
-          <a class="btn solid" href={href("start/")}><Bi zh="从自己的想法开始" en="Start from your idea" /></a>
+          <a class="btn solid" href={href("course/future-doctor/")}><Bi zh="读总纲课" en="Read the course" /></a>
+          <a class="btn" href={href("start/")}><Bi zh="从自己的想法开始" en="Start from your idea" /></a>
           <a class="btn" href="#path"><Bi zh="看这条路" en="See the path" /></a>
         </div>
         <dl class="stats">
@@ -76,6 +79,39 @@ const description = `${site.purpose.zh}。${site.slogan.zh}`;
     </div>
   </section>
 
+  <section class="section syllabus" id="course">
+    <header class="sec-head">
+      <p class="num">0</p>
+      <div>
+        <p class="kicker"><Bi zh="第 0 课 · 总纲" en="Lesson 0 · The frame" /></p>
+        <h2>未来的医生，可能需要同时懂医学与 AI</h2>
+      </div>
+    </header>
+    <blockquote>
+      <p>从 Prompt、Context、Skill 到 Agent、Harness、Loop、Graph，我越来越觉得：AI 不是医生多学的一个软件，而是一种新的能力体系。</p>
+    </blockquote>
+    <p class="lede">
+      <Bi
+        zh="这一课是后面所有项目的总纲：医学仍是底座，AI 是另一套能力。图出自课文第 08 节。原文、讨论题和能对上的仓库，在总纲课里。"
+        en="This lesson frames every project below: medicine stays the base, and AI is another set of abilities. The figures are from section 08 of the essay."
+      />
+    </p>
+    <h3>Prompt → Graph</h3>
+    <Ladder />
+    <h3><Bi zh="三层" en="Three layers" /></h3>
+    <Layers />
+    <p>
+      <Bi
+        zh="课文问的，和这间站是同一件事：一个想法怎样才能做出来。下一节是走法。"
+        en="The essay asks the same thing this site is for: how an idea becomes real. The next section is the way to walk it."
+      />
+    </p>
+    <div class="hero-actions">
+      <a class="btn solid" href={href("course/future-doctor/")}><Bi zh="读总纲课" en="Read the course" /></a>
+      <a class="btn" href="#path"><Bi zh="接着看五步" en="Then the five steps" /></a>
+    </div>
+  </section>
+
   <section class="section" id="path">
     <header class="sec-head">
       <p class="num">02</p>
@@ -84,8 +120,8 @@ const description = `${site.purpose.zh}。${site.slogan.zh}`;
         <h2><Bi zh="一条能跟着走的路" en="A path you can walk" /></h2>
         <p class="lede">
           <Bi
-            zh="这些项目不是拿来陈列的。它们用来看：一个想法怎样被说清、拆开、交给工具、做成打得开的原型，再发布出去。"
-            en="These projects are not a display shelf. They show how an idea gets said, broken down, handed to a tool, turned into a prototype you can open, and then published."
+            zh="总纲课问为什么要走。这一节是走法：一个想法怎样被说清、拆开、交给工具、做成打得开的原型，再发布出去。"
+            en="The course asks why you would walk. This section is the way: how an idea gets said, broken down, handed to a tool, turned into a prototype you can open, and then published."
           />
         </p>
       </div>

@@ -1,0 +1,354 @@
+{
+ "updated": "2026-10-15",
+ "projects": [
+  {
+   "repo": "trauma-master-academy",
+   "title": "创伤救治学院 TraumaMaster Academy",
+   "category": "trauma",
+   "level": "L3",
+   "live": "https://tuanziding.github.io/trauma-master-academy/",
+   "source": "https://github.com/TUANZIDING/trauma-master-academy",
+   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/trauma-master-academy",
+   "summary": "中英双语全流程创伤教育：临床推理、模拟、病例与操作技能。",
+   "teach": "如何用 AI 把一整套课程体系做成可点开的学院"
+  },
+  {
+   "repo": "orthopaedic-trauma-atlas",
+   "title": "骨科创伤操作教学图谱",
+   "category": "trauma",
+   "level": "L3",
+   "live": "https://tuanziding.github.io/orthopaedic-trauma-atlas/",
+   "source": "https://github.com/TUANZIDING/orthopaedic-trauma-atlas",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/orthopaedic-trauma-atlas/main/assets/home/teacher-lecture-v1.png",
+   "summary": "3D 解剖 + 神经血管风险提示的骨科创伤操作图谱。",
+   "teach": "AI 生成教学图 + 人工审核解剖准确性"
+  },
+  {
+   "repo": "radiation-muscle-pathway",
+   "title": "辐射致骨骼肌损伤 · 机制图谱",
+   "category": "research",
+   "level": "L3",
+   "live": "https://tuanziding.github.io/radiation-muscle-pathway/",
+   "source": "https://github.com/TUANZIDING/radiation-muscle-pathway",
+   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/radiation-muscle-pathway",
+   "summary": "按证据分层的放射性肌损伤与修复交互图谱。",
+   "teach": "把文献证据分层可视化：事实 / 关联 / 推测"
+  },
+  {
+   "repo": "trauma-xabcde-classroom",
+   "title": "xABCDE 创伤互动课堂",
+   "category": "trauma",
+   "level": "L3",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/trauma-xabcde-classroom",
+   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/trauma-xabcde-classroom",
+   "summary": "双语 xABCDE 创伤初级评估互动课堂。",
+   "teach": "把临床流程做成可分步演示的课堂"
+  },
+  {
+   "repo": "TraumaMaster-AI-ETM",
+   "title": "TraumaMaster AI · ETM 训练平台",
+   "category": "trauma",
+   "level": "L3",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/TraumaMaster-AI-ETM",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/TraumaMaster-AI-ETM/main/docs/screenshots/Home%20Screen.png",
+   "summary": "基于 ETM/ATLS xABCDE 的 AI 创伤病例模拟与实时反馈。",
+   "teach": "AI 当“标准化病人”：设计边界与反馈"
+  },
+  {
+   "repo": "codex-hark-bridge",
+   "title": "浏览器接力：Codex × Hark",
+   "category": "workflow",
+   "level": "L2",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/codex-hark-bridge",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/codex-hark-bridge/codex/first-edition/%E7%B4%A0%E6%9D%90/%E9%A1%B9%E7%9B%AE%E4%B8%BB%E5%9B%BEv1.1.png",
+   "summary": "两个 AI 协作的教程与模板：交接、恢复、人工决策。",
+   "teach": "多智能体分工：谁动手、谁决定"
+  },
+  {
+   "repo": "codex-obsidian-wechat-workflow",
+   "title": "Codex + Obsidian 公众号创作工作流",
+   "category": "workflow",
+   "level": "L2",
+   "live": "https://tuanziding.github.io/codex-obsidian-wechat-workflow/",
+   "source": "https://github.com/TUANZIDING/codex-obsidian-wechat-workflow",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/codex-obsidian-wechat-workflow/main/docs/assets/workflow-hero.png",
+   "summary": "本地优先、证据可追溯的医学科研公众号写作流程。",
+   "teach": "从笔记到推文：每个论断都有出处"
+  },
+  {
+   "repo": "github-homepage-style",
+   "title": "GitHub 双语首页技能",
+   "category": "workflow",
+   "level": "L2",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/github-homepage-style",
+   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/github-homepage-style",
+   "summary": "可复用的 Codex 技能：主图、导航、成果、使用入口。",
+   "teach": "把一次好结果沉淀成可复用技能"
+  },
+  {
+   "repo": "medical-conference-pptx",
+   "title": "医学会议 PPT 技能",
+   "category": "workflow",
+   "level": "L2",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/medical-conference-pptx",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/medical-conference-pptx/main/assets/template-preview.png",
+   "summary": "可编辑、证据安全的医学会议 PowerPoint 设计与质检。",
+   "teach": "AI 做 PPT 的质检清单"
+  },
+  {
+   "repo": "-patent-machine-playbook",
+   "title": "专利机器 Playbook",
+   "category": "workflow",
+   "level": "L2",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/-patent-machine-playbook",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/-patent-machine-playbook/main/assets/cover.jpg",
+   "summary": "用 AI 辅助专利点挖掘与交底书的工作手册。",
+   "teach": "AI 起草 + 专业人员复核的边界"
+  },
+  {
+   "repo": "research-evidence",
+   "title": "研究证据审阅工作流",
+   "category": "govern",
+   "level": "L1",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/research-evidence",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/research-evidence/main/assets/cover.png",
+   "summary": "基于来源的论断审阅：写明证据边界，由人确认。",
+   "teach": "入门必修：让 AI 的每句话可核查"
+  },
+  {
+   "repo": "Paper-AI-Research-Agent",
+   "title": "可审计文献研究智能体",
+   "category": "govern",
+   "level": "L4",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/Paper-AI-Research-Agent",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/Paper-AI-Research-Agent/main/docs/assets/ai-research-agent-hero.webp",
+   "summary": "证据不足即停（fail-closed）的文献检索与引用核验。",
+   "teach": "防幻觉引用：智能体如何“拒绝胡编”"
+  },
+  {
+   "repo": "topic-drift-guard",
+   "title": "话题漂移守卫",
+   "category": "govern",
+   "level": "L4",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/topic-drift-guard",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/topic-drift-guard/main/docs/assets/topic-drift-guard-hero.webp",
+   "summary": "本地、可审计的多轮智能体跑题监测。",
+   "teach": "长任务里 AI 为什么会跑偏、怎么拉回"
+  },
+  {
+   "repo": "medical-paper-pipeline",
+   "title": "临床论文全流程管线",
+   "category": "govern",
+   "level": "L4",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/medical-paper-pipeline",
+   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/medical-paper-pipeline",
+   "summary": "数据清洗→统计→成稿→期刊格式→审稿回复。",
+   "teach": "全自动的诱惑与必须留给人的关口"
+  },
+  {
+   "repo": "clinical-stats-languages-guide",
+   "title": "医学统计学习实验室",
+   "category": "research",
+   "level": "L1",
+   "live": "https://tuanziding.github.io/clinical-stats-languages-guide/",
+   "source": "https://github.com/TUANZIDING/clinical-stats-languages-guide",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/clinical-stats-languages-guide/codex/clinical-stats-guide/docs/assets/%E4%B8%B4%E5%BA%8A%E6%A8%A1%E6%8B%9F%E6%95%88%E5%BA%94%E5%9B%BEv2.2.png",
+   "summary": "给科研初学者的统计方法、工具与 AI 协作图文指南。",
+   "teach": "让 AI 帮你选统计方法，但你要会验收"
+  },
+  {
+   "repo": "diabetic-osteoporosis-public-transcriptome",
+   "title": "糖尿病骨质疏松公共转录组复现",
+   "category": "research",
+   "level": "L4",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/diabetic-osteoporosis-public-transcriptome",
+   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/diabetic-osteoporosis-public-transcriptome",
+   "summary": "公共转录组数据的可复现再分析。",
+   "teach": "用公开数据做研究：代码即证据"
+  },
+  {
+   "repo": "nhanes-grip-vfa-2013-2014",
+   "title": "NHANES 握力与椎体骨折",
+   "category": "research",
+   "level": "L4",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/nhanes-grip-vfa-2013-2014",
+   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/nhanes-grip-vfa-2013-2014",
+   "summary": "NHANES 握力与 VFA 椎体骨折的可复现档案。",
+   "teach": "公共数据库研究的完整复现包"
+  },
+  {
+   "repo": "inspire-hypotension-reproducibility",
+   "title": "INSPIRE 低血压可复现分析",
+   "category": "research",
+   "level": "L4",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/inspire-hypotension-reproducibility",
+   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/inspire-hypotension-reproducibility",
+   "summary": "BMC Anesthesiology 投稿的复现代码，不含患者数据。",
+   "teach": "只公开代码、不公开患者数据的做法"
+  },
+  {
+   "repo": "saaki-public-data-reproducibility-audit",
+   "title": "SA-AKI microRNA 复现审计",
+   "category": "research",
+   "level": "L4",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/saaki-public-data-reproducibility-audit",
+   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/saaki-public-data-reproducibility-audit",
+   "summary": "脓毒症 AKI 循环 microRNA 信号的公共数据复现审计。",
+   "teach": "用 AI 审计已发表结论能否复现"
+  },
+  {
+   "repo": "peter-rabbit-interactive",
+   "title": "彼得兔互动伴读",
+   "category": "family",
+   "level": "L3",
+   "live": "https://tuanziding.github.io/peter-rabbit-interactive/",
+   "source": "https://github.com/TUANZIDING/peter-rabbit-interactive",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/peter-rabbit-interactive/main/play/peter-rabbit/img/ch01-spreadv1.0.webp",
+   "summary": "四章有声漫画 + 五关英语练习的亲子伴读。",
+   "teach": "家长用 AI 给自己孩子做读物"
+  },
+  {
+   "repo": "comic-companion-course",
+   "title": "漫画伴读实践课（12 课）",
+   "category": "family",
+   "level": "L3",
+   "live": "https://tuanziding.github.io/comic-companion-course/",
+   "source": "https://github.com/TUANZIDING/comic-companion-course",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/comic-companion-course/main/course/assets/%E8%AF%BE%E7%A8%8B%E5%B0%81%E9%9D%A2v1.1.webp",
+   "summary": "免费非商业课程：真实案例、提示词、可运行排版示例。",
+   "teach": "一本书变成一套伴读课的完整步骤"
+  },
+  {
+   "repo": "storysprout",
+   "title": "故事芽 StorySprout",
+   "category": "family",
+   "level": "L2",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/storysprout",
+   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/storysprout",
+   "summary": "儿童漫画伴读的内容设计、提示词与数据契约（规划中）。",
+   "teach": "先写清“数据契约”，再让 AI 动手"
+  },
+  {
+   "repo": "nianjing",
+   "title": "念景 · 纸上影像创作桌",
+   "category": "family",
+   "level": "L3",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/nianjing",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/nianjing/main/%E6%96%87%E6%A1%A3/%E4%B8%BB%E5%9B%BE/%E5%BF%B5%E6%99%AF%E5%B0%81%E9%9D%A2v1.0.png",
+   "summary": "把心里的话做成会动的画：摄影与绘画拼接、配乐、本地导出。",
+   "teach": "AI 创作工具的本地优先设计"
+  },
+  {
+   "repo": "epang-palace",
+   "title": "阿房宫前殿 · 三维复原假说",
+   "category": "explore",
+   "level": "L3",
+   "live": "https://tuanziding.github.io/epang-palace/",
+   "source": "https://github.com/TUANZIDING/epang-palace",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/epang-palace/main/shots/27_surroundings_hero.png",
+   "summary": "可拆层、剖切、第一人称走上殿的 three.js 复原假说。",
+   "teach": "区分“考古事实”和“推测”的可视化"
+  },
+  {
+   "repo": "chinese-chess-learning",
+   "title": "苏格拉底式象棋学习",
+   "category": "explore",
+   "level": "L3",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/chinese-chess-learning",
+   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/chinese-chess-learning",
+   "summary": "融合苏格拉底式提问的中国象棋互动学习平台。",
+   "teach": "让 AI 提问而不是直接给答案"
+  }
+ ],
+ "toolbox": [
+  {
+   "repo": "Nature-Paper-Skills",
+   "title": "Nature 论文写作技能",
+   "summary": "起草、修改、审稿回复的写作工作流",
+   "source": "https://github.com/TUANZIDING/Nature-Paper-Skills"
+  },
+  {
+   "repo": "scientific-agent-skills",
+   "title": "科研智能体技能库",
+   "summary": "把通用智能体变成科研助手",
+   "source": "https://github.com/TUANZIDING/scientific-agent-skills"
+  },
+  {
+   "repo": "OpenResearch",
+   "title": "OpenResearch",
+   "summary": "让编程智能体做研究",
+   "source": "https://github.com/TUANZIDING/OpenResearch"
+  },
+  {
+   "repo": "agent-skills",
+   "title": "Agent Skills",
+   "summary": "工程级 AI 编程技能",
+   "source": "https://github.com/TUANZIDING/agent-skills"
+  },
+  {
+   "repo": "diagram-design",
+   "title": "Diagram Design",
+   "summary": "44 种编辑级图表设计",
+   "source": "https://github.com/TUANZIDING/diagram-design"
+  },
+  {
+   "repo": "anatomy",
+   "title": "Anatomy 结构图技能",
+   "summary": "等距交互结构插画",
+   "source": "https://github.com/TUANZIDING/anatomy"
+  },
+  {
+   "repo": "machine-skill",
+   "title": "Machine Skill",
+   "summary": "一句话生成物理交互模拟",
+   "source": "https://github.com/TUANZIDING/machine-skill"
+  },
+  {
+   "repo": "ppt-master",
+   "title": "PPT Master",
+   "summary": "文档直接生成原生 PPT",
+   "source": "https://github.com/TUANZIDING/ppt-master"
+  },
+  {
+   "repo": "human-atlas",
+   "title": "Human Atlas",
+   "summary": "开源 3D 人体解剖浏览器",
+   "source": "https://github.com/TUANZIDING/human-atlas"
+  },
+  {
+   "repo": "bioicons",
+   "title": "Bioicons",
+   "summary": "免费生物化学科研图标",
+   "source": "https://github.com/TUANZIDING/bioicons"
+  },
+  {
+   "repo": "figures4papers",
+   "title": "figures4papers",
+   "summary": "论文级 Python 绘图脚本",
+   "source": "https://github.com/TUANZIDING/figures4papers"
+  },
+  {
+   "repo": "Agent-Learning-Hub",
+   "title": "Agent 学习路线",
+   "summary": "Datawhale 智能体资料库",
+   "source": "https://github.com/TUANZIDING/Agent-Learning-Hub"
+  }
+ ]
+}

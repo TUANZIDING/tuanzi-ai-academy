@@ -1,0 +1,432 @@
+{
+ "updated": "2026-10-16",
+ "credit": {
+  "name": "OiOi 人工智能学院（Dr. Anita）",
+  "url": "https://oioi-academy.com/"
+ },
+ "concepts": [
+  {
+   "level": "L0",
+   "term": "大语言模型 LLM",
+   "def": "根据前文预测下一个词的模型。擅长组织语言，但不保证事实正确。",
+   "play": "天赋极高的新秀：没见过的局面也会“脑补”出一个动作。",
+   "more": "https://oioi-academy.com/learning/courses/twenty-ai-concepts/"
+  },
+  {
+   "level": "L0",
+   "term": "Token 与上下文窗口",
+   "def": "模型一次能“看到”的文字上限。对话太长，最早的内容会被压缩或遗忘。",
+   "play": "战术板的大小：画满了，就得擦掉旧路线。",
+   "more": "https://oioi-academy.com/learning/courses/pi-context-compaction/"
+  },
+  {
+   "level": "L0",
+   "term": "提示词 Prompt",
+   "def": "给 AI 的任务说明：角色、背景、目标、格式、限制，越具体越稳。",
+   "play": "开球前的战术呼叫：喊得清楚，全队才跑对位置。",
+   "more": "https://oioi-academy.com/learning/courses/openai-prompt-guide/"
+  },
+  {
+   "level": "L0",
+   "term": "幻觉 Hallucination",
+   "def": "AI 自信地给出不存在的文献、数据或结论。医疗场景里最危险的错误。",
+   "play": "球员没看清信号就冲出去——跑得很快，方向错了。",
+   "more": "https://oioi-academy.com/learning/courses/ears-evidence-prompts/"
+  },
+  {
+   "level": "L0",
+   "term": "多模态",
+   "def": "同一个模型能读图、听音、生成图片或视频。",
+   "play": "一名全能球员：既能传也能跑，还能看录像。",
+   "more": "https://oioi-academy.com/learning/courses/karpathy-output-ladder/"
+  },
+  {
+   "level": "L1",
+   "term": "上下文工程",
+   "def": "比“写漂亮提示词”更重要的是：把对的资料、规则和例子交给 AI。",
+   "play": "赛前把对手录像和本队战术本都塞进更衣室。",
+   "more": "https://oioi-academy.com/learning/courses/second-brain-context/"
+  },
+  {
+   "level": "L1",
+   "term": "RAG 检索增强生成",
+   "def": "先检索资料，再基于资料回答，并能标出出处。",
+   "play": "先翻战术本再喊战术，而不是凭印象。",
+   "more": "https://oioi-academy.com/learning/courses/rag-evolution/"
+  },
+  {
+   "level": "L1",
+   "term": "深度研究 Deep Research",
+   "def": "AI 多轮搜索、阅读后写成报告。省时间，但引用仍需逐条核对。",
+   "play": "球探出一份完整报告：有用，但关键数据你得亲自看录像。",
+   "more": "https://oioi-academy.com/learning/courses/claude-deep-research-skill/"
+  },
+  {
+   "level": "L1",
+   "term": "证据分层",
+   "def": "每个论断标明：事实、关联还是推测。没有来源的不进课件。",
+   "play": "裁判回看：哪些是确凿犯规，哪些只是可能。",
+   "more": "https://oioi-academy.com/offline-exchange/ai-skill-writing-pain/"
+  },
+  {
+   "level": "L2",
+   "term": "Skill 技能",
+   "def": "把一次做好的流程写成可复用的说明书，下次一句话调用。",
+   "play": "写进战术本的固定套路：叫一声暗号，全队就知道怎么跑。",
+   "more": "https://oioi-academy.com/learning/courses/skills-introduction/"
+  },
+  {
+   "level": "L2",
+   "term": "智能体 Agent",
+   "def": "能自己调用工具、分步骤行动、根据结果调整的 AI。",
+   "play": "从“回答问题的顾问”变成“上场跑动的球员”。",
+   "more": "https://oioi-academy.com/learning/courses/agent-complete/"
+  },
+  {
+   "level": "L2",
+   "term": "循环 Loop",
+   "def": "计划 → 执行 → 检查 → 再来，直到达到目标或触发停止条件。",
+   "play": "一次次推进码数，每次进攻后看一眼记分板。",
+   "more": "https://oioi-academy.com/learning/courses/loop-introduction/"
+  },
+  {
+   "level": "L2",
+   "term": "MCP 协议",
+   "def": "给 AI 接外部工具和数据的统一“插头”。",
+   "play": "统一规格的护具接口：换哪套装备都插得上。",
+   "more": "https://oioi-academy.com/learning/courses/mcp-and-cli/"
+  },
+  {
+   "level": "L2",
+   "term": "记忆 Memory",
+   "def": "让 AI 跨对话记住你的偏好、项目和已做决定。",
+   "play": "教练的赛季笔记本，而不是每场比赛从头介绍自己。",
+   "more": "https://oioi-academy.com/learning/courses/agent-memory/"
+  },
+  {
+   "level": "L2",
+   "term": "AI 知识库",
+   "def": "把资料交给 AI 整理成可检索、可追溯的笔记网络（如 Obsidian）。",
+   "play": "球队的录像资料库：随时调出任何一场。",
+   "more": "https://oioi-academy.com/learning/courses/karpathy-knowledge-three-steps/"
+  },
+  {
+   "level": "L3",
+   "term": "AI 编程智能体",
+   "def": "Codex、Claude Code 这类工具能读写文件、跑代码，帮你做出网页和小工具。",
+   "play": "你画战术，它负责跑完全场。",
+   "more": "https://oioi-academy.com/learning/courses/codex-first-task/"
+  },
+  {
+   "level": "L3",
+   "term": "从 Prompt 到 Goal",
+   "def": "不再一步步指挥，而是定义清楚“完成的标准”，让 AI 自己推进。",
+   "play": "告诉进攻组“推进到 20 码线内”，而不是每一步都喊。",
+   "more": "https://oioi-academy.com/learning/courses/prompt-to-goal/"
+  },
+  {
+   "level": "L3",
+   "term": "网页课件 PPT as Code",
+   "def": "用网页代替 PPT：可交互、可发链接、可反复迭代。",
+   "play": "把纸质战术板换成可以回放的电子战术板。",
+   "more": "https://oioi-academy.com/learning/courses/ppt-as-code/"
+  },
+  {
+   "level": "L3",
+   "term": "多智能体协作",
+   "def": "几个 AI 分工：一个写、一个查、一个审，人负责拍板。",
+   "play": "进攻组、防守组、特勤组各司其职，主教练做决定。",
+   "more": "https://oioi-academy.com/learning/courses/multi-agent-collaboration/"
+  },
+  {
+   "level": "L4",
+   "term": "Harness 工程",
+   "def": "模型之外的整套“装备”：工具、权限、停止条件、日志与审批点。",
+   "play": "头盔和护具：同一个球员，装备不同，能上的场也不同。",
+   "more": "https://oioi-academy.com/learning/courses/harness-loop-graph/"
+  },
+  {
+   "level": "L4",
+   "term": "评估 Evals",
+   "def": "用固定测试题系统检查 AI 和技能是否真的变好，而不是凭感觉。",
+   "play": "每周体测和录像复盘，用数据说话。",
+   "more": "https://oioi-academy.com/learning/courses/skill-evals-method/"
+  },
+  {
+   "level": "L4",
+   "term": "提示词注入与 Agent 安全",
+   "def": "网页或文件里藏着的指令可能劫持 AI。权限越大，越要设防。",
+   "play": "对手偷到你的暗号，冒充你喊战术。",
+   "more": "https://oioi-academy.com/learning/courses/agent-security/"
+  },
+  {
+   "level": "L4",
+   "term": "人在环 Human-in-the-loop",
+   "def": "关键决定（诊疗、投稿、发布、付款）必须由人审批。",
+   "play": "AI 跑路线，主教练喊暂停。",
+   "more": "https://oioi-academy.com/learning/courses/five-engineering-layers/"
+  }
+ ],
+ "gear": [
+  {
+   "group": "通用助手",
+   "name": "ChatGPT",
+   "good": "综合能力强：写作、读图、出图、深度研究。",
+   "use": "把病例讨论要点整理成教学提纲。",
+   "care": "不要上传可识别患者的信息。",
+   "url": "https://chatgpt.com/"
+  },
+  {
+   "group": "通用助手",
+   "name": "Claude",
+   "good": "长文本阅读与写作稳，代码能力强。",
+   "use": "通读一篇长综述，列出论点和证据缺口。",
+   "care": "引用仍需回原文核对。",
+   "url": "https://claude.ai/"
+  },
+  {
+   "group": "通用助手",
+   "name": "Gemini",
+   "good": "与 Google 文档、表格、幻灯片打通，适合长资料。",
+   "use": "把一份指南直接整理成表格或幻灯片初稿。",
+   "care": "生成的文档要人工校对数据。",
+   "url": "https://gemini.google.com/"
+  },
+  {
+   "group": "国内可用",
+   "name": "DeepSeek",
+   "good": "国内直接可用，推理与中文表现好。",
+   "use": "中文病例摘要、统计思路初稿。",
+   "care": "同样会幻觉，结论要核对。",
+   "url": "https://chat.deepseek.com/"
+  },
+  {
+   "group": "国内可用",
+   "name": "Kimi",
+   "good": "长文档阅读与中文检索方便。",
+   "use": "一次读多篇中文文献做对比。",
+   "care": "检索来源要点开确认。",
+   "url": "https://kimi.com/"
+  },
+  {
+   "group": "查资料",
+   "name": "Perplexity",
+   "good": "带出处的 AI 搜索，适合快速查证。",
+   "use": "查一个药物新适应证的最新报道。",
+   "care": "出处可能是二手转述，优先看原始文献。",
+   "url": "https://www.perplexity.ai/"
+  },
+  {
+   "group": "查资料",
+   "name": "NotebookLM",
+   "good": "只基于你上传的资料回答，不乱扩展。",
+   "use": "把 20 篇文献放进去做问答和音频概览。",
+   "care": "只上传可公开或已脱敏的材料。",
+   "url": "https://notebooklm.google.com/"
+  },
+  {
+   "group": "做作品",
+   "name": "Codex",
+   "good": "OpenAI 的编程智能体：读写文件、做网页和小工具。本站就是它参与搭的。",
+   "use": "做一个互动课件或统计小工具。",
+   "care": "先在副本里试，确认后再发布。",
+   "url": "https://openai.com/codex/"
+  },
+  {
+   "group": "做作品",
+   "name": "Claude Code",
+   "good": "终端里的编程智能体，擅长大项目改造。",
+   "use": "把旧课件批量改成网页版。",
+   "care": "给它最小必要的文件权限。",
+   "url": "https://www.anthropic.com/claude-code"
+  },
+  {
+   "group": "做作品",
+   "name": "GitHub",
+   "good": "存放作品、版本管理，用 Pages 免费发布网站。",
+   "use": "把课件发布成可分享的链接。",
+   "care": "公开仓库里不放任何患者数据。",
+   "url": "https://github.com/"
+  },
+  {
+   "group": "管知识",
+   "name": "Obsidian",
+   "good": "本地 Markdown 知识库，可接 AI 自动整理。",
+   "use": "建立“创伤教学”笔记库，按主题双向链接。",
+   "care": "定期备份；敏感资料留本地。",
+   "url": "https://obsidian.md/"
+  }
+ ],
+ "topics": {
+  "basics": "AI 基础与提问",
+  "coding": "Codex 实战",
+  "agents": "Agent 工程",
+  "skills": "Skills",
+  "knowledge": "知识库与科研",
+  "creative": "课件与配图",
+  "safety": "安全",
+  "perspectives": "认知与观察"
+ },
+ "library": [
+  {
+   "topic": "basics",
+   "title": "2026 年你必须理解的 20 个 AI 概念",
+   "url": "https://oioi-academy.com/learning/courses/twenty-ai-concepts/"
+  },
+  {
+   "topic": "basics",
+   "title": "AI 名词小白入门：先建地图，再学名词",
+   "url": "https://oioi-academy.com/learning/courses/ai-terms-map/"
+  },
+  {
+   "topic": "basics",
+   "title": "吴恩达 21 节课：AI 高手心法",
+   "url": "https://oioi-academy.com/learning/courses/andrew-ng-ai-practice/"
+  },
+  {
+   "topic": "basics",
+   "title": "OpenAI 官方提示指南详解",
+   "url": "https://oioi-academy.com/learning/courses/openai-prompt-guide/"
+  },
+  {
+   "topic": "basics",
+   "title": "EARS：让 AI 没有洞可填，禁止脑补",
+   "url": "https://oioi-academy.com/learning/courses/ears-evidence-prompts/"
+  },
+  {
+   "topic": "basics",
+   "title": "十个提示，把 AI 变成研究助理",
+   "url": "https://oioi-academy.com/learning/courses/ten-research-prompts/"
+  },
+  {
+   "topic": "basics",
+   "title": "需要知道的 AI 工具：10 个一句话清单",
+   "url": "https://oioi-academy.com/learning/courses/ten-ai-tools/"
+  },
+  {
+   "topic": "basics",
+   "title": "一句话分清：Chat、Work、Codex",
+   "url": "https://oioi-academy.com/learning/courses/chat-work-codex-roles/"
+  },
+  {
+   "topic": "coding",
+   "title": "第一次用 Codex：从注册到第一个任务",
+   "url": "https://oioi-academy.com/learning/courses/codex-first-task/"
+  },
+  {
+   "topic": "coding",
+   "title": "打工人 0 基础手册：6 个职场场景",
+   "url": "https://oioi-academy.com/learning/courses/codex-workplace-handbook/"
+  },
+  {
+   "topic": "coding",
+   "title": "GitHub 保姆级教程：Vibe Coding 入门",
+   "url": "https://oioi-academy.com/learning/courses/github-first-project/"
+  },
+  {
+   "topic": "coding",
+   "title": "从 Prompt 到 Goal",
+   "url": "https://oioi-academy.com/learning/courses/prompt-to-goal/"
+  },
+  {
+   "topic": "agents",
+   "title": "五层工程框架：从提示词到图",
+   "url": "https://oioi-academy.com/learning/courses/five-engineering-layers/"
+  },
+  {
+   "topic": "agents",
+   "title": "AI 智能体完整课程：从入门到生产",
+   "url": "https://oioi-academy.com/learning/courses/agent-complete/"
+  },
+  {
+   "topic": "agents",
+   "title": "一张图看懂 Harness / Loop / Graph",
+   "url": "https://oioi-academy.com/learning/courses/harness-loop-graph/"
+  },
+  {
+   "topic": "agents",
+   "title": "循环工程入门与实操",
+   "url": "https://oioi-academy.com/learning/courses/loop-introduction/"
+  },
+  {
+   "topic": "agents",
+   "title": "多智能体协作：从入门到分工",
+   "url": "https://oioi-academy.com/learning/courses/multi-agent-collaboration/"
+  },
+  {
+   "topic": "agents",
+   "title": "MCP 协议与“去 MCP 化”之争",
+   "url": "https://oioi-academy.com/learning/courses/mcp-and-cli/"
+  },
+  {
+   "topic": "skills",
+   "title": "Skill 小白完整入门教程",
+   "url": "https://oioi-academy.com/learning/courses/skills-introduction/"
+  },
+  {
+   "topic": "skills",
+   "title": "从 0 到 1 写出你自己的 Skill",
+   "url": "https://oioi-academy.com/learning/courses/write-your-first-skill/"
+  },
+  {
+   "topic": "skills",
+   "title": "OpenAI 评测 Skill 方法论",
+   "url": "https://oioi-academy.com/learning/courses/skill-evals-method/"
+  },
+  {
+   "topic": "knowledge",
+   "title": "卡帕西 AI 知识库：3 步搭出知识网络",
+   "url": "https://oioi-academy.com/learning/courses/karpathy-knowledge-three-steps/"
+  },
+  {
+   "topic": "knowledge",
+   "title": "Obsidian 小白完整入门",
+   "url": "https://oioi-academy.com/learning/courses/obsidian-introduction/"
+  },
+  {
+   "topic": "knowledge",
+   "title": "NotebookLM 省 Token 工作流",
+   "url": "https://oioi-academy.com/learning/courses/notebooklm-token-workflow/"
+  },
+  {
+   "topic": "knowledge",
+   "title": "AI 科研全流程地图",
+   "url": "https://oioi-academy.com/learning/courses/ai-research-process-map/"
+  },
+  {
+   "topic": "knowledge",
+   "title": "Research Paper Writing Skills · 论文写作",
+   "url": "https://oioi-academy.com/learning/courses/research-paper-writing-skills/"
+  },
+  {
+   "topic": "creative",
+   "title": "PPT as Code：用网页做演示",
+   "url": "https://oioi-academy.com/learning/courses/ppt-as-code/"
+  },
+  {
+   "topic": "creative",
+   "title": "三套提示词：画出期刊级科研图",
+   "url": "https://oioi-academy.com/learning/courses/research-figure-prompts/"
+  },
+  {
+   "topic": "creative",
+   "title": "drawio-skill：一句话生成专业图表",
+   "url": "https://oioi-academy.com/learning/courses/drawio-diagrams/"
+  },
+  {
+   "topic": "safety",
+   "title": "Agent 安全：提示词注入与身份",
+   "url": "https://oioi-academy.com/learning/courses/agent-security/"
+  },
+  {
+   "topic": "perspectives",
+   "title": "十大顶级思维：先自己学会，再让 AI 学会",
+   "url": "https://oioi-academy.com/learning/courses/ten-thinking-models/"
+  },
+  {
+   "topic": "perspectives",
+   "title": "循环工程的冷思考",
+   "url": "https://oioi-academy.com/learning/courses/loop-critical-thinking/"
+  }
+ ]
+}

@@ -33,6 +33,12 @@ const required = [
   "hours_en",
   "boundary_zh",
   "boundary_en",
+  "idea_zh",
+  "idea_en",
+  "steps_zh",
+  "steps_en",
+  "reproduce_zh",
+  "reproduce_en",
 ];
 
 const seen = new Set();
@@ -85,6 +91,12 @@ for (const name of seen) {
 }
 
 if (!Array.isArray(sessions.sessions)) errors.push("sessions.yaml must contain a sessions list");
+
+for (const step of doc.journey ?? []) {
+  for (const name of step.examples ?? []) {
+    if (!seen.has(name)) errors.push(`journey step ${step.n} example not in catalog: ${name}`);
+  }
+}
 
 if (errors.length) {
   console.error(`Catalog check failed (${errors.length})`);

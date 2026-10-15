@@ -32,6 +32,12 @@ const description = module.summary.zh;
         <p class="kicker"><a href={import.meta.env.BASE_URL}><Bi zh="回到课堂" en="Back to class" /></a></p>
         <h1><Bi zh={module.title.zh} en={module.title.en} /></h1>
         <p class="lede"><Bi zh={module.summary.zh} en={module.summary.en} /></p>
+        <p>
+          <Bi
+            zh="每张卡片都有一节「这个想法是怎样做成的」。仓库没写的工具和步骤，标成待补充。"
+            en="Each card includes how the idea became real. Tools and steps the repository did not record stay marked as still to be added."
+          />
+        </p>
         <p class="count-static">
           <Bi zh={`${items.length} 个仓库`} en={`${items.length} repositories`} />
         </p>

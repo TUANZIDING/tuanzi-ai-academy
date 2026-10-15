@@ -10,6 +10,8 @@ export interface Bilingual {
 export interface SiteInfo {
   name: Bilingual;
   position: Bilingual;
+  headline: Bilingual;
+  purpose: Bilingual;
   slogan: Bilingual;
   person: Bilingual;
   role: Bilingual;
@@ -38,6 +40,13 @@ export interface LevelInfo {
   summary: Bilingual;
 }
 
+export interface JourneyStep {
+  n: string;
+  title: Bilingual;
+  summary: Bilingual;
+  examples: string[];
+}
+
 export interface SessionInfo {
   id: string;
   date: string;
@@ -62,6 +71,9 @@ export interface Project {
   audience: Bilingual;
   hours: Bilingual;
   boundary: Bilingual;
+  idea: Bilingual;
+  steps: Bilingual;
+  reproduce: Bilingual;
   recommend: Bilingual | null;
   local: Bilingual | null;
   demo: string | null;
@@ -97,6 +109,12 @@ interface RawProject {
   hours_en: string;
   boundary_zh: string;
   boundary_en: string;
+  idea_zh: string;
+  idea_en: string;
+  steps_zh: string;
+  steps_en: string;
+  reproduce_zh: string;
+  reproduce_en: string;
   recommend_zh?: string;
   recommend_en?: string;
   local_zh?: string;
@@ -188,6 +206,7 @@ export interface Catalog {
   modules: ModuleInfo[];
   levels: LevelInfo[];
   projects: Project[];
+  journey: Array<JourneyStep & { repos: Project[] }>;
   sessions: SessionInfo[];
   fetchedAt: string;
   languages: string[];
@@ -199,6 +218,7 @@ export function getCatalog(): Catalog {
     modules: Array<{ id: string; code: string; title_zh: string; title_en: string; summary_zh: string; summary_en: string }>;
     levels: Array<{ id: string; title_zh: string; title_en: string; summary_zh: string; summary_en: string }>;
     projects: RawProject[];
+    journey?: Array<{ n: string; title_zh: string; title_en: string; summary_zh: string; summary_en: string; examples?: string[] }>;
   }>("data/projects.yaml");
 
   const sessionDoc = readYaml<{ sessions: Array<Record<string, string>> }>("data/sessions.yaml");
@@ -208,6 +228,8 @@ export function getCatalog(): Catalog {
   const site: SiteInfo = {
     name: bi(siteRaw.name_zh, siteRaw.name_en),
     position: bi(siteRaw.position_zh, siteRaw.position_en),
+    headline: bi(siteRaw.headline_zh, siteRaw.headline_en),
+    purpose: bi(siteRaw.purpose_zh, siteRaw.purpose_en),
     slogan: bi(siteRaw.slogan_zh, siteRaw.slogan_en),
     person: bi(siteRaw.person_zh, siteRaw.person_en),
     role: bi(siteRaw.role_zh, siteRaw.role_en),
@@ -251,6 +273,10 @@ export function getCatalog(): Catalog {
       raw.title_en,
       raw.summary_zh,
       raw.summary_en,
+      raw.idea_zh,
+      raw.idea_en,
+      raw.steps_zh,
+      raw.reproduce_zh,
       raw.topics.join(" "),
       raw.audience_zh,
       raw.audience_en,
@@ -281,6 +307,9 @@ export function getCatalog(): Catalog {
       audience: bi(raw.audience_zh, raw.audience_en),
       hours: bi(raw.hours_zh, raw.hours_en),
       boundary: bi(raw.boundary_zh, raw.boundary_en),
+      idea: bi(raw.idea_zh, raw.idea_en),
+      steps: bi(raw.steps_zh, raw.steps_en),
+      reproduce: bi(raw.reproduce_zh, raw.reproduce_en),
       recommend:
         raw.recommend_zh && raw.recommend_en ? bi(raw.recommend_zh, raw.recommend_en) : null,
       local: raw.local_zh && raw.local_en ? bi(raw.local_zh, raw.local_en) : null,
@@ -313,11 +342,21 @@ export function getCatalog(): Catalog {
     a.localeCompare(b),
   );
 
+  const byRepo = new Map(projects.map((item) => [item.repo, item]));
+  const journey = (doc.journey ?? []).map((step) => ({
+    n: step.n,
+    title: bi(step.title_zh, step.title_en),
+    summary: bi(step.summary_zh, step.summary_en),
+    examples: step.examples ?? [],
+    repos: (step.examples ?? []).map((name) => byRepo.get(name)).filter((item): item is Project => Boolean(item)),
+  }));
+
   return {
     site,
     modules,
     levels,
     projects,
+    journey,
     sessions,
     fetchedAt: meta.fetched_at,
     languages,

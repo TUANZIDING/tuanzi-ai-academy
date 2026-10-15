@@ -5,7 +5,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 import { FORK_GROUPS, formatDate, getCatalog, href } from "../lib/catalog";
 
 const catalog = getCatalog();
-const { site, modules, levels, projects, sessions, fetchedAt } = catalog;
+const { site, modules, levels, projects, journey, sessions, fetchedAt } = catalog;
 const courseModules = modules.filter((item) => ["a", "b", "c", "d"].includes(item.id));
 const teaching = projects.filter((item) => item.module.id !== "site");
 const originals = teaching.filter((item) => item.kind === "original");
@@ -16,50 +16,51 @@ const localOnly = projects.filter((item) => item.local);
 const recent = [...projects].sort((a, b) => (a.pushedAt < b.pushedAt ? 1 : -1)).slice(0, 8);
 const siteProjects = projects.filter((item) => item.module.id === "site");
 const groupOrder = ["writing", "viz", "agent", "office", "other"];
-const description = `${site.position.zh}。${site.slogan.zh}`;
+const description = `${site.purpose.zh}。${site.slogan.zh}`;
 ---
 
-<Base title={`${site.name.zh} · ${site.position.zh}`} description={description}>
+<Base title={`${site.name.zh} · ${site.headline.zh}`} description={description}>
   <section class="hero" id="top">
-    <p class="eyebrow"><span>01</span><Bi zh="课堂" en="Classroom" /></p>
+    <p class="eyebrow"><span>01</span><Bi zh={site.position.zh} en={site.position.en} /></p>
     <div class="hero-grid">
       <div>
         <p class="role"><Bi zh={site.role.zh} en={site.role.en} /></p>
-        <h1><Bi zh={site.position.zh} en={site.position.en} /></h1>
-        <p class="slogan"><Bi zh={site.slogan.zh} en={site.slogan.en} /></p>
+        <h1><Bi zh={site.headline.zh} en={site.headline.en} /></h1>
+        <p class="slogan"><Bi zh={site.purpose.zh} en={site.purpose.en} /></p>
+        <p class="lede"><Bi zh={site.slogan.zh} en={site.slogan.en} /></p>
         <p class="who">
           <Bi zh={site.person.zh} en={site.person.en} />
           <span aria-hidden="true"> · </span>
           <Bi zh="GitHub TUANZIDING" en="GitHub TUANZIDING" />
         </p>
         <div class="hero-actions">
-          <a class="btn solid" href="#path"><Bi zh="开始上课" en="Start class" /></a>
-          <a class="btn" href={href("projects/")}><Bi zh="看全部项目" en="All projects" /></a>
+          <a class="btn solid" href={href("start/")}><Bi zh="从自己的想法开始" en="Start from your idea" /></a>
+          <a class="btn" href="#path"><Bi zh="看这条路" en="See the path" /></a>
         </div>
         <dl class="stats">
           <div>
-            <dt><Bi zh="原创课程" en="Original lessons" /></dt>
+            <dt><Bi zh="原创，能跟着看" en="Originals to follow" /></dt>
             <dd>{originals.length}</dd>
           </div>
           <div>
-            <dt><Bi zh="Fork 收录" en="Forks in the lab" /></dt>
+            <dt><Bi zh="上游工具" en="Upstream tools" /></dt>
             <dd>{forks.length}</dd>
           </div>
           <div>
-            <dt><Bi zh="可打开的 Pages" en="Pages you can open" /></dt>
+            <dt><Bi zh="已经发布、能打开" en="Already published" /></dt>
             <dd>{demos.length}</dd>
           </div>
         </dl>
       </div>
       <aside class="hero-panel">
-        <p class="panel-label"><Bi zh="现在可以投屏" en="Open on a screen now" /></p>
+        <p class="panel-label"><Bi zh="五步" en="Five steps" /></p>
         <ol>
           {
-            demos.slice(0, 5).map((project) => (
+            journey.map((step) => (
               <li>
-                <a href={project.demo || "#"}>
-                  <span>{project.module.code}</span>
-                  <Bi zh={project.title.zh} en={project.title.en} />
+                <a href={`#step-${step.n}`}>
+                  <span>{step.n}</span>
+                  <Bi zh={step.title.zh} en={step.title.en} />
                 </a>
               </li>
             ))
@@ -67,8 +68,8 @@ const description = `${site.position.zh}。${site.slogan.zh}`;
         </ol>
         <p class="panel-note">
           <Bi
-            zh="这些地址来自各仓库已经开启的 GitHub Pages。没有 Pages 的项目只链到源码。"
-            en="These addresses are GitHub Pages that are already on. Repositories without Pages link to source only."
+            zh="写不清的步骤会标成待补充。没有记录，就不编。"
+            en="A step that was not written down is marked as still to be added. If it was not recorded, it is not invented."
           />
         </p>
       </aside>
@@ -79,16 +80,45 @@ const description = `${site.position.zh}。${site.slogan.zh}`;
     <header class="sec-head">
       <p class="num">02</p>
       <div>
-        <p class="kicker"><Bi zh="学习路径" en="Learning path" /></p>
-        <h2><Bi zh="从打开一页，到做出有门槛的工具" en="From opening a page to a tool that knows when to stop" /></h2>
+        <p class="kicker"><Bi zh="从想法到发布" en="From idea to publication" /></p>
+        <h2><Bi zh="一条能跟着走的路" en="A path you can walk" /></h2>
         <p class="lede">
           <Bi
-            zh="难度是这条课堂建议的位置，不是考试等级。空仓库标成规划中，不往前排课。"
-            en="A level is where this classroom suggests you start. It is not a grade. Empty repositories stay marked as planned."
+            zh="这些项目不是拿来陈列的。它们用来看：一个想法怎样被说清、拆开、交给工具、做成打得开的原型，再发布出去。"
+            en="These projects are not a display shelf. They show how an idea gets said, broken down, handed to a tool, turned into a prototype you can open, and then published."
           />
         </p>
       </div>
     </header>
+    <ol class="journey">
+      {
+        journey.map((step) => (
+          <li id={`step-${step.n}`}>
+            <p class="step-no">{step.n}</p>
+            <h3><Bi zh={step.title.zh} en={step.title.en} /></h3>
+            <p><Bi zh={step.summary.zh} en={step.summary.en} /></p>
+            <ul>
+              {step.repos.map((project) => (
+                <li>
+                  <a href={href(`projects/${project.repo}/`)}>
+                    <Bi zh={project.title.zh} en={project.title.en} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ol>
+    <div class="path-intro">
+      <h3><Bi zh="项目站在这条路上的哪一站" en="Where each project stands on that path" /></h3>
+      <p>
+        <Bi
+          zh="L0 到 L4 不是考试，只是建议你从哪一站看起。空仓库仍然标成规划中。"
+          en="L0 to L4 is not a test. It only suggests where to start looking. Empty repositories stay marked as planned."
+        />
+      </p>
+    </div>
     <ol class="path">
       {
         levels.map((level) => {
@@ -122,7 +152,7 @@ const description = `${site.position.zh}。${site.slogan.zh}`;
       <p class="num">03</p>
       <div>
         <p class="kicker"><Bi zh="课程模块" en="Course modules" /></p>
-        <h2><Bi zh="按要上的课来找，不按仓库新旧" en="Find a class by the lesson, not by the latest push" /></h2>
+        <h2><Bi zh="不同的想法，走的是同一条路" en="Different ideas, the same path" /></h2>
       </div>
     </header>
     {
@@ -154,7 +184,7 @@ const description = `${site.position.zh}。${site.slogan.zh}`;
       <p class="num">04</p>
       <div>
         <p class="kicker"><Bi zh="交互演示馆" en="Demo hall" /></p>
-        <h2><Bi zh="浏览器里打得开的页面" en="Pages a browser can open" /></h2>
+        <h2><Bi zh="已经发布、现在打得开的原型" en="Prototypes that are published and open now" /></h2>
         <p class="lede">
           <Bi
             zh="只放已经返回页面的 GitHub Pages。上游网站放在项目卡片的「上游演示」，不算作本站演示。"
@@ -274,6 +304,7 @@ const description = `${site.position.zh}。${site.slogan.zh}`;
                     </p>
                   </div>
                   <div class="actions">
+                    <a class="btn" href={href(`projects/${project.repo}/`)}><Bi zh="做法" en="How" /></a>
                     <a class="btn" href={project.htmlUrl}><Bi zh="源码" en="Source" /></a>
                     {project.upstreamUrl && (
                       <a class="btn" href={project.upstreamUrl}><Bi zh="上游" en="Upstream" /></a>

@@ -8,10 +8,10 @@ const home = import.meta.env.BASE_URL;
 const onHome = path === home || path === home.slice(0, -1);
 
 const links = [
-  { href: `${home}#path`, zh: "路径", en: "Path" },
+  { href: href("start/"), zh: "开始", en: "Start" },
+  { href: `${home}#path`, zh: "这条路", en: "Path" },
   { href: `${home}#modules`, zh: "模块", en: "Modules" },
   { href: `${home}#demos`, zh: "演示", en: "Demos" },
-  { href: `${home}#courseware`, zh: "课件", en: "Slides" },
   { href: `${home}#lab`, zh: "实验室", en: "Lab" },
   { href: `${home}#boundaries`, zh: "边界", en: "Limits" },
   { href: `${home}#about`, zh: "关于", en: "About" },

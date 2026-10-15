@@ -1,20 +1,24 @@
 # 团子 AI 课堂
 
-临床医生的 AI 实践课堂。这个静态网站把 [TUANZIDING](https://github.com/TUANZIDING) 的公开仓库收成一间可以投屏、也可以自学的课堂。
+临床医生的 AI 实践课堂。这个静态网站用来看一件事：怎么样让自己的想法实现。路径是说出想法、拆开、和 Codex / Claude Code 或其他代理一起做、做出打得开的原型、再发布（例如 GitHub Pages）。[TUANZIDING](https://github.com/TUANZIDING) 的公开仓库是这条路上的例子，可以投屏，也可以自学。
 
 线上地址（开启 Pages 之后）：<https://tuanziding.github.io/tuanzi-ai-academy/>
 
 ## 页面
 
-- `/` 单页课堂：开场、L0–L4、模块 A–E、演示馆、线下课件、开源实验室、使用边界、关于、邮件反馈、最近更新
+- `/` 单页课堂：开场、从想法到发布的五步、L0–L4、模块 A–E、演示馆、线下课件、开源实验室、使用边界、关于、邮件反馈、最近更新
+- `/start/` 从自己的想法开始，含一段可抄进 README 的记录
 - `/modules/<id>/` 每个模块一页（`a` `b` `c` `d` `e` `site`）
 - `/projects/` 全部项目，可按来源、模块、分组、难度、语言、状态筛选
+- `/projects/<仓库名>/` 这一则想法是怎样做成的
 
 右上角可以切换中文 / English、浅色 / 深色，以及「投屏」（字号加大，方便教室里看）。
 
 ## 改一节课的资料
 
-教学分组、难度、受众、课时建议和边界写在 [`data/projects.yaml`](data/projects.yaml)。星标、仓库自带简介、编程语言、推送时间和是否开启 GitHub Pages **不要手写**，它们来自 [`data/github-meta.json`](data/github-meta.json)。
+教学分组、难度、受众、课时建议、边界，以及「想法是怎样做成的」，写在 [`data/projects.yaml`](data/projects.yaml)。星标、仓库自带简介、编程语言、推送时间和是否开启 GitHub Pages **不要手写**，它们来自 [`data/github-meta.json`](data/github-meta.json)。
+
+每一则有三组中英文字段：`idea_*`（原来的想法）、`steps_*`（用过的工具和步骤）、`reproduce_*`（别人可以照着做的部分）。只写 README 或提交记录里有的内容。写不清就写「待补充」，不要补一个没出现过的模型或提示词。`journey` 里的 `examples` 必须是已经收录的仓库名。
 
 1. 找到对应的 `repo:`。
 2. 改中英文字段。不要写该仓库 README 里没有的个人经历，也不要把 fork 写成原创。

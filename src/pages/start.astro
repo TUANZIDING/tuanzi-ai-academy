@@ -1,0 +1,169 @@
+---
+import Base from "../layouts/Base.astro";
+import Bi from "../components/Bi.astro";
+import { getCatalog, href } from "../lib/catalog";
+
+const { site, journey, projects } = getCatalog();
+const picks = ["nianjing", "comic-companion-course", "codex-hark-bridge", "epang-palace"]
+  .map((name) => projects.find((item) => item.repo === name))
+  .filter((item) => item !== undefined);
+
+const notes: Record<string, { zh: string; en: string }> = {
+  "1": {
+    zh: "拿一张纸，写四行：要做什么；给谁用；别人打开之后看见什么，才算做成；哪一句必须你自己说。诊断、患者信息、还没核对的文献，都留在最后一行，不交给工具。",
+    en: "On a sheet of paper, write four lines: what you are making; who it is for; what someone sees when it is done; and the sentence you must say yourself. Diagnosis, patient information, and citations you have not checked stay on that last line.",
+  },
+  "2": {
+    zh: "只留今天能做完的一块：一页、一个例子，或一句要人确认的话。其余先放着。做不完的大计划，先不要开工。",
+    en: "Keep one piece you can finish today: a page, an example, or a sentence a person must confirm. Leave the rest. Do not start a plan you cannot finish.",
+  },
+  "3": {
+    zh: "选你已经在用的工具：Codex、Claude Code，或其他代理。开工前写两句：它能改哪些文件；它不能碰什么，比如患者资料、密码、没经你点头的发布。做完由你看一遍。下面几则的 README 写了各自用过的工具。没写的，不要补上。",
+    en: "Use a tool you already have: Codex, Claude Code, or another agent. Before it starts, write what files it may change, and what it must not touch: patient data, passwords, or a publish button you have not approved. You read the result. The READMEs linked below name the tools they used. Do not fill in a tool they left unnamed.",
+  },
+  "4": {
+    zh: "在自己的电脑上打开，或在浏览器里打开。打不开，就还没做成。能打开之后，再写它做到了哪一步。",
+    en: "Open it on your own computer, or in a browser. If it does not open, it is not made yet. Once it opens, write down how far it got.",
+  },
+  "5": {
+    zh: "代码放上 GitHub。一个静态页可以交给 GitHub Pages，让别人不用安装就能打开。仓库 Settings 里，Source 选 GitHub Actions；若该仓库 README 写了自己的发布方式，就按它写的做。说明里留下想法、用过的工具，以及还没写清的地方。",
+    en: "Put the code on GitHub. A static page can go out through GitHub Pages, so someone else can open it without installing anything. In the repository settings, set the Pages source to GitHub Actions, or follow the publish steps that repository's README already wrote. Leave the idea, the tools, and the gaps in the notes.",
+  },
+};
+---
+
+<Base title={`从自己的想法开始 · ${site.name.zh}`} description={site.purpose.zh}>
+  <section class="section page-intro">
+    <header class="sec-head">
+      <p class="num">01</p>
+      <div>
+        <p class="kicker">
+          <a href={import.meta.env.BASE_URL}><Bi zh="回到课堂" en="Back to class" /></a>
+        </p>
+        <h1><Bi zh="从自己的想法开始" en="Start from your own idea" /></h1>
+        <p class="lede">
+          <Bi
+            zh="这页不是工具名单。它是一条能再走一遍的路：把想法说清，拆成今天能做完的一块，和 AI 一起做成打得开的原型，再发布出去。写不清的地方，就写待补充。"
+            en="This page is not a list of tools. It is a path you can walk again: say the idea, cut out one piece for today, make a prototype you can open with an AI tool, then publish it. Where a step is missing, write that it is still to be added."
+          />
+        </p>
+      </div>
+    </header>
+  </section>
+
+  <section class="section tight" id="steps">
+    <ol class="guide">
+      {
+        journey.map((step) => {
+          const note = notes[step.n];
+          return (
+            <li id={`guide-${step.n}`}>
+              <p class="step-no">{step.n}</p>
+              <h2><Bi zh={step.title.zh} en={step.title.en} /></h2>
+              <p><Bi zh={step.summary.zh} en={step.summary.en} /></p>
+              {note && <p><Bi zh={note.zh} en={note.en} /></p>}
+              {
+                step.repos.length > 0 && (
+                  <ul>
+                    {step.repos.map((project) => (
+                      <li>
+                        <a href={href(`projects/${project.repo}/`)}>
+                          <Bi zh={project.title.zh} en={project.title.en} />
+                        </a>
+                        <span class="guide-aside"><Bi zh={project.idea.zh} en={project.idea.en} /></span>
+                      </li>
+                    ))}
+                  </ul>
+                )
+              }
+            </li>
+          );
+        })
+      }
+    </ol>
+  </section>
+
+  <section class="section" id="record">
+    <header class="sec-head">
+      <p class="num">02</p>
+      <div>
+        <p class="kicker"><Bi zh="留下记录" en="Leave a record" /></p>
+        <h2><Bi zh="做完一块，就写下这四段" en="After one piece, write these four parts" /></h2>
+        <p class="lede">
+          <Bi
+            zh="把下面这段放进仓库 README。这站上的「这个想法是怎样做成的」只根据 README 和提交记录来写。没写过的工具、模型和提示词，保持待补充。"
+            en="Put the note below in the repository README. On this site, “how this idea became real” comes only from the README and the commit history. A tool, model, or prompt that was not written down stays marked as still to be added."
+          />
+        </p>
+      </div>
+    </header>
+    <pre class="template"><span class="zh">{`## 原来的想法
+我要做的是：
+给谁用：
+做成的样子：别人打开之后能看见
+不能让工具替我说的：
+
+## 用过的工具和步骤
+工具：（Codex / Claude Code / 其他。没用过，或没记下，就写待补充）
+今天只做了哪一块：
+它改了什么：
+我确认过什么：
+
+## 别人可以照着做的部分
+1.
+2.
+
+## 还没写清的地方
+待补充`}</span><span class="en">{`## The idea
+What I am making:
+Who it is for:
+What done looks like: when someone opens it, they see
+What the tool must not decide:
+
+## Tools and steps
+Tool: (Codex / Claude Code / another. If you did not use one, or did not write it down, say it is still to be added.)
+The piece I finished today:
+What it changed:
+What I checked:
+
+## What someone else can copy
+1.
+2.
+
+## Not written down yet
+Still to be added`}</span></pre>
+  </section>
+
+  <section class="section" id="examples">
+    <header class="sec-head">
+      <p class="num">03</p>
+      <div>
+        <p class="kicker"><Bi zh="已经留下的记录" en="Records already left" /></p>
+        <h2><Bi zh="先看别人怎样把想法写成页" en="See how an idea was written down" /></h2>
+        <p class="lede">
+          <Bi
+            zh="念景从一句话开始，还没有公开网页。漫画伴读的 README 写了 Hark、Codex 和 OpenAI 的图像工具，生图模型它自己标了待补充。浏览器接力写明 Hark 规划、Codex 执行、人做决定。阿房宫已经发布，页面由哪个工具写成，README 没写，所以标待补充。"
+            en="Nianjing starts from one sentence and has no public page yet. The comic course README names Hark, Codex, and OpenAI’s image tool, and marks the image model as still to be added. The browser bridge says Hark plans, Codex executes, and a person decides. Epang Palace is published; the README does not name the tool that wrote the page, so that stays unmarked."
+          />
+        </p>
+      </div>
+    </header>
+    <ul class="example-list">
+      {
+        picks.map((project) => (
+          <li>
+            <a href={href(`projects/${project.repo}/`)}>
+              <Bi zh={project.title.zh} en={project.title.en} />
+            </a>
+            <p><Bi zh={project.idea.zh} en={project.idea.en} /></p>
+          </li>
+        ))
+      }
+    </ul>
+    <p>
+      <a class="text-link" href={`${import.meta.env.BASE_URL}#path`}>
+        <Bi zh="回到首页，看整条路" en="Back to the path on the home page" />
+      </a>
+    </p>
+  </section>
+</Base>

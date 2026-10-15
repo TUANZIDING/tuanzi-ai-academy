@@ -1,11 +1,13 @@
 ---
 import Bi from "./Bi.astro";
+import Story from "./Story.astro";
 import {
   KIND_LABEL,
   STATUS_LABEL,
   FORK_GROUPS,
   coverUrl,
   formatDate,
+  href,
   type Project,
 } from "../lib/catalog";
 
@@ -52,9 +54,12 @@ const kind = KIND_LABEL[project.kind];
       <span class="kind"><Bi zh={kind.zh} en={kind.en} /></span>
     </p>
     <h3>
-      <Bi zh={project.title.zh} en={project.title.en} />
+      <a href={href(`projects/${project.repo}/`)}>
+        <Bi zh={project.title.zh} en={project.title.en} />
+      </a>
     </h3>
     <p class="summary"><Bi zh={project.summary.zh} en={project.summary.en} /></p>
+    <Story project={project} />
     {
       project.kind === "fork" && project.upstreamAuthor && (
         <p class="upstream">

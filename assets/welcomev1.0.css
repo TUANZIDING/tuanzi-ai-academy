@@ -1,9 +1,9 @@
 /* ===== 欢迎页 v2：浅色、温暖、留白 ===== */
 html.w-open{overflow:hidden}
-.welcome{position:fixed;inset:0;z-index:100;overflow:auto;color:#24313f;background:#f7f1e6;transition:opacity .7s ease,transform .7s ease}
+.welcome{position:fixed;inset:0;z-index:100;overflow-y:auto;overflow-x:hidden;color:#24313f;background:#f7f1e6;transition:opacity .7s ease,transform .7s ease}
 .welcome.leaving{opacity:0;transform:scale(1.02);pointer-events:none}
 .welcome[hidden]{display:none}
-.w-bg{position:absolute;inset:0;background:url(welcome-fieldv1.0.jpg) center right/cover no-repeat;animation:wZoom 24s ease-out both}
+.w-bg{position:fixed;inset:0;background:url(welcome-fieldv1.0.jpg) center right/cover no-repeat;animation:wZoom 24s ease-out both}
 .w-bg::after{content:"";position:absolute;inset:0;background:
   linear-gradient(90deg,rgba(252,248,240,.96) 0%,rgba(252,248,240,.9) 32%,rgba(252,248,240,.55) 52%,rgba(252,248,240,0) 72%),
   linear-gradient(180deg,rgba(255,250,240,.35),rgba(255,250,240,0) 30%,rgba(255,250,240,0) 80%,rgba(255,248,236,.5))}

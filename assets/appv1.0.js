@@ -24,7 +24,7 @@
     { meta: '线下工作坊 · 半天 · 实操', title: '医生也能做出互动作品', steps: [
       ['L3 骨科创伤 3D 图谱拆解', 'orthopaedic-trauma-atlas'],
       ['L3 证据分层的机制图谱', 'radiation-muscle-pathway'],
-      ['L3 亲子伴读：给自己孩子做读物', 'peter-rabbit-interactive'],
+      ['L3 亲子伴读：给自己孩子做读物（实战案例）', 'https://hark.site/s/263c1fe8-4cbe-45de-81ef-4c687d5b9a99?hark_region=us'],
       ['L3 事实与推测分开画：阿房宫复原', 'epang-palace'] ] }
   ];
 
@@ -136,7 +136,7 @@
     $('#lessonList').innerHTML = LESSONS.map(l => `<article class="lesson">
       <span class="meta">${l.meta}</span><h3>${l.title}</h3>
       <ol>${l.steps.map(([t, r]) => {
-        const p = r && byRepo[r]; const href = p ? (p.live || p.source) : null;
+        const p = r && byRepo[r]; const href = r && /^https?:/.test(r) ? r : (p ? (p.live || p.source) : null);
         return `<li>${href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(t)} ↗</a>` : esc(t)}</li>`;
       }).join('')}</ol>
       <span class="status">示范路线 · 课后课件按场次上架</span></article>`).join('');

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>团子 AI 学院 · AI 战术手册 | Tuanzi AI Academy</title>
 <meta name="description" content="丁海祥（急诊创伤外科医生）的 AI 使用策略教学站：L0–L4 战术路线、可点开的开源作品、线上线下课件。">
-<link rel="stylesheet" href="assets/stylev1.0.css?v=1.6.1">
-<link rel="stylesheet" href="assets/welcomev1.0.css?v=1.6.1">
+<link rel="stylesheet" href="assets/stylev1.0.css?v=1.7">
+<link rel="stylesheet" href="assets/welcomev1.0.css?v=1.7">
 </head>
 <body>
 <a class="skip" href="#main">跳到主要内容</a>
@@ -14,7 +14,7 @@
   <div class="w-bg" aria-hidden="true"></div>
   <header class="w-top">
     <span class="w-brand"><svg viewBox="0 0 40 40" aria-hidden="true"><ellipse cx="20" cy="20" rx="17" ry="11" transform="rotate(-30 20 20)" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M13 24 27 16M16 20l2 3M19 18l2 3M22 16l2 3" stroke="currentColor" stroke-width="2"/></svg>团子 AI 学院</span>
-    <button class="w-music" data-music-toggle aria-pressed="false"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>灌篮高手 · 钢琴版</button>
+    <button class="w-music" data-music-toggle aria-pressed="false"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span data-music-status>热血钢琴 · Unity</span></button>
   </header>
   <div class="w-inner">
     <div class="w-left">
@@ -45,14 +45,14 @@
     </svg>
     <ol><li>先问</li><li>再核对</li><li>最后构建</li></ol>
   </aside>
+  <p class="w-credit">背景音乐：“Unity” Kevin MacLeod (incompetech.com) · CC BY 4.0</p>
 </div>
 
-<div class="music-dock" id="musicDock" hidden>
-  <div class="md-head"><b>♪ 好想大声说爱你</b><span>灌篮高手主题曲 · 钢琴版</span><button class="md-x" data-music-toggle aria-label="关闭音乐">×</button></div>
-  <div class="md-frame" id="musicFrame"></div>
-  <p class="md-note">通过网易云音乐官方外链播放，版权归原作者。<a href="https://music.163.com/song?id=1907766528" target="_blank" rel="noopener">在网易云打开 ↗</a></p>
+<div class="music-ctl" id="musicCtl" data-music>
+  <audio id="bgm" data-src="assets/music/unity-pianov1.0.mp3" loop preload="none"></audio>
+  <button class="music-fab" data-music-toggle aria-pressed="false" aria-label="背景音乐 Unity · 热血钢琴"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span class="mf-t" data-music-status>播放音乐</span></button>
+  <input class="music-vol" type="range" min="0" max="100" step="1" value="30" aria-label="背景音乐音量">
 </div>
-<button class="music-fab" data-music-toggle aria-pressed="false" aria-label="背景音乐：灌篮高手主题曲钢琴版"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span class="mf-t">音乐</span></button>
 
 <header class="nav">
   <a class="brand" href="#top" aria-label="团子 AI 学院 首页">
@@ -235,8 +235,9 @@
 <footer class="foot">
   <p>团子 AI 学院 · Learn AI. Verify Everything. Build for Care.</p>
   <p class="muted" id="updated"></p>
+  <p class="muted">背景音乐：“Unity” Kevin MacLeod (<a href="https://incompetech.com" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
 </footer>
-<script src="assets/appv1.0.js?v=1.6.1"></script>
-<script src="assets/welcomev1.0.js?v=1.6.1"></script>
+<script src="assets/appv1.0.js?v=1.7"></script>
+<script src="assets/welcomev1.0.js?v=1.7"></script>
 </body>
 </html>

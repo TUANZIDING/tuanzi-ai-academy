@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16",
+ "updated": "2026-10-17",
  "credit": {
   "name": "OiOi 人工智能学院（Dr. Anita）",
   "url": "https://oioi-academy.com/"
@@ -265,9 +265,60 @@
   "knowledge": "知识库与科研",
   "creative": "课件与配图",
   "safety": "安全",
-  "perspectives": "认知与观察"
+  "perspectives": "认知与观察",
+  "medical": "医学互动课件范例"
  },
  "library": [
+  {
+   "topic": "medical",
+   "title": "GE Carestation 850 · 麻醉工作站交互课件",
+   "url": "https://oioi-academy.com/medical-learning/carestation-850/"
+  },
+  {
+   "topic": "medical",
+   "title": "认知障碍图谱",
+   "url": "https://oioi-academy.com/medical-learning/cognitive-atlas/"
+  },
+  {
+   "topic": "medical",
+   "title": "右美托咪定：从受体到睡眠样镇静",
+   "url": "https://oioi-academy.com/medical-learning/dexmedetomidine-brain/"
+  },
+  {
+   "topic": "perspectives",
+   "title": "斩杀线，被斩杀了：AI 大模型价格战解读",
+   "url": "https://oioi-academy.com/learning/courses/kill-line/"
+  },
+  {
+   "topic": "basics",
+   "title": "人工智能发展史",
+   "url": "https://oioi-academy.com/offline-exchange/ai-history-2026/"
+  },
+  {
+   "topic": "agents",
+   "title": "始终在线的 AI 智能体",
+   "url": "https://oioi-academy.com/offline-exchange/always-on-agent/"
+  },
+  {
+   "topic": "agents",
+   "title": "AI 进化论：从提示词到 Harness 工程",
+   "url": "https://oioi-academy.com/offline-exchange/ai-evolution-harness/"
+  },
+  {
+   "topic": "perspectives",
+   "title": "AI 认知漏斗 · Karpathy 解读",
+   "url": "https://oioi-academy.com/offline-exchange/karpathy-ai-funnel/"
+  },
+  {
+   "topic": "agents",
+   "title": "9 种 AI 云端电脑，到底怎么选？",
+   "url": "https://oioi-academy.com/offline-exchange/ai-cloud-computers/"
+  },
+  {
+   "topic": "perspectives",
+   "title": "AI 时代，谁最稀缺？· 网感与技术四象限",
+   "url": "https://oioi-academy.com/offline-exchange/ai-role-quadrants/"
+  },
   {
    "topic": "basics",
    "title": "2026 年你必须理解的 20 个 AI 概念",

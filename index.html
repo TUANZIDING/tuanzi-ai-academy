@@ -5,10 +5,59 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>团子 AI 学院 · AI 战术手册 | Tuanzi AI Academy</title>
 <meta name="description" content="丁海祥（急诊创伤外科医生）的 AI 使用策略教学站：L0–L4 战术路线、可点开的开源作品、线上线下课件。">
-<link rel="stylesheet" href="assets/stylev1.0.css?v=1.3">
+<link rel="stylesheet" href="assets/stylev1.0.css?v=1.4">
+<link rel="stylesheet" href="assets/welcomev1.0.css?v=1.4">
 </head>
 <body>
 <a class="skip" href="#main">跳到主要内容</a>
+<div class="welcome" id="welcome" role="dialog" aria-modal="true" aria-labelledby="wName">
+  <canvas class="w-net" id="wNet" aria-hidden="true"></canvas>
+  <div class="w-yards" aria-hidden="true"><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>40</span><span>30</span><span>20</span><span>10</span></div>
+  <div class="w-inner">
+    <div class="w-left">
+      <p class="w-eyebrow"><i></i>WELCOME TO THE HUDDLE · 欢迎来到战术会议</p>
+      <h1 id="wName">丁海祥<small>Haixiang (Bruce) Ding, MD</small></h1>
+      <ul class="w-tags">
+        <li>急诊创伤外科主治医师</li>
+        <li>苏州大学临床医学博士在读</li>
+        <li>AI 教学实践者 · 两个孩子的爸爸</li>
+      </ul>
+      <p class="w-quote">在抢救室，黄金一小时靠团队按顺序执行；<br>在 AI 时代，好结果靠<b>人做决定</b>、<em>AI 跑路线</em>。</p>
+      <div class="w-three">
+        <article><svg viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="16" rx="13" ry="8" transform="rotate(-30 16 16)"/><path d="M10 19 22 13M12.5 16l1.5 2M15 14.5l1.5 2M17.5 13l1.5 2"/></svg><b>橄榄球战术板</b><span>四分卫看全场、做决定；每条路线都提前画好。</span></article>
+        <article><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M12 4h8v8h8v8h-8v8h-8v-8H4v-8h8z"/></svg><b>创伤救治顺序</b><span>像 xABCDE 一样：先排优先级，每一步都复评、核查。</span></article>
+        <article><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="8" width="16" height="16" rx="3"/><path d="M12 4v4M20 4v4M12 24v4M20 24v4M4 12h4M4 20h4M24 12h4M24 20h4"/></svg><b>AI 跑路线</b><span>检索、写作、编程、做课件，AI 负责执行，人负责拍板。</span></article>
+      </div>
+      <p class="w-aud">这门课讲给：<span>医生</span><span>护士</span><span>科研人员</span><span>年轻父母</span><span>社会工作者</span></p>
+      <div class="w-cta">
+        <button class="btn primary w-enter" id="wEnter">进入 AI 战术手册 →</button>
+        <button class="btn w-music" data-music-toggle aria-pressed="false"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>假如爱有天意 · 李健</button>
+      </div>
+    </div>
+    <div class="w-card" aria-label="球员卡">
+      <div class="w-card-top"><span>TUANZI AI ACADEMY</span><span class="live"><i></i>AI ONLINE</span></div>
+      <div class="w-jersey"><b>90</b><span>DING</span></div>
+      <p class="w-pos">位置 · QB / 急诊创伤 · 无锡</p>
+      <svg class="w-ecg" viewBox="0 0 300 60" aria-hidden="true"><path d="M0 34h60l8-14 8 28 10-44 10 40 6-10h70l8-14 8 28 10-44 10 40 6-10h86"/></svg>
+      <dl class="w-stats">
+        <div><dt>HR</dt><dd>72<small>bpm</small></dd></div>
+        <div><dt>公开作品</dt><dd id="wWorks">25</dd></div>
+        <div><dt>战术档位</dt><dd>L0–L4</dd></div>
+      </dl>
+      <p class="w-research">研究：放射性骨骼肌损伤 · 骨质疏松<br>教学：AI 使用策略 · 创伤急救课程</p>
+      <div class="w-scan" aria-hidden="true"></div>
+    </div>
+  </div>
+  <svg class="w-ecg-strip" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 44h180l12-20 12 40 14-60 14 54 8-14h220l12-20 12 40 14-60 14 54 8-14h220l12-20 12 40 14-60 14 54 8-14h220l12-20 12 40 14-60 14 54 8-14h120"/></svg>
+</div>
+
+<div class="music-dock" id="musicDock" hidden>
+  <div class="md-head"><b>♪ 假如爱有天意</b><span>李健 · 网易云音乐</span><button class="md-x" data-music-toggle aria-label="关闭音乐">×</button></div>
+  <div class="md-frame" id="musicFrame"></div>
+  <p class="md-note">音乐通过网易云音乐官方外链播放，版权归原作者；该曲为会员歌曲，未登录可能只能试听。<a href="https://music.163.com/song?id=31877467" target="_blank" rel="noopener">在网易云打开 ↗</a></p>
+</div>
+<button class="music-fab" data-music-toggle aria-pressed="false" aria-label="背景音乐：假如爱有天意"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span class="mf-t">音乐</span></button>
+
 <header class="nav">
   <a class="brand" href="#top" aria-label="团子 AI 学院 首页">
     <svg viewBox="0 0 40 40" aria-hidden="true"><ellipse cx="20" cy="20" rx="17" ry="11" transform="rotate(-30 20 20)" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M13 24 27 16M16 20l2 3M19 18l2 3M22 16l2 3" stroke="currentColor" stroke-width="2"/></svg>
@@ -25,6 +74,7 @@
     <a href="#toolbox">开源工具箱</a>
     <a href="#about">关于</a>
   </nav>
+  <button class="btn ghost" id="reWelcome" title="回到欢迎页">关于我</button>
   <button class="btn ghost" id="projector" aria-pressed="false" title="线下投屏时放大字号">投屏模式</button>
 </header>
 
@@ -40,18 +90,55 @@
     </div>
     <ul class="stats" id="stats" aria-label="站点数据"></ul>
   </div>
-  <figure class="hero-board" aria-label="战术板动画：QB、RB、WR 三条路线">
-    <svg viewBox="0 0 420 320" role="img">
-      <title>AI 战术板</title>
-      <defs><pattern id="yard" width="42" height="320" patternUnits="userSpaceOnUse"><path d="M0 0V320" stroke="#1e3a5f" stroke-width="1"/></pattern></defs>
-      <rect width="420" height="320" rx="18" fill="#0b1a2e"/>
-      <rect width="420" height="320" rx="18" fill="url(#yard)"/>
-      <line x1="0" y1="200" x2="420" y2="200" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 6" opacity=".7"/>
-      <g class="route r1"><path d="M110 230 C110 160 150 120 210 90" /><circle cx="110" cy="230" r="11"/><text x="96" y="262">问</text></g>
-      <g class="route r2"><path d="M210 240 C230 180 300 170 330 110" /><circle cx="210" cy="240" r="11"/><text x="196" y="272">核对</text></g>
-      <g class="route r3"><path d="M310 230 C330 190 380 160 360 60" /><circle cx="310" cy="230" r="11"/><text x="296" y="262">构建</text></g>
-      <text x="22" y="36" class="board-label">PLAY 01 · 先问，再核对，最后构建</text>
-      <text x="22" y="300" class="board-label small">人类做决定 · AI 跑路线</text>
+  <figure class="hero-board" aria-label="AI 战术板：人类做决定，AI 跑路线">
+    <svg viewBox="0 0 520 400" role="img">
+      <title>AI 战术板 · 人类做决定 · AI 跑路线</title>
+      <defs>
+        <linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071224"/><stop offset="1" stop-color="#0c1f3d"/></linearGradient>
+        <radialGradient id="glowG" cx=".5" cy=".18" r=".6"><stop offset="0" stop-color="#22d3ee" stop-opacity=".28"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></radialGradient>
+        <linearGradient id="rtG" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#f59e0b"/><stop offset=".5" stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+        <linearGradient id="capG" x1="0" x2="1"><stop offset="0" stop-color="#f59e0b"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+        <filter id="neon" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke="#1b3b66" stroke-width=".6"/></pattern>
+        <path id="p1" d="M140 300 C135 225 170 175 240 128"/>
+        <path id="p2" d="M260 312 C285 245 360 230 392 150"/>
+        <path id="p3" d="M380 300 C410 250 470 205 448 92"/>
+      </defs>
+      <rect width="520" height="400" rx="22" fill="url(#bgG)"/>
+      <rect width="520" height="400" rx="22" fill="url(#grid)" opacity=".55"/>
+      <rect width="520" height="400" rx="22" fill="url(#glowG)"/>
+      <g class="yardnums" font-size="10" fill="#2b5486"><text x="18" y="214">10</text><text x="18" y="134">20</text><text x="18" y="54">30</text></g>
+      <!-- AI engine chip -->
+      <g class="chip">
+        <path class="bus" d="M290 70 V88 C290 105 240 110 240 128 M290 70 V88 C290 105 392 120 392 150 M310 60 C360 60 448 60 448 92" />
+        <rect x="246" y="30" width="96" height="40" rx="9" fill="#0b1a2e" stroke="#22d3ee" stroke-width="1.5" filter="url(#neon)"/>
+        <g stroke="#22d3ee" stroke-width="1.4"><path d="M262 24v6M278 24v6M294 24v6M310 24v6M326 24v6M262 70v6M326 70v6"/></g>
+        <text x="294" y="55" text-anchor="middle" class="chip-t">AI ENGINE</text>
+      </g>
+      <!-- line of decision -->
+      <line x1="40" y1="262" x2="500" y2="262" stroke="#f59e0b" stroke-width="2" stroke-dasharray="8 7" class="los"/>
+      <text x="498" y="254" text-anchor="end" class="los-t">人类决策线 · LINE OF DECISION</text>
+      <!-- routes -->
+      <g class="rt"><use href="#p1" class="halo"/><use href="#p1" class="flow"/>
+        <circle r="4" class="dot"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle></g>
+      <g class="rt"><use href="#p2" class="halo"/><use href="#p2" class="flow d2"/>
+        <circle r="4" class="dot"><animateMotion dur="3.2s" begin=".6s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></circle></g>
+      <g class="rt"><use href="#p3" class="halo"/><use href="#p3" class="flow d3"/>
+        <circle r="4" class="dot"><animateMotion dur="3.6s" begin="1.1s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion></circle></g>
+      <!-- end markers -->
+      <g class="tgt"><circle cx="240" cy="128" r="5"/><circle cx="392" cy="150" r="5"/><circle cx="448" cy="92" r="5"/></g>
+      <!-- players: the human -->
+      <g class="ply"><circle cx="140" cy="300" r="20" class="ring"/><circle cx="140" cy="300" r="13"/><text x="140" y="305">问</text></g>
+      <g class="ply"><circle cx="260" cy="312" r="20" class="ring r2"/><circle cx="260" cy="312" r="13"/><text x="260" y="317">核</text></g>
+      <g class="ply"><circle cx="380" cy="300" r="20" class="ring r3"/><circle cx="380" cy="300" r="13"/><text x="380" y="305">建</text></g>
+      <g class="tag"><rect x="104" y="332" width="72" height="22" rx="11"/><text x="140" y="347">01 提问</text>
+        <rect x="224" y="344" width="72" height="22" rx="11"/><text x="260" y="359">02 核对</text>
+        <rect x="344" y="332" width="72" height="22" rx="11"/><text x="380" y="347">03 构建</text></g>
+      <!-- HUD -->
+      <g class="hud" stroke="#22d3ee" stroke-width="2" fill="none"><path d="M14 34V14h20M486 14h20v20M506 366v20h-20M34 386H14v-20"/></g>
+      <text x="30" y="40" class="board-label">PLAY 01 · 先问，再核对，最后构建</text>
+      <g class="status"><circle cx="420" cy="36" r="4"/><text x="430" y="40">AI RUNNING</text></g>
+      <text x="260" y="388" text-anchor="middle" class="cap">人类做决定 · AI 跑路线</text>
     </svg>
   </figure>
 </section>
@@ -153,6 +240,7 @@
   <p>团子 AI 学院 · Learn AI. Verify Everything. Build for Care.</p>
   <p class="muted" id="updated"></p>
 </footer>
-<script src="assets/appv1.0.js?v=1.3"></script>
+<script src="assets/appv1.0.js?v=1.4"></script>
+<script src="assets/welcomev1.0.js?v=1.4"></script>
 </body>
 </html>

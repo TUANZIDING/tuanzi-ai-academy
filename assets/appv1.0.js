@@ -91,7 +91,7 @@
       .filter(p => cat === 'all' || p.category === cat)
       .filter(p => !level || p.level === level)
       .sort((a, b) => (b.live ? 1 : 0) - (a.live ? 1 : 0));
-    $('#grid').innerHTML = list.map(card).join('') || '<p class="sub">这个组合下暂时没有作品。</p>';
+    $('#grid').innerHTML = list.length ? list.map(card).join('') : (level && cat === 'all' ? drill(level) : '<p class="sub">这个组合下暂时没有作品，试试清除筛选。</p>');
     const parts = [];
     if (level) parts.push(`${level} 档`);
     if (cat !== 'all') parts.push(CATS[cat]);
@@ -99,6 +99,38 @@
     const clr = $('#clr'); if (clr) clr.onclick = () => { cat = 'all'; level = null; renderFilters(); renderLevels(); renderGrid(); };
   }
 
+
+  const DRILL = [
+    { down: '1ST DOWN', tag: '只丢一句话', q: '骨盆骨折怎么处理？', a: '得到一份教科书式的泛泛清单，和你眼前的病人关系不大。', grade: 'weak' },
+    { down: '2ND DOWN', tag: '加上背景', q: '我是急诊科医生。模拟病例：65 岁女性，跌倒后骨盆骨折，血压 85/50，心率 120。怎么处理？', a: '开始贴近现场：提到休克、骨盆带、输血，但顺序和依据仍然模糊。', grade: 'mid' },
+    { down: '3RD DOWN', tag: '完整战术呼叫', q: '你是创伤外科带教老师。模拟病例同上。目标：按 xABCDE 列出到院前 30 分钟的处置要点。格式：表格（时间点 / 操作 / 理由）。限制：每条标注指南出处，不确定的写“需核实”，不要编造文献。', a: '得到可直接上课讨论的表格：顺序清楚、有出处、留出了人工核对的位置。', grade: 'good' }
+  ];
+  function drill(lv) {
+    const L = LEVELS.find(l => l.id === lv);
+    const cs = (learn ? learn.concepts : []).filter(c => c.level === lv);
+    const parts = lv === 'L0' ? `
+      <div class="drill-plays">${DRILL.map(d => `
+        <div class="play-card ${d.grade}"><span class="down">${d.down}</span><b>${d.tag}</b>
+          <p class="q">“${esc(d.q)}”</p><p class="a">→ ${esc(d.a)}</p></div>`).join('')}</div>
+      <div class="call"><b>战术呼叫五要素</b><span>角色</span><span>背景</span><span>目标</span><span>格式</span><span>限制</span></div>` : '';
+    return `<section class="drill" aria-label="${lv} 现场演示">
+      <div class="drill-head"><span class="badge lv">${lv} ${L.name}</span>
+        <h3>这一档没有作品，靠现场演示：同一个临床问题，三次进攻</h3>
+        <p>${esc(L.desc)} 课上我会现场换三种问法，大家对比 AI 的回答。</p></div>
+      ${parts}
+      ${cs.length ? `<div class="drill-terms"><b>这一档要懂的概念</b>${cs.map(c => `<a href="${esc(c.more)}" target="_blank" rel="noopener">${esc(c.term)} ↗</a>`).join('')}</div>` : ''}
+      <div class="drill-next"><a class="btn primary" href="#concepts">去战术词典看 ${lv} 概念</a>
+        <button class="btn ghost" data-next="L1">练完了，推进到 L1 →</button></div>
+    </section>`;
+  }
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-next]'); if (!b) return;
+    level = b.dataset.next; renderLevels(); renderGrid();
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.drill-next a[href="#concepts"]')) return;
+    if (typeof cLevel !== 'undefined' && learn && level) { cLevel = level; renderConcepts(); }
+  });
   function renderLessons() {
     const byRepo = Object.fromEntries(data.projects.map(p => [p.repo, p]));
     $('#lessonList').innerHTML = LESSONS.map(l => `<article class="lesson">
@@ -158,6 +190,6 @@
     $('#libList').innerHTML = learn.library.filter(c => libTopic === 'all' || c.topic === libTopic).map(c =>
       `<a class="lib-item" href="${esc(c.url)}" target="_blank" rel="noopener"><span>${esc(learn.topics[c.topic])}</span><b>${esc(c.title)}</b></a>`).join('');
   }
-  fetch('data/learnv1.0.json').then(r => r.json()).then(d => { learn = d; renderConcepts(); renderGear(); renderLibrary(); })
+  fetch('data/learnv1.0.json').then(r => r.json()).then(d => { learn = d; renderConcepts(); renderGear(); renderLibrary(); if (level) renderGrid(); })
     .catch(() => { $('#conceptGrid').innerHTML = '<p class="sub">词典数据加载失败，请刷新页面。</p>'; });
 })();

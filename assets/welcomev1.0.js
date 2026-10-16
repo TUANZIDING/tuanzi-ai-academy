@@ -19,7 +19,7 @@
   fetch('data/projectsv1.0.json').then(r => r.json()).then(d => { const n = document.getElementById('wWorks'); if (n && d.projects) n.textContent = d.projects.length; }).catch(() => {});
 
   // AI 神经网络背景
-  const cv = document.getElementById('wNet'); const ctx = cv.getContext('2d');
+  const cv = document.getElementById('wNet'); const ctx = cv ? cv.getContext('2d') : null;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let pts = [], raf = null;
   function size() { cv.width = cv.offsetWidth * devicePixelRatio; cv.height = cv.offsetHeight * devicePixelRatio;
@@ -34,9 +34,9 @@
     for (const p of pts) { ctx.fillStyle = 'rgba(165,243,252,.8)'; ctx.beginPath(); ctx.arc(p.x, p.y, 1.6 * devicePixelRatio, 0, 7); ctx.fill(); }
     if (!reduce) raf = requestAnimationFrame(draw);
   }
-  function startNet() { if (raf) return; size(); draw(); }
+  function startNet() { if (!cv || raf) return; size(); draw(); }
   function stopNet() { cancelAnimationFrame(raf); raf = null; }
-  addEventListener('resize', () => { if (!w.hidden) size(); });
+  addEventListener('resize', () => { if (cv && !w.hidden) size(); });
   if (!w.hidden) startNet();
 
   // 音乐：网易云官方外链播放器，点击才加载
@@ -45,7 +45,7 @@
   let on = false;
   function setMusic(v) {
     on = v; dock.hidden = !v;
-    frame.innerHTML = v ? '<iframe title="假如爱有天意 · 李健 · 网易云音乐" src="https://music.163.com/outchain/player?type=2&id=31877467&auto=1&height=66" allow="autoplay" loading="lazy"></iframe>' : '';
+    frame.innerHTML = v ? '<iframe title="好想大声说爱你 · 灌篮高手钢琴版 · 网易云音乐" src="https://music.163.com/outchain/player?type=2&id=1907766528&auto=1&height=66" allow="autoplay" loading="lazy"></iframe>' : '';
     toggles.forEach(t => t.hasAttribute('aria-pressed') && t.setAttribute('aria-pressed', String(v)));
   }
   toggles.forEach(t => t.addEventListener('click', () => setMusic(!on)));

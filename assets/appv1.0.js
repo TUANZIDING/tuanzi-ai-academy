@@ -155,7 +155,7 @@
   };
   try { if (localStorage.getItem('projector') === '1') pj.click(); } catch (e) {}
 
-  fetch('data/projectsv1.0.json').then(r => r.json()).then(d => {
+  fetch('data/projectsv1.0.json?v=1.5').then(r => r.json()).then(d => {
     data = d; renderStats(); renderLevels(); renderFilters(); renderGrid(); renderLessons(); renderTools();
   }).catch(() => { $('#grid').innerHTML = '<p class="sub">作品数据加载失败，请刷新页面。</p>'; });
 
@@ -190,6 +190,6 @@
     $('#libList').innerHTML = learn.library.filter(c => libTopic === 'all' || c.topic === libTopic).map(c =>
       `<a class="lib-item" href="${esc(c.url)}" target="_blank" rel="noopener"><span>${esc(learn.topics[c.topic])}</span><b>${esc(c.title)}</b></a>`).join('');
   }
-  fetch('data/learnv1.0.json').then(r => r.json()).then(d => { learn = d; renderConcepts(); renderGear(); renderLibrary(); if (level) renderGrid(); })
+  fetch('data/learnv1.0.json?v=1.5').then(r => r.json()).then(d => { learn = d; renderConcepts(); renderGear(); renderLibrary(); if (level) renderGrid(); })
     .catch(() => { $('#conceptGrid').innerHTML = '<p class="sub">词典数据加载失败，请刷新页面。</p>'; });
 })();

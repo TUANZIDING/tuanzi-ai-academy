@@ -1,6 +1,10 @@
 // 橄榄球光标：精确小点 + 跟随的橄榄球（随运动方向旋转）+ 战术路线尾迹
 (() => {
-  if (!matchMedia('(pointer:fine)').matches || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  // 只在真正用鼠标时启用（第一次鼠标移动才初始化），触屏设备不受影响
+  const calm = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function boot(e0) {
+  if (e0.pointerType && e0.pointerType !== 'mouse') return;
+  removeEventListener('pointermove', boot);
   const css = `
   html.fb-cursor, html.fb-cursor *{cursor:none!important}
   html.fb-cursor input, html.fb-cursor textarea, html.fb-cursor select, html.fb-cursor [contenteditable]{cursor:text!important}
@@ -24,7 +28,7 @@
   function size() { dpr = Math.min(devicePixelRatio || 1, 2); cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
   size(); addEventListener('resize', size);
 
-  let mx = innerWidth / 2, my = innerHeight / 2, bx = mx, by = my, ang = 0, seen = false;
+  let mx = e0.clientX, my = e0.clientY, bx = mx, by = my, ang = 0, seen = false;
   const pts = [];
   addEventListener('pointermove', e => {
     mx = e.clientX; my = e.clientY;
@@ -47,7 +51,7 @@
     }
     const stretch = 1 + Math.min(sp / 260, 0.18);
     ball.style.transform = `translate(${bx}px,${by}px) rotate(${ang}deg) scale(${stretch},${1 / stretch})`;
-    if (sp > 2) pts.push({ x: bx, y: by, life: 1 });
+    if (sp > 2 && !calm) pts.push({ x: bx, y: by, life: 1 });
     ctx.clearRect(0, 0, innerWidth, innerHeight);
     for (let i = pts.length - 1; i >= 0; i--) { pts[i].life -= 0.028; if (pts[i].life <= 0) pts.splice(i, 1); }
     if (pts.length > 1) {
@@ -64,4 +68,7 @@
     requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
+  dot.style.transform = `translate(${mx}px,${my}px)`; seen = true;
+  }
+  addEventListener('pointermove', boot, { passive: true });
 })();

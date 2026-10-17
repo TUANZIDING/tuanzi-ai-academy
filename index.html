@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>团子 AI 学院 · AI 战术手册 | Tuanzi AI Academy</title>
 <meta name="description" content="丁海祥（急诊创伤外科医生）的 AI 使用策略教学站：L0–L4 战术路线、可点开的开源作品、线上线下课件。">
-<link rel="stylesheet" href="assets/stylev1.0.css?v=1.9">
-<link rel="stylesheet" href="assets/welcomev1.0.css?v=1.9">
+<link rel="stylesheet" href="assets/stylev1.0.css?v=2.0">
+<link rel="stylesheet" href="assets/welcomev1.0.css?v=2.0">
+<link rel="stylesheet" href="assets/campv1.0.css?v=1.0">
 </head>
 <body>
 <a class="skip" href="#main">跳到主要内容</a>
@@ -65,6 +66,7 @@
     <a href="#gear">装备库</a>
     <a href="#gallery">作品馆</a>
     <a href="#lessons">课件馆</a>
+    <a href="#camp">训练营</a>
     <a href="#library">延伸学习</a>
     <a href="#safety">安全边界</a>
     <a href="#toolbox">开源工具箱</a>
@@ -192,6 +194,21 @@
   <div class="lessons" id="lessonList"></div>
 </section>
 
+<section id="camp" class="section camp">
+  <p class="eyebrow">TRAINING CAMP / 训练营</p>
+  <h2>丁医生的 AI 训练营 · <em>18 堂战术课</em></h2>
+  <p class="sub">每堂课一个主题，配一个球场比喻、一个急诊或科研里的真实场景、一道课堂练习。10 到 20 分钟一堂，按顺序练，也可以挑着练。</p>
+  <div class="camp-tracks" id="campTracks"></div>
+</section>
+
+<div class="camp-reader" id="campReader" hidden role="dialog" aria-modal="true" aria-labelledby="crTitle">
+  <div class="cr-backdrop" data-cr-close></div>
+  <article class="cr-sheet">
+    <button class="cr-x" data-cr-close aria-label="关闭">×</button>
+    <div id="crBody"></div>
+  </article>
+</div>
+
 <section id="library" class="section">
   <p class="eyebrow">06 / FILM ROOM</p>
   <h2>延伸学习 · 录像室</h2>
@@ -237,8 +254,9 @@
   <p class="muted" id="updated"></p>
   <p class="muted">背景音乐：“Unity” Kevin MacLeod (<a href="https://incompetech.com" target="_blank" rel="noopener">incompetech.com</a>) · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
 </footer>
-<script src="assets/appv1.0.js?v=1.9"></script>
-<script src="assets/welcomev1.0.js?v=1.9"></script>
-<script src="assets/cursorv1.0.js?v=1.9" defer></script>
+<script src="assets/appv1.0.js?v=2.0.1"></script>
+<script src="assets/welcomev1.0.js?v=2.0"></script>
+<script src="assets/campv1.0.js?v=1.0" defer></script>
+<script src="assets/cursorv1.0.js?v=2.0" defer></script>
 </body>
 </html>

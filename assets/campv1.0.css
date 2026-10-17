@@ -1,0 +1,47 @@
+/* 训练营 */
+.camp{background:linear-gradient(180deg,#fbf7ef 0%,#f5f8fc 100%)}
+.camp-tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:28px;margin-top:32px}
+.camp-track{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px 22px 18px;box-shadow:0 10px 30px rgba(11,26,46,.05);position:relative;overflow:hidden}
+.camp-track::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:linear-gradient(90deg,#c8692c,#f2c14e)}
+.camp-track.t-agents::before{background:linear-gradient(90deg,#2f6f5e,#2f8f9d)}
+.camp-track header{margin-bottom:14px}
+.ct-en{font-size:.7rem;letter-spacing:.2em;color:#c8692c;font-weight:700}
+.t-agents .ct-en{color:#2f8f9d}
+.camp-track h3{margin:4px 0 6px;font-size:1.35rem}
+.camp-track header p{margin:0;color:var(--muted);font-size:.92rem}
+.ct-meta{display:inline-block;margin-top:10px;font-size:.78rem;color:var(--muted);background:var(--bg2);padding:3px 10px;border-radius:999px}
+.camp-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.camp-card{width:100%;display:flex;align-items:center;gap:14px;text-align:left;background:#fff;border:1px solid transparent;border-radius:14px;padding:12px;font:inherit;color:inherit;cursor:pointer;transition:.2s}
+.camp-card:hover{background:#fbf7ef;border-color:rgba(200,105,44,.35);transform:translateX(3px)}
+.t-agents .camp-card:hover{background:#f0f7f6;border-color:rgba(47,143,157,.35)}
+.cc-no{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:.85rem;color:#c8692c;background:#fdf1e6;letter-spacing:.04em}
+.t-agents .cc-no{color:#2f6f5e;background:#e6f2ef}
+.cc-main{flex:1;min-width:0}
+.cc-main b{display:block;font-size:.98rem;line-height:1.4}
+.cc-main em{display:block;font-style:normal;font-size:.8rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cc-tag{flex:none;font-size:.72rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 8px}
+html.cr-open{overflow:hidden}
+.camp-reader{position:fixed;inset:0;z-index:150;display:flex;justify-content:flex-end}
+.camp-reader[hidden]{display:none}
+.cr-backdrop{position:absolute;inset:0;background:rgba(31,43,56,.35);backdrop-filter:blur(3px);animation:crFade .3s}
+.cr-sheet{position:relative;width:min(720px,100vw);height:100%;overflow:auto;background:#fffdf9;padding:44px 48px 40px;box-shadow:-20px 0 60px rgba(31,43,56,.2);animation:crIn .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes crIn{from{transform:translateX(40px);opacity:0}}@keyframes crFade{from{opacity:0}}
+.cr-x{position:absolute;right:20px;top:16px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:1.4rem;line-height:1;cursor:pointer;color:var(--muted)}
+.cr-kick{font-size:.78rem;color:#c8692c;letter-spacing:.06em;font-weight:700;margin:0 0 6px}
+.cr-sheet h2{font-size:1.7rem;line-height:1.3;margin:0 0 14px}
+.cr-one{font-size:1.08rem;line-height:1.8;color:#33414f;margin:0 0 20px}
+.cr-play{background:linear-gradient(135deg,#f2f8f2,#eef6f7);border-radius:16px;padding:16px 18px;margin-bottom:22px;border-left:4px solid #2f6f5e}
+.cr-play span,.cr-box span{font-size:.8rem;font-weight:700;color:#2f6f5e}
+.cr-play p,.cr-box p{margin:6px 0 0;line-height:1.75}
+.cr-sheet h4{margin:0 0 8px;font-size:1rem}
+.cr-points{margin:0 0 22px;padding-left:1.3em;line-height:1.9}
+.cr-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.cr-box{border-radius:16px;padding:16px;background:#fff;border:1px solid var(--line)}
+.cr-box.case span{color:#c0392b}.cr-box.drill span{color:#c8692c}
+.cr-care{background:#fff7e8;border-radius:12px;padding:12px 14px;font-size:.92rem;color:#6b4a12}
+.cr-nav{display:flex;justify-content:space-between;gap:12px;margin:28px 0 10px}
+.cr-nav button{flex:1;max-width:48%;font:inherit;font-size:.85rem;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;color:var(--ink);text-align:left}
+.cr-nav button:last-child{text-align:right}
+.cr-nav button:hover{border-color:#c8692c;color:#c8692c}
+.cr-sign{font-size:.75rem;color:#9aa5b0;margin:14px 0 0}
+@media (max-width:700px){.camp-tracks{grid-template-columns:1fr}.cr-sheet{padding:40px 20px 30px}.cr-grid{grid-template-columns:1fr}.cc-tag{display:none}}

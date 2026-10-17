@@ -258,9 +258,7 @@
   }
  ],
  "topics": {
-  "basics": "AI 基础与提问",
   "coding": "Codex 实战",
-  "agents": "Agent 工程",
   "skills": "Skills",
   "knowledge": "知识库与科研",
   "creative": "课件与配图",
@@ -290,74 +288,14 @@
    "url": "https://oioi-academy.com/learning/courses/kill-line/"
   },
   {
-   "topic": "basics",
-   "title": "人工智能发展史",
-   "url": "https://oioi-academy.com/offline-exchange/ai-history-2026/"
-  },
-  {
-   "topic": "agents",
-   "title": "始终在线的 AI 智能体",
-   "url": "https://oioi-academy.com/offline-exchange/always-on-agent/"
-  },
-  {
-   "topic": "agents",
-   "title": "AI 进化论：从提示词到 Harness 工程",
-   "url": "https://oioi-academy.com/offline-exchange/ai-evolution-harness/"
-  },
-  {
    "topic": "perspectives",
    "title": "AI 认知漏斗 · Karpathy 解读",
    "url": "https://oioi-academy.com/offline-exchange/karpathy-ai-funnel/"
   },
   {
-   "topic": "agents",
-   "title": "9 种 AI 云端电脑，到底怎么选？",
-   "url": "https://oioi-academy.com/offline-exchange/ai-cloud-computers/"
-  },
-  {
    "topic": "perspectives",
    "title": "AI 时代，谁最稀缺？· 网感与技术四象限",
    "url": "https://oioi-academy.com/offline-exchange/ai-role-quadrants/"
-  },
-  {
-   "topic": "basics",
-   "title": "2026 年你必须理解的 20 个 AI 概念",
-   "url": "https://oioi-academy.com/learning/courses/twenty-ai-concepts/"
-  },
-  {
-   "topic": "basics",
-   "title": "AI 名词小白入门：先建地图，再学名词",
-   "url": "https://oioi-academy.com/learning/courses/ai-terms-map/"
-  },
-  {
-   "topic": "basics",
-   "title": "吴恩达 21 节课：AI 高手心法",
-   "url": "https://oioi-academy.com/learning/courses/andrew-ng-ai-practice/"
-  },
-  {
-   "topic": "basics",
-   "title": "OpenAI 官方提示指南详解",
-   "url": "https://oioi-academy.com/learning/courses/openai-prompt-guide/"
-  },
-  {
-   "topic": "basics",
-   "title": "EARS：让 AI 没有洞可填，禁止脑补",
-   "url": "https://oioi-academy.com/learning/courses/ears-evidence-prompts/"
-  },
-  {
-   "topic": "basics",
-   "title": "十个提示，把 AI 变成研究助理",
-   "url": "https://oioi-academy.com/learning/courses/ten-research-prompts/"
-  },
-  {
-   "topic": "basics",
-   "title": "需要知道的 AI 工具：10 个一句话清单",
-   "url": "https://oioi-academy.com/learning/courses/ten-ai-tools/"
-  },
-  {
-   "topic": "basics",
-   "title": "一句话分清：Chat、Work、Codex",
-   "url": "https://oioi-academy.com/learning/courses/chat-work-codex-roles/"
   },
   {
    "topic": "coding",
@@ -378,36 +316,6 @@
    "topic": "coding",
    "title": "从 Prompt 到 Goal",
    "url": "https://oioi-academy.com/learning/courses/prompt-to-goal/"
-  },
-  {
-   "topic": "agents",
-   "title": "五层工程框架：从提示词到图",
-   "url": "https://oioi-academy.com/learning/courses/five-engineering-layers/"
-  },
-  {
-   "topic": "agents",
-   "title": "AI 智能体完整课程：从入门到生产",
-   "url": "https://oioi-academy.com/learning/courses/agent-complete/"
-  },
-  {
-   "topic": "agents",
-   "title": "一张图看懂 Harness / Loop / Graph",
-   "url": "https://oioi-academy.com/learning/courses/harness-loop-graph/"
-  },
-  {
-   "topic": "agents",
-   "title": "循环工程入门与实操",
-   "url": "https://oioi-academy.com/learning/courses/loop-introduction/"
-  },
-  {
-   "topic": "agents",
-   "title": "多智能体协作：从入门到分工",
-   "url": "https://oioi-academy.com/learning/courses/multi-agent-collaboration/"
-  },
-  {
-   "topic": "agents",
-   "title": "MCP 协议与“去 MCP 化”之争",
-   "url": "https://oioi-academy.com/learning/courses/mcp-and-cli/"
   },
   {
    "topic": "skills",

@@ -44,7 +44,7 @@
   function close() { $('#campReader').hidden = true; document.documentElement.classList.remove('cr-open'); history.replaceState(null, '', '#camp'); }
   document.addEventListener('click', e => { if (e.target.closest('[data-cr-close]')) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#campReader').hidden) close(); });
-  fetch('data/campv1.0.json?v=1.1').then(r => r.json()).then(d => {
+  fetch('data/campv1.0.json?v=1.2').then(r => r.json()).then(d => {
     camp = d; render();
     const m = location.hash.match(/^#camp-(\w+)/); if (m) { $('#camp').scrollIntoView(); open(m[1], false); }
   }).catch(() => { $('#campTracks').innerHTML = '<p class="sub">课程加载失败，请刷新页面。</p>'; });

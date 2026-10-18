@@ -47,3 +47,4 @@ html.cr-open{overflow:hidden}
 @media (max-width:700px){.camp-tracks{grid-template-columns:1fr}.cr-sheet{padding:40px 20px 30px}.cr-grid{grid-template-columns:1fr}.cc-tag{display:none}}
 .cr-nav button{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cr-one,.cr-sheet p,.cr-points{word-break:normal;overflow-wrap:break-word;line-break:strict}
+.cc-tag.story{background:var(--orange,#d9600b);color:#fff;border-color:transparent;font-weight:700}

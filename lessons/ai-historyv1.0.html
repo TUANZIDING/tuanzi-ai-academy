@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>七十年一场比赛：AI 是怎么走到今天的 · 团子 AI 学院</title>
+<meta name="description" content="丁海祥 · 团子 AI 学院训练营 O01：用一场七十年的比赛，讲清人工智能的历史。">
+<style>
+:root{--cream:#fbf7ef;--ink:#1d2430;--muted:#5b6573;--orange:#d9600b;--teal:#2f8f9d;--green:#2f6f5e;--night:#121014}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--cream);overflow:hidden}
+.deck{height:100vh;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.s{position:relative;min-height:100vh;scroll-snap-align:start;display:flex;align-items:center;padding:9vh 8vw;overflow:hidden}
+.s.dark{background:var(--night);color:#f4efe6}.s.dark .muted{color:#b9b2a7}
+.s.dusk{background:#1d2633;color:#eef2f5}.s.dusk .muted{color:#aab6c2}
+.bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.bg::after{content:"";position:absolute;inset:0}
+.bg.l::after{background:linear-gradient(90deg,rgba(251,247,239,.97) 0%,rgba(251,247,239,.88) 38%,rgba(251,247,239,0) 70%)}
+.bg.r::after{background:linear-gradient(270deg,rgba(251,247,239,.97) 0%,rgba(251,247,239,.88) 38%,rgba(251,247,239,0) 70%)}
+.bg.dl::after{background:linear-gradient(90deg,rgba(18,16,20,.96) 0%,rgba(18,16,20,.8) 40%,rgba(18,16,20,.1) 75%)}
+.bg.dr::after{background:linear-gradient(270deg,rgba(18,16,20,.96) 0%,rgba(18,16,20,.8) 40%,rgba(18,16,20,.1) 75%)}
+.in{position:relative;z-index:1;max-width:620px}
+.in.right{margin-left:auto}
+.in.wide{max-width:1100px;width:100%}
+.in.center{margin:0 auto;text-align:center;max-width:900px}
+.kick{font-size:.85rem;letter-spacing:.24em;font-weight:700;color:var(--orange);margin:0 0 18px}
+.dark .kick,.dusk .kick{color:#f0a35e}
+.year{font-size:clamp(5rem,15vw,11rem);font-weight:800;line-height:.9;letter-spacing:-.04em;margin:0 0 12px;background:linear-gradient(120deg,var(--orange),#f2b14e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dusk .year{background:linear-gradient(120deg,#9fc3d6,#e7f0f5);-webkit-background-clip:text;background-clip:text}
+h1{font-size:clamp(2.4rem,5.4vw,4.4rem);line-height:1.15;margin:0 0 24px;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,3.8vw,3rem);line-height:1.25;margin:0 0 20px;letter-spacing:-.01em}
+p{font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.85;margin:0 0 16px}
+.muted{color:var(--muted)}
+.big{font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1.6;font-weight:600}
+.huge{font-size:clamp(2.6rem,7vw,6rem);font-weight:800;line-height:1.15;letter-spacing:-.03em}
+.quote{border-left:4px solid var(--orange);padding:4px 0 4px 20px;font-size:clamp(1.15rem,1.8vw,1.5rem);line-height:1.7;font-style:normal;margin:24px 0}
+.play{display:inline-block;margin-top:14px;background:rgba(47,111,94,.1);color:var(--green);border-radius:999px;padding:8px 16px;font-size:.98rem;font-weight:600}
+.dark .play,.dusk .play{background:rgba(255,255,255,.1);color:#9fe0c9}
+.cap{position:absolute;right:16px;bottom:12px;z-index:2;font-size:.7rem;color:rgba(120,110,100,.8)}
+.dark .cap,.dusk .cap{color:rgba(255,255,255,.4)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.on .reveal{opacity:1;transform:none}
+.on .reveal:nth-child(2){transition-delay:.15s}.on .reveal:nth-child(3){transition-delay:.3s}.on .reveal:nth-child(4){transition-delay:.45s}.on .reveal:nth-child(5){transition-delay:.6s}.on .reveal:nth-child(6){transition-delay:.75s}
+/* act divider */
+.act{background:var(--cream)}
+.act .num{font-size:clamp(7rem,20vw,16rem);font-weight:800;color:rgba(217,96,11,.1);position:absolute;right:6vw;bottom:-4vh;line-height:1}
+/* timeline strip */
+.strip{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:34px;position:relative}
+.strip::before{content:"";position:absolute;left:0;right:0;top:22px;height:2px;background:linear-gradient(90deg,var(--orange),var(--teal))}
+.tl{position:relative;padding-top:52px}
+.tl::before{content:"";position:absolute;top:14px;left:0;width:18px;height:18px;border-radius:50%;background:#fff;border:4px solid var(--orange)}
+.tl b{display:block;font-size:2rem;font-weight:800;color:var(--orange);line-height:1}
+.tl h3{margin:8px 0 6px;font-size:1.1rem}
+.tl p{font-size:.95rem;line-height:1.65;color:var(--muted);margin:0}
+/* numbers */
+.stats{display:flex;gap:48px;margin:28px 0;flex-wrap:wrap}
+.stat b{display:block;font-size:clamp(2.6rem,5vw,4rem);font-weight:800;line-height:1}
+.stat span{font-size:.95rem;opacity:.75}
+.stat.hot b{color:#7be3a5}.stat.cold b{color:#9aa3ad}
+/* video facade */
+.vid{margin-top:22px;max-width:560px;aspect-ratio:16/9;border-radius:16px;overflow:hidden;position:relative;background:#000;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.vid button{all:unset;cursor:pointer;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,rgba(217,96,11,.85),rgba(47,143,157,.85));color:#fff;text-align:center;padding:20px}
+.vid button i{font-style:normal;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.95);color:var(--orange);display:grid;place-items:center;font-size:1.6rem;padding-left:5px}
+.vid button span{font-size:1rem;font-weight:600}
+.vid button small{font-size:.8rem;opacity:.85}
+.vid iframe{width:100%;height:100%;border:0}
+.vlinks{font-size:.85rem;margin-top:10px}.vlinks a{color:inherit;opacity:.75;margin-right:16px}
+/* football field recap */
+.field{margin-top:30px;background:linear-gradient(180deg,#3f7f4f,#356f44);border-radius:18px;padding:26px 20px 20px;position:relative;color:#fff;box-shadow:0 20px 50px rgba(30,60,40,.25)}
+.yard{display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.yard>div{border-left:2px solid rgba(255,255,255,.55);padding:0 14px 6px;min-height:200px}
+.yard>div:last-child{border-right:2px solid rgba(255,255,255,.55)}
+.yard em{font-style:normal;font-size:.8rem;opacity:.8;letter-spacing:.1em}
+.yard b{display:block;font-size:1.25rem;margin:4px 0}
+.yard p{font-size:.92rem;line-height:1.6;margin:0;opacity:.92}
+.ballrun{position:absolute;top:-14px;left:0;font-size:1.6rem;animation:run 6s ease-in-out infinite}
+@keyframes run{0%{left:2%}100%{left:94%}}
+/* takeaways */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px;text-align:left}
+.three div{background:#fff;border-radius:18px;padding:24px;border:1px solid #eadfcd}
+.three b{font-size:2.4rem;color:var(--orange);display:block;line-height:1}
+.three h3{margin:10px 0 8px;font-size:1.2rem}
+.three p{font-size:1rem;color:var(--muted);line-height:1.7;margin:0}
+.btns{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem}
+.btn.p{background:var(--orange);color:#fff}.btn.g{border:1px solid #d8cdbb;color:var(--ink);background:#fff}
+/* chrome */
+.top{position:fixed;left:0;right:0;top:0;z-index:50;display:flex;align-items:center;gap:16px;padding:12px 22px;pointer-events:none}
+.top a,.top .yr{pointer-events:auto}
+.home{font-size:.85rem;color:var(--muted);text-decoration:none;background:rgba(255,255,255,.8);backdrop-filter:blur(8px);padding:6px 12px;border-radius:999px}
+.bar{flex:1;height:4px;background:rgba(120,110,100,.18);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--orange),var(--teal));transition:width .4s}
+.yr{font-weight:800;font-variant-numeric:tabular-nums;font-size:1rem;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);padding:5px 12px;border-radius:999px;color:var(--orange);min-width:64px;text-align:center}
+.hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:50;font-size:.78rem;color:var(--muted);background:rgba(255,255,255,.8);padding:5px 14px;border-radius:999px;backdrop-filter:blur(8px);transition:opacity .6s}
+@media (max-width:760px){
+  .s{padding:12vh 7vw 8vh}
+  .bg.l::after,.bg.r::after{background:linear-gradient(0deg,rgba(251,247,239,.97) 45%,rgba(251,247,239,.55) 100%)}
+  .bg.dl::after,.bg.dr::after{background:linear-gradient(0deg,rgba(18,16,20,.95) 45%,rgba(18,16,20,.5) 100%)}
+  .strip,.yard,.three{grid-template-columns:1fr}.strip::before{display:none}
+  .yard>div{min-height:0;border-right:0;border-bottom:1px solid rgba(255,255,255,.3);padding:10px}
+  .ballrun{display:none}.stats{gap:26px}
+}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.ballrun{animation:none}}
+</style>
+</head>
+<body>
+<div class="top"><a class="home" href="../index.html#camp">← 训练营</a><div class="bar"><i id="bar"></i></div><span class="yr" id="yr">O01</span></div>
+<div class="hint" id="hint">按 → / 空格 翻页 · 投屏时按 F 全屏</div>
+
+<main class="deck" id="deck">
+
+<section class="s" data-year="O01">
+  <div class="in center">
+    <p class="kick reveal">团子 AI 学院 · 训练营 O01</p>
+    <h1 class="reveal">七十年一场比赛<br>AI 是怎么走到今天的</h1>
+    <p class="muted reveal">一个急诊外科医生讲的 AI 简史 · 丁海祥</p>
+    <p class="play reveal">🏈 上半场两次被打回本方半场，下半场一路冲进端区</p>
+  </div>
+</section>
+
+<section class="s dark" data-year="2016">
+  <div class="bg dl" style="background-image:url(../assets/story/hist-move37v1.0.jpg)"></div>
+  <div class="in">
+    <p class="kick reveal">首尔 · 2016 年 3 月 10 日</p>
+    <h2 class="reveal">第二局，第 37 手。</h2>
+    <p class="reveal">AlphaGo 落下一子。解说员愣住了，以为是程序失误。AlphaGo 自己估算，人类棋手下出这一步的概率只有万分之一。</p>
+    <p class="reveal">世界冠军李世石起身离开座位，十几分钟后才回来落子。</p>
+    <p class="big reveal">那一刻，很多人第一次觉得：<br>机器好像有了“想法”。</p>
+  </div>
+  <span class="cap">AI 生成示意图</span>
+</section>
+
+<section class="s dark" data-year="1950">
+  <div class="in center">
+    <p class="huge reveal">但这一手，<br>人类等了六十多年。</p>
+    <p class="muted reveal" style="margin-top:24px">故事，要从一个问题开始。</p>
+  </div>
+</section>
+
+<section class="s act" data-year="1950">
+  <div class="in"><p class="kick reveal">第一幕</p><h1 class="reveal">梦想</h1><p class="muted reveal">1950 — 1969 · 一群人相信，一个夏天就能造出会思考的机器</p></div>
+  <span class="num">01</span>
+</section>
+
+<section class="s" data-year="1950">
+  <div class="bg r" style="background-image:url(../assets/story/hist-1950v1.0.jpg)"></div>
+  <div class="in right">
+    <p class="year reveal">1950</p>
+    <h2 class="reveal">“机器能思考吗？”</h2>
+    <p class="reveal">英国数学家艾伦·图灵在论文《计算机器与智能》里提出这个问题。他没有纠缠“思考”的定义，而是设计了一个游戏：如果你隔着屏幕聊天，分不出对面是人还是机器，那它就算会思考。</p>
+    <p class="muted reveal">这就是后来的“图灵测试”。</p>
+    <p class="play reveal">🏈 先定比赛规则：怎么算赢？</p>
+  </div>
+  <span class="cap">AI 生成示意图</span>
+</section>
+
+<section class="s" data-year="1956">
+  <div class="bg l" style="background-image:url(../assets/story/hist-1956v1.0.jpg)"></div>
+  <div class="in">
+    <p class="year reveal">1956</p>
+    <h2 class="reveal">一个夏天，一个名字</h2>
+    <p class="reveal">美国达特茅斯学院。约翰·麦卡锡、马文·明斯基、克劳德·香农等人办了一场夏季研讨会，第一次正式使用“人工智能”这个词。</p>
+    <blockquote class="quote reveal">他们在申请书里写：只要一群科学家一起工作一个夏天，就能在让机器使用语言、形成概念等问题上取得重大进展。</blockquote>
+    <p class="muted reveal">事实证明，这个“夏天”持续了六十多年。</p>
+  </div>
+  <span class="cap">AI 生成示意图</span>
+</section>
+
+<section class="s" data-year="1958">
+  <div class="in center">
+    <p class="year reveal">1958</p>
+    <h2 class="reveal">第一次被捧上天</h2>
+    <p class="reveal">心理学家弗兰克·罗森布拉特造出“感知机”，一台能学会区分简单图形的机器，是今天神经网络的祖先。</p>
+    <blockquote class="quote reveal" style="text-align:left;max-width:680px;margin:24px auto">《纽约时报》报道说，海军期待它将来能走路、说话、看见、写字，甚至意识到自己的存在。</blockquote>
+    <p class="play reveal">🏈 赛前吹得太满，往往是失误的开始</p>
+  </div>
+</section>
+
+<section class="s act" data-year="1969">
+  <div class="in"><p class="kick reveal">第二幕</p><h1 class="reveal">两次寒冬</h1><p class="muted reveal">1969 — 1993 · 承诺太大，交付太少，钱和人一起离场</p></div>
+  <span class="num">02</span>
+</section>
+
+<section class="s dusk" data-year="1973">
+  <div class="bg dr" style="background-image:url(../assets/story/hist-winterv1.0.jpg)"></div>
+  <div class="in right">
+    <p class="year reveal">1973</p>
+    <h2 class="reveal">第一次寒冬</h2>
+    <p class="reveal">1969 年，明斯基和派珀特出版《感知机》，证明单层网络连“异或”这样的简单问题都学不会。神经网络研究几乎停摆。</p>
+    <p class="reveal">1973 年，英国的莱特希尔报告认为 AI 远没兑现承诺，政府大幅削减经费。美国也随之收紧。</p>
+    <p class="play reveal">🏈 连续三档没推进，只能弃踢</p>
+  </div>
+  <span class="cap">AI 生成示意图</span>
+</section>
+
+<section class="s" data-year="1976">
+  <div class="in wide" style="display:grid;grid-template-columns:1.1fr .9fr;gap:6vw;align-items:center">
+    <div>
+      <p class="kick reveal">这一页，医生要多看两眼</p>
+      <p class="year reveal">1970s</p>
+      <h2 class="reveal">MYCIN：会开抗生素的电脑</h2>
+      <p class="reveal">斯坦福大学开发的专家系统，用大约 600 条“如果……那么……”规则，帮医生判断感染的细菌并推荐抗生素。评测中，它的建议不输感染科专家。</p>
+      <p class="big reveal">但它从来没有真正进入临床。</p>
+    </div>
+    <div class="reveal" style="background:#fff;border-radius:20px;padding:28px;border:1px solid #eadfcd">
+      <p style="font-weight:700;margin-bottom:12px">为什么？</p>
+      <p>· 出了错，谁负责？</p>
+      <p>· 医生要手动输入几十个问题，太慢</p>
+      <p>· 医院没有电脑网络可以接入</p>
+      <p>· 医生不信任看不懂的建议</p>
+      <p class="muted" style="margin-top:14px;font-size:1rem">五十年后，这四个问题我们仍然在回答。</p>
+    </div>
+  </div>
+</section>
+
+<section class="s dusk" data-year="1987">
+  <div class="in center">
+    <p class="year reveal">1987</p>
+    <h2 class="reveal">第二次寒冬</h2>
+    <p class="reveal">80 年代企业疯狂投资专家系统，但规则越写越多，维护越来越难。专门运行 AI 程序的 Lisp 机器市场一夜崩塌。</p>
+    <p class="big reveal">把经验写成规则，<br>碰到规则以外的病人，就不灵了。</p>
+    <p class="play reveal">🏈 战术手册写得再厚，也写不完场上的变化</p>
+  </div>
+</section>
+
+<section class="s act" data-year="1986">
+  <div class="in"><p class="kick reveal">第三幕</p><h1 class="reveal">暗处的坚持</h1><p class="muted reveal">1986 — 2011 · 没人看好的时候，有人一直在练基本功</p></div>
+  <span class="num">03</span>
+</section>
+
+<section class="s" data-year="1986–2009">
+  <div class="in wide">
+    <h2 class="reveal">五个没上头条的转折点</h2>
+    <div class="strip reveal">
+      <div class="tl"><b>1986</b><h3>反向传播</h3><p>鲁梅尔哈特、辛顿等人让多层网络能从错误里自我修正。</p></div>
+      <div class="tl"><b>1997</b><h3>深蓝胜卡斯帕罗夫</h3><p>IBM 的超级计算机赢下国际象棋世界冠军，靠的主要是算力搜索。</p></div>
+      <div class="tl"><b>1998</b><h3>LeNet</h3><p>杨立昆的卷积网络能读支票上的手写数字，悄悄用在银行里。</p></div>
+      <div class="tl"><b>2006</b><h3>“深度学习”</h3><p>辛顿团队找到训练深层网络的办法，给老技术换了新名字。</p></div>
+      <div class="tl"><b>2009</b><h3>ImageNet</h3><p>李飞飞团队整理出上千万张标注图片，给机器准备了“题库”。</p></div>
+    </div>
+    <p class="play reveal" style="margin-top:34px">🏈 算法 + 数据都到位了，还差一样：体能，也就是算力</p>
+  </div>
+</section>
+
+<section class="s act" data-year="2012">
+  <div class="in"><p class="kick reveal">第四幕</p><h1 class="reveal">大爆发</h1><p class="muted reveal">2012 — 2020 · 三件东西同时到位：算法、数据、算力</p></div>
+  <span class="num">04</span>
+</section>
+
+<section class="s dark" data-year="2012">
+  <div class="bg dl" style="background-image:url(../assets/story/hist-2012v1.0.jpg)"></div>
+  <div class="in">
+    <p class="year reveal">2012</p>
+    <h2 class="reveal">两块游戏显卡，改写了历史</h2>
+    <p class="reveal">多伦多大学的亚历克斯、伊利亚和辛顿，用两块 NVIDIA GTX 580 游戏显卡训练出 AlexNet，参加 ImageNet 图像识别比赛。</p>
+    <div class="stats reveal"><div class="stat hot"><b>15.3%</b><span>AlexNet 错误率</span></div><div class="stat cold"><b>26.2%</b><span>第二名错误率</span></div></div>
+    <p class="reveal">黄仁勋后来说，AlexNet 不只是 AlexNet：它证明了机器可以从数据里学会几乎任何规律。英伟达从此押上整家公司。</p>
+    <div class="vid reveal" data-bv="BV1ih411J7Kz"><button><i>▶</i><span>李沐精读 AlexNet 论文</span><small>B 站 · 点击播放</small></button></div>
+  </div>
+  <span class="cap">AI 生成示意图</span>
+</section>
+
+<section class="s dark" data-year="2016">
+  <div class="bg dr" style="background-image:url(../assets/story/hist-move37v1.0.jpg)"></div>
+  <div class="in right">
+    <p class="year reveal">2016</p>
+    <h2 class="reveal">回到开场那一手</h2>
+    <p class="reveal">AlphaGo 以 4:1 战胜李世石。围棋的变化比宇宙中的原子还多，靠算力穷举不可能，它靠的是深度学习练出来的“棋感”。</p>
+    <p class="reveal">但别忘了第四局：李世石下出第 78 手，被称为“神之一手”，人类赢下了唯一一局。</p>
+    <div class="vid reveal" data-bv="BV1pE411y7Pu"><button><i>▶</i><span>纪录片《AlphaGo》中英字幕</span><small>B 站 · 点击播放</small></button></div>
+    <p class="vlinks reveal"><a href="https://www.youtube.com/watch?v=WXuK6gekU1Y" target="_blank" rel="noopener">DeepMind 官方 YouTube 全片 ↗</a></p>
+  </div>
+</section>
+
+<section class="s" data-year="2017">
+  <div class="in center">
+    <p class="year reveal">2017</p>
+    <h2 class="reveal">一篇论文，一个字母</h2>
+    <p class="reveal">谷歌 8 位研究者发表论文《Attention Is All You Need》，提出 Transformer 架构：让模型同时看一整句话，自己判断哪些词彼此相关。</p>
+    <p class="big reveal">今天 ChatGPT 里的 “T”，<br>就是 Transformer。</p>
+    <p class="play reveal">🏈 四分卫不再一个一个看接球手，而是一眼看全场</p>
+  </div>
+</section>
+
+<section class="s" data-year="2020–2024">
+  <div class="in center">
+    <p class="year reveal">2024</p>
+    <h2 class="reveal">一年，两座诺贝尔奖</h2>
+    <div class="three reveal">
+      <div><b>2020</b><h3>AlphaFold 2</h3><p>DeepMind 在蛋白质结构预测比赛 CASP14 中，把困扰生物学 50 年的难题推进到接近实验精度。</p></div>
+      <div><b>化学奖</b><h3>哈萨比斯、江珀、贝克</h3><p>因蛋白质结构预测与设计，获 2024 年诺贝尔化学奖。</p></div>
+      <div><b>物理奖</b><h3>霍普菲尔德、辛顿</h3><p>因奠定人工神经网络机器学习的基础，获 2024 年诺贝尔物理学奖。</p></div>
+    </div>
+    <p class="muted reveal" style="margin-top:24px">那个在寒冬里坚持了 40 年的辛顿，终于站上了领奖台。</p>
+  </div>
+</section>
+
+<section class="s act" data-year="2022">
+  <div class="in"><p class="kick reveal">第五幕</p><h1 class="reveal">来到你我身边</h1><p class="muted reveal">2022 — 今天 · AI 从实验室走进了诊室、办公室和家里</p></div>
+  <span class="num">05</span>
+</section>
+
+<section class="s" data-year="2022">
+  <div class="bg r" style="background-image:url(../assets/story/hist-2022v1.0.jpg)"></div>
+  <div class="in right">
+    <p class="year reveal">2022</p>
+    <h2 class="reveal">11 月 30 日，ChatGPT</h2>
+    <p class="reveal">OpenAI 发布 ChatGPT。不用学编程，只要会打字，人人都能和 AI 对话。</p>
+    <div class="stats reveal"><div class="stat"><b style="color:var(--orange)">约 2 个月</b><span>用户突破 1 亿（据估算）</span></div></div>
+    <p class="reveal">这是当时历史上增长最快的消费级应用。</p>
+    <p class="play reveal">🏈 比赛第一次向所有观众开放下场</p>
+  </div>
+  <span class="cap">AI 生成示意图</span>
+</section>
+
+<section class="s" data-year="2023–2026">
+  <div class="in wide">
+    <h2 class="reveal">这三年，跑得比过去三十年还快</h2>
+    <div class="strip reveal" style="grid-template-columns:repeat(4,1fr)">
+      <div class="tl"><b>2023</b><h3>能看图了</h3><p>GPT-4 等多模态模型能读图片、看化验单和影像截图。</p></div>
+      <div class="tl"><b>2024</b><h3>能讲道理了</h3><p>推理模型先“想一想”再回答，数学和编程能力大幅提升。</p></div>
+      <div class="tl"><b>2025</b><h3>开源追上来了</h3><p>1 月 DeepSeek-R1 开源发布，推理能力接近顶级闭源模型。</p></div>
+      <div class="tl"><b>2026</b><h3>能干活了</h3><p>Agent 会用工具、跑代码、替你值班，开始真正进入工作流程。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" data-year="回放">
+  <div class="in wide">
+    <p class="kick reveal">整场回放</p>
+    <h2 class="reveal">七十年，五个阶段，一个比喻</h2>
+    <div class="field reveal">
+      <span class="ballrun">🏈</span>
+      <div class="yard">
+        <div><em>1956 · 规则时代</em><b>背战术手册</b><p>人把经验写成规则，照本宣科。</p></div>
+        <div><em>1990s · 统计时代</em><b>看比赛录像</b><p>机器从数据里总结规律。</p></div>
+        <div><em>2012 · 深度学习</em><b>练出球感</b><p>海量训练，自己找到特征。</p></div>
+        <div><em>2017 · 大模型</em><b>会读全场的四分卫</b><p>一眼看全局，会说会写会推理。</p></div>
+        <div><em>2025 · Agent</em><b>自己跑完一整个回合</b><p>会用工具，按计划执行，再回来汇报。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" data-year="带走">
+  <div class="in center">
+    <p class="kick reveal">急诊医生能从这段历史带走什么</p>
+    <h2 class="reveal">三句话</h2>
+    <div class="three reveal">
+      <div><b>01</b><h3>两次寒冬，都因为吹得太满</h3><p>对 AI 的每一次“革命”，保持兴奋，也保持清醒。</p></div>
+      <div><b>02</b><h3>技术好，不等于能进临床</h3><p>MYCIN 的四个问题：责任、效率、接入、信任，今天依然是关口。</p></div>
+      <div><b>03</b><h3>人做决定，AI 跑路线</h3><p>AlphaGo 赢了棋，李世石的第 78 手提醒我们：人的判断永远有位置。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s dark" data-year="练习">
+  <div class="in center">
+    <p class="kick reveal">One more thing · 课堂练习</p>
+    <h2 class="reveal">让 AI 给护士讲 3 分钟的 AI 史</h2>
+    <p class="reveal">要求它用“球队战术演变”做比喻。然后，你来挑出它讲错的一个年份或人名。</p>
+    <p class="muted reveal">⚠️ AI 讲历史也会记错，课件里的关键时间点要自己核对一次。</p>
+    <div class="btns reveal"><a class="btn p" href="../index.html#camp-b2">下一课：20 个必懂词 →</a><a class="btn g" href="../index.html#camp">回到训练营</a></div>
+    <p class="muted reveal" style="font-size:.8rem;margin-top:30px">丁海祥 · 团子 AI 学院原创课程 · 配图为 AI 生成示意图 · 视频版权归原作者</p>
+  </div>
+</section>
+
+</main>
+
+<script>
+(() => {
+  const deck = document.getElementById('deck'), slides = [...document.querySelectorAll('.s')];
+  const bar = document.getElementById('bar'), yr = document.getElementById('yr'), hint = document.getElementById('hint');
+  let cur = 0;
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting && e.intersectionRatio > .5) {
+      e.target.classList.add('on'); cur = slides.indexOf(e.target);
+      bar.style.width = (cur / (slides.length - 1) * 100) + '%';
+      yr.textContent = e.target.dataset.year || '';
+      if (cur > 0) hint.style.opacity = 0;
+    }
+  }), { root: deck, threshold: [.5, .6] });
+  slides.forEach(s => io.observe(s));
+  const go = i => { i = Math.max(0, Math.min(slides.length - 1, i)); slides[i].scrollIntoView({ behavior: 'smooth' }); };
+  addEventListener('keydown', e => {
+    if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); go(cur + 1); }
+    else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); go(cur - 1); }
+    else if (e.key === 'Home') go(0); else if (e.key === 'End') go(slides.length - 1);
+    else if (e.key === 'f' || e.key === 'F') { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.(); }
+  });
+  document.querySelectorAll('.vid').forEach(v => v.querySelector('button').onclick = () => {
+    v.innerHTML = `<iframe src="https://player.bilibili.com/player.html?bvid=${v.dataset.bv}&page=1&autoplay=1&high_quality=1&danmaku=0" allowfullscreen allow="autoplay; fullscreen" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+  });
+})();
+</script>
+<script src="../assets/cursorv1.0.js?v=2.0" defer></script>
+</body>
+</html>

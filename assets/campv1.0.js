@@ -13,11 +13,11 @@
           <li><button class="camp-card" data-id="${l.id}">
             <span class="cc-no">${ti ? 'S' : 'O'}${String(i + 1).padStart(2, '0')}</span>
             <span class="cc-main"><b>${esc(l.title)}</b><em>${esc(l.one)}</em></span>
-            <span class="cc-tag">${l.level} · ${l.min}′</span>
+            <span class="cc-tag${l.story ? ' story' : ''}">${l.story ? '▶ 故事版' : l.level + ' · ' + l.min + '′'}</span>
           </button></li>`).join('')}</ol></div>`;
     }).join('');
     $('#campTracks').innerHTML = html;
-    $('#campTracks').querySelectorAll('.camp-card').forEach(b => b.onclick = () => open(b.dataset.id, true));
+    $('#campTracks').querySelectorAll('.camp-card').forEach(b => b.onclick = () => { const l = camp.lessons.find(x => x.id === b.dataset.id); if (l.story) location.href = l.story; else open(b.dataset.id, true); });
   }
   function open(id, push) {
     const all = camp.lessons, idx = all.findIndex(l => l.id === id); if (idx < 0) return;
@@ -44,7 +44,7 @@
   function close() { $('#campReader').hidden = true; document.documentElement.classList.remove('cr-open'); history.replaceState(null, '', '#camp'); }
   document.addEventListener('click', e => { if (e.target.closest('[data-cr-close]')) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#campReader').hidden) close(); });
-  fetch('data/campv1.0.json?v=1.0').then(r => r.json()).then(d => {
+  fetch('data/campv1.0.json?v=1.1').then(r => r.json()).then(d => {
     camp = d; render();
     const m = location.hash.match(/^#camp-(\w+)/); if (m) { $('#camp').scrollIntoView(); open(m[1], false); }
   }).catch(() => { $('#campTracks').innerHTML = '<p class="sub">课程加载失败，请刷新页面。</p>'; });

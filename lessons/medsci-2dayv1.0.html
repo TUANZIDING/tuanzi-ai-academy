@@ -22,7 +22,7 @@ a{color:var(--cyan)}
 .bar nav a:hover{color:var(--orange)}
 /* hero */
 .hero{position:relative;overflow:hidden;background:linear-gradient(140deg,#0b1a2e 0%,#12304d 55%,#16465f 100%);color:#eef4fa;padding:90px 0 80px}
-.hero svg.field{position:absolute;inset:0;width:100%;height:100%;opacity:.16}
+.hero svg.field{position:absolute;inset:0;width:100%;height:100%;opacity:.08}
 .hero .wrap{position:relative}
 .kick{letter-spacing:.24em;font-size:.8rem;font-weight:700;color:var(--amber);margin:0 0 18px}
 .hero h1{font-size:clamp(2.3rem,6vw,4.4rem);line-height:1.12;margin:0 0 20px;letter-spacing:-.02em}
@@ -55,7 +55,7 @@ a{color:var(--cyan)}
 .tl a b{color:var(--orange);margin-right:6px}
 .tl a:hover{border-color:var(--orange)}
 /* module */
-.mod{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;margin:0 0 22px;box-shadow:0 14px 34px -28px rgba(11,26,46,.5);scroll-margin-top:72px}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;margin:0 0 22px;box-shadow:0 14px 34px -28px rgba(11,26,46,.5);scroll-margin-top:90px}
 .mod header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
 .mod .no{font-size:2.4rem;font-weight:800;color:#dbe4ef;line-height:1;min-width:58px}
 .mod h3{margin:4px 0 0;font-size:clamp(1.2rem,2.2vw,1.55rem);line-height:1.3}
@@ -75,6 +75,8 @@ a{color:var(--cyan)}
 .pj:hover{border-color:var(--orange);transform:translateY(-2px);box-shadow:0 10px 24px -18px rgba(217,96,11,.7)}
 .pj .th{flex:0 0 72px;height:52px;border-radius:10px;background:#e7eef6 center/cover no-repeat}
 .pj .th.play{display:grid;place-items:center;background:linear-gradient(135deg,var(--navy),#16465f);color:var(--amber);font-size:1.2rem}
+.pj .th.gen{display:grid;place-items:center;color:#fff;font-weight:800;font-size:1.05rem;letter-spacing:.04em}
+.c0{background:linear-gradient(135deg,#d9600b,#f2b14e)!important}.c1{background:linear-gradient(135deg,#0e7490,#2f8f9d)!important}.c2{background:linear-gradient(135deg,#0b1a2e,#16465f)!important}.c3{background:linear-gradient(135deg,#15803d,#4fa36a)!important}
 .pj .pt{display:flex;flex-direction:column;min-width:0}
 .pj b{font-size:.92rem;line-height:1.35}
 .pj small{color:var(--muted);font-size:.78rem}
@@ -146,8 +148,8 @@ footer a{color:var(--muted)}
 <section class="method"><div class="wrap">
  <div class="row">
   <div><b><i>1</i>讲一个故事</b><small>从真实的急诊、科研或家里的问题开场，约 25 分钟</small></div>
-  <div><b><i>2</i>演示一个作品</b><small>打开 GitHub 上的成品，看 AI 做了什么、人核对了什么</small></div>
-  <div><b><i>3</i>做一个小成品</b><small>学员动手约 40 分钟，讲师和助教逐桌指导</small></div>
+  <div><b><i>2</i>演示一个作品</b><small>打开真实成品，看 AI 做了什么、人核对了什么</small></div>
+  <div><b><i>3</i>做一个小成品</b><small>学员动手约 40 分钟，讲师逐桌指导</small></div>
  </div>
  <p class="thesis">让 AI 做执行、模拟和整理；<br>让人保留<em>目标、判断、责任</em>和最后的决定。</p>
 </div></section>
@@ -187,9 +189,9 @@ footer a{color:var(--muted)}
  <div class="phase drill"><span class="ph">练 · 约 40 分钟</span><p>选一个自己常讲的知识点，用 AI 生成一页可投屏的互动课件，或一道带分支选项的病例题，组内互相试做。</p></div>
 </div>
 <div class="demo"><span class="ph">现场演示</span><div class="pjs"><a class="pj" href="https://tuanziding.github.io/trauma-master-academy/" target="_blank" rel="noopener">
-<span class="th" style="background-image:url('https://opengraph.githubassets.com/1/TUANZIDING/trauma-master-academy')"></span>
+<span class="th gen c1">创伤</span>
 <span class="pt"><b>创伤救治学院 TraumaMaster Academy</b><small>在线演示 ↗</small></span></a><a class="pj" href="https://github.com/TUANZIDING/trauma-xabcde-classroom" target="_blank" rel="noopener">
-<span class="th" style="background-image:url('https://opengraph.githubassets.com/1/TUANZIDING/trauma-xabcde-classroom')"></span>
+<span class="th gen c3">xA</span>
 <span class="pt"><b>xABCDE 创伤互动课堂</b><small>GitHub ↗</small></span></a><a class="pj" href="https://tuanziding.github.io/orthopaedic-trauma-atlas/" target="_blank" rel="noopener">
 <span class="th" style="background-image:url('https://raw.githubusercontent.com/TUANZIDING/orthopaedic-trauma-atlas/main/assets/home/teacher-lecture-v1.png')"></span>
 <span class="pt"><b>骨科创伤操作教学图谱</b><small>在线演示 ↗</small></span></a><a class="pj" href="https://github.com/TUANZIDING/medical-conference-pptx" target="_blank" rel="noopener">
@@ -233,7 +235,7 @@ footer a{color:var(--muted)}
  <div class="phase drill"><span class="ph">练 · 约 40 分钟</span><p>学员用自己的课题跑一次检索，把 AI 给出的 5 条结论逐条到 PubMed 核对：真有、部分有、查无此文，各记几条。</p></div>
 </div>
 <div class="demo"><span class="ph">现场演示</span><div class="pjs"><a class="pj" href="https://tuanziding.github.io/radiation-muscle-pathway/" target="_blank" rel="noopener">
-<span class="th" style="background-image:url('https://opengraph.githubassets.com/1/TUANZIDING/radiation-muscle-pathway')"></span>
+<span class="th gen c0">辐射</span>
 <span class="pt"><b>肌肉信号图谱 v0.7：筛 891 篇、纳入 53 篇</b><small>在线演示 ↗</small></span></a><a class="pj" href="https://github.com/TUANZIDING/Paper-AI-Research-Agent" target="_blank" rel="noopener">
 <span class="th" style="background-image:url('https://raw.githubusercontent.com/TUANZIDING/Paper-AI-Research-Agent/main/docs/assets/ai-research-agent-hero.webp')"></span>
 <span class="pt"><b>可审计文献研究智能体</b><small>GitHub ↗</small></span></a><a class="pj" href="https://github.com/TUANZIDING/research-evidence" target="_blank" rel="noopener">
@@ -254,11 +256,11 @@ footer a{color:var(--muted)}
 <div class="demo"><span class="ph">现场演示</span><div class="pjs"><a class="pj" href="https://tuanziding.github.io/clinical-stats-languages-guide/" target="_blank" rel="noopener">
 <span class="th" style="background-image:url('https://raw.githubusercontent.com/TUANZIDING/clinical-stats-languages-guide/codex/clinical-stats-guide/docs/assets/%E4%B8%B4%E5%BA%8A%E6%A8%A1%E6%8B%9F%E6%95%88%E5%BA%94%E5%9B%BEv2.2.png')"></span>
 <span class="pt"><b>医学统计学习实验室</b><small>在线演示 ↗</small></span></a><a class="pj" href="https://github.com/TUANZIDING/nhanes-grip-vfa-2013-2014" target="_blank" rel="noopener">
-<span class="th" style="background-image:url('https://opengraph.githubassets.com/1/TUANZIDING/nhanes-grip-vfa-2013-2014')"></span>
+<span class="th gen c1">NH</span>
 <span class="pt"><b>NHANES 握力与椎体骨折</b><small>GitHub ↗</small></span></a><a class="pj" href="https://github.com/TUANZIDING/inspire-hypotension-reproducibility" target="_blank" rel="noopener">
-<span class="th" style="background-image:url('https://opengraph.githubassets.com/1/TUANZIDING/inspire-hypotension-reproducibility')"></span>
+<span class="th gen c3">IN</span>
 <span class="pt"><b>INSPIRE 低血压可复现分析</b><small>GitHub ↗</small></span></a><a class="pj" href="https://github.com/TUANZIDING/medical-paper-pipeline" target="_blank" rel="noopener">
-<span class="th" style="background-image:url('https://opengraph.githubassets.com/1/TUANZIDING/medical-paper-pipeline')"></span>
+<span class="th gen c2">临床</span>
 <span class="pt"><b>临床论文全流程管线</b><small>GitHub ↗</small></span></a></div></div>
 <details class="pc"><summary>学员提示词卡 <em>点开复制</em></summary><pre>我有一份模拟数据（变量：【列出变量名和类型】）。研究问题是【问题】。
 请：1. 推荐合适的统计方法并说明理由；2. 列出该方法的前提假设，并写出检验代码；3. 给出完整可运行的 R 代码，每行加中文注释；4. 说明结果应如何在论文里报告。</pre><button class="cp" type="button">复制提示词</button></details>
@@ -270,7 +272,7 @@ footer a{color:var(--muted)}
  <div class="phase drill"><span class="ph">练 · 约 40 分钟</span><p>从一个癌种或放疗损伤问题进入图谱，找出一个"证据少、临床有需求"的小课题，写成一句研究问题。</p></div>
 </div>
 <div class="demo"><span class="ph">现场演示</span><div class="pjs"><a class="pj story" href="onco-guidev1.0.html" target="_blank" rel="noopener"><span class="th play">▶</span><span class="pt"><b>一张地图装下肿瘤学</b><small>故事课 ↗</small></span></a><a class="pj" href="https://github.com/TUANZIDING/onco-cc-guide" target="_blank" rel="noopener">
-<span class="th" style="background-image:url('https://opengraph.githubassets.com/1/TUANZIDING/onco-cc-guide')"></span>
+<span class="th gen c1">On</span>
 <span class="pt"><b>OnCo 肿瘤知识图谱导航</b><small>GitHub ↗</small></span></a></div></div>
 <details class="pc"><summary>学员提示词卡 <em>点开复制</em></summary><pre>围绕【癌种或疾病】，请帮我梳理：
 1. 研究最多的 5 个方向；

@@ -12,6 +12,7 @@
   ];
   const LESSONS = [
     { meta: '线下工作坊 · 两天 · 梅斯医学 2026.10.31—11.01', title: 'AI 进医院、进实验室、进家门', steps: [
+      ['一页纸课纲：投屏直接讲', 'https://tuanziding.github.io/tuanzi-ai-academy/lessons/medsci-onepagev1.0.html'],
       ['完整课纲：9 个模块，讲练交替', 'https://tuanziding.github.io/tuanzi-ai-academy/lessons/medsci-2dayv1.0.html'],
       ['D1 医学教学：做一页互动课件', 'trauma-master-academy'],
       ['D2 医学科研：每句话追到原文', 'radiation-muscle-pathway'],

@@ -11,6 +11,11 @@
     { id: 'L4', name: '会治理', en: 'GOVERN', desc: '可审计智能体、可复现科研：让 AI 出错时能被发现。', yard: 'END ZONE' }
   ];
   const LESSONS = [
+    { meta: '线下工作坊 · 两天 · 梅斯医学 2026.10.31—11.01', title: 'AI 进医院、进实验室、进家门', steps: [
+      ['完整课纲：9 个模块，讲练交替', 'https://tuanziding.github.io/tuanzi-ai-academy/lessons/medsci-2dayv1.0.html'],
+      ['D1 医学教学：做一页互动课件', 'trauma-master-academy'],
+      ['D2 医学科研：每句话追到原文', 'radiation-muscle-pathway'],
+      ['D2 孩子教育：AI 陪孩子做项目', 'peter-rabbit-interactive'] ] },
     { meta: '线下 · 约 60 分钟 · 入门', title: 'AI 使用策略入门：先问，再核对', steps: [
       ['L0 现场演示：同一个临床问题，三种问法的差别', null],
       ['L1 证据审阅：让 AI 给出处、标边界', 'research-evidence'],

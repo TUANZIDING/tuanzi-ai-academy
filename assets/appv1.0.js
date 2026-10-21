@@ -155,7 +155,7 @@
   };
   try { if (localStorage.getItem('projector') === '1') pj.click(); } catch (e) {}
 
-  fetch('data/projectsv1.0.json?v=1.5').then(r => r.json()).then(d => {
+  fetch('data/projectsv1.0.json?v=1.6').then(r => r.json()).then(d => {
     data = d; renderStats(); renderLevels(); renderFilters(); renderGrid(); renderLessons(); renderTools();
   }).catch(() => { $('#grid').innerHTML = '<p class="sub">作品数据加载失败，请刷新页面。</p>'; });
 

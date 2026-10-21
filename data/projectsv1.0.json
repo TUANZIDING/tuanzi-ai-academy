@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15",
+ "updated": "2026-10-21",
  "projects": [
   {
    "repo": "trauma-master-academy",
@@ -31,8 +31,19 @@
    "live": "https://tuanziding.github.io/radiation-muscle-pathway/",
    "source": "https://github.com/TUANZIDING/radiation-muscle-pathway",
    "cover": "https://opengraph.githubassets.com/1/TUANZIDING/radiation-muscle-pathway",
-   "summary": "按证据分层的放射性肌损伤与修复交互图谱。",
-   "teach": "把文献证据分层可视化：事实 / 关联 / 推测"
+   "summary": "按证据分层的放射性肌损伤分子通路图（v0.7，系统筛查 891 题、纳入 53 篇），另有细胞外囊泡（EV）干预图谱 v0.1。",
+   "teach": "讲“AI 帮你做系统文献筛查，但每条连线都要能追到 PubMed”：证据分级 A/B/C、空白怎么标、图不由模型画。"
+  },
+  {
+   "repo": "onco-cc-guide",
+   "title": "OnCo 肿瘤知识图谱导航",
+   "category": "research",
+   "level": "L2",
+   "live": null,
+   "source": "https://github.com/TUANZIDING/onco-cc-guide",
+   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/onco-cc-guide",
+   "summary": "onco.cc 开放肿瘤知识图谱的中文导航：六大栏目、六条阅读路径、数据接口与引用规范（非商业）。",
+   "teach": "讲“知识图谱怎么帮医生找研究空白”：从一个癌种或放疗损伤问题进入，顺着靶点、药物、试验走。"
   },
   {
    "repo": "trauma-xabcde-classroom",

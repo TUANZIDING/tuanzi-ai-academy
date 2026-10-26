@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21",
+ "updated": "2026-10-26",
  "projects": [
   {
    "repo": "trauma-master-academy",
@@ -286,6 +286,17 @@
    "cover": "https://opengraph.githubassets.com/1/TUANZIDING/chinese-chess-learning",
    "summary": "融合苏格拉底式提问的中国象棋互动学习平台。",
    "teach": "让 AI 提问而不是直接给答案"
+  },
+  {
+   "repo": "shihua-scrolls",
+   "title": "诗画长卷 · 古诗词水墨长卷",
+   "category": "explore",
+   "level": "L3",
+   "live": "https://tuanziding.github.io/shihua/",
+   "source": "https://github.com/TUANZIDING/shihua-scrolls",
+   "cover": "https://raw.githubusercontent.com/TUANZIDING/shihua-scrolls/main/%E6%96%87%E6%A1%A3/%E4%B8%BB%E5%9B%BE/%E5%B0%81%E9%9D%A2v1.0.jpg",
+   "summary": "杨柳依依、边塞、江南三卷动态水墨长卷，读懂古诗词的以景寄情与含蓄。",
+   "teach": "用 AI 当水墨画师和排版师，把一组主题诗做成会动的长卷"
   }
  ],
  "toolbox": [

@@ -84,6 +84,12 @@ p{font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.85;margin:0 0 16px}
 .three b{font-size:2.4rem;color:var(--orange);display:block;line-height:1}
 .three h3{margin:10px 0 8px;font-size:1.2rem}
 .three p{font-size:1rem;color:var(--muted);line-height:1.7;margin:0}
+.ex{display:grid;grid-template-columns:1fr 1.15fr;gap:24px;margin:22px 0 16px;align-items:start}
+.ex ol{margin:0;padding-left:1.3em;line-height:1.9;font-size:1.05rem}
+.pbox{position:relative;background:#fff;border:1px solid #eadfcd;border-radius:16px;padding:18px 18px 54px}
+.pbox pre{margin:0;white-space:pre-wrap;font:inherit;font-size:.9rem;line-height:1.7;color:var(--ink)}
+.cp{position:absolute;right:14px;bottom:12px;border:0;border-radius:999px;background:var(--orange);color:#fff;font-weight:700;padding:8px 16px;cursor:pointer;font-size:.88rem}
+@media (max-width:760px){.ex{grid-template-columns:1fr}}
 .btns{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem}
 .btn.p{background:var(--orange);color:#fff}.btn.g{border:1px solid #d8cdbb;color:var(--ink);background:#fff}
@@ -359,14 +365,41 @@ p{font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.85;margin:0 0 16px}
   </div>
 </section>
 
-<section class="s dark" data-year="练习">
+<section class="s dark" data-year="回到开场">
   <div class="in center">
-    <p class="kick reveal">One more thing · 课堂练习</p>
-    <h2 class="reveal">让 AI 给护士讲 3 分钟的 AI 史</h2>
-    <p class="reveal">要求它用“球队战术演变”做比喻。然后，你来挑出它讲错的一个年份或人名。</p>
-    <p class="muted reveal">⚠️ AI 讲历史也会记错，课件里的关键时间点要自己核对一次。</p>
-    <div class="btns reveal"><a class="btn p" href="../index.html#camp-b2">下一课：20 个必懂词 →</a><a class="btn g" href="../index.html#camp">回到训练营</a></div>
-    <p class="muted reveal" style="font-size:.8rem;margin-top:30px">丁海祥 · 团子 AI 学院原创课程 · 配图为 AI 生成示意图 · 视频版权归原作者</p>
+    <p class="kick reveal">回到开场</p>
+    <h2 class="reveal">1950 年的问题，今天怎么回答？</h2>
+    <p class="reveal">图灵问：“机器能思考吗？”七十多年后，更实用的答案是——</p>
+    <p class="huge reveal" style="margin:18px 0;font-size:clamp(2rem,5vw,4.2rem)">它很会<span style="color:var(--orange)">生成</span>，<br>但不一定<span style="color:var(--teal)">知道</span>。</p>
+    <div class="three reveal">
+      <div><b>37</b><h3>机器的一手</h3><p>算出人类想不到的路线。AI 擅长：快、广、敢试。</p></div>
+      <div><b>78</b><h3>人的一手</h3><p>李世石找到机器的盲区。人负责：目标、判断、责任。</p></div>
+      <div><b>你</b><h3>下一手</h3><p>每天用 AI 时，先让它跑路线，再由你决定走不走。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" data-year="练习">
+  <div class="in wide">
+    <p class="kick reveal">课堂练习 · 10 分钟 · 两人一组</p>
+    <h2 class="reveal">让 AI 讲一遍这节课，你来当裁判</h2>
+    <div class="ex reveal">
+      <ol>
+        <li><b>复制提示词</b>，发给你常用的 AI（DeepSeek、豆包、Kimi、ChatGPT 都行）。</li>
+        <li><b>对照本课时间轴</b>，核对它说的 3 个点：年份、人名、数字。</li>
+        <li><b>写一句裁判报告</b>：“它讲对了___，讲错了___，我是用___核对的。”</li>
+      </ol>
+      <div class="pbox"><pre id="ex-prompt">你是一位医学院的科普讲师。请用“一支球队七十年的战术演变”做比喻，给医院同事讲 3 分钟的 AI 简史。
+要求：
+1. 按时间顺序覆盖：1950 图灵测试、1956 达特茅斯会议、两次 AI 寒冬、MYCIN 专家系统、2012 AlexNet、2016 AlphaGo、2022 ChatGPT、今天的 Agent。
+2. 每个节点给出具体年份、关键人物和一个数字。
+3. 最后用一句话说明：AI 在临床上适合做什么、不能替代什么。
+4. 不确定的地方请标注“待核实”，不要编造。</pre><button class="cp" data-copy="ex-prompt">复制提示词</button></div>
+    </div>
+    <p class="muted reveal">裁判提示：这节课里能直接对答案的——1956 达特茅斯、2012 AlexNet 错误率 15.3%、2016 年 3 月第 37 手和第 78 手、2022 年 11 月 30 日 ChatGPT。挑不出错？再问它要原始出处。</p>
+    <p class="reveal" style="font-weight:700">带走一句话：会生成 ≠ 真知道。AI 讲的每个年份、人名、数字，用之前自己核对一次。</p>
+    <div class="btns reveal" style="justify-content:flex-start"><a class="btn p" href="../index.html#camp-b2">下一课：20 个必懂词 →</a><a class="btn g" href="../index.html#camp">回到训练营</a></div>
+    <p class="muted reveal" style="font-size:.8rem;margin-top:24px">丁海祥 · 团子 AI 学院原创课程 · 配图为 AI 生成示意图 · 视频版权归原作者</p>
   </div>
 </section>
 
@@ -392,6 +425,10 @@ p{font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.85;margin:0 0 16px}
     else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); go(cur - 1); }
     else if (e.key === 'Home') go(0); else if (e.key === 'End') go(slides.length - 1);
     else if (e.key === 'f' || e.key === 'F') { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.(); }
+  });
+  document.querySelectorAll('.cp').forEach(b => b.onclick = () => {
+    const t = document.getElementById(b.dataset.copy).innerText;
+    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(() => { b.textContent = '已复制 ✓'; setTimeout(() => b.textContent = '复制提示词', 1600); }).catch(() => { const r = document.createRange(); r.selectNode(document.getElementById(b.dataset.copy)); getSelection().removeAllRanges(); getSelection().addRange(r); });
   });
   document.querySelectorAll('.vid').forEach(v => v.querySelector('button').onclick = () => {
     const d = v.dataset;

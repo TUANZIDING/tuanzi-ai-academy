@@ -65,6 +65,8 @@ p{font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.85;margin:0 0 16px}
 .vid button span{font-size:1rem;font-weight:600}
 .vid button small{font-size:.8rem;opacity:.85}
 .vid iframe{width:100%;height:100%;border:0}
+.vid-alt{display:inline-block;margin-top:10px;font-size:.85rem;color:rgba(255,255,255,.75);text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.4)}
+.vid-alt:hover{color:#fff}
 .vlinks{font-size:.85rem;margin-top:10px}.vlinks a{color:inherit;opacity:.75;margin-right:16px}
 /* football field recap */
 .field{margin-top:30px;background:linear-gradient(180deg,#3f7f4f,#356f44);border-radius:18px;padding:26px 20px 20px;position:relative;color:#fff;box-shadow:0 20px 50px rgba(30,60,40,.25)}
@@ -256,7 +258,7 @@ p{font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.85;margin:0 0 16px}
     <p class="reveal">多伦多大学的亚历克斯、伊利亚和辛顿，用两块 NVIDIA GTX 580 游戏显卡训练出 AlexNet，参加 ImageNet 图像识别比赛。</p>
     <div class="stats reveal"><div class="stat hot"><b>15.3%</b><span>AlexNet 错误率</span></div><div class="stat cold"><b>26.2%</b><span>第二名错误率</span></div></div>
     <p class="reveal">黄仁勋后来说，AlexNet 不只是 AlexNet：它证明了机器可以从数据里学会几乎任何规律。英伟达从此押上整家公司。</p>
-    <div class="vid reveal" data-bv="BV1ih411J7Kz"><button><i>▶</i><span>李沐精读 AlexNet 论文</span><small>B 站 · 点击播放</small></button></div>
+    <div class="vid reveal" data-bv="BV1ih411J7Kz" data-aid="208532381" data-cid="424903662"><button><i>▶</i><span>李沐精读 AlexNet 论文</span><small>B 站 · 点击播放</small></button></div>
   </div>
   <span class="cap">AI 生成示意图</span>
 </section>
@@ -268,7 +270,7 @@ p{font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.85;margin:0 0 16px}
     <h2 class="reveal">回到开场那一手</h2>
     <p class="reveal">AlphaGo 以 4:1 战胜李世石。围棋的变化比宇宙中的原子还多，靠算力穷举不可能，它靠的是深度学习练出来的“棋感”。</p>
     <p class="reveal">但别忘了第四局：李世石下出第 78 手，被称为“神之一手”，人类赢下了唯一一局。</p>
-    <div class="vid reveal" data-bv="BV1pE411y7Pu"><button><i>▶</i><span>纪录片《AlphaGo》中英字幕</span><small>B 站 · 点击播放</small></button></div>
+    <div class="vid reveal" data-bv="BV1pE411y7Pu" data-aid="73147962" data-cid="125104979"><button><i>▶</i><span>纪录片《AlphaGo》中英字幕</span><small>B 站 · 点击播放</small></button></div>
     <p class="vlinks reveal"><a href="https://www.youtube.com/watch?v=WXuK6gekU1Y" target="_blank" rel="noopener">DeepMind 官方 YouTube 全片 ↗</a></p>
   </div>
 </section>
@@ -390,7 +392,8 @@ p{font-size:clamp(1.05rem,1.5vw,1.3rem);line-height:1.85;margin:0 0 16px}
     else if (e.key === 'f' || e.key === 'F') { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.(); }
   });
   document.querySelectorAll('.vid').forEach(v => v.querySelector('button').onclick = () => {
-    v.innerHTML = `<iframe src="https://player.bilibili.com/player.html?bvid=${v.dataset.bv}&page=1&autoplay=1&high_quality=1&danmaku=0" allowfullscreen allow="autoplay; fullscreen" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+    const d = v.dataset;
+    v.innerHTML = `<iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=${d.aid}&bvid=${d.bv}&cid=${d.cid}&p=1&autoplay=1&high_quality=1&danmaku=0" scrolling="no" frameborder="0" allowfullscreen allow="autoplay; fullscreen; encrypted-media; picture-in-picture" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups allow-presentation"></iframe>`;
   });
 })();
 </script>

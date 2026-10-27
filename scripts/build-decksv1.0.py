@@ -57,6 +57,8 @@ EXTRA_CSS = r"""
 .nx p{font-size:20px;color:var(--mute);margin-top:10px;line-height:1.5}
 .home{margin-top:28px;font-size:20px}
 .home a{color:var(--blue)}
+.page:not(.cv).cur{display:flex;flex-direction:column;justify-content:center}
+.page:not(.cv) .hd{margin-top:-40px}
 """
 
 FIELD_SVG = '''<svg viewBox="0 0 620 620" aria-hidden="true"><g fill="none" stroke="rgba(27,95,168,.22)" stroke-width="2">
@@ -152,7 +154,7 @@ def build(l, camp):
 <div class="card" data-b="3"><b>2<small>分钟</small></b><h3>同桌互看</h3><p>交换结果，各指出一处最好和一处要改的地方。</p></div>
 <div class="card" data-b="4"><b>1–2<small>人</small></b><h3>投屏点评</h3><p>抽一两位学员投屏，现场一起改。</p></div></div>'''))
     # 5 care
-    P.append(page(6, '小心', '护栏', hd(5, '小心', '本课最容易踩的坑') + f'''
+    P.append(page(6, '小心', '小心', hd(5, '小心', '本课最容易踩的坑') + f'''
 <div class="g2" style="grid-template-columns:1.2fr 1fr">
 <div class="card box warn" data-b="1"><h3><span class="tag wn">本课提醒</span></h3><p class="big">{E(l['care'])}</p></div>
 <div class="card box" data-b="2"><h3>三条通用红线</h3>

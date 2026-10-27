@@ -48,3 +48,7 @@ html.cr-open{overflow:hidden}
 .cr-nav button{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cr-one,.cr-sheet p,.cr-points{word-break:normal;overflow-wrap:break-word;line-break:strict}
 .cc-tag.story{background:var(--orange,#d9600b);color:#fff;border-color:transparent;font-weight:700}
+
+.cc-tag.deck{background:#E8F0FA;color:#1B5FA8}
+.cr-deck{display:inline-flex;align-items:center;gap:6px;margin:4px 0 14px;padding:8px 16px;border-radius:999px;background:#1B5FA8;color:#fff;font-weight:600;font-size:14px;text-decoration:none}
+.cr-deck:hover{background:#174f8c}

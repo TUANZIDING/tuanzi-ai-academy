@@ -13,7 +13,7 @@
           <li><button class="camp-card" data-id="${l.id}">
             <span class="cc-no">${ti ? 'S' : 'O'}${String(i + 1).padStart(2, '0')}</span>
             <span class="cc-main"><b>${esc(l.title)}</b><em>${esc(l.one)}</em></span>
-            <span class="cc-tag${l.story ? ' story' : ''}">${l.story ? '▶ 故事版' : l.level + ' · ' + l.min + '′'}</span>
+            <span class="cc-tag${l.story ? ' story' : l.deck ? ' deck' : ''}">${l.story ? '▶ 故事版' : l.deck ? '▣ 课件 · ' + l.min + '′' : l.level + ' · ' + l.min + '′'}</span>
           </button></li>`).join('')}</ol></div>`;
     }).join('');
     $('#campTracks').innerHTML = html;
@@ -26,6 +26,7 @@
     $('#crBody').innerHTML = `
       <p class="cr-kick">${esc(t.name)} · 第 ${n} 课 · ${l.level} · ${l.min} 分钟</p>
       <h2 id="crTitle">${esc(l.title)}</h2>
+      ${l.deck ? `<a class="cr-deck" href="${esc(l.deck)}" target="_blank" rel="noopener">▣ 打开投屏课件 ↗</a>` : ''}
       <p class="cr-one">${esc(l.one)}</p>
       <div class="cr-play"><span>🏈 球场比喻</span><p>${esc(l.play)}</p></div>
       <h4>本课要点</h4><ol class="cr-points">${l.points.map(p => `<li>${esc(p)}</li>`).join('')}</ol>
@@ -44,7 +45,7 @@
   function close() { $('#campReader').hidden = true; document.documentElement.classList.remove('cr-open'); history.replaceState(null, '', '#camp'); }
   document.addEventListener('click', e => { if (e.target.closest('[data-cr-close]')) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#campReader').hidden) close(); });
-  fetch('data/campv1.0.json?v=1.3').then(r => r.json()).then(d => {
+  fetch('data/campv1.0.json?v=1.4').then(r => r.json()).then(d => {
     camp = d; render();
     const m = location.hash.match(/^#camp-(\w+)/); if (m) { $('#camp').scrollIntoView(); open(m[1], false); }
   }).catch(() => { $('#campTracks').innerHTML = '<p class="sub">课程加载失败，请刷新页面。</p>'; });

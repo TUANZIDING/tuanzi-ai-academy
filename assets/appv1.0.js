@@ -142,7 +142,7 @@
     $('#lessonList').innerHTML = LESSONS.map(l => `<article class="lesson">
       <span class="meta">${l.meta}</span><h3>${l.title}</h3>
       <ol>${l.steps.map(([t, r]) => {
-        const p = r && byRepo[r]; const href = r && /^https?:/.test(r) ? r : (p ? (p.live || p.source) : null);
+        const p = r && byRepo[r]; const href = r && (/^https?:/.test(r) || r.startsWith('lessons/')) ? r : (p ? (p.live || p.source) : null);
         return `<li>${href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(t)} ↗</a>` : esc(t)}</li>`;
       }).join('')}</ol>
       <span class="status">示范路线 · 课后课件按场次上架</span></article>`).join('');

@@ -1,0 +1,126 @@
+/* v3.0 · 暖色"一盒学院"皮肤：在 v1/v2 样式之上覆盖，不改结构 */
+:root{
+  --bg:#f7f3ec;--bg2:#efe8dc;--card:#fffdf9;--line:#e6dccb;
+  --ink:#24201b;--muted:#6b6257;--cyan:#2f7f86;--orange:#d9600b;--green:#3f7d5c;--navy:#1f2a44;
+  --radius:22px;--shadow:0 1px 2px rgba(60,40,10,.05),0 10px 30px rgba(60,40,10,.07);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+body{background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:var(--cyan)}
+::selection{background:#f6d7b8}
+
+/* nav */
+.nav{background:rgba(247,243,236,.86);border-bottom:1px solid rgba(230,220,203,.8);gap:20px}
+.nav nav a{color:var(--muted);font-size:.9rem;padding:4px 2px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav nav a:hover{color:var(--ink);border-bottom-color:var(--orange)}
+.btn{transition:transform .2s var(--ease),background .2s,border-color .2s,color .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:var(--orange)}
+.btn.ghost{background:var(--card);border-color:var(--line)}
+.btn.ghost:hover,.btn.ghost[aria-pressed=true]{border-color:var(--ink);color:var(--ink)}
+
+/* typography */
+h1{letter-spacing:-.02em;font-weight:800}
+h2{letter-spacing:-.015em;font-weight:800;font-size:clamp(1.7rem,3.6vw,2.6rem)}
+h1 em,h2 em{color:var(--orange)}
+.section .eyebrow,.eyebrow{display:inline-block;background:none;color:var(--orange);padding:0;border-radius:0;letter-spacing:.2em;font-size:.74rem;font-weight:800}
+.sub,.lead{color:var(--muted)}
+
+/* hero */
+.hero{background:radial-gradient(900px 520px at 88% 10%,rgba(217,96,11,.10),transparent 60%),radial-gradient(700px 480px at 0% 100%,rgba(63,125,92,.10),transparent 60%),var(--bg);min-height:72vh}
+.hero-board svg{border-radius:26px;box-shadow:0 30px 70px rgba(31,42,68,.25)}
+.stats b{color:var(--ink);font-weight:800}
+
+/* sections */
+.section{border-top:0;padding:88px 5vw}
+.section:nth-of-type(even){background:var(--bg2)}
+.section>h2+.sub{margin-bottom:6px}
+
+/* cards everywhere */
+.card,.lesson,.rules article,.gear-card,.concept,.drill,.case-feature,.lib-item,.tool,.levels button{background:var(--card);border-color:var(--line);box-shadow:var(--shadow)}
+.card,.lesson,.case-feature,.gear-card,.drill{border-radius:var(--radius)}
+.card{transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:#d8c9b0;box-shadow:0 2px 4px rgba(60,40,10,.06),0 18px 40px rgba(60,40,10,.12)}
+.thumb{background:linear-gradient(135deg,#f1e7d6,#e7dbc6)}
+.links a.go{background:var(--ink);border-radius:999px;padding:6px 14px}
+.links a.go:hover{background:var(--orange)}
+.badge{background:rgba(36,32,27,.85)}
+.chip{background:var(--card);border-color:var(--line);transition:.2s}
+.chip:hover{border-color:var(--ink);color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink)}
+.levels button{border-top:4px solid var(--ink);border-radius:18px}
+.levels button[aria-pressed=true]{border-top-color:var(--orange);background:#fff4e8}
+.concept{border-left:4px solid var(--orange);border-radius:16px}
+.concept .play{background:var(--bg)}
+.gear-card .tag{background:var(--green)}
+.lib-item{border-radius:14px;transition:.2s}
+.lib-item:hover{border-color:var(--ink);transform:translateY(-2px)}
+.tool{border-style:solid;border-radius:14px}
+.tool:hover{border-color:var(--ink)}
+.case-cover{border:0;border-radius:16px}
+.case-aud li{background:var(--bg)}
+.play-card{background:var(--bg)}
+
+/* ---------- 01 一盒学院 (bento) ---------- */
+.academy{background:var(--bg)!important}
+.box-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.box-head h2{margin:.15em 0 0}
+.box-head p{margin:0;color:var(--muted);max-width:420px}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.bx{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:26px;overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.bx:hover{transform:translateY(-5px);box-shadow:0 2px 4px rgba(60,40,10,.06),0 22px 48px rgba(60,40,10,.14)}
+.bx:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.bx .pic{aspect-ratio:4/3;overflow:hidden;background:#f3ecdf}
+.bx .pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+.bx:hover .pic img{transform:scale(1.04)}
+.bx .txt{padding:18px 22px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.bx .k{font-size:.7rem;letter-spacing:.18em;font-weight:800;color:var(--orange)}
+.bx h3{margin:0;font-size:1.3rem;letter-spacing:-.01em}
+.bx p{margin:0;color:var(--muted);font-size:.92rem}
+.bx .n{margin-top:auto;padding-top:10px;display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.bx .n b{font-size:2.1rem;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.bx .n b small{font-size:.85rem;font-weight:600;color:var(--muted);margin-left:4px}
+.bx .n span{font-size:.88rem;font-weight:700;color:var(--ink);white-space:nowrap}
+.bx:hover .n span{color:var(--orange)}
+.bx.w3{grid-column:span 3}.bx.w2{grid-column:span 2}
+.bx.w3 .pic{aspect-ratio:16/9}
+.bx.dark{background:var(--navy);color:#f3eee6;border-color:var(--navy)}
+.bx.dark p,.bx.dark .n b small{color:#bfc6d6}.bx.dark .n span{color:#fff}
+.bx.dark .k{color:#f2a65a}
+
+/* ---------- 最近更新 ---------- */
+.news{margin-top:44px}
+.news-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:14px}
+.news-head h3{margin:0;font-size:1.15rem}
+.news-head span{color:var(--muted);font-size:.85rem}
+.news-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.nw{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;text-decoration:none;color:var(--ink);transition:.3s var(--ease)}
+.nw:hover{border-color:var(--ink);transform:translateY(-2px)}
+.nw i{flex:none;font-style:normal;font-size:.68rem;font-weight:800;letter-spacing:.1em;color:#fff;background:var(--orange);border-radius:999px;padding:3px 9px;margin-top:3px}
+.nw b{display:block;font-size:.98rem;line-height:1.4}
+.nw small{display:block;color:var(--muted);font-size:.8rem;margin-top:4px}
+
+/* ---------- section art (side illustrations) ---------- */
+.sec-art{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:36px;align-items:center}
+.sec-art figure{margin:0;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:#f3ecdf}
+.sec-art figure img{display:block;width:100%;height:auto}
+.safety{background:var(--bg2)!important}
+.rules{grid-template-columns:1fr 1fr}
+.rules span{color:var(--orange)}
+.about .sec-art{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+.about>div{max-width:none}
+
+/* footer */
+.foot{background:var(--navy);color:#efe9df}
+.foot .muted{color:#aab3c5}.foot a{color:#f2a65a}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.bx,.bx .pic img,.card{transition:none}}
+
+@media (max-width:1080px){.bento{grid-template-columns:repeat(2,1fr)}.bx.w3,.bx.w2{grid-column:span 1}.bx.w3 .pic{aspect-ratio:4/3}.news-row{grid-template-columns:1fr}}
+@media (max-width:820px){.sec-art,.about .sec-art{grid-template-columns:1fr}.sec-art figure{max-width:520px}}
+@media (max-width:620px){.bento{grid-template-columns:1fr}.rules{grid-template-columns:1fr}.section{padding:64px 5vw}}
+html.projector .bx h3{font-size:1.5rem}

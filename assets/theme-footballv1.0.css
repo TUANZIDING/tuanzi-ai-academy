@@ -26,9 +26,11 @@
 
 /* 01 学院：整块草皮 */
 .academy{background:
-  repeating-linear-gradient(90deg,transparent 0 calc(10% - 2px),var(--chalk) calc(10% - 2px) 10%),
-  repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 60px,transparent 60px 120px),
-  linear-gradient(180deg,var(--turf),var(--turf2))!important;color:#fff;background-size:100% 100%,100% 100%,100% 100%}
+  repeating-linear-gradient(90deg,rgba(255,255,255,.045) 0 8%,transparent 8% 16%),
+  linear-gradient(180deg,var(--turf),var(--turf2))!important;color:#fff}
+.academy>.bento,.academy>.news,.academy>.box-head{position:relative;z-index:1}
+.academy::after{content:"";position:absolute;left:0;right:0;top:0;height:18px;opacity:.7;pointer-events:none;
+  background:repeating-linear-gradient(90deg,var(--chalk) 0 2px,transparent 2px 28px)}
 .academy::before{display:none}
 .academy .box-head h2{color:#fff}.academy .box-head p{color:#d9e8dd}
 .academy .eyebrow .ek{color:#fff}
@@ -67,9 +69,9 @@
 
 /* 页脚：端区 */
 .foot{position:relative;overflow:hidden;background:repeating-linear-gradient(135deg,var(--navy) 0 26px,#18284a 26px 52px);padding-top:0}
-.endzone{display:flex;justify-content:center;gap:4vw;padding:42px 4vw 18px;border-bottom:3px solid rgba(255,255,255,.65);margin-bottom:24px}
+.endzone{display:flex;justify-content:center;gap:.6em;padding:42px 4vw 18px;border-bottom:3px solid rgba(255,255,255,.65);margin-bottom:24px}
 .endzone span{font:900 clamp(1.6rem,6vw,4.6rem)/1 var(--varsity);letter-spacing:.06em;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.85)}
-.endzone span:last-child{-webkit-text-stroke-color:var(--orange)}
+.endzone span{font-size:clamp(1.4rem,4.6vw,3.6rem)!important}.endzone span:last-child{-webkit-text-stroke-color:var(--orange)}
 
 @media (max-width:620px){.eyebrow .jn{font-size:2rem}.stats{display:flex;flex-wrap:wrap}.stats li{flex:1 1 40%;border-right:0}.endzone{flex-direction:column;align-items:center;gap:6px}}
 @media (prefers-reduced-motion:reduce){.nw:hover{transform:none}}

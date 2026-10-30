@@ -289,14 +289,14 @@
   },
   {
    "repo": "chinese-chess-learning",
-   "title": "苏格拉底式象棋学习",
+   "title": "团子棋馆",
    "category": "explore",
    "level": "L3",
-   "live": null,
+   "live": "https://games.aiai-academy.com",
    "source": "https://github.com/TUANZIDING/chinese-chess-learning",
    "cover": "https://opengraph.githubassets.com/1/TUANZIDING/chinese-chess-learning",
-   "summary": "融合苏格拉底式提问的中国象棋互动学习平台。",
-   "teach": "让 AI 提问而不是直接给答案"
+   "summary": "中国象棋、国际象棋、五子棋、军棋，点开就能和电脑下，四档难度，开局动画教规则。",
+   "teach": "教练先提问再给答案：苏格拉底式提示"
   },
   {
    "repo": "shihua-scrolls",

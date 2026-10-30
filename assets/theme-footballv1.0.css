@@ -1,0 +1,75 @@
+/* v3.1 · 美式橄榄球主调：草皮 + 粉笔码线 + 球衣号码 + 记分牌，布局参考 OiOi 的"一盒学院" */
+:root{
+  --turf:#1d5a3a;--turf2:#174a30;--chalk:rgba(255,255,255,.78);--navy:#14213d;--orange:#e8641b;--gold:#f2b134;
+  --varsity:"Arial Black","Helvetica Neue",Impact,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+.btn.primary{background:var(--orange);color:#fff}
+.btn.primary:hover{background:#c24f0f}
+
+/* 球衣号码式章节标 */
+.section .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.eyebrow .jn{font-family:var(--varsity);font-size:2.6rem;line-height:.9;letter-spacing:0;color:transparent;-webkit-text-stroke:2px var(--orange);text-shadow:3px 3px 0 rgba(232,100,27,.18);font-weight:900}
+.eyebrow .ek{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;letter-spacing:.22em;color:var(--navy);font-weight:800}
+.eyebrow .ek::before{content:"";width:22px;height:13px;border-radius:50%;background:#8a4b22;box-shadow:inset 0 0 0 1.5px #5d2f12;background-image:linear-gradient(90deg,transparent 45%,#fff 45% 55%,transparent 55%)}
+
+/* 每个章节顶部一条码线标尺 */
+.section{position:relative}
+.section::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;pointer-events:none;opacity:.5;
+  background:repeating-linear-gradient(90deg,var(--line) 0 2px,transparent 2px 24px),repeating-linear-gradient(90deg,#c9b99d 0 2px,transparent 2px 120px);
+  background-size:auto 7px,auto 14px;background-repeat:repeat-x;background-position:0 0,0 0}
+
+/* 记分牌：首页数据 */
+.stats{display:inline-flex;gap:0;background:#111;border-radius:16px;padding:10px;box-shadow:0 14px 34px rgba(0,0,0,.25),inset 0 0 0 2px #2b2b2b}
+.stats li{padding:8px 18px;color:#c9c2b4;font-size:.72rem;letter-spacing:.12em;text-align:center;border-right:1px solid #2c2c2c}
+.stats li:last-child{border-right:0}
+.stats b{font-family:"SFMono-Regular",Menlo,Consolas,monospace;font-size:2rem;color:var(--gold);text-shadow:0 0 12px rgba(242,177,52,.55);background:#000;border-radius:6px;padding:2px 10px;margin-bottom:6px;display:block}
+
+/* 01 学院：整块草皮 */
+.academy{background:
+  repeating-linear-gradient(90deg,transparent 0 calc(10% - 2px),var(--chalk) calc(10% - 2px) 10%),
+  repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 60px,transparent 60px 120px),
+  linear-gradient(180deg,var(--turf),var(--turf2))!important;color:#fff;background-size:100% 100%,100% 100%,100% 100%}
+.academy::before{display:none}
+.academy .box-head h2{color:#fff}.academy .box-head p{color:#d9e8dd}
+.academy .eyebrow .ek{color:#fff}
+.academy .eyebrow .jn{-webkit-text-stroke-color:#fff;text-shadow:3px 3px 0 rgba(0,0,0,.25)}
+.academy h2 em{color:var(--gold)}
+.bento{counter-reset:play}
+.bx{counter-increment:play;border:0;box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.bx::after{content:"PLAY 0" counter(play);position:absolute;top:12px;left:12px;font:800 .68rem/1 var(--varsity);letter-spacing:.14em;color:var(--navy);background:var(--gold);padding:6px 10px;border-radius:999px;box-shadow:0 2px 0 rgba(0,0,0,.2)}
+.bx .txt{border-top:3px dashed #e7d9c2}
+.bx .n b{font-family:var(--varsity);color:var(--navy)}
+.bx:hover .n span{color:var(--orange)}
+.news-head h3{color:#fff;display:flex;align-items:center;gap:10px}
+.news-head span{color:#cfe2d4}
+.gd{font:800 .66rem/1 var(--varsity);letter-spacing:.16em;background:var(--orange);color:#fff;padding:6px 10px;border-radius:4px}
+.nw{position:relative;border:0;border-radius:14px;padding-left:22px;box-shadow:0 10px 24px rgba(0,0,0,.22)}
+.nw::before{content:"";position:absolute;left:8px;top:10px;bottom:10px;border-left:2px dotted #d8c7aa}
+.nw i{background:var(--navy)}
+.nw:hover{transform:translateY(-3px) rotate(-.4deg)}
+
+/* 战术路线：档位卡做成"码数推进" */
+.levels button{border-top:0;border-left:5px solid var(--turf)}
+.levels button[aria-pressed=true]{border-left-color:var(--orange)}
+.levels .lv{font-family:var(--varsity)}
+
+/* 训练营、安全边界加草地底纹 */
+.camp{background:linear-gradient(180deg,#eef3ea,#e4ecdf)!important}
+.safety .rules article{border-top:4px solid var(--navy)}
+.safety .rules article:nth-child(2){border-top-color:var(--orange)}
+.safety .rules article:nth-child(3){border-top-color:var(--turf)}
+.safety .rules article:nth-child(4){border-top-color:var(--gold)}
+.rules span{font-family:var(--varsity)}
+
+/* 卡片徽章 */
+.badge.lv{background:var(--orange)}.badge.live{background:var(--turf)}
+.chip[aria-pressed=true]{background:var(--turf);border-color:var(--turf)}
+
+/* 页脚：端区 */
+.foot{position:relative;overflow:hidden;background:repeating-linear-gradient(135deg,var(--navy) 0 26px,#18284a 26px 52px);padding-top:0}
+.endzone{display:flex;justify-content:center;gap:4vw;padding:42px 4vw 18px;border-bottom:3px solid rgba(255,255,255,.65);margin-bottom:24px}
+.endzone span{font:900 clamp(1.6rem,6vw,4.6rem)/1 var(--varsity);letter-spacing:.06em;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.85)}
+.endzone span:last-child{-webkit-text-stroke-color:var(--orange)}
+
+@media (max-width:620px){.eyebrow .jn{font-size:2rem}.stats{display:flex;flex-wrap:wrap}.stats li{flex:1 1 40%;border-right:0}.endzone{flex-direction:column;align-items:center;gap:6px}}
+@media (prefers-reduced-motion:reduce){.nw:hover{transform:none}}

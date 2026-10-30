@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26",
+ "updated": "2026-10-30",
  "projects": [
   {
    "repo": "trauma-master-academy",
@@ -220,6 +220,17 @@
    "cover": "https://opengraph.githubassets.com/1/TUANZIDING/saaki-public-data-reproducibility-audit",
    "summary": "脓毒症 AKI 循环 microRNA 信号的公共数据复现审计。",
    "teach": "用 AI 审计已发表结论能否复现"
+  },
+  {
+   "repo": "kosmos-lite-course",
+   "title": "AI 科研工作流实战课 · Kosmos-lite v1.3.0",
+   "category": "research",
+   "level": "L3",
+   "live": "https://tuanziding.github.io/tuanzi-ai-academy/lessons/kosmos-lite-coursev1.0.html",
+   "source": "https://github.com/TUANZIDING/kosmos-lite-course",
+   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/kosmos-lite-course",
+   "summary": "18 页课件：科研人的 6 个痛点，对应 6 道 AI 流程护栏，含 Codex 现场演示。",
+   "teach": "AI 负责跑，人负责放行：门禁、引用分级、止损线与证据包"
   },
   {
    "repo": "peter-rabbit-interactive",

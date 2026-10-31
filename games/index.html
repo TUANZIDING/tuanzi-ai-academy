@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#fff7ec">
+<title>团子棋馆 · 棋类、益智与英语小游戏</title>
+<meta name="description" content="11 款免费网页小游戏：象棋、国际象棋、五子棋、小围棋、军棋，数独、华容道、24 点、数织，英语大冒险和横版闯关。纯浏览器运行，不收集数据。">
+<meta property="og:title" content="团子棋馆 · 棋类、益智与英语小游戏">
+<meta property="og:image" content="assets/hall-herov2.0.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23f3d9a4' stroke='%23b0793a' stroke-width='4'/%3E%3Ctext x='32' y='42' font-size='28' text-anchor='middle' fill='%23e5484d' font-family='serif'%3E%E5%B8%85%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/hubv1.0.css?v=1.5">
+<link rel="stylesheet" href="games/chessv1.0.css?v=1.5" onerror="this.remove()">
+<link rel="stylesheet" href="games/junqiv1.0.css?v=1.5" onerror="this.remove()">
+</head>
+<body>
+<div class="app" data-view="lobby">
+
+  <!-- 大厅 -->
+  <section class="view lobby">
+    <header class="topbar">
+      <div class="brand"><span class="logo">帅</span><div><b>团子棋馆</b><small>TUANZI GAME HALL</small></div></div>
+      <button class="iconbtn" data-act="mute" aria-label="声音开关">🔊</button>
+    </header>
+
+    <div class="hero">
+      <div class="hero-txt">
+        <p class="kick">四个游戏区 · 十一张游戏桌</p>
+        <h1>今天，<br>想跟团子<em>玩哪个</em>？</h1>
+        <p class="sub">中国象棋、国际象棋、五子棋、军棋，小围棋，数独、华容道、24 点、数织、英语大冒险，还有横版闯关。四档难度从「新手」到「大师」，第一次玩先看 30 秒动画规则，卡住了可以问团子教练。</p>
+        <div class="stats"><span><b data-stat="games">0</b>局已下</span><span><b data-stat="wins">0</b>局获胜</span><span><b data-stat="best">—</b>最高战绩</span></div>
+      </div>
+      <img class="hero-img" src="assets/hall-herov2.0.webp" alt="团子和小机器人在摆满棋盘、谜题、英语绘本和游戏机的游戏室里（AI 生成）">
+    </div>
+
+    <nav class="zone-nav" aria-label="游戏分区"></nav>
+    <div class="tables"></div>
+
+    <section class="coach-card">
+      <div class="coach-face">🥟</div>
+      <div><b>团子教练不直接给答案</b><p>按「提示」时，教练先问你一个问题——对方上一步想干什么？你的哪个子没保护？再按一次才亮出推荐着法。想清楚再走，才会越下越强。</p></div>
+    </section>
+
+    <footer class="foot">
+      <p>团子棋馆 · 全部在浏览器本地运行，不收集任何数据</p>
+      <p>插画由 AI 生成 · 由 <a href="https://aiai-academy.com" target="_blank" rel="noopener">aiai 人工智能学院</a> 出品</p>
+    </footer>
+  </section>
+
+  <!-- 设置 -->
+  <section class="view setup" aria-hidden="true">
+    <header class="topbar"><button class="iconbtn" data-act="home" aria-label="返回大厅">←</button><b class="setup-title"></b><span></span></header>
+    <div class="setup-body">
+      <div class="setup-art"></div>
+      <h3>选难度</h3>
+      <div class="levels"></div>
+      <h3>你执</h3>
+      <div class="sides"></div>
+      <label class="tog"><input type="checkbox" class="want-demo"> <span>开局前先看动画规则</span></label>
+      <button class="big go">开始对局</button>
+      <button class="ghost demo-only">只看规则演示</button>
+    </div>
+  </section>
+
+  <!-- 演示 -->
+  <section class="view demo" aria-hidden="true">
+    <header class="topbar"><button class="iconbtn" data-act="back-setup" aria-label="返回">←</button><b class="demo-title"></b><button class="pill skip">跳过 ›</button></header>
+    <div class="caption"><span class="cap-step"></span><p class="cap-txt">准备…</p></div>
+    <div class="board-wrap demo-board"></div>
+    <div class="dots"></div>
+  </section>
+
+  <!-- 对局 -->
+  <section class="view play" aria-hidden="true">
+    <header class="topbar"><button class="iconbtn" data-act="leave" aria-label="离开对局">←</button><div class="play-title"><b></b><small></small></div><button class="iconbtn" data-act="mute" aria-label="声音开关">🔊</button></header>
+    <div class="status"><i></i><span>准备中…</span></div>
+    <div class="board-wrap play-board"></div>
+    <div class="coach-bubble" hidden><span class="cf">🥟</span><p></p></div>
+    <nav class="actions">
+      <button data-act="undo"><span>↶</span>悔棋</button>
+      <button data-act="hint"><span>💡</span>提示</button>
+      <button data-act="restart"><span>⟳</span>重开</button>
+      <button data-act="rules"><span>📖</span>规则</button>
+    </nav>
+  </section>
+
+  <!-- 结束弹窗 -->
+  <div class="modal" hidden>
+    <div class="modal-card">
+      <div class="m-emoji">🏆</div>
+      <h3 class="m-title">你赢了！</h3>
+      <p class="m-reason"></p>
+      <div class="m-btns"><button class="big m-again">再来一局</button><button class="ghost m-up">升一级挑战</button><button class="ghost m-home">回大厅</button></div>
+    </div>
+  </div>
+  <canvas class="confetti"></canvas>
+  <div class="toast" hidden></div>
+</div>
+
+<script src="games/xiangqiv1.0.js?v=1.5"></script>
+<script src="games/chessv1.0.js?v=1.5"></script>
+<script src="games/gomokuv1.0.js?v=1.5"></script>
+<script src="games/junqiv1.0.js?v=1.5"></script>
+<script src="games/sudokuv1.0.js?v=1.5"></script>
+<script src="games/blasterv1.0.js?v=1.5"></script>
+<script src="games/go9v1.0.js?v=1.5"></script>
+<script src="games/huarongv1.0.js?v=1.5"></script>
+<script src="games/point24v1.0.js?v=1.5"></script>
+<script src="games/nonogramv1.0.js?v=1.5"></script>
+<script src="games/englishv1.0.js?v=1.5"></script>
+<script src="assets/hubv1.0.js?v=1.5.1"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+/* 团子游戏馆：首页 bento 横幅 + #games 分区 */
+.bx.w6{grid-column:1/-1}
+.bx.wide{flex-direction:row}
+.bx.wide .pic{flex:0 0 52%;aspect-ratio:16/9}
+.bx.wide .txt{justify-content:center;padding:26px 32px}
+.bx.wide h3{font-size:1.6rem}
+
+.games .gm-hero{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:center;margin:26px 0 30px;background:var(--card);border:1px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
+.gm-pic{display:block;height:100%;overflow:hidden}
+.gm-pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+.gm-pic:hover img{transform:scale(1.03)}
+.gm-txt{padding:26px 30px 26px 0;display:flex;flex-direction:column;gap:16px}
+.gm-txt p{margin:0;color:var(--muted)}
+.gm-facts{list-style:none;margin:0;padding:0;display:flex;gap:26px}
+.gm-facts li{display:flex;flex-direction:column}
+.gm-facts b{font-size:2.4rem;line-height:1;font-weight:800;font-variant-numeric:tabular-nums}
+.gm-facts span{font-size:.85rem;color:var(--muted);margin-top:4px}
+.gm-btns{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.gm-alt{font-size:.88rem;color:var(--muted)}
+.gm-zones{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.gm-zone{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-top:5px solid var(--zc);border-radius:22px;overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .45s var(--ease)}
+.gm-zone:hover{transform:translateY(-4px)}
+.gm-zone img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#f3ecdf}
+.gm-zone>div{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.gm-zone .zn{font-size:.68rem;letter-spacing:.16em;font-weight:800;color:var(--zc)}
+.gm-zone h3{margin:0;font-size:1.2rem}
+.gm-zone p{margin:0;color:var(--muted);font-size:.9rem}
+.gm-zone .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
+.gm-zone .chips i{font-style:normal;font-size:.78rem;font-weight:600;padding:3px 9px;border-radius:999px;background:color-mix(in srgb,var(--zc) 12%,#fff);color:var(--ink)}
+@media (max-width:1080px){.gm-zones{grid-template-columns:repeat(2,1fr)}.bx.w6{grid-column:1/-1}}
+@media (max-width:760px){.bx.wide{flex-direction:column}.bx.wide .pic{flex:none;width:100%}.bx.wide .txt{padding:18px 22px 22px}
+  .games .gm-hero{grid-template-columns:1fr}.gm-txt{padding:4px 22px 24px}}
+@media (max-width:520px){.gm-zones{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.gm-zone,.gm-pic img{transition:none}}

@@ -292,7 +292,7 @@
    "title": "团子棋馆",
    "category": "explore",
    "level": "L3",
-   "live": "https://games.aiai-academy.com",
+   "live": "https://aiai-academy.com/games/",
    "source": "https://github.com/TUANZIDING/tuanzi-games",
    "cover": "https://opengraph.githubassets.com/1/TUANZIDING/tuanzi-games",
    "summary": "11 款网页小游戏：象棋、国际象棋、五子棋、小围棋、军棋，数独、华容道、24 点、数织，英语大冒险和横版闯关。",

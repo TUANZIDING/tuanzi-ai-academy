@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="assets/theme-footballv1.0.css?v=3.1.1">
 <link rel="stylesheet" href="assets/gamesv1.0.css?v=1.0">
 <link rel="stylesheet" href="assets/videosv1.0.css?v=1.0">
+<link rel="stylesheet" href="assets/shelfv1.0.css?v=1.0">
 <style>.brand .aiai-mark{height:38px;width:auto;display:block}.w-brand .aiai-mark{height:34px;width:auto;display:block}.w-brand .aiai-sub{display:flex;flex-direction:column;line-height:1.2;font-size:.92rem}.w-brand .aiai-sub small,.brand small{display:block;font-size:.6rem;letter-spacing:.2em;font-weight:500;opacity:.7}</style>
 </head>
 <body>
@@ -68,16 +69,20 @@
   </a>
   <nav aria-label="主导航">
     <a href="#academy">学院</a>
-    <a href="#playbook">战术路线</a>
-    <a href="#concepts">战术词典</a>
-    <a href="#gear">装备库</a>
-    <a href="#gallery">作品馆</a><a href="#games">游戏馆</a><a href="#videos">放映厅</a>
+    <a href="#playbook">路线</a>
+    <a href="#gallery">作品馆</a>
+    <a href="#games">游戏馆</a>
+    <a href="#videos">放映厅</a>
     <a href="#lessons">课件馆</a>
     <a href="#camp">训练营</a>
-    <a href="#library">延伸学习</a>
-    <a href="#safety">安全边界</a>
-    <a href="#toolbox">开源工具箱</a>
-    <a href="#about">关于</a>
+    <details class="nav-more"><summary>更多</summary><div class="menu">
+      <a href="#concepts">战术词典</a>
+      <a href="#gear">装备库</a>
+      <a href="#library">延伸学习</a>
+      <a href="#safety">安全边界</a>
+      <a href="#toolbox">开源工具箱</a>
+      <a href="#about">关于</a>
+    </div></details>
   </nav>
   <button class="btn ghost" id="reWelcome" title="回到欢迎页">关于我</button>
   <button class="btn ghost" id="projector" aria-pressed="false" title="线下投屏时放大字号">投屏模式</button>
@@ -338,5 +343,7 @@
 <script src="assets/home-v3v1.0.js?v=3.0" defer></script>
 <script src="assets/hlsv1.5.17.min.js" defer></script>
 <script src="assets/videosv1.0.js?v=1.0" defer></script>
+<script src="assets/shelfv1.0.js?v=1.0" defer></script>
+<script>document.addEventListener("click",e=>{const d=document.querySelector(".nav-more[open]");if(d&&(!d.contains(e.target)||e.target.closest(".menu a")))d.removeAttribute("open")});</script>
 </body>
 </html>

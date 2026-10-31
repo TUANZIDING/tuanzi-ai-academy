@@ -1,0 +1,37 @@
+/* aiai 放映厅 */
+.videos .reel{margin-top:30px}
+.reel-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:14px}
+.reel-en{font-size:.7rem;letter-spacing:.18em;font-weight:800;color:var(--orange)}
+.reel-head h3{margin:4px 0 2px;font-size:1.35rem}
+.reel-head h3 small{font-size:.8rem;font-weight:600;color:var(--muted);margin-left:6px}
+.reel-head p{margin:0;color:var(--muted);font-size:.92rem}
+.reel-nav{display:flex;gap:8px;flex:none}
+.rb{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:1.5rem;line-height:1;cursor:pointer;color:var(--ink);box-shadow:var(--shadow)}
+.rb:hover:not(:disabled){background:var(--ink);color:#fff}
+.rb:disabled{opacity:.35;cursor:default}
+.reel-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:2px;padding:4px 2px 16px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.reel-track:focus-visible{outline:3px solid var(--orange);outline-offset:4px;border-radius:12px}
+.vcard{flex:0 0 clamp(240px,27vw,340px);scroll-snap-align:start;display:flex;flex-direction:column;gap:5px;text-align:left;background:none;border:0;padding:0;cursor:pointer;color:var(--ink);font:inherit}
+.vcard.vert{flex-basis:clamp(150px,15vw,190px)}
+.vthumb{position:relative;display:block;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#1f2a44;box-shadow:var(--shadow)}
+.vcard.vert .vthumb{aspect-ratio:9/16;max-height:340px}
+.vthumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s var(--ease)}
+.vcard:hover .vthumb img{transform:scale(1.05)}
+.vplay{position:absolute;inset:0;margin:auto;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--orange);display:grid;place-items:center;font-size:1.2rem;padding-left:4px;box-shadow:0 6px 18px rgba(0,0,0,.25);opacity:.88;transition:transform .3s var(--ease),opacity .3s}
+.vcard:hover .vplay{transform:scale(1.1);opacity:1}
+.vdur{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.72);color:#fff;font-size:.75rem;font-weight:700;padding:3px 8px;border-radius:8px;font-variant-numeric:tabular-nums}
+.vtag{position:absolute;left:10px;top:10px;background:var(--orange);color:#fff;font-size:.7rem;font-weight:800;padding:3px 9px;border-radius:999px}
+.vcard b{font-size:1rem;margin-top:6px;line-height:1.35}
+.vcard small{color:var(--muted);font-size:.85rem;line-height:1.4}
+.vcard:focus-visible .vthumb{outline:3px solid var(--orange);outline-offset:3px}
+#vplayer{border:0;padding:0;background:transparent;width:min(1100px,94vw);max-height:94vh;overflow:visible}
+#vplayer.vert{width:min(420px,92vw)}
+#vplayer::backdrop{background:rgba(10,12,20,.82)}
+#vplayer .vp-box{background:#0d1018;border-radius:18px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+#vplayer video{display:block;width:100%;max-height:80vh;background:#000}
+#vplayer .vp-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;color:#eee}
+#vplayer .vp-title{font-weight:800}
+#vplayer .vp-sub{font-size:.85rem;color:#aab}
+#vplayer .vp-x{flex:none;border:0;background:#fff;color:#111;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer}
+@media (max-width:620px){.reel-nav{display:none}.vcard{flex-basis:78vw}.vcard.vert{flex-basis:46vw}}
+@media (prefers-reduced-motion:reduce){.vthumb img,.vplay{transition:none}}

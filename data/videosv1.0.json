@@ -1,0 +1,22 @@
+{
+ "base": "media/v/",
+ "rows": [
+  {"id":"science","name":"医学科研 · 肌肉、辐射与再生","en":"SCIENCE","desc":"把基础研究讲成侦探故事：每句标注证据等级，中英双语字幕。","items":[
+   {"id":"beam-ep1","title":"射线之后 01 · 子弹与蓝图","sub":"电离、DNA 双链断裂与细胞命运","dur":"18:28","tag":"系列"},
+   {"id":"beam-ep2","title":"射线之后 02 · 守护者","sub":"Pax7 卫星细胞为何不可或缺","dur":"20:28","tag":"系列"},
+   {"id":"beam-ep3","title":"射线之后 03 · 邻居变脸","sub":"FAP、巨噬细胞与放射后纤维化","dur":"21:27","tag":"系列"},
+   {"id":"beam-ep4","title":"射线之后 04 · 从实验台到病床","sub":"人体证据、模型与剂量怎么选","dur":"21:36","tag":"系列"},
+   {"id":"repairmen","title":"沉睡的修理工","sub":"爱迪生带你听懂一场肌肉干细胞报告","dur":"20:14","tag":"讲座复述"},
+   {"id":"dna3d","title":"射线穿过后的第一秒","sub":"90 秒 3D 短片：肌细胞核里的 DNA 损伤","dur":"1:31","tag":"3D 短片","v":true}
+  ]},
+  {"id":"ai","name":"AI 与科技","en":"AI · TECH","desc":"AI 是怎么走到今天的，以及身边的硬核科技。","items":[
+   {"id":"ai-history","title":"AI 发展史 · 19 块展盘","sub":"从图灵之问到智能体，英式旁白","dur":"9:21","tag":"科普"},
+   {"id":"wang-muse","title":"Alexandr Wang 与 Meta","sub":"视频号竖屏短视频","dur":"1:43","tag":"短视频","v":true},
+   {"id":"starlink","title":"星链相控阵天线","sub":"一块平板怎么对准高速卫星（英文旁白）","dur":"1:50","tag":"动画"}
+  ]},
+  {"id":"humanities","name":"历史与人文","en":"HUMANITIES","desc":"老照片、诗与画，也是练英语的好材料。","items":[
+   {"id":"civil-war","title":"分裂之家 · 美国南北战争","sub":"林肯第一人称讲述，档案老照片","dur":"10:27","tag":"历史"},
+   {"id":"poem","title":"诗情画意","sub":"一首古诗的水墨小片","dur":"0:24","tag":"短片"}
+  ]}
+ ]
+}

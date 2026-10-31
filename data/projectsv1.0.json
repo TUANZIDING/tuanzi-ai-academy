@@ -226,7 +226,7 @@
    "title": "AI 科研工作流实战课 · Kosmos-lite v1.3.0",
    "category": "research",
    "level": "L3",
-   "live": "https://tuanziding.github.io/tuanzi-ai-academy/lessons/kosmos-lite-coursev1.0.html",
+   "live": "https://aiai-academy.com/lessons/kosmos-lite-coursev1.0.html",
    "source": "https://github.com/TUANZIDING/kosmos-lite-course",
    "cover": "https://opengraph.githubassets.com/1/TUANZIDING/kosmos-lite-course",
    "summary": "18 页课件：科研人的 6 个痛点，对应 6 道 AI 流程护栏，含 Codex 现场演示。",
@@ -288,14 +288,14 @@
    "teach": "区分“考古事实”和“推测”的可视化"
   },
   {
-   "repo": "chinese-chess-learning",
+   "repo": "tuanzi-games",
    "title": "团子棋馆",
    "category": "explore",
    "level": "L3",
    "live": "https://games.aiai-academy.com",
-   "source": "https://github.com/TUANZIDING/chinese-chess-learning",
-   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/chinese-chess-learning",
-   "summary": "中国象棋、国际象棋、五子棋、军棋，点开就能和电脑下，四档难度，开局动画教规则。",
+   "source": "https://github.com/TUANZIDING/tuanzi-games",
+   "cover": "https://opengraph.githubassets.com/1/TUANZIDING/tuanzi-games",
+   "summary": "11 款网页小游戏：象棋、国际象棋、五子棋、小围棋、军棋，数独、华容道、24 点、数织，英语大冒险和横版闯关。",
    "teach": "教练先提问再给答案：苏格拉底式提示"
   },
   {

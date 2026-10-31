@@ -1,9 +1,10 @@
-<h1 align="center">团子 AI 学院 · Tuanzi AI Academy</h1>
+<h1 align="center">团子 AI 学院 · AIAI Academy</h1>
 
 <p align="center"><strong>一名急诊创伤外科医生的 AI 战术手册：先会用，再用对。</strong><br>
 An AI playbook for clinicians, built from my own public GitHub projects.</p>
 
-<p align="center"><a href="https://tuanziding.github.io/tuanzi-ai-academy/"><strong>打开网站 · Open the site</strong></a></p>
+<p align="center"><a href="https://aiai-academy.com"><strong>aiai-academy.com · 打开网站</strong></a><br>
+<sub>备用镜像 <a href="https://tuanziding.github.io/aiai-academy/">tuanziding.github.io/aiai-academy</a> · 姊妹站 <a href="https://games.aiai-academy.com">团子棋馆 games.aiai-academy.com</a></sub></p>
 
 ## 这是什么
 把我在 GitHub 上的公开项目集中到一个页面，用于线上与线下的「AI 使用策略」授课。
@@ -20,17 +21,20 @@ An AI playbook for clinicians, built from my own public GitHub projects.</p>
 
 1. 新项目推上 GitHub 后，运行 `python3 scripts/sync-reposv0.1.py`，它会列出还没收录的仓库并给出 JSON 草稿。
 2. 把草稿粘进 `projects`，补上 `category`、`level` 和 `teach`（课上讲什么）。
-3. 提交即上线。
+3. 提交后同步部署到 Cloudflare Pages（主站）；GitHub Pages 镜像自动更新。
 
 `category` 可选：`trauma` 创伤教学 · `workflow` AI 工作流 · `govern` 证据与智能体治理 · `research` 可复现科研 · `family` 亲子与创作 · `explore` 趣味探索
 
 ## 结构
 ```
 index.html                 页面骨架
-assets/stylev1.0.css       样式（深蓝底 · 电光青 · 橙色，橄榄球战术板）
+assets/stylev1.0.css       基础样式
+assets/theme-footballv1.0.css  美式橄榄球主题皮肤（当前）
+lessons/                   投屏课件与故事版课程
+data/campv1.0.json         训练营原创课程
 assets/appv1.0.js          渲染与筛选
 data/projectsv1.0.json     作品与工具箱数据
 scripts/sync-reposv0.1.py  查找未收录的公开仓库
 ```
 
-纯静态，无构建步骤、无第三方依赖，GitHub Pages 直接发布。
+纯静态，无构建步骤、无第三方依赖。主站 aiai-academy.com 由 Cloudflare Pages 发布，GitHub Pages 同步作为镜像。

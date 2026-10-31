@@ -6,7 +6,7 @@ List public, non-fork TUANZIDING repos missing from data/projectsv1.0.json.
 import json, pathlib, urllib.request
 
 USER = "TUANZIDING"
-SKIP = {"tuanzi-ai-academy", "TUANZIDING", "TUANZIDING.github.io", "medical-science-shorts"}
+SKIP = {"aiai-academy", "tuanzi-games", "TUANZIDING", "TUANZIDING.github.io", "medical-science-shorts"}
 root = pathlib.Path(__file__).resolve().parent.parent
 data = json.loads((root / "data" / "projectsv1.0.json").read_text(encoding="utf-8"))
 have = {p["repo"] for p in data["projects"]}

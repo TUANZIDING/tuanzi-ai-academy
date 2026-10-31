@@ -1,4 +1,5 @@
-<h1 align="center">团子 AI 学院 · AIAI Academy</h1>
+<p align="center"><img src="assets/aiai-wordmarkv1.0.webp" alt="aiai" width="320"></p>
+<h1 align="center">aiai 人工智能学院 · AIAI Academy</h1>
 
 <p align="center"><strong>一名急诊创伤外科医生的 AI 战术手册：先会用，再用对。</strong><br>
 An AI playbook for clinicians, built from my own public GitHub projects.</p>

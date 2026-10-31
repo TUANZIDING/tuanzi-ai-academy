@@ -122,7 +122,7 @@ def build(l, camp):
     P = []
     # 0 cover
     P.append(page(1, '封面', '训练营', f'''
-<div class="ttl"><div class="k">团子 AI 学院 · {E(t['name'])}</div>
+<div class="ttl"><div class="k">aiai 学院 · {E(t['name'])}</div>
 <h1>{E(main)}{f'<em>{E(sub)}</em>' if sub else ''}</h1>
 <div class="sub">{E(l['one'])}</div>
 <div class="meta">丁海祥 · 原创课程 · 第 {n} 课</div></div>
@@ -179,14 +179,14 @@ def build(l, camp):
         return f'<a class="card" href="{E(link_for(x))}"><small>{lab}{" · 故事版" if x.get("story") else ""}</small><h3>{E(x["title"])}</h3><p>{E(x["level"])} · {x["min"]} 分钟</p></a>'
     P.append(page(8, '下一课', '继续', hd(7, '接着练', t['name']) + f'''
 <div class="nx" data-b="1">{card(prv,'上一课')}{card(nxt,'下一课')}</div>
-<p class="home" data-b="2"><a href="../#camp-{E(l['id'])}">← 回到训练营 · 全部课程</a>　　<span class="src">丁海祥 · 团子 AI 学院原创课程 · 更新于 {E(camp['updated'])}</span></p>'''))
+<p class="home" data-b="2"><a href="../#camp-{E(l['id'])}">← 回到训练营 · 全部课程</a>　　<span class="src">丁海祥 · aiai 学院原创课程 · 更新于 {E(camp['updated'])}</span></p>'''))
     total = len(P)
     return f'''<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{E(l['title'])} · 团子 AI 学院训练营 {code}</title>
+<title>{E(l['title'])} · aiai 学院训练营 {code}</title>
 <meta name="description" content="{E(l['one'])}">
 <style>{BASE_CSS}{EXTRA_CSS}</style></head><body>
 <div id="viewport"><div id="stage">
-<div id="brand"><span class="dot"></span><b>团子 AI 学院</b><span>· 训练营 {code}</span></div>
+<div id="brand"><span class="dot"></span><b>aiai 学院</b><span>· 训练营 {code}</span></div>
 <div id="magbadge"><span class="obj">训练营</span><span class="idx">1 / {total}</span></div>
 <div id="pages">{''.join(P)}</div>
 <div id="toc" class="card"><h4>目录</h4><div id="tocList"></div></div>

@@ -36,7 +36,7 @@
       </div>
       <div class="cr-care"><b>⚠️ 小心：</b>${esc(l.care)}</div>
       <nav class="cr-nav">${prev ? `<button data-go="${prev.id}">← ${esc(prev.title)}</button>` : '<span></span>'}${next ? `<button data-go="${next.id}">${esc(next.title)} →</button>` : '<span></span>'}</nav>
-      <p class="cr-sign">丁海祥 · 团子 AI 学院原创课程 · 更新于 ${esc(camp.updated)}</p>`;
+      <p class="cr-sign">丁海祥 · aiai 学院原创课程 · 更新于 ${esc(camp.updated)}</p>`;
     $('#crBody').querySelectorAll('[data-go]').forEach(b => b.onclick = () => open(b.dataset.go, true));
     const r = $('#campReader'); r.hidden = false; document.documentElement.classList.add('cr-open');
     r.querySelector('.cr-sheet').scrollTop = 0;

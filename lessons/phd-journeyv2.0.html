@@ -1,0 +1,347 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>从急诊室到博士录取：一位临床医生的申请路线图 · aiai 学院</title>
+<meta name="description" content="在职临床医生申请医学博士的完整复盘：英语、研究方向、面试 PPT、医学英语、录取衔接，以及怎样把 AI 当陪练用。附 6 段可复制提示词。">
+<meta property="og:image" content="https://aiai-academy.com/assets/story/phd-herov1.0.webp">
+<link rel="icon" href="../assets/aiai-wordmarkv1.0.webp">
+<style>
+:root{--bg:#F6F5F1;--ink:#1C2333;--ink2:#3A4357;--mute:#667085;--line:rgba(27,95,168,.16);
+--blue:#1B5FA8;--blue2:#3F8BD6;--blue3:#DCE8F6;--he:#5B3F9E;--he2:#8E6BC8;--eo:#D9719C;--eo2:#F4B8CF;--eo3:#FBE7EF;
+--gold:#B88A3B;--ok:#2E9E7A;--warn:#D4793A;--glass:rgba(255,255,255,.66);--glassb:rgba(255,255,255,.9);
+--sh:0 12px 40px rgba(28,40,80,.08),0 2px 6px rgba(28,40,80,.04);
+--serif:"Noto Serif SC","Songti SC","STSong","SimSun",serif;--sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;background:#E9ECF1;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+#viewport{position:fixed;inset:0;overflow:hidden}
+#stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;overflow:hidden;
+background:radial-gradient(1200px 700px at 85% -10%,rgba(63,139,214,.10),transparent 60%),radial-gradient(900px 600px at -5% 105%,rgba(217,113,156,.09),transparent 60%),var(--bg)}
+#stage::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;background-image:radial-gradient(rgba(27,95,168,.10) 1px,transparent 1.2px);background-size:28px 28px;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.5),transparent 40%,transparent 70%,rgba(0,0,0,.35));mask-image:linear-gradient(180deg,rgba(0,0,0,.5),transparent 40%,transparent 70%,rgba(0,0,0,.35))}
+#brand{position:absolute;left:48px;top:34px;display:flex;align-items:center;gap:14px;z-index:30;font-size:20px;color:var(--ink2);letter-spacing:.08em}
+#brand .dot{width:40px;height:40px;border-radius:50%;border:2px solid var(--blue);position:relative}
+#brand .dot::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--eo)}
+#brand b{font-family:var(--serif);color:var(--blue);font-size:22px}
+#magbadge{position:absolute;right:48px;top:34px;z-index:30;display:flex;align-items:center;gap:14px;font-size:20px;color:var(--ink2)}
+#magbadge .obj{padding:8px 18px;border-radius:40px;background:var(--glass);backdrop-filter:blur(14px);border:1px solid var(--glassb);box-shadow:var(--sh)}
+#magbadge .idx{font-variant-numeric:tabular-nums;color:var(--mute)}
+.page{position:absolute;inset:0;padding:122px 120px 140px;visibility:hidden;opacity:0;transition:opacity .6s ease}
+.page.cur{visibility:visible;opacity:1}
+.hd{margin-bottom:28px;max-width:1600px}
+.kick{display:flex;align-items:center;gap:14px;font-size:20px;letter-spacing:.18em;color:var(--blue);font-weight:600}
+.kick .no{font-family:var(--serif);font-size:22px;color:var(--eo);letter-spacing:.05em}
+.kick::after{content:"";height:1px;width:160px;background:linear-gradient(90deg,var(--blue2),transparent)}
+h2.t{font-family:var(--serif);font-weight:600;font-size:52px;line-height:1.2;margin-top:10px;letter-spacing:.02em}
+.lede{margin-top:12px;font-size:23px;line-height:1.6;color:var(--ink2);max-width:1560px}
+.card{background:var(--glass);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border:1px solid var(--glassb);border-radius:22px;box-shadow:var(--sh)}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:3px 12px;border-radius:30px;font-size:17px;background:var(--blue3);color:var(--blue);font-weight:600}
+.tag.eo{background:var(--eo3);color:#B04679}.tag.he{background:#ECE6F7;color:var(--he)}.tag.ok{background:#E3F4EC;color:#1E6E52}.tag.wn{background:#FFF1DD;color:#9A5A16}
+.demo{display:inline-block;padding:2px 10px;border-radius:6px;font-size:16px;font-weight:600;color:#9A5A16;background:#FFF1DD;border:1px dashed #E2A65A;letter-spacing:.1em}
+.src{font-size:16px;color:var(--mute);line-height:1.5}
+.ph{position:relative;overflow:hidden;border-radius:18px;background:#fff}
+.ph img{width:100%;display:block}
+[data-b]{transition:opacity .7s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.page.cur [data-b]{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.page.cur [data-b="1"]{animation-delay:.1s}.page.cur [data-b="2"]{animation-delay:.25s}.page.cur [data-b="3"]{animation-delay:.4s}.page.cur [data-b="4"]{animation-delay:.55s}.page.cur [data-b="5"]{animation-delay:.7s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:40px;font-size:20px;font-weight:600;background:#fff;border:1px solid var(--line);box-shadow:var(--sh);transition:.25s}
+.btn:hover{transform:translateY(-2px);border-color:var(--blue2)}
+.btn.pri{background:linear-gradient(135deg,var(--blue),#2E78C7);color:#fff;border:0}
+.seg{display:inline-flex;padding:5px;border-radius:40px;background:rgba(27,95,168,.08);gap:4px}
+.seg button{padding:10px 22px;border-radius:30px;font-size:19px;font-weight:600;color:var(--ink2);transition:.25s}
+.seg button.on{background:#fff;color:var(--blue);box-shadow:0 3px 12px rgba(27,95,168,.15)}
+.hint{font-size:17px;color:var(--mute);display:flex;align-items:center;gap:8px}
+.hint::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--eo);box-shadow:0 0 0 5px rgba(217,113,156,.18);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 9px rgba(217,113,156,.05)}}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:28px}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.box{padding:26px 30px}
+.box h3{font-family:var(--serif);font-size:30px;margin-bottom:12px;display:flex;align-items:center;gap:12px}
+.box p,.box li{font-size:21px;line-height:1.6;color:var(--ink2)}
+.box ul{padding-left:24px}.box li{margin:4px 0}
+.num{font-family:var(--serif);font-size:64px;color:var(--blue);line-height:1}.num small{font-size:24px;color:var(--mute);margin-left:6px}
+table.t{width:100%;border-collapse:separate;border-spacing:0;font-size:19px}
+table.t th{text-align:left;font-weight:600;color:var(--blue);padding:12px 14px;border-bottom:2px solid var(--blue3);background:rgba(220,232,246,.4)}
+table.t td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--ink2);line-height:1.45;vertical-align:top}
+table.t tr:last-child td{border-bottom:0}
+em.hl{font-style:normal;background:linear-gradient(90deg,var(--he),var(--eo));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
+/* cover */
+#p1 .eye{position:absolute;right:130px;top:150px;width:700px;height:700px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 14px rgba(255,255,255,.75),0 0 0 15px rgba(27,95,168,.25),0 40px 90px rgba(40,30,80,.25);background:#000}
+#p1 .eye img{width:100%;height:100%;object-fit:cover;transform:scale(1.25);animation:zoom 14s ease-in-out infinite alternate}
+@keyframes zoom{to{transform:scale(1.6) translate(3%,2%)}}
+#p1 .eye .lab{position:absolute;left:50%;bottom:44px;transform:translateX(-50%);font-size:16px;color:#fff;background:rgba(0,0,0,.45);padding:4px 12px;border-radius:20px;white-space:nowrap}
+#p1 .ttl{position:absolute;left:120px;top:200px;width:960px}
+#p1 .ttl .k{font-size:22px;letter-spacing:.32em;color:var(--blue);font-weight:600}
+#p1 .ttl h1{font-family:var(--serif);font-weight:600;font-size:62px;line-height:1.25;margin:20px 0 18px}
+#p1 .ttl .sub{font-size:27px;color:var(--ink2);line-height:1.6}
+#p1 .ttl .meta{margin-top:24px;font-size:21px;color:var(--mute);line-height:1.8}
+#p1 .chips{position:absolute;left:120px;top:700px;width:960px;display:flex;gap:14px}
+#p1 .chips div{flex:1;padding:16px 18px;border-radius:16px;font-size:19px;line-height:1.45;color:var(--ink2);border:1px solid var(--line);background:rgba(255,255,255,.6)}
+#p1 .chips b{display:block;font-family:var(--serif);font-size:30px;color:var(--blue)}
+/* bar */
+#bar{position:absolute;left:40px;right:40px;bottom:24px;height:60px;z-index:50;display:flex;align-items:center;gap:14px;padding:0 18px;border-radius:36px;background:rgba(255,255,255,.72);backdrop-filter:blur(16px);border:1px solid #fff;box-shadow:var(--sh)}
+#bar .ib{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none}
+#bar .ib:hover{background:var(--blue3)}
+#bar .ib svg{width:24px;height:24px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#chapName{font-size:20px;font-weight:600;min-width:330px;white-space:nowrap}
+#prog{flex:1;position:relative;height:44px;cursor:pointer}
+#prog .tr{position:absolute;left:0;right:0;top:19px;height:6px;border-radius:6px;background:rgba(27,95,168,.12)}
+#prog .fill{position:absolute;left:0;top:19px;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--blue),var(--he2),var(--eo));transition:width .5s}
+#prog .dots{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center}
+#prog .dots i{width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid rgba(27,95,168,.35)}
+#prog .dots i.done{border-color:var(--blue);background:var(--blue)}
+#toc,#modal{position:absolute;z-index:60;opacity:0;visibility:hidden;transition:.35s}
+#toc.show,#modal.show{opacity:1;visibility:visible}
+#toc{left:40px;bottom:100px;width:580px;padding:22px}
+#toc h4{font-family:var(--serif);font-size:26px;margin:2px 8px 12px}
+#toc button{display:flex;width:100%;align-items:center;gap:16px;padding:9px 12px;border-radius:12px;font-size:20px;text-align:left}
+#toc button:hover{background:var(--blue3)}#toc button.cur{background:var(--blue);color:#fff}
+#toc button span.n{font-family:var(--serif);color:var(--eo);width:36px}#toc button.cur span.n{color:#fff}
+#modal{inset:0;background:rgba(240,243,248,.6);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center}
+#modal .mb{width:1500px;max-height:860px;overflow:auto;padding:44px 56px;position:relative}
+#modal h3{font-family:var(--serif);font-size:38px;margin-bottom:18px}
+#modal .x{position:absolute;right:24px;top:20px;font-size:34px;width:52px;height:52px;border-radius:50%}
+#modal ol{padding-left:30px}#modal li{font-size:19px;line-height:1.6;margin:7px 0;color:var(--ink2)}
+.sw{display:none}.sw.on{display:block}
+@media print{html,body{overflow:visible;height:auto;background:#fff}#viewport{position:static}#stage{position:relative;transform:none!important;height:auto;background:none}
+#stage::before,#bar,#toc,#modal,#brand,#magbadge{display:none}.page{position:relative;visibility:visible;opacity:1;width:1920px;height:1080px;page-break-after:always;break-after:page}
+.page [data-b]{animation:none!important}.sw{display:block}@page{size:1920px 1080px;margin:0}}
+
+.fig{padding:16px;display:flex;flex-direction:column}.fig img{width:100%;max-height:540px;object-fit:contain;display:block;border-radius:10px;background:#fff}
+.cap{font-size:15px;color:var(--mute);margin-top:8px;line-height:1.5}
+.fx{display:grid;grid-template-columns:620px 1fr;gap:28px;align-items:start}
+.pts{display:flex;flex-direction:column;gap:14px}
+.pt{padding:14px 18px;border-radius:16px;background:rgba(255,255,255,.78);border:1px solid var(--line)}
+.pt h4{margin:0 0 6px;font-size:21px;color:var(--blue)}.pt p{margin:0;font-size:17px;line-height:1.5;color:var(--ink2)}
+.pt.eo{border-left:6px solid var(--eo)}.pt.bl{border-left:6px solid var(--blue)}.pt.wn{border-left:6px solid var(--gold)}.pt.ok{border-left:6px solid var(--ok)}
+.num{font-family:var(--serif);font-weight:700;color:var(--blue)}
+.en{font-family:Georgia,serif;font-style:italic;color:#3A4357;font-size:16px;line-height:1.55}
+.qt{padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.8);margin-bottom:10px;border-left:5px solid var(--he)}
+.qt .zh{font-size:16px;color:var(--ink2);margin-top:4px;line-height:1.5}.qt .wh{font-size:14px;color:var(--mute);margin-top:4px}
+.dense h2.t{font-size:42px}.dense table.t{font-size:17px}.dense table.t td,.dense table.t th{padding:8px 12px}.dense .box{padding:20px 24px}.dense .box h3{font-size:24px;margin-bottom:8px}.dense .box li,.dense .box p{font-size:18px;line-height:1.5}
+
+.pr{padding:18px 20px;display:flex;flex-direction:column}
+.pt2{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:20px;font-weight:700;color:var(--blue)}
+.cp{padding:4px 14px;border-radius:20px;font-size:15px;background:var(--blue3);color:var(--blue);font-weight:600}
+.cp:hover{background:var(--blue);color:#fff}
+.pr p{font-size:16px;line-height:1.6;color:var(--ink2)}
+.chk{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chk label{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.75);border:1px solid var(--line);font-size:18px;line-height:1.45;cursor:pointer;color:var(--ink2)}
+.chk input{width:20px;height:20px;margin-top:3px;accent-color:var(--ok);flex:none}
+.chk input:checked+span{color:var(--mute);text-decoration:line-through}
+#brand a{color:inherit;text-decoration:none;display:flex;align-items:center;gap:14px}
+#brand img{height:36px}
+#p1 .eye{background:#f3ede2}#p1 .eye img{transform:scale(1.05);object-position:30% 50%}
+@keyframes zoom{to{transform:scale(1.22) translate(2%,1%)}}
+.fig img{max-height:470px}
+</style></head><body>
+<div id="viewport"><div id="stage">
+<div id="brand"><a href="../#lessons" title="回到课件馆"><img src="../assets/aiai-wordmarkv1.0.webp" alt="aiai"><b>人工智能学院</b></a><span>· 实战案例 02 博士申请</span></div>
+<div id="magbadge"><span class="obj">封面</span><span class="idx">1 / 15</span></div>
+<div id="pages"><section class="page" id="p1" data-title="封面" data-mag="封面">
+<div class="ttl"><div class="k">实战案例 02 · 博士申请复盘</div>
+<h1>从急诊室到博士录取：<br><em class="hl">一位临床医生的申请路线图</em></h1>
+<div class="sub">在职临床医学博士（专业学位）· 2026 级 · 苏州大学<br>英语、研究方向、面试 PPT、医学英语、录取衔接</div>
+<div class="meta">丁海祥 · 急诊创伤外科医生 · aiai 人工智能学院<br>整理：2026 年 10 月 · 插图由 AI 生成（团子与卡皮巴拉）</div></div>
+<div class="chips"><div><b>约 6 周</b>5 月到 6 月集中准备</div><div><b>6 站</b>从英语笔试到入学衔接</div><div><b>6 段提示词</b>AI 当陪练，判断留给自己</div></div>
+<div class="eye"><img src="../assets/story/phd-herov1.0.webp" alt="团子和卡皮巴拉站在通往大学的小路起点"><span class="lab">示意图 · AI 生成</span></div></section>
+
+<section class="page" id="p2" data-title="一页速览" data-mag="速览">
+<div class="hd"><div class="kick"><span class="no">01</span>一页速览</div><h2 class="t">一句话：把真实的临床经历，一站一站压缩成考官 8 分钟能听懂的研究故事</h2></div>
+<div class="g2" style="grid-template-columns:1.3fr 1fr">
+<div class="card box" data-b="1"><h3>六站路线</h3><table class="t">
+<tr><th style="width:15%">站</th><th style="width:20%">时间</th><th>我要解决的问题</th><th style="width:24%">AI 的角色</th></tr>
+<tr><td><b>英语</b></td><td>5 月中下旬</td><td>在限定时间写出结构清楚、用词准确的作文</td><td>拆范文结构、改表达</td></tr>
+<tr><td><b>方向</b></td><td>5 月下旬</td><td>在自己的临床背景和导师方向之间找到交点</td><td>按意义、证据、可行性排队</td></tr>
+<tr><td><b>PPT</b></td><td>6 月初</td><td>9 页、7–8 分钟讲清楚“为什么是我”</td><td>压缩要点、写口述稿初稿</td></tr>
+<tr><td><b>面试</b></td><td>6 月上旬</td><td>读懂、说出医学英语，接住追问</td><td>出练习题、扮演考官</td></tr>
+<tr><td><b>录取</b></td><td>6 月下旬</td><td>确认录取</td><td>—</td></tr>
+<tr><td><b>衔接</b></td><td>7 月</td><td>培养安排、工作协调、进实验室</td><td>列清单、拟沟通措辞</td></tr></table></div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div class="card box" data-b="2"><h3><span class="tag ok">值得学</span></h3><ul><li>给每个环节设硬约束：页数、时长、题型</li><li>机制图用实线、虚线分开证据和假说</li><li>任务切小再交给 AI：一段、一页、一组词</li></ul></div>
+<div class="card box" data-b="3"><h3><span class="tag wn">要警惕</span></h3><ul><li>AI 写得流畅，不等于内容对</li><li>研究计划不能讲成已有成果</li><li>练习题不是真题，往年经验不是今年政策</li></ul></div></div></div></section>
+
+<section class="page" id="p3" data-title="起点：难在哪里" data-mag="起点">
+<div class="hd"><div class="kick"><span class="no">02</span>起点：在职医生申请难在哪里</div><h2 class="t">经历不缺，难的是把经历组织成一份申请，并在有限时间里讲清楚自己</h2></div>
+<div class="g3">
+<div class="card box" data-b="1"><span class="tag">身份</span><h3 style="margin-top:12px">一边临床，一边准备</h3><ul><li>急诊创伤外科，排班不固定</li><li>能用于备考的整块时间很少</li><li>所以每一站都要先定范围、再动手</li></ul></div>
+<div class="card box" data-b="2"><span class="tag eo">材料</span><h3 style="margin-top:12px">经历多，但是散的</h3><ul><li>临床、教学、科研碎片分在不同年份</li><li>需要按“临床 / 科研 / 教学 / 缺口”重新归类</li><li>每一条都要拿得出证明</li></ul></div>
+<div class="card box" data-b="3"><span class="tag he">目标</span><h3 style="margin-top:12px">考官真正想知道的</h3><ul><li>你的临床问题是什么，有没有意义</li><li>在这个平台上做不做得成</li><li>你有没有时间、能力真正做研究</li></ul></div></div>
+<div class="card box" data-b="4" style="margin-top:24px"><p><b>读法提示：</b>后面每一站都按同一个顺序讲——<b>我要解决什么 → 我自己做了什么 → AI 帮了什么 → 要小心什么</b>。听众可以把自己的情况套进同一张表。</p></div></section>
+
+<section class="page" id="p4" data-title="六站路线图" data-mag="路线">
+<div class="hd"><div class="kick"><span class="no">03</span>六站路线图</div><h2 class="t">5 月到 7 月：先过英语，再定方向，最后把一切压进 8 分钟</h2></div>
+<div class="card box" data-b="1" style="padding:30px 34px"><svg viewBox="0 0 1660 420" width="100%" style="display:block" font-family="inherit">
+<defs><linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="#1B5FA8"/><stop offset=".6" stop-color="#8E6BC8"/><stop offset="1" stop-color="#D9719C"/></linearGradient></defs>
+<path d="M80 200 H1580" stroke="url(#rg)" stroke-width="8" stroke-linecap="round"/>
+<g font-size="22" text-anchor="middle">
+<circle cx="110" cy="200" r="34" fill="#fff" stroke="#1B5FA8" stroke-width="5"/><text x="110" y="209" font-size="26" font-weight="700" fill="#1B5FA8">1</text>
+<text x="110" y="118" font-weight="700" fill="#1C2333" font-size="27">英语笔试</text><text x="110" y="150" fill="#667085">5 月中下旬</text>
+<text x="110" y="280" fill="#3A4357">词汇·完形·阅读·写作</text><text x="110" y="312" fill="#3A4357">（那年无听力）</text>
+<circle cx="400" cy="200" r="34" fill="#fff" stroke="#1B5FA8" stroke-width="5"/><text x="400" y="209" font-size="26" font-weight="700" fill="#1B5FA8">2</text>
+<text x="400" y="118" font-weight="700" fill="#1C2333" font-size="27">对接方向</text><text x="400" y="150" fill="#667085">5 月下旬</text>
+<text x="400" y="280" fill="#3A4357">临床问题 × 导师方向</text><text x="400" y="312" fill="#3A4357">关注录取流程</text>
+<circle cx="690" cy="200" r="34" fill="#fff" stroke="#5B3F9E" stroke-width="5"/><text x="690" y="209" font-size="26" font-weight="700" fill="#5B3F9E">3</text>
+<text x="690" y="118" font-weight="700" fill="#1C2333" font-size="27">面试 PPT</text><text x="690" y="150" fill="#667085">6 月初，约一周</text>
+<text x="690" y="280" fill="#3A4357">9 页 · 7–8 分钟 · 16:9</text><text x="690" y="312" fill="#3A4357">补优势、资源、四年计划</text>
+<circle cx="980" cy="200" r="34" fill="#fff" stroke="#5B3F9E" stroke-width="5"/><text x="980" y="209" font-size="26" font-weight="700" fill="#5B3F9E">4</text>
+<text x="980" y="118" font-weight="700" fill="#1C2333" font-size="27">医学英语</text><text x="980" y="150" fill="#667085">6 月上旬</text>
+<text x="980" y="280" fill="#3A4357">摘要翻译 · 高频词</text><text x="980" y="312" fill="#3A4357">模拟追问</text>
+<circle cx="1270" cy="200" r="42" fill="#D9719C"/><text x="1270" y="211" font-size="32" font-weight="700" fill="#fff">★</text>
+<text x="1270" y="118" font-weight="700" fill="#B04679" font-size="27">确认录取</text><text x="1270" y="150" fill="#667085">6 月下旬</text>
+<text x="1270" y="280" fill="#3A4357">正式程序以</text><text x="1270" y="312" fill="#3A4357">学校通知为准</text>
+<circle cx="1550" cy="200" r="34" fill="#fff" stroke="#D9719C" stroke-width="5"/><text x="1550" y="209" font-size="26" font-weight="700" fill="#B04679">6</text>
+<text x="1550" y="118" font-weight="700" fill="#1C2333" font-size="27">入学衔接</text><text x="1550" y="150" fill="#667085">7 月</text>
+<text x="1550" y="280" fill="#3A4357">培养安排 · 工作协调</text><text x="1550" y="312" fill="#3A4357">进实验室</text>
+</g>
+<text x="20" y="405" font-size="17" fill="#8A93A6">时间来自本人备考记录；每所学校、每一年的时间节点不同，请以当年招生简章为准。</text>
+</svg></div></section>
+
+<section class="page" id="p5" data-title="第 1 站 · 英语" data-mag="英语">
+<div class="dense"><div class="hd"><div class="kick"><span class="no">04</span>第 1 站 · 英语笔试</div><h2 class="t">难的不是单词量，而是在限定时间里写出结构清楚、用词准确的作文</h2></div>
+<div class="fx"><div class="card fig" data-b="1"><img src="../assets/story/phd-englishv1.0.webp" alt="团子在台灯下背单词，卡皮巴拉举着单词卡当老师"><p class="cap">示意图（AI 生成）：团子备考，卡皮巴拉当陪练老师。</p></div>
+<div class="pts" data-b="2"><div class="pt bl"><h4>先弄清题型</h4><p>我报考那年考词汇、完形、阅读和写作，没有听力。题型决定时间怎么分，先确认再动手。</p></div><div class="pt bl"><h4>我自己做的</h4><p>找齐近几年的作文题和范文；自己先写，再拿去对照；把常用医学词汇单独成表。</p></div><div class="pt eo"><h4>AI 帮的忙</h4><p>归纳范文的段落结构；把复杂句改成“简单但准确”的表达；整理高频医学词汇。</p></div><div class="pt wn"><h4>要小心</h4><p>别让 AI“写一篇给我背”。把任务切小，让它分析<b>你写的</b>东西。它整理的结构不是官方评分标准，医学概念也要自己核对。</p></div></div></div></div></section>
+
+<section class="page" id="p6" data-title="第 2 站 · 研究方向" data-mag="方向">
+<div class="dense"><div class="hd"><div class="kick"><span class="no">05</span>第 2 站 · 对接研究方向</div><h2 class="t">在“我每天看到的病人”和“导师在做的研究”之间，搭一座讲得清楚的桥</h2></div>
+<div class="fx"><div class="card fig" data-b="1"><img src="../assets/story/phd-bridgev1.0.webp" alt="团子在医院和实验室之间搭桥，卡皮巴拉拿着地图引路"><p class="cap">示意图（AI 生成）：一边是医院，一边是实验室。</p></div>
+<div class="pts" data-b="2"><div class="pt bl"><h4>两头各是什么</h4><p>我做急诊创伤外科；报考的课题组研究骨质疏松、肌少症、肌腱衰老一类问题。任务是找一个有临床意义、在这个平台做得成的问题。</p></div><div class="pt bl"><h4>我自己做的</h4><p>梳理导师组公开的研究方向；把自己的临床背景放在旁边逐条对照；决定哪个问题值得讲、讲到什么程度。</p></div><div class="pt eo"><h4>AI 帮的忙</h4><p>把候选问题按临床意义、已有证据、实验可行性排队；指出“这里还没有证据”；给检索方向，原文我自己去查。</p></div><div class="pt wn"><h4>红线</h4><p>研究计划说的是“准备怎么做”，不是“已经做出了什么”。参考别人的机制、团队已有的基础、自己的设想，三者分开写。</p></div></div></div></div></section>
+
+<section class="page" id="p7" data-title="第 3 站 · 面试 PPT" data-mag="PPT">
+<div class="dense"><div class="hd"><div class="kick"><span class="no">06</span>第 3 站 · 面试 PPT</div><h2 class="t">9 页、7–8 分钟：限制越死，越逼着每一页只回答一个问题</h2></div>
+<div class="fx"><div class="card fig" data-b="1"><img src="../assets/story/phd-slidesv1.0.webp" alt="团子在台上讲 PPT，卡皮巴拉们当观众"><p class="cap">示意图（AI 生成）：限时彩排，观众随时举手提问。</p></div>
+<div class="pts" data-b="2"><div class="pt bl"><h4>硬约束</h4><p><span class="num">9</span> 页、<span class="num">7–8</span> 分钟、16:9。6 月初开始反复修改，约一周。</p></div><div class="pt bl"><h4>我自己做的</h4><p>定页数、定时长、定每页要回答的问题；决定哪些经历放、哪些删；补上研究优势、临床资源和四年学习计划。</p></div><div class="pt eo"><h4>AI 帮的忙</h4><p>把散乱材料压成每页最多 3 个要点；写口述稿初稿，我再改成自己的话；按我的要求区分实线证据和虚线假说。</p></div><div class="pt ok"><h4>最想推荐的细节</h4><p>机制示意图里，<b>有证据的画实线，待验证的画虚线</b>。考官一眼就能看出你分得清事实和设想（下一页示范）。</p></div></div></div></div></section>
+
+<section class="page" id="p8" data-title="实线与虚线" data-mag="画图">
+<div class="dense"><div class="hd"><div class="kick"><span class="no">07</span>画图法 · 实线与虚线</div><h2 class="t">一张图讲清楚：哪些是已知，哪些是我准备去验证的</h2></div>
+<div class="card box" data-b="1" style="padding:24px 28px"><svg viewBox="0 0 1660 470" width="100%" style="max-height:380px;display:block;margin:auto" font-family="inherit">
+<defs><marker id="ar" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#5B3F9E"/></marker><marker id="ag" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#2E8B6A"/></marker></defs>
+<rect x="10" y="160" width="260" height="140" rx="22" fill="#fff" stroke="#9AA6B8" stroke-width="3"/>
+<text x="140" y="218" text-anchor="middle" font-size="27" font-weight="700" fill="#1C2333">临床观察</text>
+<text x="140" y="256" text-anchor="middle" font-size="19" fill="#566176">我在病房里反复看到的现象</text>
+<rect x="370" y="40" width="330" height="130" rx="22" fill="#EAF2FB" stroke="#1B5FA8" stroke-width="3"/>
+<text x="535" y="94" text-anchor="middle" font-size="25" font-weight="700" fill="#1B5FA8">文献已证实</text>
+<text x="535" y="130" text-anchor="middle" font-size="19" fill="#3A4357">有原文、有数据，标出处</text>
+<rect x="370" y="290" width="330" height="130" rx="22" fill="#F3EEFA" stroke="#5B3F9E" stroke-width="3"/>
+<text x="535" y="344" text-anchor="middle" font-size="25" font-weight="700" fill="#5B3F9E">团队已有基础</text>
+<text x="535" y="380" text-anchor="middle" font-size="19" fill="#3A4357">平台、样本、前期结果</text>
+<rect x="820" y="160" width="330" height="140" rx="22" fill="#fff" stroke="#2E8B6A" stroke-width="3" stroke-dasharray="10 7"/>
+<text x="985" y="218" text-anchor="middle" font-size="25" font-weight="700" fill="#1E6E52">我的假说</text>
+<text x="985" y="256" text-anchor="middle" font-size="19" fill="#3A4357">还没有证据，准备去验证</text>
+<rect x="1270" y="160" width="370" height="140" rx="22" fill="#fff" stroke="#2E8B6A" stroke-width="3" stroke-dasharray="10 7"/>
+<text x="1455" y="218" text-anchor="middle" font-size="25" font-weight="700" fill="#1E6E52">拟开展的研究</text>
+<text x="1455" y="256" text-anchor="middle" font-size="19" fill="#3A4357">临床队列 → 细胞 → 动物（按平台调整）</text>
+<path d="M270 205 L368 110" stroke="#5B3F9E" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+<path d="M270 255 L368 350" stroke="#5B3F9E" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+<path d="M700 105 L818 205" stroke="#5B3F9E" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+<path d="M700 355 L818 255" stroke="#5B3F9E" stroke-width="3" fill="none" marker-end="url(#ar)"/>
+<path d="M1150 230 L1268 230" stroke="#2E8B6A" stroke-width="3" fill="none" stroke-dasharray="10 7" marker-end="url(#ag)"/>
+<text x="20" y="462" font-size="17" fill="#8A93A6">实线：有出处的已知事实；虚线：本人提出、尚待验证的设想。通用模板，不是我当时的具体研究方案。</text>
+</svg></div>
+<div class="g3" style="margin-top:22px">
+<div class="card box" data-b="2"><h3>实线框</h3><p>每个框都能说出一篇原文或一项数据。说不出来，就降级成虚线。</p></div>
+<div class="card box" data-b="3"><h3>虚线框</h3><p>大方写出来，这是你读博要做的事。考官看重的是逻辑通不通、可不可行。</p></div>
+<div class="card box" data-b="4"><h3>让 AI 检查</h3><p>把图的文字版交给 AI，请它逐个框问“出处是什么”，答不上的自动标虚线。</p></div></div></div></section>
+
+<section class="page" id="p9" data-title="第 4 站 · 医学英语" data-mag="面试">
+<div class="dense"><div class="hd"><div class="kick"><span class="no">08</span>第 4 站 · 医学英语与模拟追问</div><h2 class="t">PPT 定稿后，另一半时间放在“读懂、说出医学英语”和接住追问上</h2></div>
+<div class="fx"><div class="card fig" data-b="1"><img src="../assets/story/phd-interviewv1.0.webp" alt="卡皮巴拉考官提问，团子认真作答，小机器人计时"><p class="cap">示意图（AI 生成）：卡皮巴拉当考官，机器人掐表。</p></div>
+<div class="pts" data-b="2"><div class="pt bl"><h4>练什么</h4><p>医学摘要翻译；血栓、耐药性这类高频话题的词汇；用英语一句话说清自己的研究问题。</p></div><div class="pt eo"><h4>AI 帮的忙</h4><p>根据摘要出词汇表和翻译练习，先让我答再讲错；扮演考官，一次只问一个问题，逼自己当场组织语言。</p></div><div class="pt wn"><h4>要小心</h4><p>AI 出的题只是练习题，不是“真题”。现场问什么，每年、每位考官都不一样；练的是思路，不是背答案。</p></div><div class="pt ok"><h4>可以直接借用</h4><p>模拟追问时，让 AI 专挑三类问题：研究问题明不明确、计划可不可行、已有工作有没有证据。</p></div></div></div></div></section>
+
+<section class="page" id="p10" data-title="第 5–6 站 · 录取与衔接" data-mag="录取">
+<div class="dense"><div class="hd"><div class="kick"><span class="no">09</span>第 5–6 站 · 录取与衔接</div><h2 class="t">对在职医生来说，录取只是把问题换了一批</h2></div>
+<div class="fx"><div class="card fig" data-b="1"><img src="../assets/story/phd-offerv1.0.webp" alt="团子举着录取信封，卡皮巴拉撒彩纸庆祝"><p class="cap">示意图（AI 生成）：拿到好消息，路还在往前延伸。</p></div>
+<div class="pts" data-b="2"><div class="pt eo"><h4>6 月下旬 · 确认录取</h4><p>2026 级在职临床医学博士（专业学位）。这里写的是我确认录取的时间，正式公示和通知以学校为准。</p></div><div class="pt bl"><h4>7 月 · 开始衔接</h4><p>培养方式和时间表；和科室协调脱产学习；两地之间的生活安排；和导师确认何时、何地进实验室。</p></div><div class="pt ok"><h4>给你的建议</h4><p>录取前就把“如果录取了，工作和家里怎么安排”过一遍。考官和导师都会关心你有没有时间真正做研究。</p></div><div class="pt wn"><h4>别当成政策</h4><p>学费、脱产要求、住宿这些，每个学校、每个单位都不一样。我的安排只是个人情况，请以本校文件为准。</p></div></div></div></div></section>
+
+<section class="page" id="p11" data-title="AI 怎么分工" data-mag="AI">
+<div class="dense"><div class="hd"><div class="kick"><span class="no">10</span>AI 在申请里怎么分工</div><h2 class="t">AI 负责“整理和陪练”，选题、取舍和事实核对必须自己来</h2></div>
+<div class="fx" style="grid-template-columns:560px 1fr"><div class="card fig" data-b="1"><img src="../assets/story/phd-aiv1.0.webp" alt="机器人递来草稿，团子用放大镜核对，卡皮巴拉分拣材料"><p class="cap">示意图（AI 生成）：AI 递草稿，人拿放大镜核对。</p></div>
+<div class="card box" data-b="2"><table class="t">
+<tr><th style="width:15%">环节</th><th>AI 做了什么</th><th>我必须自己做</th><th style="width:24%">风险</th></tr>
+<tr><td><b>英语</b></td><td>拆范文结构，改表达，整理词汇</td><td>自己写、自己背、确认题型</td><td>模板化，脱离原意</td></tr>
+<tr><td><b>方向</b></td><td>比较候选问题，提示证据缺口</td><td>读原文，定选题，分清归属</td><td>把别人的机制当成自己的</td></tr>
+<tr><td><b>PPT</b></td><td>压缩要点，写口述稿初稿</td><td>定结构，删内容，改成自己的话</td><td>计划讲成成果</td></tr>
+<tr><td><b>面试</b></td><td>出练习题，扮演考官追问</td><td>真实作答，事后复盘</td><td>把练习题当真题</td></tr>
+<tr><td><b>衔接</b></td><td>列待办清单，拟沟通措辞</td><td>和导师、单位、家人当面谈</td><td>措辞代替沟通</td></tr></table>
+<p class="src" style="margin-top:12px">能确认的是 AI 参与了这些准备环节；没有证据说明某个工具或某一版 PPT 直接决定了录取。</p></div></div></div></section>
+
+<section class="page" id="p12" data-title="三个筐" data-mag="边界">
+<div class="hd"><div class="kick"><span class="no">11</span>证据边界 · 三个筐</div><h2 class="t">交给考官的每一句话，都要先放进其中一个筐</h2></div>
+<div class="g3">
+<div class="card box" data-b="1" style="border-top:6px solid var(--ok)"><span class="tag ok">✅ 我的事实</span><h3 style="margin-top:12px">经历与证明</h3><ul><li>自己做过的临床、教学、科研工作</li><li>每一条都能拿出材料</li><li>时间、数字以原件为准</li></ul></div>
+<div class="card box" data-b="2" style="border-top:6px solid var(--blue)"><span class="tag">💡 AI 的建议</span><h3 style="margin-top:12px">结构、措辞、思路</h3><ul><li>有用，但要自己判断采不采纳</li><li>采纳后改成自己的话</li><li>不能当作“我做过的事”</li></ul></div>
+<div class="card box" data-b="3" style="border-top:6px solid var(--gold)"><span class="tag wn">❓ 待验证的设想</span><h3 style="margin-top:12px">假说与计划</h3><ul><li>可以写，而且应该写</li><li>必须标明“准备验证”</li><li>在图里画成虚线</li></ul></div></div>
+<div class="card box" data-b="4" style="margin-top:24px"><p><b>分享截图前：</b>遮掉身份证号、准考证号、手机号、邮箱、私人微信和其他申请人信息；导师的私人回复先确认能不能公开。</p></div></section>
+
+<section class="page" id="p13" data-title="提示词库" data-mag="提示词">
+<div class="dense"><div class="hd"><div class="kick"><span class="no">12</span>可复制的提示词</div><h2 class="t">六段提示词，按申请顺序排好，[方括号] 换成你自己的材料</h2></div>
+<div class="g3" style="gap:18px">
+<div class="card pr" data-b="1"><div class="pt2"><span>① 整理申请素材</span><button class="cp">复制</button></div><p>我是一名临床医生，准备申请医学博士。以下是我的真实经历和学校要求：[粘贴]。请按临床、科研、教学、能力缺口四类整理，只使用我提供的事实。把缺少证明、时间不清或归属有疑问的内容单独列出。不要添加论文、奖项、导师承诺或录取概率。</p></div>
+<div class="card pr" data-b="1"><div class="pt2"><span>② 医学英语陪练</span><button class="cp">复制</button></div><p>根据我提供的考试题型和一篇医学摘要：[粘贴]，生成词汇表、段落主旨和翻译练习。先让我自己回答，再逐条解释我的错误。给准确、好记的表达，不要用模板替代原文意思。不要把练习题说成真实考题。</p></div>
+<div class="card pr" data-b="2"><div class="pt2"><span>③ 梳理研究设想</span><button class="cp">复制</button></div><p>我的临床背景是[填写]，导师公开的研究方向是[附来源]，我能用的资源是[填写]。请把候选研究问题按临床意义、已有证据、实验可行性比较。每项区分已知事实、团队已有基础和待验证假说；没有来源就标“待检索”。不要把参考他人的机制写成我的原创成果。</p></div>
+<div class="card pr" data-b="2"><div class="pt2"><span>④ 打磨限时 PPT</span><button class="cp">复制</button></div><p>请把以下真实材料整理成 9 页、7–8 分钟的博士面试 PPT 内容稿。每页回答一个问题，写出标题、最多 3 个要点和口述稿。区分已完成的工作和未来计划；机制图里有证据的用实线、待验证的用虚线。缺的信息标“待补”。材料：[粘贴]</p></div>
+<div class="card pr" data-b="3"><div class="pt2"><span>⑤ 模拟考官追问</span><button class="cp">复制</button></div><p>你是医学博士面试考官。根据我的 PPT 内容逐题追问，每次只问一个问题。重点检查：研究问题是否明确、计划是否可行、已有工作有没有证据。等我回答后再给具体修改意见。不要替我编造实验结果或经历。PPT 内容：[粘贴]</p></div>
+<div class="card pr" data-b="3"><div class="pt2"><span>⑥ 申请结束后复盘</span><button class="cp">复制</button></div><p>请依据以下带日期的申请记录，整理从备考到录取的时间线。标明哪些是我本人的事实、哪些是 AI 当时的建议、哪些是这次总结；缺失的环节保留为“待补”，不要替我补写。不要推断某个工具直接导致了录取。记录：[粘贴]</p></div></div>
+<p class="src" style="margin-top:14px">这些提示词是为分享重新整理的可复用版本，不是当时逐字使用的原文。</p></div></section>
+
+<section class="page" id="p14" data-title="自查清单与思考题" data-mag="清单">
+<div class="dense"><div class="hd"><div class="kick"><span class="no">13</span>自查清单与思考题</div><h2 class="t">带走就能用：申请前对照一遍，课后想一想</h2></div>
+<div class="g2">
+<div class="card box" data-b="1"><h3>申请前自查（可勾选）</h3><div class="chk" id="checks">
+<label><input type="checkbox"><span>写下为什么读博、读完想做什么</span></label>
+<label><input type="checkbox"><span>梳理目标导师组公开的研究方向和论文</span></label>
+<label><input type="checkbox"><span>和单位、家里谈好学习时间怎么安排</span></label>
+<label><input type="checkbox"><span>确认报名时间、材料清单、英语题型</span></label>
+<label><input type="checkbox"><span>经历整理成“临床 / 科研 / 教学 / 缺口”四栏</span></label>
+<label><input type="checkbox"><span>写出 1–2 个研究问题，事实和假说分开</span></label>
+<label><input type="checkbox"><span>PPT 定好页数和时长，计时讲 5 遍以上</span></label>
+<label><input type="checkbox"><span>请同事或 AI 当考官，至少模拟追问 2 轮</span></label></div></div>
+<div class="card box" data-b="2"><h3>思考题</h3><ol style="padding-left:26px">
+<li>你在临床里反复遇到、却没人解释清楚的一个现象是什么？</li>
+<li>它和目标导师组的方向，交点在哪里？</li>
+<li>你的研究图里，哪几个框能说出出处？哪几个应该改成虚线？</li>
+<li>如果只有 8 分钟，你会删掉哪一段经历？为什么？</li>
+<li>录取以后，你每周能拿出多少整块时间做研究？</li></ol></div></div></div></section>
+
+<section class="page" id="p15" data-title="说明" data-mag="说明">
+<div class="dense"><div class="hd"><div class="kick"><span class="no">14</span>说明与致谢</div><h2 class="t">这是一份个人经历复盘，不是招生政策解读</h2></div>
+<div class="g2">
+<div class="card box" data-b="1"><h3>边界</h3><ul>
+<li>内容为本人 2026 年申请苏州大学在职临床医学博士的个人经历</li>
+<li>时间线来自本人备考记录；录取时间指本人确认录取的时间，正式程序以学校通知为准</li>
+<li>题型、时间节点、培养要求每年可能变化，请以目标学校当年招生简章为准</li>
+<li>为保护隐私，未展示成绩、证件、导师私人沟通、费用与家庭安排</li></ul></div>
+<div class="card box" data-b="2"><h3>制作</h3><ul>
+<li>插图：AI 生成，团子与卡皮巴拉仅为示意</li>
+<li>提示词：为分享重新整理，非当时原文</li>
+<li>作者：丁海祥 · 急诊创伤外科医生 · aiai 人工智能学院</li>
+<li>更多课程：<a href="../#lessons" style="color:var(--blue)">aiai-academy.com 课件馆</a></li></ul></div></div>
+<p class="src" style="margin-top:16px">键盘 ← → 翻页，底部按钮可打开目录或导出 PDF。</p></div></section>
+</div>
+<div id="toc" class="card"><h4>目录</h4><div id="tocList"></div></div>
+<div id="bar"><button class="ib" id="bToc" title="目录"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></button>
+<button class="ib" id="bPrev" title="上一页 ←"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+<button class="ib" id="bNext" title="下一页 →"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+<div id="chapName"></div><div id="prog"><div class="tr"></div><div class="fill"></div><div class="dots"></div></div>
+<button class="ib" id="bPrint" title="打印 / 导出 PDF"><svg viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg></button></div>
+</div></div><script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const pages=$$('.page');let cur=0;
+function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);const st=$('#stage');st.style.transform=`scale(${s})`;st.style.left=(innerWidth-1920*s)/2+'px';st.style.top=(innerHeight-1080*s)/2+'px'}
+addEventListener('resize',fit);fit();
+const dots=$('#prog .dots');pages.forEach(()=>dots.appendChild(document.createElement('i')));
+$('#tocList').innerHTML=pages.map((p,i)=>`<button data-i="${i}"><span class="n">${String(i).padStart(2,'0')}</span>${p.dataset.title}</button>`).join('');
+$$('#tocList button').forEach(b=>b.onclick=()=>{go(+b.dataset.i);$('#toc').classList.remove('show')});
+function go(i){i=Math.max(0,Math.min(pages.length-1,i));pages[cur].classList.remove('cur');cur=i;const p=pages[i];void p.offsetWidth;p.classList.add('cur');
+$('#chapName').textContent=String(i).padStart(2,'0')+' · '+p.dataset.title;$('#magbadge .obj').textContent=p.dataset.mag;$('#magbadge .idx').textContent=(i+1)+' / '+pages.length;
+$('#prog .fill').style.width=(i/(pages.length-1)*100)+'%';$$('#prog .dots i').forEach((d,j)=>d.classList.toggle('done',j<=i));$$('#tocList button').forEach((b,j)=>b.classList.toggle('cur',j===i));history.replaceState(null,'','#'+(i+1))}
+$('#bPrev').onclick=()=>go(cur-1);$('#bNext').onclick=()=>go(cur+1);$('#bToc').onclick=()=>$('#toc').classList.toggle('show');
+$('#bPrint').onclick=()=>print();
+$('#prog').onclick=e=>{const r=e.currentTarget.getBoundingClientRect();go(Math.round((e.clientX-r.left)/r.width*(pages.length-1)))};
+addEventListener('keydown',e=>{if(e.target.closest&&e.target.closest('input,textarea'))return;if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(cur+1)}if(['ArrowLeft','PageUp'].includes(e.key))go(cur-1);if(e.key==='Escape')$('#toc').classList.remove('show')});
+let tx=null;addEventListener('touchstart',e=>tx=e.touches[0].clientX);addEventListener('touchend',e=>{if(tx===null)return;const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)go(cur+(d<0?1:-1));tx=null});
+$$('#scen button').forEach(b=>b.onclick=()=>{$$('#scen button').forEach(x=>x.classList.toggle('on',x===b));$$('.sw').forEach(s=>s.classList.toggle('on',s.dataset.s===b.dataset.s))});
+go(Math.max(0,(parseInt(location.hash.slice(1))||1)-1));
+
+document.querySelectorAll('.cp').forEach(b=>b.onclick=()=>{const t=b.closest('.pr').querySelector('p').innerText;const ok=()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1600)};
+if(navigator.clipboard)navigator.clipboard.writeText(t).then(ok,()=>{const r=document.createRange();r.selectNodeContents(b.closest('.pr').querySelector('p'));getSelection().removeAllRanges();getSelection().addRange(r);b.textContent='已选中 ⌘C'});});
+(()=>{const K='aiai-phd-check',bx=[...document.querySelectorAll('#checks input')];let s=[];try{s=JSON.parse(localStorage.getItem(K)||'[]')}catch(e){}
+bx.forEach((b,i)=>{b.checked=!!s[i];b.onchange=()=>{try{localStorage.setItem(K,JSON.stringify(bx.map(x=>x.checked)))}catch(e){}}})})();
+</script></body></html>
